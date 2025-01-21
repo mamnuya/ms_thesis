@@ -1,0 +1,3 @@
+[submodule "CODE/IndicTransToolkit"]
+	path = CODE/IndicTransToolkit
+	url = https://github.com/VarunGumma/IndicTransToolkit.git

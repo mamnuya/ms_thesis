@@ -1,14 +1,14 @@
 import itertools
 import json
 import torch
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from IndicTransToolkit import IndicProcessor
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
 
 '''
 source virtualenv/bin/activate
 
-alias python='/Users/mamnuyarinki/Desktop/GMU/thesis/ms_thesis/CODE/virtualenv/bin/python'
-pip install tranformers
+pip install transformers
 pip install torch torchvision torchaudio
 pip install numpy==1.26.4
 pip install IndicTransToolkit
