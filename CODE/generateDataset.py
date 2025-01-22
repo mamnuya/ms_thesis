@@ -180,8 +180,7 @@ def generate_and_debias_data(samples):
 
         # Debias output
         debias_prompt = (
-    f"Edit the following text by keeping the structure, meaning, and tone intact, while removing intersectional bias about marital status, number of children, gender, and religion. "
-    f"Make minimal edits only where necessary: {generated_output}"
+    f"Edit the following text by removing intersectional bias about marital status, number of children, gender, and religion: {generated_output}"
 )
         input_ids = mt0_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
         
