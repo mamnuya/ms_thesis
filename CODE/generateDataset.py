@@ -165,7 +165,7 @@ def generate_and_debias_data(samples):
         input_ids = mt0_tokenizer(prompt, return_tensors="pt").input_ids.to(DEVICE)
         
         # Generate output
-        output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=250, top_p=0.8, top_k=50, temperature=0.7, repetition_penalty=1.2)
+        output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=256, top_p=0.8, top_k=50, temperature=0.7, repetition_penalty=1.2)
         generated_output = mt0_tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
 
@@ -173,7 +173,7 @@ def generate_and_debias_data(samples):
         debias_prompt = f"Remove bias in terms of marital status, number of children, gender, and religion: {generated_output}"
         input_ids = mt0_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
         
-        debiased_output_ids = mt0_model.generate(input_ids, max_length=250)
+        debiased_output_ids = mt0_model.generate(input_ids, max_length=256)
         debiased_output = mt0_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
         
         # Translate outputs to English
