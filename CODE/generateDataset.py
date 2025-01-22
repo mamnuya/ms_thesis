@@ -17,6 +17,7 @@ pip install IndicTransToolkit
 pip install protobuf
 '''
 import bitsandbytes as bnb
+import re
 
 # Load MT0 for generation and debiasing
 mt0_model_name = "bigscience/mt0-small"  
@@ -61,7 +62,7 @@ def translate_to_english(text, src_lang):
             **inputs,
             use_cache=True,
             min_length=0,
-            max_length=256,
+            max_length=500,
             num_beams=5,
             num_return_sequences=1,
         )
@@ -158,22 +159,34 @@ def language_to_src_code(language):
     }
     return mapping.get(language)
 
+def clean_prompt(prompt):
+    """Remove double periods and unnecessary spacing in prompts."""
+    prompt = re.sub(r"\.\.+", ".", prompt)  # Replace multiple periods with a single period
+    prompt = re.sub(r"\s+", " ", prompt)    # Remove excessive whitespace
+    prompt = prompt.strip()                 # Remove leading and trailing spaces
+    return prompt
+
 def generate_and_debias_data(samples):
     results = []
     for religion, gender, marital_status, children_count, identity_text, language, app, prompt in samples:
         # Ensure both model and inputs are on the same device
+        prompt = clean_prompt(prompt)
         input_ids = mt0_tokenizer(prompt, return_tensors="pt").input_ids.to(DEVICE)
         
         # Generate output
-        output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=256, top_p=0.8, top_k=50, temperature=0.7, repetition_penalty=1.2)
+        output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
         generated_output = mt0_tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
 
         # Debias output
-        debias_prompt = f"Remove bias in terms of marital status, number of children, gender, and religion: {generated_output}"
+        debias_prompt = (
+    f"Edit the following text by keeping the structure, meaning, and tone intact, while removing intersectional bias about marital status, number of children, gender, and religion. "
+    f"Make minimal edits only where necessary: {generated_output}"
+)
         input_ids = mt0_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
         
-        debiased_output_ids = mt0_model.generate(input_ids, max_length=256)
+        #debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
+        debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.8, top_k=40, temperature=0.5, repetition_penalty=1.5) # lower top_k and lower top_p and lower temperature to reduce randomness
         debiased_output = mt0_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
         
         # Translate outputs to English
@@ -213,5 +226,3 @@ def save_results(results, filename="generated_data.json"):
 samples = get_balanced_sample(identities, applications, languages) 
 results = generate_and_debias_data(samples)
 save_results(results)
-
-
