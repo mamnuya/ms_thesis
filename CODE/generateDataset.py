@@ -20,7 +20,7 @@ import bitsandbytes as bnb
 import re
 
 # Load MT0 for generation and debiasing
-mt0_model_name = "bigscience/mt0-small"  
+mt0_model_name = "bigscience/mt0-large"  
 mt0_tokenizer = AutoTokenizer.from_pretrained(mt0_model_name)
 mt0_model = AutoModelForSeq2SeqLM.from_pretrained(mt0_model_name, device_map="auto", load_in_8bit=True)
 
@@ -112,6 +112,9 @@ total number of entries will be: 48*10*3 = 1440 per 1 iteration
 If repeats = 7, we get 1440*7 = 10,080 entries
 10080entries/10languages = 1008 entries/1 language
 
+If repeats = 35, we get 1440*35 = 50,400 entries
+50400entries/10languages = 5040 entries/1 language
+
 '''
 
 # Repeat the sample generation to get 10,000 entries
@@ -184,8 +187,8 @@ def generate_and_debias_data(samples):
 )
         input_ids = mt0_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
         
-        #debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
-        debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.8, top_k=40, temperature=0.5, repetition_penalty=1.5) # lower top_k and lower top_p and lower temperature to reduce randomness
+        debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
+        #debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.8, top_k=40, temperature=0.5, repetition_penalty=1.5) # lower top_k and lower top_p and lower temperature to reduce randomness
         debiased_output = mt0_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
         
         # Translate outputs to English
@@ -225,3 +228,4 @@ def save_results(results, filename="generated_data.json"):
 samples = get_balanced_sample(identities, applications, languages) 
 results = generate_and_debias_data(samples)
 save_results(results)
+
