@@ -2,7 +2,7 @@ import itertools
 import json
 import torch
 from IndicTransToolkit import IndicProcessor
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, BitsAndBytesConfig
 
 
 '''
@@ -21,8 +21,24 @@ import re
 
 # Load MT0 for generation and debiasing
 mt0_model_name = "bigscience/mt0-large"  
+
+
 mt0_tokenizer = AutoTokenizer.from_pretrained(mt0_model_name)
-mt0_model = AutoModelForSeq2SeqLM.from_pretrained(mt0_model_name, device_map="auto", load_in_8bit=True)
+
+# Configure 8-bit quantization
+quantization_config = BitsAndBytesConfig(
+    load_in_8bit=True,  # Enable 8-bit quantization
+    llm_int8_enable_fp32_cpu_offload=True  # Use FP32 offload if needed
+)
+
+# Load the model with 8-bit quantization
+mt0_model = AutoModelForSeq2SeqLM.from_pretrained(
+    mt0_model_name,
+    device_map="auto",  # Automatically assign layers to available GPUs
+    quantization_config=quantization_config
+)
+#mt0_model = AutoModelForSeq2SeqLM.from_pretrained(mt0_model_name, device_map="auto", load_in_8bit=True)
+
 
 # Load AI4Bharat translation model
 ai4bharat_model_name = "ai4bharat/indictrans2-indic-en-dist-200M"
@@ -86,7 +102,7 @@ children_counts = ["No children", "One child", "Many children"]
 # 10 languages
 #languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
 #TODO change this
-languages = ["Hindi",  "Kannada"]
+languages = ["Kannada"]
 
 # Applications
 applications = {
@@ -99,7 +115,7 @@ places = ["home", "school", "work", "hospital"]
 
 # Generate all combinations for intersectional identities
 identities = list(itertools.product(religions, genders, marital_statuses, children_counts))
-identity_format = "A {religion} {gender} {marital_status} with {children_count}."
+identity_format = "A {religion} {gender} {marital_status} with {children_count}"
 
 
 '''
@@ -149,7 +165,7 @@ def get_balanced_sample(identities, applications, languages):
 def language_to_src_code(language):
     """Map human-readable language names to AI4Bharat src_lang codes."""
     mapping = {
-        "Hindi": "hin_Deva",
+        #"Hindi": "hin_Deva",
         # "Urdu": "urd_Arab",  
         # "Bengali": "ben_Beng",
         # "Punjabi": "pan_Guru",
@@ -228,4 +244,5 @@ def save_results(results, filename="generated_data.json"):
 samples = get_balanced_sample(identities, applications, languages) 
 results = generate_and_debias_data(samples)
 save_results(results)
+
 
