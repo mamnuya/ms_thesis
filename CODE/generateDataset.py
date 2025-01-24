@@ -41,9 +41,13 @@ mt0_model = AutoModelForSeq2SeqLM.from_pretrained(
 
 
 # Load AI4Bharat translation model
-ai4bharat_model_name = "ai4bharat/indictrans2-indic-en-dist-200M"
+ai4bharat_model_name = "ai4bharat/indictrans2-indic-en-1B"
 ai4bharat_tokenizer = AutoTokenizer.from_pretrained(ai4bharat_model_name, trust_remote_code=True)
-ai4bharat_model = AutoModelForSeq2SeqLM.from_pretrained(ai4bharat_model_name, trust_remote_code=True)
+ai4bharat_model = AutoModelForSeq2SeqLM.from_pretrained(
+    ai4bharat_model_name, 
+    device_map="auto",  # Automatically assign layers to available GPUs
+    quantization_config=quantization_config,
+    trust_remote_code=True)
 processor = IndicProcessor(inference=True)
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -71,7 +75,7 @@ def translate_to_english(text, src_lang):
     inputs = {key: value.to(DEVICE) for key, value in inputs.items()}  # Move all inputs to the same device as the model
 
     # Ensure the model is also on the same device
-    ai4bharat_model.to(DEVICE)
+    #ai4bharat_model.to(DEVICE)
 
     with torch.no_grad():
         generated_tokens = ai4bharat_model.generate(
@@ -244,5 +248,8 @@ def save_results(results, filename="generated_data.json"):
 samples = get_balanced_sample(identities, applications, languages) 
 results = generate_and_debias_data(samples)
 save_results(results)
+
+
+
 
 
