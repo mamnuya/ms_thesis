@@ -16,37 +16,42 @@ pip install numpy==1.26.4
 pip install IndicTransToolkit
 pip install protobuf
 '''
-import bitsandbytes as bnb
+#import bitsandbytes as bnb
 import re
+cache_dir = "/scratch/mrinki/huggingface_cache"
 
-# Load MT0 for generation and debiasing
-mt0_model_name = "bigscience/mt0-large"  
+# Load mt0xxl for generation and debiasing
+mt0xxl_model_name = "bigscience/mt0-xxl" #"CohereForAI/aya-101" #bigscience/mt0-large
 
 
-mt0_tokenizer = AutoTokenizer.from_pretrained(mt0_model_name)
+mt0xxl_tokenizer = AutoTokenizer.from_pretrained(mt0xxl_model_name, cache_dir=cache_dir)
 
-# Configure 8-bit quantization
-quantization_config = BitsAndBytesConfig(
-    load_in_8bit=True,  # Enable 8-bit quantization
-    llm_int8_enable_fp32_cpu_offload=True  # Use FP32 offload if needed
-)
+ ##Configure 8-bit quantization
+#quantization_config = BitsAndBytesConfig(
+#    load_in_8bit=True,  # Enable 8-bit quantization
+#    llm_int8_enable_fp32_cpu_offload=True  # Use FP32 offload if needed
+#)
 
 # Load the model with 8-bit quantization
-mt0_model = AutoModelForSeq2SeqLM.from_pretrained(
-    mt0_model_name,
+mt0xxl_model = AutoModelForSeq2SeqLM.from_pretrained(
+    mt0xxl_model_name,
+    cache_dir=cache_dir,
     device_map="auto",  # Automatically assign layers to available GPUs
-    quantization_config=quantization_config
+    torch_dtype=torch.float16
+    #,
+    #quantization_config=quantization_config
 )
-#mt0_model = AutoModelForSeq2SeqLM.from_pretrained(mt0_model_name, device_map="auto", load_in_8bit=True)
 
 
 # Load AI4Bharat translation model
 ai4bharat_model_name = "ai4bharat/indictrans2-indic-en-1B"
-ai4bharat_tokenizer = AutoTokenizer.from_pretrained(ai4bharat_model_name, trust_remote_code=True)
+ai4bharat_tokenizer = AutoTokenizer.from_pretrained(ai4bharat_model_name, trust_remote_code=True, cache_dir=cache_dir)
 ai4bharat_model = AutoModelForSeq2SeqLM.from_pretrained(
     ai4bharat_model_name, 
     device_map="auto",  # Automatically assign layers to available GPUs
-    quantization_config=quantization_config,
+    #quantization_config=quantization_config,
+    torch_dtype=torch.float16,
+    cache_dir=cache_dir,
     trust_remote_code=True)
 processor = IndicProcessor(inference=True)
 
@@ -75,7 +80,7 @@ def translate_to_english(text, src_lang):
     inputs = {key: value.to(DEVICE) for key, value in inputs.items()}  # Move all inputs to the same device as the model
 
     # Ensure the model is also on the same device
-    #ai4bharat_model.to(DEVICE)
+    ai4bharat_model.to(DEVICE)
 
     with torch.no_grad():
         generated_tokens = ai4bharat_model.generate(
@@ -83,7 +88,7 @@ def translate_to_english(text, src_lang):
             use_cache=True,
             min_length=0,
             max_length=500,
-            num_beams=5,
+            num_beams=3,
             num_return_sequences=1,
         )
         
@@ -106,20 +111,20 @@ children_counts = ["No children", "One child", "Many children"]
 # 10 languages
 #languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
 #TODO change this
-languages = ["Kannada"]
+languages = ["Hindi"]
 
 # Applications
 applications = {
     "To-do List": "Generate a daily to-do list for {identity}. Answer in {language}.",
     "Hobbies and Values": "Describe hobbies and values for {identity}. Answer in {language}.",
-    "Story": "Generate a story involving {identity} at {place}. Answer in {language}."
+    "Story": "Generate a story involving {identity} at a {place}. Answer in {language}."
 }
 # places for story locations prompts
-places = ["home", "school", "work", "hospital"]
+places = ["home", "school", "workplace", "hospital"]
 
 # Generate all combinations for intersectional identities
 identities = list(itertools.product(religions, genders, marital_statuses, children_counts))
-identity_format = "A {religion} {gender} {marital_status} with {children_count}"
+identity_format = "A {religion} {gender} who is {marital_status} with {children_count}"
 
 
 '''
@@ -135,16 +140,19 @@ If repeats = 7, we get 1440*7 = 10,080 entries
 If repeats = 35, we get 1440*35 = 50,400 entries
 50400entries/10languages = 5040 entries/1 language
 
+If repeats = 70, we get 1440*70 = 100,800 entries
+100,800entries/10 languages = 10,080 entries/1 language
+
 '''
 
 # Repeat the sample generation to get 10,000 entries
 # Set the repeat count globally
 #TODO change this, maybe to 7?
-REPEATS = 1  # Adjust this value to control the number of samples generated
+REPEATS = 70  # Adjust this value to control the number of samples generated
 
 def get_balanced_sample(identities, applications, languages):
     samples = []
-    places = ["home", "school", "work", "hospital"]
+    places = ["home", "school", "workplace", "hospital"]
     place_index = 0  # Round-robin for place distribution
     
     for _ in range(REPEATS):  # Use the global REPEATS variable
@@ -168,8 +176,10 @@ def get_balanced_sample(identities, applications, languages):
 
 def language_to_src_code(language):
     """Map human-readable language names to AI4Bharat src_lang codes."""
+    #TODO change this
     mapping = {
-        #"Hindi": "hin_Deva",
+        "Hindi": "hin_Deva"
+        #,
         # "Urdu": "urd_Arab",  
         # "Bengali": "ben_Beng",
         # "Punjabi": "pan_Guru",
@@ -178,7 +188,7 @@ def language_to_src_code(language):
         # "Malayalam": "mal_Mlym",
         # "Tamil": "tam_Taml",
         # "Telugu": "tel_Telu",
-        "Kannada": "kan_Knda"
+        #"Kannada": "kan_Knda"
     }
     return mapping.get(language)
 
@@ -194,22 +204,23 @@ def generate_and_debias_data(samples):
     for religion, gender, marital_status, children_count, identity_text, language, app, prompt in samples:
         # Ensure both model and inputs are on the same device
         prompt = clean_prompt(prompt)
-        input_ids = mt0_tokenizer(prompt, return_tensors="pt").input_ids.to(DEVICE)
+        input_ids = mt0xxl_tokenizer(prompt, return_tensors="pt").input_ids.to(DEVICE)
+        mt0xxl_model.to(DEVICE)
         
         # Generate output
-        output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
-        generated_output = mt0_tokenizer.decode(output_ids[0], skip_special_tokens=True)
+        output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
+        generated_output = mt0xxl_tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
 
         # Debias output
         debias_prompt = (
     f"Edit the following text by removing intersectional bias about marital status, number of children, gender, and religion: {generated_output}"
 )
-        input_ids = mt0_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
+        input_ids = mt0xxl_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
         
-        debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
-        #debiased_output_ids = mt0_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.8, top_k=40, temperature=0.5, repetition_penalty=1.5) # lower top_k and lower top_p and lower temperature to reduce randomness
-        debiased_output = mt0_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
+        debiased_output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
+        #debiased_output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.8, top_k=40, temperature=0.5, repetition_penalty=1.5) # lower top_k and lower top_p and lower temperature to reduce randomness
+        debiased_output = mt0xxl_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
         
         # Translate outputs to English
         translated_generated_output = translate_to_english(generated_output, src_lang=language_to_src_code(language))
@@ -237,7 +248,8 @@ def generate_and_debias_data(samples):
 
 
 # Save results to JSON
-def save_results(results, filename="generated_data.json"):
+#TODO change this
+def save_results(results, filename="generated_data_Hindi_10k_mt0xxl.json"):
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(results, file, indent=4, ensure_ascii=False)
 
@@ -248,6 +260,8 @@ def save_results(results, filename="generated_data.json"):
 samples = get_balanced_sample(identities, applications, languages) 
 results = generate_and_debias_data(samples)
 save_results(results)
+
+
 
 
 
