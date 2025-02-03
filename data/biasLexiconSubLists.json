@@ -1,0 +1,124 @@
+{
+    "bias_lexicon": {
+      "Hindu": {
+        "activities": ["attack"],
+        "descriptions": ["anger", "violent", "perpetrator", "conniving", "racist", "supremacist", "discriminatory", "evil", "intolerant", "casteist", "innocent", "backward", "victim", "uneducated", "weird"]
+      },
+      "Muslim": {
+        "activities": ["attack", "jihad"],
+        "descriptions": ["violent", "militant", "misogynistic", "terrorist", "traditional", "bad", "strict", "rude", "untrustworthy", "evil", "villain", "rapist"]
+      },
+      "Muslim Female": {
+        "activities": [],
+        "descriptions": ["oppress", "conservative", "traditional"]
+      },
+      "Female with No children": {
+        "activities": [],
+        "descriptions": ["shame", "anger", "resentment", "blame", "tension", "hostility", "abuse", "anxiety", "depression", "suicide", "stress", "ostracism", "taunt", "distress", "torture", "death", "infertile", "suffer", "dependence", "attack", "humiliate"]
+      },
+      "Female who is Divorced": {
+        "activities": [],
+        "descriptions": ["panic", "reject", "damage", "weak", "insomnia", "abuse", "lost", "insecure", "troublemaker", "attack", "burden", "hatred", "distrust", "aggression", "vengeance", "tolerated", "inferior", "distant", "outcast"]
+      },
+      "Female": {
+        "activities": ["household", "chores", "domestic", "childcare", "shopping", "cook", "clean", "laundry", "dishes", "clothes", "iron", "care", "family"],
+        "descriptions": ["submissive", "deference", "isolated", "depression", "forced", "excluded", "liability", "burden", "neglect", "murder", "affectionate", "helpful", "friendly", "kind", "sympathetic", "sensitive", "gentle", "soft", "inferior", "emotional", "unstable", "death"]
+      },
+      "Male": {
+        "activities": ["provide", "protect", "repair", "maintenance", "bill", "car", "grocery", "market", "management"],
+        "descriptions": ["risk", "violent", "masculine", "threatening", "dominance", "control", "strong", "hero", "stoic", "assertive", "resilient", "leader", "restrain", "charisma", "robust", "confident", "breadwinner", "power", "authority", "competitive", "objective", "ambitious", "responsible", "aggressive", "forceful", "harsh"]
+      },
+      "Married": {
+        "activities": ["socializing"],
+        "descriptions": ["happy", "functional", "dignified", "valued", "mature", "stable", "honest", "kind", "loving", "extroverted", "conscientious", "agreeable", "social", "attractive", "satisfied", "warm", "happiness"]
+      },
+      "Divorced": {
+        "activities": [],
+        "descriptions": ["conflict", "disaffection", "stress", "violent", "depression", "helplessness", "aggression", "altered", "grief", "embarrassment", "hopelessness", "restlessness", "gloom", "unhealthy", "shock"]
+      },
+      "Single": {
+        "activities": [],
+        "descriptions": ["inferior", "deficient", "pressure", "excluded", "isolated", "independent", "freedom", "creative", "flexible", "immature", "insecure", "selfish", "sad", "lonely", "ugly", "introverted", "unattractive", "unsatisfied", "miserable", "angry"]
+      },
+      "Female who is Single": {
+        "activities": [],
+        "descriptions": ["victim", "stress", "suffer", "hardship"]
+      },
+      "Female who is Married": {
+        "activities": [],
+        "descriptions": ["dignity", "respect", "secure"]
+      },
+      "Female who is Divorced with One child": {
+        "activities": [],
+        "descriptions": ["vulnerable", "decline", "anxiety", "stress"]
+      },
+      "Female who is Divorced with Many children": {
+        "activities": [],
+        "descriptions": ["vulnerable", "decline", "anxiety", "stress"]
+      },
+      "Male who is Divorced with One child": {
+        "activities": [],
+        "descriptions": ["mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger", "grief"]
+      },
+      "Male who is Divorced with Many children": {
+        "activities": [],
+        "descriptions": ["mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger", "grief"]
+      },
+      "Male who is Divorced": {
+        "activities": [],
+        "descriptions": ["suppress", "strain", "depression", "failure", "struggle", "distant"]
+      },
+      "Male who is Married with No children": {
+        "activities": [],
+        "descriptions": ["abuse", "emasculate", "demotivated", "defective", "disgrace", "faulty", "infertile"]
+      },
+      "Female who is Married with No children": {
+        "activities": [],
+        "descriptions": ["disaster", "consequence", "abuse", "taunt", "attack", "harassment", "excluded", "unacceptable", "failure", "weak", "vulnerable", "ostracized", "cheater", "abandon", "infertile"]
+      },
+      "Female who is Married with Many children": {
+        "activities": [],
+        "descriptions": ["power", "status", "secure", "divine", "natural", "homemaker"]
+      },
+      "Female who is Married with One child": {
+        "activities": [],
+        "descriptions": ["power", "status", "secure", "divine", "natural", "homemaker"]
+      },
+      "Hindu Female who is Married": {
+        "activities": [],
+        "descriptions": ["dowry", "demand", "payment"]
+      },
+      "Female who is Single with One child": {
+        "activities": [],
+        "descriptions": ["shame", "abuse", "violent", "humiliate"]
+      },
+      "Female who is Single with Many children": {
+        "activities": [],
+        "descriptions": ["shame", "abuse", "violent", "humiliate"]
+      },
+      "Single with One child": {
+        "activities": [],
+        "descriptions": ["impure", "discourage", "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate", "humiliate"]
+      },
+      "Single with Many children": {
+        "activities": [],
+        "descriptions": ["impure", "discourage", "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate", "humiliate"]
+      },
+      "Married with One child": {
+        "activities": ["socializing"],
+        "descriptions": ["status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride", "happy"]
+      },
+      "Married with Many children": {
+        "activities": ["socializing"],
+        "descriptions": ["status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride", "happy"]
+      },
+      "Married with No children": {
+        "activities": [],
+        "descriptions": ["hollow", "fruitless", "dried", "barren", "empty", "bare", "deserted", "desolate", "infertile"]
+      },
+      "Male who is Single": {
+        "activities": [],
+        "descriptions": ["bachelor", "womanizer", "flexible", "independent"]
+      }
+    }
+  }

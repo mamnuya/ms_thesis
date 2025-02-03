@@ -1,3 +1,11 @@
+'''
+Processess lexicon and adds lexicon synonyms where input file is in format with flat list.
+"bias_lexicon": {
+        "Identity": {
+            "word1", "word2
+        }
+'''
+
 import nltk
 import spacy
 from nltk.corpus import wordnet as wn
@@ -11,8 +19,8 @@ nltk.download("omw-1.4")
 nlp = spacy.load("en_core_web_md")
 
 # Paths to bias lexicon files
-bias_lexicon_path = "../data/biasLexicon.json"
-synonyms_bias_lexicon_path = "../data/biasLexiconSynonyms.json"
+bias_lexicon_path = "../../data/biasLexicon.json"
+synonyms_bias_lexicon_path = "../../data/biasLexiconSynonyms.json"
 
 # Function to load JSON file
 def load_json(filepath):
