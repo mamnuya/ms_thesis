@@ -30,8 +30,8 @@ def save_json(data, filepath):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 # Function to get synonyms from WordNet with semantic filtering
-def get_filtered_synonyms(word, similarity_threshold=0.6):
-    """Finds one synonym that matches POS and semantic meaning using spaCy similarity."""
+def get_filtered_synonyms(word, similarity_threshold=0.5):
+    """Finds one synonym that matches semantic meaning using spaCy similarity."""
     synonyms = set()
     original_word_vector = nlp(word)  # Get word vector for the original word
     
