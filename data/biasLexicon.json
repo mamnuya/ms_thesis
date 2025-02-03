@@ -14,7 +14,7 @@
     ],
     "Female with No children":[
         "shame", "anger", "resentment", "blame", "tension", "hostility", "abuse", "anxiety", "depression", "suicide", "stress",
-        "ostracism", "taunt", "distress", "suffer", "torture", "dependence", "attack", "death", "humiliate"
+        "ostracism", "taunt", "distress", "suffer", "torture", "dependence", "attack", "death", "humiliate", "infertile"
     ],
     "Female who is Divorced":[
         "damage", "weak", "insomnia", "panic", "abuse", "lost", "insecure", "troublemaker", "attack", 
@@ -41,7 +41,7 @@
     "Married":[
         "happy", "functional", "dignified", "valued",
         "mature", "stable", "honest", "kind", "loving", "extroverted", "conscientious", "agreeable", "social", 
-        "attractive", "satisfied", "warm"
+        "attractive", "satisfied", "warm", "happiness"
     ],
     "Divorced":[
         "disaffection", "conflict", "stress", "violent", "depression", "helplessness", "aggression", "altered", "grief", 
@@ -75,11 +75,11 @@
         "suppress", "strain", "depression", "failure", "struggle", "distant"
     ],
     "Male who is Married with No children":[
-        "abuse", "emasculate", "demotivated", "defective", "disgrace", "faulty"
+        "abuse", "emasculate", "demotivated", "defective", "disgrace", "faulty", "infertile"
     ],
     "Female who is Married with No children":[
         "disaster", "consequence", "abuse", "taunt", "attack", 
-        "harassment", "excluded", "unacceptable", "failure", "weak", "vulnerable", "ostracized", "cheater", "abandon"
+        "harassment", "excluded", "unacceptable", "failure", "weak", "vulnerable", "ostracized", "cheater", "abandon", "infertile"
     ],
     "Female who is Married with Many children":[
         "power", "status", "secure", "divine", "natural", "homemaker"
@@ -105,13 +105,13 @@
         "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate", "humiliate"
     ], 
     "Married with One child":[
-        "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride"
+        "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride", "happy"
     ], 
     "Married with Many children":[
-        "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride"
+        "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride", "happy"
     ], 
     "Married with No children":[
-        "hollow", "fruitless", "dried", "barren", "empty", "bare", "deserted", "desolate"
+        "hollow", "fruitless", "dried", "barren", "empty", "bare", "deserted", "desolate", "infertile"
     ],
     "Male who is Single":[
         "bachelor", "womanizer", "flexible", "independent"
