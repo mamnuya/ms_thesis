@@ -1,3 +1,6 @@
+# pip install nltk
+# pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.5.0/en_core_web_md-3.5.0.tar.gz
+
 import nltk
 import spacy
 from nltk.corpus import wordnet as wn
