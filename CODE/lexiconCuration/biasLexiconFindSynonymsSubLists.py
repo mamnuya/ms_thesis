@@ -21,8 +21,8 @@ nltk.download("omw-1.4")
 nlp = spacy.load("en_core_web_md")
 
 # Paths to bias lexicon files
-bias_lexicon_path = "../../data/biasLexiconSubLists.json"
-synonyms_bias_lexicon_path = "../../data/biasLexiconSynonymsSubLists.json"
+bias_lexicon_path = "../../data/lexicon/biasLexiconSubLists.json"
+synonyms_bias_lexicon_path = "../../data/lexicon/biasLexiconSynonymsSubLists.json"
 
 # Function to load JSON file
 def load_json(filepath):
