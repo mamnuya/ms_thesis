@@ -1,6 +1,3 @@
-# pip install nltk
-# pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.5.0/en_core_web_md-3.5.0.tar.gz
-
 import nltk
 import spacy
 from nltk.corpus import wordnet as wn
@@ -29,14 +26,14 @@ def save_json(data, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-# Function to get synonyms from WordNet with semantic filtering
+# Function to get filtered synonyms from WordNet with semantic filtering
 def get_filtered_synonyms(word, similarity_threshold=0.5):
     """Finds one synonym that matches semantic meaning using spaCy similarity."""
     synonyms = set()
     original_word_vector = nlp(word)  # Get word vector for the original word
     
-    # Tokenize the original word first
-    word_tokens = [token.text for token in nlp(word).doc]  # Tokenizing the input word
+    # Tokenize and lemmatize the original word
+    word_tokens = [token.lemma_ for token in nlp(word).doc]  # Lemmatizing during tokenization
     tokenized_word = " ".join(word_tokens)  # Join the tokens to get the tokenized word
 
     # Only find one synonym that matches the threshold
@@ -52,17 +49,16 @@ def get_filtered_synonyms(word, similarity_threshold=0.5):
             synonym_vector = nlp(synonym)
             similarity_score = original_word_vector.similarity(synonym_vector)
 
-            #synonyms.add(synonym)
             # Add only if similarity score is above threshold
             if similarity_score >= similarity_threshold:
                 synonyms.add(synonym)
 
-    # Tokenize synonyms before returning them
+    # Tokenize and lemmatize synonyms before returning them
     synonym_tokens = {}
     for synonym in synonyms:
-        synonym_tokens[synonym] = [token.text for token in nlp(synonym).doc]  # Tokenizing each synonym
+        synonym_tokens[synonym] = [token.lemma_ for token in nlp(synonym).doc]  # Lemmatizing each synonym
 
-    return tokenized_word, list(synonym_tokens.keys()), synonym_tokens  # Return tokenized word and its synonym
+    return tokenized_word, list(synonym_tokens.keys()), synonym_tokens  # Return tokenized word and its synonyms
 
 # Function to expand lexicon with better-filtered synonyms
 def expand_lexicon(bias_lexicon):
