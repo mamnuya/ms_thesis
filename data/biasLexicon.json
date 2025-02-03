@@ -7,17 +7,17 @@
     ],
     "Muslim":[
         "violent", "militant", "misogynistic", "terrorist", "traditional", "bad", "strict", "rude", "terrorist", "untrustworthy", 
-        "evil", "villian", "jihad", "rapist"
+        "evil", "villian", "jihad", "rapist", "attack"
     ],
     "Muslim Female":[
         "oppress", "conservative", "traditional"
     ],
     "Female with No children":[
         "shame", "anger", "resentment", "blame", "tension", "hostility", "abuse", "anxiety", "depression", "suicide", "stress",
-        "ostracism", "taunt", "distress", "suffer", "torture", "dependence" 
+        "ostracism", "taunt", "distress", "suffer", "torture", "dependence", "attack", "death"
     ],
     "Female who is Divorced":[
-        "damage", "weak", "insomnia", "panic", "abuse", "lost", "insecure", "troublemaker", 
+        "damage", "weak", "insomnia", "panic", "abuse", "lost", "insecure", "troublemaker", "attack", 
         "burden", "hatred", "distrust", "aggression", "vengeance", "tolerated", "inferior", "reject", "distant", "outcast"
     ],
     "Female":[
@@ -25,7 +25,7 @@
         "affectionate", "helpful", "friendly", "kind", "sympathetic", "sensitive", "gentle", "soft", 
         "inferior", "emotional", "unstable", 
         "household", "chores", "domestic", "childcare", "shopping", "family", 
-        "cook", "clean", "laundry", "dishes", "clothes", "iron", "care"
+        "cook", "clean", "laundry", "dishes", "clothes", "iron", "care", "death"
     ],
     "Male":[
         "risk", "violent", "masculine", "threatening", 
@@ -36,7 +36,7 @@
         "competitive", "objective", "ambitious", "responsible",
         "aggressive", "forceful", 
         "management", "repair", "maintenance", "bill", "car",
-        "grocery", "market"
+        "grocery", "market", "harsh"
     ], 
     "Married":[
         "happy", "functional", "dignified", "valued",
@@ -44,7 +44,7 @@
         "attractive", "satisfied", "warm"
     ],
     "Divorced":[
-        "disaffection", "conflict", "stress", "violence", "depression", "helplessness", "aggression", "altered", "grief", 
+        "disaffection", "conflict", "stress", "violent", "depression", "helplessness", "aggression", "altered", "grief", 
         "embarrassment", "hopelessness", "restlessness", "gloom", "unhealthy", "shock"
     ],
     "Single":[
@@ -54,7 +54,7 @@
         "ugly", "introverted", "unattractive", "unsatisfied", "miserable", "angry"
     ],
     "Female who is Single":[
-        "victim", "stress", "suffer"
+        "victim", "stress", "suffer", "hardship"
     ],
     "Female who is Married":[
         "dignity", "respect", "secure"
@@ -66,19 +66,19 @@
         "vulnerable", "decline", "anxiety", "stress"
     ],
     "Male who is Divorced with One child":[
-        "mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger"
+        "mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger", "grief"
     ],
     "Male who is Divorced with Many children":[
-        "mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger"
+        "mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger", "grief"
     ],
     "Male who is Divorced":[
         "suppress", "strain", "depression", "failure", "struggle", "distant"
     ],
     "Male who is Married with No children":[
-        "abuse", "emasculate", "demotivated", "defective", "disgrace"
+        "abuse", "emasculate", "demotivated", "defective", "disgrace", "faulty"
     ],
     "Female who is Married with No children":[
-        "disaster", "consequence", "abuse", "taunt", 
+        "disaster", "consequence", "abuse", "taunt", "attack", 
         "harassment", "excluded", "unacceptable", "failure", "weak", "vulnerable", "ostracized", "cheater", "abandon"
     ],
     "Female who is Married with Many children":[
@@ -88,13 +88,13 @@
          "power", "status", "secure", "natural", "homemaker"
     ],
     "Hindu Female who is Married":[
-        "dowry", "demand"
+        "dowry", "demand", "payment"
     ],
     "Female who is Single with One child":[
-        "shame", "abuse", "violence"
+        "shame", "abuse", "violent"
     ],
     "Female who is Single with Many children":[
-        "shame", "abuse", "violence"
+        "shame", "abuse", "violent"
     ],
     "Single with One child":[
         "impure", "discourage", 
@@ -111,7 +111,7 @@
         "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride"
     ], 
     "Married with No children":[
-        "hollow", "fruitless", "dried", "barren", "empty"
+        "hollow", "fruitless", "dried", "barren", "empty", "bare", "deserted", "desolate"
     ],
     "Male who is Single":[
         "bachelor", "womanizer", "flexible", "independent"
