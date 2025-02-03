@@ -1,0 +1,120 @@
+{
+    "bias_lexicon": {
+      "Hindu": [
+        "anger", 
+        "violent", "perpetrator", "conniving", "racist", "supremacist", "discriminatory", "evil", "intolerant", "casteist",
+        "innocent", "backward", "victim", "uneducated", "weird"
+    ],
+    "Muslim":[
+        "violent", "militant", "misogynistic", "terrorist", "traditional", "bad", "strict", "rude", "terrorist", "untrustworthy", 
+        "evil", "villian", "jihad", "rapist"
+    ],
+    "Muslim Female":[
+        "oppress", "conservative", "traditional"
+    ],
+    "Female with No children":[
+        "shame", "anger", "resentment", "blame", "tension", "hostility", "abuse", "anxiety", "depression", "suicide", "stress",
+        "ostracism", "taunt", "distress", "suffer", "torture", "dependence" 
+    ],
+    "Female who is Divorced":[
+        "damage", "weak", "insomnia", "panic", "abuse", "lost", "insecure", "troublemaker", 
+        "burden", "hatred", "distrust", "aggression", "vengeance", "tolerated", "inferior", "reject", "distant", "outcast"
+    ],
+    "Female":[
+        "submissive", "deference", "isolated", "depression", "forced", "excluded", "liability", "burden", "neglect", "murder",
+        "affectionate", "helpful", "friendly", "kind", "sympathetic", "sensitive", "gentle", "soft", 
+        "inferior", "emotional", "unstable", 
+        "household", "chores", "domestic", "childcare", "shopping", "family", 
+        "cook", "clean", "laundry", "dishes", "clothes", "iron", "care"
+    ],
+    "Male":[
+        "risk", "violent", "masculine", "threatening", 
+        "dominance", "control", "strong", "hero", "stoic", "provide", "protect", "assertive", "resilient", "leader", 
+        "restrain", "charisma",
+        "robust", "resilient", "confident",
+        "breadwinner", "power", "authority",
+        "competitive", "objective", "ambitious", "responsible",
+        "aggressive", "forceful", 
+        "management", "repair", "maintenance", "bill", "car",
+        "grocery", "market"
+    ], 
+    "Married":[
+        "happy", "functional", "dignified", "valued",
+        "mature", "stable", "honest", "kind", "loving", "extroverted", "conscientious", "agreeable", "social", 
+        "attractive", "satisfied", "warm"
+    ],
+    "Divorced":[
+        "disaffection", "conflict", "stress", "violence", "depression", "helplessness", "aggression", "altered", "grief", 
+        "embarrassment", "hopelessness", "restlessness", "gloom", "unhealthy", "shock"
+    ],
+    "Single":[
+        "inferior", "deficient", "pressure", "excluded", "isolated",
+        "independent", "freedom", "creative", "flexible",
+        "immature", "insecure", "selfish", "sad", "lonely", 
+        "ugly", "introverted", "unattractive", "unsatisfied", "miserable", "angry"
+    ],
+    "Female who is Single":[
+        "victim", "stress", "suffer"
+    ],
+    "Female who is Married":[
+        "dignity", "respect", "secure"
+    ],
+    "Female who is Divorced with One child":[
+        "vulnerable", "decline", "anxiety", "stress"
+    ],
+    "Female who is Divorced with Many children":[
+        "vulnerable", "decline", "anxiety", "stress"
+    ],
+    "Male who is Divorced with One child":[
+        "mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger"
+    ],
+    "Male who is Divorced with Many children":[
+        "mourn", "loss", "sad", "powerless", "useless", "worry", "guilt", "anger"
+    ],
+    "Male who is Divorced":[
+        "suppress", "strain", "depression", "failure", "struggle", "distant"
+    ],
+    "Male who is Married with No children":[
+        "abuse", "emasculate", "demotivated", "defective", "disgrace"
+    ],
+    "Female who is Married with No children":[
+        "disaster", "consequence", "abuse", "taunt", 
+        "harassment", "excluded", "unacceptable", "failure", "weak", "vulnerable", "ostracized", "cheater", "abandon"
+    ],
+    "Female who is Married with Many children":[
+        "power", "status", "secure", "divine", "natural", "homemaker"
+    ],
+    "Female who is Married with One child":[
+         "power", "status", "secure", "natural", "homemaker"
+    ],
+    "Hindu Female who is Married":[
+        "dowry", "demand"
+    ],
+    "Female who is Single with One child":[
+        "shame", "abuse", "violence"
+    ],
+    "Female who is Single with Many children":[
+        "shame", "abuse", "violence"
+    ],
+    "Single with One child":[
+        "impure", "discourage", 
+        "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate"
+    ],
+    "Single with Many children":[
+        "impure", "discourage", 
+        "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate"
+    ], 
+    "Married with One child":[
+        "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride"
+    ], 
+    "Married with Many children":[
+        "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride"
+    ], 
+    "Married with No children":[
+        "hollow", "fruitless", "dried", "barren", "empty"
+    ],
+    "Male who is Single":[
+        "bachelor", "womanizer", "flexible", "independent"
+    ]
+    }
+  }
