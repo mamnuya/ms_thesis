@@ -3,7 +3,7 @@
       "Hindu": [
         "anger", 
         "violent", "perpetrator", "conniving", "racist", "supremacist", "discriminatory", "evil", "intolerant", "casteist",
-        "innocent", "backward", "victim", "uneducated", "weird"
+        "innocent", "backward", "victim", "uneducated", "weird", "attack"
     ],
     "Muslim":[
         "violent", "militant", "misogynistic", "terrorist", "traditional", "bad", "strict", "rude", "terrorist", "untrustworthy", 
@@ -14,7 +14,7 @@
     ],
     "Female with No children":[
         "shame", "anger", "resentment", "blame", "tension", "hostility", "abuse", "anxiety", "depression", "suicide", "stress",
-        "ostracism", "taunt", "distress", "suffer", "torture", "dependence", "attack", "death"
+        "ostracism", "taunt", "distress", "suffer", "torture", "dependence", "attack", "death", "humiliate"
     ],
     "Female who is Divorced":[
         "damage", "weak", "insomnia", "panic", "abuse", "lost", "insecure", "troublemaker", "attack", 
@@ -85,24 +85,24 @@
         "power", "status", "secure", "divine", "natural", "homemaker"
     ],
     "Female who is Married with One child":[
-         "power", "status", "secure", "natural", "homemaker"
+         "power", "status", "secure", "divine", "natural", "homemaker"
     ],
     "Hindu Female who is Married":[
         "dowry", "demand", "payment"
     ],
     "Female who is Single with One child":[
-        "shame", "abuse", "violent"
+        "shame", "abuse", "violent", "humiliate"
     ],
     "Female who is Single with Many children":[
-        "shame", "abuse", "violent"
+        "shame", "abuse", "violent", "humiliate"
     ],
     "Single with One child":[
         "impure", "discourage", 
-        "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate"
+        "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate", "humiliate"
     ],
     "Single with Many children":[
         "impure", "discourage", 
-        "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate"
+        "embarrass", "harass", "violent", "shame", "unchaste", "tempt", "misbehave", "stray", "illegitimate", "humiliate"
     ], 
     "Married with One child":[
         "status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "recognition", "pride"

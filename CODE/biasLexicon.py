@@ -52,6 +52,7 @@ def get_filtered_synonyms(word, similarity_threshold=0.5):
             synonym_vector = nlp(synonym)
             similarity_score = original_word_vector.similarity(synonym_vector)
 
+            #synonyms.add(synonym)
             # Add only if similarity score is above threshold
             if similarity_score >= similarity_threshold:
                 synonyms.add(synonym)
