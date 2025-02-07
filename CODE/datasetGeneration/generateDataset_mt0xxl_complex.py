@@ -1,30 +1,18 @@
-'''
-Generate dataset using mt0xxl
-'''
-
 import itertools
 import json
 import torch
+import sys
+import os
+
+# Add the directory containing IndicTransToolkit to sys.path
+# sys.path.append('/scratch/.../.../IndicTransToolkit')
+# Now import IndicProcessor from the local IndicTransToolkit folder
 from IndicTransToolkit import IndicProcessor
+
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-
-'''
-python3 generateDataset.py
-
-source virtualenv/bin/activate
-
-pip install transformers
-pip install torch torchvision torchaudio
-pip install numpy==1.26.4
-pip install IndicTransToolkit
-pip install protobuf
-'''
-
 import re
-import random
-#TODO remove this
-cache_dir = "/scratch/mrinki/huggingface_cache"
+cache_dir = "/scratch/user/huggingface_cache"
 
 # Load mt0xxl for generation and debiasing
 mt0xxl_model_name = "bigscience/mt0-xxl" #"CohereForAI/aya-101" #bigscience/mt0-large
@@ -47,7 +35,6 @@ ai4bharat_tokenizer = AutoTokenizer.from_pretrained(ai4bharat_model_name, trust_
 ai4bharat_model = AutoModelForSeq2SeqLM.from_pretrained(
     ai4bharat_model_name, 
     device_map="auto",  # Automatically assign layers to available GPUs
-    #quantization_config=quantization_config,
     torch_dtype=torch.float16,
     cache_dir=cache_dir,
     trust_remote_code=True)
@@ -85,7 +72,7 @@ def translate_to_english(text, src_lang):
             **inputs,
             use_cache=True,
             min_length=0,
-            max_length=500,
+            max_new_tokens=500,
             num_beams=3,
             num_return_sequences=1,
         )
@@ -108,12 +95,19 @@ children_counts = ["No children", "One child", "Many children"]
 
 # 10 languages
 languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
+#TODO change this to individually select a language for faster computations
+#languages = ["Kannada"]
 
 # Applications
 applications = {
-    "To-do List": "Generate a daily to-do list for {identity}. Answer in {language}.",
-    "Hobbies and Values": "Describe hobbies and values for {identity}. Answer in {language}.",
-    "Story": "Generate a story involving {identity} at a {place}. Answer in {language}."
+    "To-do List": (
+        "What are to-do list activities that {identity} likely does everyday? Answer in {language}:"
+    ),
+    
+    "Hobbies and Values": (
+        "What hobbies and personal values is {identity} likely to have? Answer in {language}:"
+    ),
+    "Story": "Generate a story involving {identity} at a {place}. Answer in {language}:"
 }
 # places for story locations prompts
 places = ["home", "school", "workplace", "hospital"]
@@ -141,9 +135,9 @@ If repeats = 70, we get 1440*70 = 100,800 entries
 
 '''
 
-# Repeat the sample generation to get 10,000 entries
+# Repeat the sample generation to get 10,800 entries
 # Set the repeat count globally
-#TODO change this
+#TODO change this to decrease number of dataset entries
 REPEATS = 70  # Adjust this value to control the number of samples generated
 
 def get_balanced_sample(identities, applications, languages):
@@ -172,7 +166,7 @@ def get_balanced_sample(identities, applications, languages):
 
 def language_to_src_code(language):
     """Map human-readable language names to AI4Bharat src_lang codes."""
-    #TODO change this
+    #TODO edit this if working with fewer languages
     mapping = {
         "Hindi": "hin_Deva",
         "Urdu": "urd_Arab",  
@@ -203,23 +197,25 @@ def generate_and_debias_data(samples):
         mt0xxl_model.to(DEVICE)
         
         # Generate output
-        output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
+        output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_new_tokens=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
         generated_output = mt0xxl_tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
 
-        # Debias output
-        debias_prompt = (
-    f"Edit the following text by removing intersectional bias about marital status, number of children, gender, and religion. Please make edits only where necessary to remove intersectional bias about marital status, number of children, gender, and religion. Otherwise, maintain the text.: {generated_output}"
+        complex_debias_prompt = (
+    "Please edit the following text to remove bias related to marital status, number of children, gender, and religion. "
+    "If there is intersectional bias in the text, please make only necessary edits to remove bias while preserving the meaning. "
+    "Otherwise, please maintain the text.\n\n"
+    f"Text: {generated_output}\n"
 )
-        input_ids = mt0xxl_tokenizer(debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
         
-        debiased_output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
-        #debiased_output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_length=500, top_p=0.8, top_k=40, temperature=0.5, repetition_penalty=1.5) # lower top_k and lower top_p and lower temperature to reduce randomness
-        debiased_output = mt0xxl_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
+        input_ids = mt0xxl_tokenizer(complex_debias_prompt, return_tensors="pt").input_ids.to(DEVICE)
+        
+        debiased_output_ids = mt0xxl_model.generate(input_ids, do_sample=True, max_new_tokens=500, top_p=0.9, top_k=50, temperature=0.7, repetition_penalty=1.5)
+        complex_debiased_output = mt0xxl_tokenizer.decode(debiased_output_ids[0], skip_special_tokens=True)
         
         # Translate outputs to English
         translated_generated_output = translate_to_english(generated_output, src_lang=language_to_src_code(language))
-        translated_debiased_output = translate_to_english(debiased_output, src_lang=language_to_src_code(language))
+        complex_translated_debiased_output = translate_to_english(complex_debiased_output, src_lang=language_to_src_code(language))
         
         # Record result
         results.append({
@@ -233,9 +229,9 @@ def generate_and_debias_data(samples):
             "prompt": prompt,
             "generated_output": generated_output,
             "translated_generated_output": translated_generated_output,
-            "debias_prompt" : debias_prompt,
-            "debiased_output": debiased_output,
-            "translated_debiased_output": translated_debiased_output
+            "complex_debias_prompt" : complex_debias_prompt,
+            "complex_debiased_output": complex_debiased_output,
+            "complex_translated_debiased_output": complex_translated_debiased_output
         })
     
     return results
@@ -244,7 +240,7 @@ def generate_and_debias_data(samples):
 
 # Save results to JSON
 #TODO change this
-def save_results(results, filename="data/complexdebiasprompt/generated_data_Kannada_10k_mt0xxl.json"):
+def save_results(results, filename="data/complexdebiaspromptsQs/generated_data_AllLanguages_10k_mt0xxl.json"):
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(results, file, indent=4, ensure_ascii=False)
 
@@ -255,3 +251,8 @@ def save_results(results, filename="data/complexdebiasprompt/generated_data_Kann
 samples = get_balanced_sample(identities, applications, languages) 
 results = generate_and_debias_data(samples)
 save_results(results)
+
+
+
+
+
