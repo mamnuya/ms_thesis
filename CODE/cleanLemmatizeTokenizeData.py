@@ -33,6 +33,7 @@ def clean_text(text):
     
     text = text.strip()  # Remove leading/trailing spaces
     text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
+    text = text.replace('-', ' ')  # Replace dashes with spaces
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
     text = text.replace('"', '')  # Remove quotation marks
     return text.lower()  # Convert to lowercase
@@ -87,6 +88,8 @@ def process_json(input_file, output_file):
     print(f"Processed data saved to {output_file}")
 
 # Run the script
-input_json = "../data/complex_and_simple_debiaspromptsQs/raw/generated_data_Bengali_10k_mt0xxl_with_complex_and_simple_debiasing.json"
-output_json = "../data/complex_and_simple_debiaspromptsQs/cleaned_tokenized_lemmatized/generated_data_Bengali_10k_mt0xxl_with_complex_and_simple_debiasing.json"
-process_json(input_json, output_json)
+languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
+for lang in languages:
+    input_json = f"../data/complex_and_simple_debiaspromptsQs/raw/generated_data_{lang}_10k_mt0xxl_with_complex_and_simple_debiasing.json"
+    output_json = f"../data/complex_and_simple_debiaspromptsQs/cleaned_tokenized_lemmatized/generated_data_{lang}_10k_mt0xxl_with_complex_and_simple_debiasing.json"
+    process_json(input_json, output_json)
