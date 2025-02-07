@@ -4,6 +4,8 @@ Processess lexicon and adds lexicon synonyms where input file is in format with 
         "Identity": {
             "word1", "word2
         }
+
+        clean → tokenize → lemmatize
 '''
 
 import nltk
@@ -16,7 +18,8 @@ nltk.download("wordnet")
 nltk.download("omw-1.4")
 
 # Load spaCy model with word vectors
-nlp = spacy.load("en_core_web_md")
+# python -m spacy download en_core_web_lg
+nlp = spacy.load("en_core_web_lg")
 
 # Paths to bias lexicon files
 bias_lexicon_path = "../../data/lexicon/biasLexicon.json"
@@ -34,22 +37,26 @@ def save_json(data, filepath):
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
+# Function to tokenize & lemmatize using spaCy
+def tokenize_and_lemmatize(text):
+    """Tokenizes and lemmatizes text using spaCy."""
+    doc = nlp(text)
+    return [token.lemma_ for token in doc if token.is_alpha]  # Keep only words
+
 # Function to get filtered synonyms from WordNet with semantic filtering
 def get_filtered_synonyms(word, similarity_threshold=0.5):
-    """Finds one synonym that matches semantic meaning using spaCy similarity."""
+    """Finds synonyms that match semantic meaning using WordNet & spaCy similarity."""
     synonyms = set()
     original_word_vector = nlp(word)  # Get word vector for the original word
     
     # Tokenize and lemmatize the original word
-    word_tokens = [token.lemma_ for token in nlp(word).doc]  # Lemmatizing during tokenization
-    tokenized_word = " ".join(word_tokens)  # Join the tokens to get the tokenized word
+    lemmatized_word = " ".join(tokenize_and_lemmatize(word))
 
-    # Only find one synonym that matches the threshold
     for syn in wn.synsets(word):
         for lemma in syn.lemmas():
             synonym = lemma.name().replace("_", " ").lower()
 
-            # Ensure the synonym is not the same as the original word and is a single word
+            # Ensure valid synonyms (single-word, different from original, not stopwords)
             if synonym == word or len(synonym.split()) > 1 or len(synonym) <= 2:
                 continue
 
@@ -61,26 +68,24 @@ def get_filtered_synonyms(word, similarity_threshold=0.5):
             if similarity_score >= similarity_threshold:
                 synonyms.add(synonym)
 
-    # Tokenize and lemmatize synonyms before returning them
-    synonym_tokens = {}
-    for synonym in synonyms:
-        synonym_tokens[synonym] = [token.lemma_ for token in nlp(synonym).doc]  # Lemmatizing each synonym
+    # Tokenize and lemmatize synonyms
+    synonym_tokens = {syn: tokenize_and_lemmatize(syn) for syn in synonyms}
 
-    return tokenized_word, list(synonym_tokens.keys()), synonym_tokens  # Return tokenized word and its synonyms
+    return lemmatized_word, list(synonym_tokens.keys()), synonym_tokens
 
 # Function to expand lexicon with better-filtered synonyms
 def expand_lexicon(bias_lexicon):
     """Expands bias lexicon with synonyms that pass semantic filtering."""
     expanded_lexicon = {"bias_lexicon": {}}
-    all_synonym_tokens = {}  # Dictionary to hold tokens of all added synonyms
+    all_synonym_tokens = {}
 
     for category, words in bias_lexicon["bias_lexicon"].items():
-        expanded_lexicon["bias_lexicon"][category] = set(words)  # Store as a set to avoid duplicates
+        expanded_lexicon["bias_lexicon"][category] = set(words)  # Store as a set
         
         for word in words:
-            tokenized_word, synonyms, synonym_tokens = get_filtered_synonyms(word)
-            expanded_lexicon["bias_lexicon"][category].add(tokenized_word)  # Add tokenized word to the category
-            expanded_lexicon["bias_lexicon"][category].update(synonyms)  # Add synonym to the same category
+            lemmatized_word, synonyms, synonym_tokens = get_filtered_synonyms(word)
+            expanded_lexicon["bias_lexicon"][category].add(lemmatized_word)  # Add lemmatized word
+            expanded_lexicon["bias_lexicon"][category].update(synonyms)  # Add synonyms
             all_synonym_tokens[word] = synonym_tokens  # Store synonym tokens for analysis
 
     # Convert sets to lists for JSON compatibility
