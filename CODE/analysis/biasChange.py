@@ -1,8 +1,15 @@
 '''
 Calculate change for each identity and debiasing method
 
-Bias Change=
+Bias Change % =
 ((debiasing method frequency - original frequency) / original frequency) * 100
+
+Negative values will indicate a percentage reduction in bias 
+(i.e., the debiased method results in fewer occurrences of bias terms compared to the original).
+
+Positive values will indicate a percentage increase in bias 
+(i.e., the debiased method results in more occurrences of bias terms compared to the original).
+
 '''
 
 import json
