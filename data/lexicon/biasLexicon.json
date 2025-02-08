@@ -24,7 +24,7 @@
         "submissive", "deference", "isolated", "depression", "forced", "excluded", "liability", "burden", "neglect", "murder",
         "affectionate", "helpful", "friendly", "kind", "sympathetic", "sensitive", "gentle", "soft", 
         "inferior", "emotional", "unstable", 
-        "household", "chores", "domestic", "childcare", "shopping", "family", 
+        "household", "chores", "domestic", "childcare", "shopping", "family",
         "cook", "clean", "laundry", "dishes", "clothes", "iron", "care", "death"
     ],
     "Male":[
@@ -33,7 +33,7 @@
         "restrain", "charisma",
         "robust", "resilient", "confident",
         "breadwinner", "power", "authority",
-        "competitive", "objective", "ambitious", "responsible",
+        "competitive", "objective", "ambitious", "responsible", "responsibility",
         "aggressive", "forceful", 
         "management", "repair", "maintenance", "bill", "car",
         "grocery", "market", "harsh"

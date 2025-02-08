@@ -26,7 +26,7 @@
       },
       "Male": {
         "activities": ["provide", "protect", "repair", "maintenance", "bill", "car", "grocery", "market", "management"],
-        "descriptions": ["risk", "violent", "masculine", "threatening", "dominance", "control", "strong", "hero", "stoic", "assertive", "resilient", "leader", "restrain", "charisma", "robust", "confident", "breadwinner", "power", "authority", "competitive", "objective", "ambitious", "responsible", "aggressive", "forceful", "harsh"]
+        "descriptions": ["risk", "violent", "masculine", "threatening", "dominance", "control", "strong", "hero", "stoic", "assertive", "resilient", "leader", "restrain", "charisma", "robust", "confident", "breadwinner", "power", "authority", "competitive", "objective", "ambitious", "responsible", "responsibility", "aggressive", "forceful", "harsh"]
       },
       "Married": {
         "activities": ["socializing"],
