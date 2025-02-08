@@ -13,24 +13,24 @@ def load_json(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def compute_average_bias_reduction(bias_change_results):
-    """Compute the average bias reduction for each identity and debiasing method."""
-    identity_avg_reduction = {}
+def compute_average_bias_change(bias_change_results):
+    """Compute the average bias change for each identity and debiasing method."""
+    identity_avg_change = {}
 
     # Loop through each identity in the bias change results
     for identity, changes in bias_change_results.items():
         complex_changes = changes.get("complex_change_from_original", {})
         simple_changes = changes.get("simple_change_from_original", {})
 
-        avg_complex_reduction = sum(complex_changes.values()) / len(complex_changes) if complex_changes else 0
-        avg_simple_reduction = sum(simple_changes.values()) / len(simple_changes) if simple_changes else 0
+        avg_complex_change = sum(complex_changes.values()) / len(complex_changes) if complex_changes else 0
+        avg_simple_change = sum(simple_changes.values()) / len(simple_changes) if simple_changes else 0
 
-        identity_avg_reduction[identity] = {
-            "complex_avg_reduction": avg_complex_reduction,
-            "simple_avg_reduction": avg_simple_reduction
+        identity_avg_change[identity] = {
+            "complex_avg_change": avg_complex_change,
+            "simple_avg_change": avg_simple_change
         }
 
-    return identity_avg_reduction
+    return identity_avg_change
 
 def save_json(data, filepath):
     """Save JSON data to a file."""
@@ -40,8 +40,8 @@ def save_json(data, filepath):
 # Languages to process
 languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
 
-# Dictionary to store average reductions for each language and identity
-language_avg_reductions = {}
+# Dictionary to store average changes for each language and identity
+language_avg_changes = {}
 
 # Process each language
 for lang in languages:
@@ -51,45 +51,45 @@ for lang in languages:
     with open(file_path, "r", encoding="utf-8") as f:
         bias_change_results = json.load(f)
 
-    # Compute the average bias reduction for each identity (per debiasing method)
-    identity_avg_reduction = compute_average_bias_reduction(bias_change_results)
+    # Compute the average bias change for each identity (per debiasing method)
+    identity_avg_change = compute_average_bias_change(bias_change_results)
 
     # Store the results for the current language, broken down by identity
-    language_avg_reductions[lang] = identity_avg_reduction
+    language_avg_changes[lang] = identity_avg_change
 
-    print(f"Average bias reduction for {lang} - identity breakdown saved.")
+    print(f"Average bias change for {lang} - identity breakdown saved.")
 
 # Save the results to a JSON file
-save_path = f"../../data/lexicon_analysis/bias_change/avg_bias_change_by_debiasing_method/average_bias_reduction_by_identity.json"
-save_json(language_avg_reductions, save_path)
+save_path = f"../../data/lexicon_analysis/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity.json"
+save_json(language_avg_changes, save_path)
 
-print("Average bias reduction for each identity group, broken down by debiasing method, saved successfully.")
+print("Average bias change for each identity group, broken down by debiasing method, saved successfully.")
 
 #---
 
-def compute_average_by_language(bias_reduction_by_identity):
-    """Compute the average bias reduction (complex and simple) for each language."""
+def compute_average_by_language(bias_change_by_identity):
+    """Compute the average bias change (complex and simple) for each language."""
     language_avg = {}
 
-    for language, identity_data in bias_reduction_by_identity.items():
+    for language, identity_data in bias_change_by_identity.items():
         avg_complex = 0
         avg_simple = 0
         total_identities = len(identity_data)
 
-        # Compute averages for complex and simple reductions across all identities
-        for identity, reductions in identity_data.items():
-            avg_complex += reductions.get("complex_avg_reduction", 0)
-            avg_simple += reductions.get("simple_avg_reduction", 0)
+        # Compute averages for complex and simple changes across all identities
+        for identity, changes in identity_data.items():
+            avg_complex += changes.get("complex_avg_change", 0)
+            avg_simple += changes.get("simple_avg_change", 0)
 
         # Calculate average for complex and simple
         if total_identities > 0:
             avg_complex /= total_identities
             avg_simple /= total_identities
 
-        # Store average reduction for the language
+        # Store average change for the language
         language_avg[language] = {
-            "complex_avg_reduction_from_original": avg_complex,
-            "simple_avg_reduction_from_original": avg_simple
+            "complex_avg_change_from_original": avg_complex,
+            "simple_avg_change_from_original": avg_simple
         }
 
     return language_avg
@@ -101,17 +101,17 @@ def save_json(data, filepath):
 
 def calculate_and_save_language_averages(input_file, output_file):
     """Load the bias change results by identity, compute the average per language, and save the result."""
-    # Load the bias reduction results by identity from the provided input file
-    bias_reduction_by_identity = load_json(input_file)
+    # Load the bias change results by identity from the provided input file
+    bias_change_by_identity = load_json(input_file)
 
-    # Compute the average by language for complex and simple bias reductions
-    language_avg = compute_average_by_language(bias_reduction_by_identity)
+    # Compute the average by language for complex and simple bias changes
+    language_avg = compute_average_by_language(bias_change_by_identity)
 
     # Save the calculated averages to the output file
     save_json(language_avg, output_file)
-    print(f"Average bias reductions by language saved to {output_file}")
+    print(f"Average bias changes by language saved to {output_file}")
 
 # Example of calling the function
-input_file = "../../data/lexicon_analysis/bias_change/avg_bias_change_by_debiasing_method/average_bias_reduction_by_identity.json"
-output_file = "../../data/lexicon_analysis/bias_change/avg_bias_change_by_debiasing_method/average_bias_reduction_by_identity_language.json"
+input_file = "../../data/lexicon_analysis/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity.json"
+output_file = "../../data/lexicon_analysis/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity_language.json"
 calculate_and_save_language_averages(input_file, output_file)
