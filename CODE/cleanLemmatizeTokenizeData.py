@@ -46,17 +46,44 @@ def tokenize_lemmatize_text(text):
 
 # Function to check if an entry is low quality
 def is_low_quality_entry(entry):
-    """Check if the generated response is low-quality and should be filtered out."""
+    """Check if the generated response or debiased responses are low-quality and should be filtered out."""
     
-    generated_output = entry.get("translated_generated_output", "").strip().lower()
-    prompt = entry.get("translated_prompt", "").strip().lower()
+    def words_from_text(text):
+        """Extracts words from a given text (removes punctuation and normalizes)."""
+        return set(re.findall(r'\b\w+\b', text.lower().strip())) if text else set()
 
-    # Extract words from the prompt and output (remove punctuation)
-    prompt_words = set(re.findall(r'\b\w+\b', prompt))  
-    output_words = set(re.findall(r'\b\w+\b', generated_output))  
+    # Extract relevant fields
+    generated_output = entry.get("translated_generated_output", "")
+    prompt = entry.get("translated_prompt", "")
 
-    # Check if ALL output words are in the prompt (i.e., no new words in response)
-    return output_words.issubset(prompt_words)
+    complex_output = entry.get("complex_translated_debiased_output", "")
+    complex_prompt = entry.get("complex_debias_prompt", "")
+
+    simple_output = entry.get("simple_translated_debiased_output", "")
+    simple_prompt = entry.get("simple_debias_prompt", "")
+
+    # Get sets of words from each field
+    prompt_words = words_from_text(prompt)
+    output_words = words_from_text(generated_output)
+
+    complex_prompt_words = words_from_text(complex_prompt)
+    complex_output_words = words_from_text(complex_output)
+
+    simple_prompt_words = words_from_text(simple_prompt)
+    simple_output_words = words_from_text(simple_output)
+
+    # Filtering conditions:
+    # 1. Remove if the generated output has no new words beyond the original prompt
+    generated_low_quality = output_words.issubset(prompt_words)
+
+    # 2. Remove if the complex debiased output has no new words beyond its debiasing prompt
+    complex_low_quality = complex_output_words.issubset(complex_prompt_words)
+
+    # 3. Remove if the simple debiased output has no new words beyond its debiasing prompt
+    simple_low_quality = simple_output_words.issubset(simple_prompt_words)
+
+    # If any of these conditions are met, the entry is low quality and should be removed
+    return generated_low_quality or complex_low_quality or simple_low_quality
 
 # Process JSON file
 def process_json(input_file, output_file):
