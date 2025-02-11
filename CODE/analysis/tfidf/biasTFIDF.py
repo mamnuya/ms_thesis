@@ -1,3 +1,18 @@
+'''
+Compute tfidf 
+
+t: bias term from lexicon
+d: document AKA an identity group's data from the dataset
+Compute TF(t,d) = TF(t,d) =  # occurences of t in d/ # terms in d
+
+N = total # identites
+df(t) = document frequency of term t AKA number of identities in which term t occurs
+Compute IDF(t) = log( (N+1) / (df(t)+1) ) + 1
+
+TFIDF(t,d)=TF(t,d)*IDF(t)
+
+'''
+
 import json
 import math
 from collections import defaultdict
