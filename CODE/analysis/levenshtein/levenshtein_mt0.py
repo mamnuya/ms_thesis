@@ -1,5 +1,8 @@
 '''
 pip install levenshtein
+
+Levenshtein distance: a method to determine the minimum number of single-character edits 
+(insertions, deletions, or substitutions) needed to transform one string into another
 '''
 
 import json
