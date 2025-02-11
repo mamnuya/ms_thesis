@@ -1,0 +1,42 @@
+{
+    "Hindi": {
+        "complex_avg_change_from_original": 9.987064760855548,
+        "simple_avg_change_from_original": 6.53354397992608
+    },
+    "Urdu": {
+        "complex_avg_change_from_original": 5.481370786706563,
+        "simple_avg_change_from_original": 2.5053750339397585
+    },
+    "Bengali": {
+        "complex_avg_change_from_original": 1.8102615705293885,
+        "simple_avg_change_from_original": -3.9626012275598117
+    },
+    "Punjabi": {
+        "complex_avg_change_from_original": 0.8338075430378616,
+        "simple_avg_change_from_original": -0.4777027167231533
+    },
+    "Marathi": {
+        "complex_avg_change_from_original": 4.351528610409173,
+        "simple_avg_change_from_original": 3.874871528554737
+    },
+    "Gujarati": {
+        "complex_avg_change_from_original": -1.4357051849325515,
+        "simple_avg_change_from_original": -0.697637899842829
+    },
+    "Malayalam": {
+        "complex_avg_change_from_original": -3.703287864550228,
+        "simple_avg_change_from_original": -3.5799574043155373
+    },
+    "Tamil": {
+        "complex_avg_change_from_original": -1.1301339943214523,
+        "simple_avg_change_from_original": -0.7028327184382851
+    },
+    "Telugu": {
+        "complex_avg_change_from_original": 0.9776260263514259,
+        "simple_avg_change_from_original": -0.6164521662875455
+    },
+    "Kannada": {
+        "complex_avg_change_from_original": -7.571600952397063,
+        "simple_avg_change_from_original": -4.35112193085
+    }
+}

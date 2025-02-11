@@ -121,7 +121,7 @@ with open(output_file, "w", encoding="utf-8") as f:
 print(f"Results saved to {output_file}")
 
 
-def calculate_avg_change_across_languages(language_results):
+def calculate_avg_change_by_identity_across_languages(language_results):
     comparison_across_languages = {}
 
     # For each identity, calculate the average change across all languages
@@ -146,93 +146,43 @@ def calculate_avg_change_across_languages(language_results):
     return comparison_across_languages
 
 # Calculate and save the result
-comparison_across_languages = calculate_avg_change_across_languages(language_results)
+comparison_across_languages = calculate_avg_change_by_identity_across_languages(language_results)
 
 # Save final comparison across languages
-final_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity_language.json"
+final_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity_ALL_languages.json"
 with open(final_output_file, "w", encoding="utf-8") as f:
     json.dump(comparison_across_languages, f, indent=4, ensure_ascii=False)
 
 print(f"Final comparison across languages saved to {final_output_file}")
 
 
-### plot
-import json
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+def calculate_avg_change_by_method(language_results):
+    """Compute overall average for complex and simple methods across all languages."""
+    complex_changes = []
+    simple_changes = []
 
-# Load JSON results (Average Bias Change by Identity Within a Language)
-with open("../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity.json", "r", encoding="utf-8") as f:
-    language_results = json.load(f)
+    for lang in languages:
+        lang_complex_avg = np.mean([language_results[lang][identity]["complex_avg_change"] for identity in language_results[lang]])
+        lang_simple_avg = np.mean([language_results[lang][identity]["simple_avg_change"] for identity in language_results[lang]])
 
-# Load JSON results (Average Bias Change by Identity Across Languages)
-with open("../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity_language.json", "r", encoding="utf-8") as f:
-    comparison_across_languages = json.load(f)
+        complex_changes.append(lang_complex_avg)
+        simple_changes.append(lang_simple_avg)
 
-# Plot Average Bias Change by Identity Within Each Language (for 10 languages)
-
-def plot_avg_bias_change_by_identity_for_all_languages(language_results, languages):
-    """Plot the average bias change by identity for each language."""
-    for language in languages:
-        identities = list(language_results[language].keys())
-        complex_avg_changes = [language_results[language][identity]["complex_avg_change"] for identity in identities]
-        simple_avg_changes = [language_results[language][identity]["simple_avg_change"] for identity in identities]
-
-        # Create a DataFrame for easier plotting
-        data = {
-            'Identity': identities,
-            'Complex Average Change': complex_avg_changes,
-            'Simple Average Change': simple_avg_changes
+    # Store results
+    avg_change_by_method = {}
+    for i, lang in enumerate(languages):
+        avg_change_by_method[lang] = {
+            "complex_avg_change_from_original": complex_changes[i],
+            "simple_avg_change_from_original": simple_changes[i]
         }
-        df = pd.DataFrame(data)
 
-        # Create the plot
-        plt.figure(figsize=(12, 8))
-        sns.barplot(x='Identity', y='Complex Average Change', data=df, color='lightblue', label='Complex')
-        sns.barplot(x='Identity', y='Simple Average Change', data=df, color='lightgreen', label='Simple')
+    return avg_change_by_method
 
-        plt.xticks(rotation=90)
-        plt.xlabel("Identity")
-        plt.ylabel("Average Change")
-        plt.title(f"Average Bias Change by Identity for {language}")
-        plt.legend()
-        plt.tight_layout()
-        plt.show()
+# Compute and save overall averages by debiasing method
+avg_change_by_method = calculate_avg_change_by_method(language_results)
+method_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_method_ALL_languages.json"
 
-# Example: Plot for all languages
-languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
-plot_avg_bias_change_by_identity_for_all_languages(language_results, languages)
+with open(method_output_file, "w", encoding="utf-8") as f:
+    json.dump(avg_change_by_method, f, indent=4, ensure_ascii=False)
 
-
-# Plot: Average Bias Change Across Languages for all identities
-
-def plot_avg_bias_change_across_languages_for_all_identities(comparison_across_languages, languages):
-    """Plot the average bias change across languages for all identities."""
-    identities = list(comparison_across_languages.keys())
-    complex_avg_changes = [comparison_across_languages[identity]["complex_avg_change_from_original"] for identity in identities]
-    simple_avg_changes = [comparison_across_languages[identity]["simple_avg_change_from_original"] for identity in identities]
-
-    # Create a DataFrame for easier plotting
-    data = {
-        'Identity': identities,
-        'Complex Average Change': complex_avg_changes,
-        'Simple Average Change': simple_avg_changes
-    }
-    df = pd.DataFrame(data)
-
-    # Create the plot
-    plt.figure(figsize=(14, 8))
-    sns.barplot(x='Identity', y='Complex Average Change', data=df, color='lightblue', label='Complex')
-    sns.barplot(x='Identity', y='Simple Average Change', data=df, color='lightgreen', label='Simple')
-
-    plt.xticks(rotation=90)
-    plt.xlabel("Identity")
-    plt.ylabel("Average Change Across Languages")
-    plt.title("Average Bias Change Across 10 Languages by Identity")
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
-
-# Example: Plot Across All Languages for all identities
-plot_avg_bias_change_across_languages_for_all_identities(comparison_across_languages, languages)
+print(f"Overall average bias change across languages saved to {method_output_file}")
