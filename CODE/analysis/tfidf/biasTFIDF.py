@@ -104,7 +104,7 @@ for lang in languages:
     tf_idf_scores = compute_tf_idf(tf_scores, idf_scores)
 
     # Save TF-IDF results
-    save_path = f"../../../data/lexicon_analysis/tfidf/tfidf_analysis_{lang}_mt0xxl_with_complex_and_simple_debiasing.json"
+    save_path = f"../../../data/lexicon_analysis/tfidf/tfidf_scores/tfidf_analysis_{lang}_mt0xxl_with_complex_and_simple_debiasing.json"
     save_json(tf_idf_scores, save_path)
 
     print(f"TF-IDF scores saved successfully for {lang}.")
