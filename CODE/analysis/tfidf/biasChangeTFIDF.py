@@ -37,11 +37,12 @@ def load_json(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
 
-# calculate bias change within a language
+# Step 1: Calculate bias change within a language
 def compare_tfidf_within_language(language, input_folder, output_folder):
     """
     Compare TF-IDF scores for original, complex, and simple debiasing within a language.
     Compute percentage change from original for complex and simple debiased outputs.
+    Store original, complex, and simple TF-IDF values.
     """
     input_file = os.path.join(input_folder, f"tfidf_analysis_{language}_mt0xxl_with_complex_and_simple_debiasing.json")
     output_file = os.path.join(output_folder, f"tfidf_comparison_within_{language}.json")
@@ -50,7 +51,13 @@ def compare_tfidf_within_language(language, input_folder, output_folder):
     comparison_results = {}
 
     for identity, scores in tfidf_data.items():
-        comparison_results[identity] = {"complex_change_from_original": {}, "simple_change_from_original": {}}
+        comparison_results[identity] = {
+            "complex_change_from_original": {},
+            "simple_change_from_original": {},
+            "original_tfidf": {},
+            "complex_tfidf": {},
+            "simple_tfidf": {}
+        }
 
         for term, original_tfidf in scores["original"].items():
             complex_tfidf = scores["complex"].get(term, 0)
@@ -60,9 +67,12 @@ def compare_tfidf_within_language(language, input_folder, output_folder):
             complex_change = (((complex_tfidf - original_tfidf) / original_tfidf) * 100) if original_tfidf > 0 else 0
             simple_change = (((simple_tfidf - original_tfidf) / original_tfidf) * 100) if original_tfidf > 0 else 0
 
-
+            # Store values
             comparison_results[identity]["complex_change_from_original"][term] = complex_change
             comparison_results[identity]["simple_change_from_original"][term] = simple_change
+            comparison_results[identity]["original_tfidf"][term] = original_tfidf
+            comparison_results[identity]["complex_tfidf"][term] = complex_tfidf
+            comparison_results[identity]["simple_tfidf"][term] = simple_tfidf
 
     # Save results
     with open(output_file, "w", encoding="utf-8") as f:
@@ -84,22 +94,25 @@ for lang in languages:
 '''
 import numpy as np
 def calculate_avg_change(language_data):
+    """Compute average TF-IDF change and store original, complex, and simple averages."""
     comparison_results = {}
 
-    # Iterate over identities
     for identity, scores in language_data.items():
-        comparison_results[identity] = {"complex_avg_change": 0, "simple_avg_change": 0}
+        complex_changes = list(scores["complex_change_from_original"].values())
+        simple_changes = list(scores["simple_change_from_original"].values())
 
-        complex_changes = []
-        simple_changes = []
+        original_values = list(scores["original_tfidf"].values())
+        complex_values = list(scores["complex_tfidf"].values())
+        simple_values = list(scores["simple_tfidf"].values())
 
-        # Collect bias changes for each term within the identity
-        complex_changes.extend(scores["complex_change_from_original"].values())
-        simple_changes.extend(scores["simple_change_from_original"].values())
-
-        # Calculate average change for complex and simple
-        comparison_results[identity]["complex_avg_change"] = np.mean(complex_changes)
-        comparison_results[identity]["simple_avg_change"] = np.mean(simple_changes)
+        # Store averages
+        comparison_results[identity] = {
+            "complex_avg_change": np.mean(complex_changes),
+            "simple_avg_change": np.mean(simple_changes),
+            "original_avg_tfidf": np.mean(original_values),
+            "complex_avg_tfidf": np.mean(complex_values),
+            "simple_avg_tfidf": np.mean(simple_values)
+        }
 
     return comparison_results
 
@@ -107,13 +120,13 @@ def calculate_avg_change(language_data):
 language_results = {}
 
 for lang in languages:
-    input_file = os.path.join("../../../data/lexicon_analysis/tfidf/bias_change/bias_change_by_debiasing_method", f"tfidf_comparison_within_{lang}.json")
+    input_file = os.path.join(output_folder, f"tfidf_comparison_within_{lang}.json")
     language_data = load_json(input_file)
     
     # Calculate averages for the current language
     language_results[lang] = calculate_avg_change(language_data)
 
-# Save individual language results (complex and simple average change per identity)
+# Save individual language results
 output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(language_results, f, indent=4, ensure_ascii=False)
@@ -121,64 +134,75 @@ with open(output_file, "w", encoding="utf-8") as f:
 print(f"Results saved to {output_file}")
 
 
+# Step 3: Compute averages across languages
 def calculate_avg_change_by_identity_across_languages(language_results):
+    """Compute the average TF-IDF change across all languages for each identity."""
     comparison_across_languages = {}
 
-    # For each identity, calculate the average change across all languages
     for identity in language_results[languages[0]].keys():
-        comparison_across_languages[identity] = {
-            "complex_avg_change_from_original": 0,
-            "simple_avg_change_from_original": 0
-        }
-
         complex_changes = []
         simple_changes = []
+        original_values = []
+        complex_values = []
+        simple_values = []
 
         # Collect average change data across languages
         for lang in languages:
             complex_changes.append(language_results[lang][identity]["complex_avg_change"])
             simple_changes.append(language_results[lang][identity]["simple_avg_change"])
+            original_values.append(language_results[lang][identity]["original_avg_tfidf"])
+            complex_values.append(language_results[lang][identity]["complex_avg_tfidf"])
+            simple_values.append(language_results[lang][identity]["simple_avg_tfidf"])
 
-        # Calculate average change across languages
-        comparison_across_languages[identity]["complex_avg_change_from_original"] = np.mean(complex_changes)
-        comparison_across_languages[identity]["simple_avg_change_from_original"] = np.mean(simple_changes)
+        # Compute and store averages
+        comparison_across_languages[identity] = {
+            "complex_avg_change_from_original": np.mean(complex_changes),
+            "simple_avg_change_from_original": np.mean(simple_changes),
+            "original_avg_tfidf": np.mean(original_values),
+            "complex_avg_tfidf": np.mean(complex_values),
+            "simple_avg_tfidf": np.mean(simple_values)
+        }
 
     return comparison_across_languages
 
-# Calculate and save the result
+# Compute and save final comparison across languages
 comparison_across_languages = calculate_avg_change_by_identity_across_languages(language_results)
-
-# Save final comparison across languages
 final_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity_ALL_languages.json"
+
 with open(final_output_file, "w", encoding="utf-8") as f:
     json.dump(comparison_across_languages, f, indent=4, ensure_ascii=False)
 
 print(f"Final comparison across languages saved to {final_output_file}")
 
-
+# Step 4: Compute overall averages by method across languages
 def calculate_avg_change_by_method(language_results):
-    """Compute overall average for complex and simple methods across all languages."""
+    """Compute overall average TF-IDF change and values for complex and simple methods."""
     complex_changes = []
     simple_changes = []
+    original_values = []
+    complex_values = []
+    simple_values = []
 
     for lang in languages:
-        lang_complex_avg = np.mean([language_results[lang][identity]["complex_avg_change"] for identity in language_results[lang]])
-        lang_simple_avg = np.mean([language_results[lang][identity]["simple_avg_change"] for identity in language_results[lang]])
+        for identity in language_results[lang]:
+            complex_changes.append(language_results[lang][identity]["complex_avg_change"])
+            simple_changes.append(language_results[lang][identity]["simple_avg_change"])
+            original_values.append(language_results[lang][identity]["original_avg_tfidf"])
+            complex_values.append(language_results[lang][identity]["complex_avg_tfidf"])
+            simple_values.append(language_results[lang][identity]["simple_avg_tfidf"])
 
-        complex_changes.append(lang_complex_avg)
-        simple_changes.append(lang_simple_avg)
-
-    # Store results
-    avg_change_by_method = {}
-    for i, lang in enumerate(languages):
-        avg_change_by_method[lang] = {
-            "complex_avg_change_from_original": complex_changes[i],
-            "simple_avg_change_from_original": simple_changes[i]
-        }
+    # Store overall averages
+    avg_change_by_method = {
+        "complex_avg_change_from_original": np.mean(complex_changes),
+        "simple_avg_change_from_original": np.mean(simple_changes),
+        "original_avg_tfidf": np.mean(original_values),
+        "complex_avg_tfidf": np.mean(complex_values),
+        "simple_avg_tfidf": np.mean(simple_values)
+    }
 
     return avg_change_by_method
 
-# Compute and save overall averages by debiasing method
+# Compute and save overall averages
 avg_change_by_method = calculate_avg_change_by_method(language_results)
 method_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_method_ALL_languages.json"
 
