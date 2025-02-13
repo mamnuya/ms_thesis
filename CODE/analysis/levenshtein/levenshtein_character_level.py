@@ -29,13 +29,13 @@ def compute_avg_distance_per_identity(language_data):
         identity = entry["identity"]
 
         # Get the cleaned generated output and debiased outputs
-        gen_text = entry["cleaned_translated_generated_output"]
+        original_text = entry["cleaned_translated_generated_output"]
         complex_text = entry["complex_cleaned_translated_debiased_output"]
         simple_text = entry["simple_cleaned_translated_debiased_output"]
 
         # Compute Levenshtein distances
-        complex_dist = compute_levenshtein(gen_text, complex_text)
-        simple_dist = compute_levenshtein(gen_text, simple_text)
+        complex_dist = compute_levenshtein(original_text, complex_text)
+        simple_dist = compute_levenshtein(original_text, simple_text)
 
         # Store distances
         identity_distances[identity]["complex"].append(complex_dist)

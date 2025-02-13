@@ -29,13 +29,13 @@ def compute_avg_distance_per_identity(language_data):
         identity = entry["identity"]
 
         # Get the tokenized and lemmatized word lists for the generated and debiased outputs
-        gen_words = entry["processed_translated_debiased_output"]
+        original_words = entry["processed_translated_generated_output"]
         complex_words = entry["complex_processed_translated_debiased_output"]
         simple_words = entry["simple_processed_translated_debiased_output"]
 
         # Compute word-level Levenshtein distances
-        complex_dist = compute_word_level_levenshtein(gen_words, complex_words)
-        simple_dist = compute_word_level_levenshtein(gen_words, simple_words)
+        complex_dist = compute_word_level_levenshtein(original_words, complex_words)
+        simple_dist = compute_word_level_levenshtein(original_words, simple_words)
 
         # Store distances
         identity_distances[identity]["complex"].append(complex_dist)
