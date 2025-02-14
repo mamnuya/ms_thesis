@@ -130,12 +130,15 @@ def compute_avg_distance_across_languages(identity_level_results):
 
 # Compute averages across all languages and save the result
 avg_identity_across_languages = compute_avg_distance_across_languages(identity_level_results)
+
+'''
 output_identity_across_languages = os.path.join(output_folder, "cosine_distance_by_identity_ALL_languages.json")
 
 with open(output_identity_across_languages, "w", encoding="utf-8") as f:
     json.dump(avg_identity_across_languages, f, indent=4, ensure_ascii=False)
 
 print(f"Identity-level averages across languages saved to {output_identity_across_languages}")
+'''
 
 def compute_method_avg_cosine_distance(language_level_results):
     """Compute the method average of cosine distances across all languages."""

@@ -1,42 +1,42 @@
 {
     "Hindi": {
-        "complex_avg_change_from_original": 0.06115475487311737,
-        "simple_avg_change_from_original": 0.038169205644097905
+        "complex_avg_change_from_original": 0.06115475487311736,
+        "simple_avg_change_from_original": 0.03816920564409787
     },
     "Urdu": {
-        "complex_avg_change_from_original": 0.02391090379415474,
-        "simple_avg_change_from_original": 0.014504460220036366
+        "complex_avg_change_from_original": 0.023910903794154725,
+        "simple_avg_change_from_original": 0.01450446022003636
     },
     "Bengali": {
-        "complex_avg_change_from_original": 0.09379326021488142,
-        "simple_avg_change_from_original": 0.03921102867113365
+        "complex_avg_change_from_original": 0.09379326021488145,
+        "simple_avg_change_from_original": 0.03921102867113357
     },
     "Punjabi": {
-        "complex_avg_change_from_original": 0.05926661791068291,
-        "simple_avg_change_from_original": 0.023098048509727534
+        "complex_avg_change_from_original": 0.05926661791068293,
+        "simple_avg_change_from_original": 0.023098048509727454
     },
     "Marathi": {
-        "complex_avg_change_from_original": 0.07630158541406128,
-        "simple_avg_change_from_original": 0.05481712947612951
+        "complex_avg_change_from_original": 0.07630158541406125,
+        "simple_avg_change_from_original": 0.054817129476129496
     },
     "Gujarati": {
-        "complex_avg_change_from_original": 0.10205013178187661,
-        "simple_avg_change_from_original": 0.05554403537968607
+        "complex_avg_change_from_original": 0.1020501317818766,
+        "simple_avg_change_from_original": 0.05554403537968611
     },
     "Malayalam": {
         "complex_avg_change_from_original": 0.13182215965181468,
-        "simple_avg_change_from_original": 0.08072982869481561
+        "simple_avg_change_from_original": 0.08072982869481556
     },
     "Tamil": {
-        "complex_avg_change_from_original": 0.03337050199947355,
+        "complex_avg_change_from_original": 0.03337050199947353,
         "simple_avg_change_from_original": 0.016717110631978536
     },
     "Telugu": {
-        "complex_avg_change_from_original": 0.04613916925396788,
-        "simple_avg_change_from_original": 0.01642684507552022
+        "complex_avg_change_from_original": 0.0461391692539679,
+        "simple_avg_change_from_original": 0.016426845075520214
     },
     "Kannada": {
-        "complex_avg_change_from_original": 0.1382885708020037,
+        "complex_avg_change_from_original": 0.13828857080200369,
         "simple_avg_change_from_original": 0.08402901569108055
     }
 }

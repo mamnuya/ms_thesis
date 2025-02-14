@@ -167,12 +167,14 @@ def calculate_avg_change_by_identity_across_languages(language_results):
 
 # Compute and save final comparison across languages
 comparison_across_languages = calculate_avg_change_by_identity_across_languages(language_results)
+'''
 final_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_identity_ALL_languages.json"
 
 with open(final_output_file, "w", encoding="utf-8") as f:
     json.dump(comparison_across_languages, f, indent=4, ensure_ascii=False)
 
 print(f"Final comparison across languages saved to {final_output_file}")
+'''
 
 def calculate_avg_change_by_language(language_results):
     """Compute average TF-IDF change for complex and simple methods per language."""
