@@ -204,8 +204,8 @@ with open(method_output_file, "w", encoding="utf-8") as f:
 
 print(f"Per-language average bias change saved to {method_output_file}")
 
-def calculate_global_avg(avg_change_by_language):
-    """Compute the global average of TF-IDF changes across all languages."""
+def calculate_method_avg(avg_change_by_language):
+    """Compute the method average of TF-IDF changes across all languages."""
     complex_changes = []
     simple_changes = []
 
@@ -213,12 +213,12 @@ def calculate_global_avg(avg_change_by_language):
         complex_changes.append(values["complex_avg_change_from_original"])
         simple_changes.append(values["simple_avg_change_from_original"])
 
-    global_avg = {
-        "global_complex_avg_change_from_original": np.mean(complex_changes),
-        "global_simple_avg_change_from_original": np.mean(simple_changes)
+    method_avg = {
+        "method_complex_avg_change_from_original": np.mean(complex_changes),
+        "method_simple_avg_change_from_original": np.mean(simple_changes)
     }
 
-    return global_avg
+    return method_avg
 
 # Load per-language average results
 language_avg_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_language.json"
@@ -226,13 +226,13 @@ language_avg_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_c
 with open(language_avg_file, "r", encoding="utf-8") as f:
     avg_change_by_language = json.load(f)
 
-# Compute global average
-global_avg = calculate_global_avg(avg_change_by_language)
+# Compute method average
+method_avg = calculate_method_avg(avg_change_by_language)
 
-# Save the global average results
-global_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/global_average_bias_change.json"
+# Save the method average results
+method_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_method.json"
 
-with open(global_output_file, "w", encoding="utf-8") as f:
-    json.dump(global_avg, f, indent=4, ensure_ascii=False)
+with open(method_output_file, "w", encoding="utf-8") as f:
+    json.dump(method_avg, f, indent=4, ensure_ascii=False)
 
-print(f"Global average bias change saved to {global_output_file}")
+print(f"Method average bias change saved to {method_output_file}")

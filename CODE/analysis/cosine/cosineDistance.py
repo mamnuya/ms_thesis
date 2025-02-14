@@ -137,8 +137,8 @@ with open(output_identity_across_languages, "w", encoding="utf-8") as f:
 
 print(f"Identity-level averages across languages saved to {output_identity_across_languages}")
 
-def compute_global_avg_cosine_distance(language_level_results):
-    """Compute the global average of cosine distances across all languages."""
+def compute_method_avg_cosine_distance(language_level_results):
+    """Compute the method average of cosine distances across all languages."""
     complex_distances = []
     simple_distances = []
 
@@ -146,12 +146,12 @@ def compute_global_avg_cosine_distance(language_level_results):
         complex_distances.append(values["complex_avg_change_from_original"])
         simple_distances.append(values["simple_avg_change_from_original"])
 
-    global_avg = {
-        "global_complex_avg_change_from_original": np.mean(complex_distances),
-        "global_simple_avg_change_from_original": np.mean(simple_distances)
+    method_avg = {
+        "method_complex_avg_change_from_original": np.mean(complex_distances),
+        "method_simple_avg_change_from_original": np.mean(simple_distances)
     }
 
-    return global_avg
+    return method_avg
 
 # Load per-language average results
 language_avg_file = os.path.join(output_folder, "average_cosine_distance_by_language.json")
@@ -159,13 +159,13 @@ language_avg_file = os.path.join(output_folder, "average_cosine_distance_by_lang
 with open(language_avg_file, "r", encoding="utf-8") as f:
     language_level_results = json.load(f)
 
-# Compute global average
-global_avg_cosine_distance = compute_global_avg_cosine_distance(language_level_results)
+# Compute method average
+method_avg_cosine_distance = compute_method_avg_cosine_distance(language_level_results)
 
-# Save the global average results
-global_output_file = os.path.join(output_folder, "global_average_cosine_distance.json")
+# Save the method average results
+method_output_file = os.path.join(output_folder, "average_cosine_distance_by_method.json")
 
-with open(global_output_file, "w", encoding="utf-8") as f:
-    json.dump(global_avg_cosine_distance, f, indent=4, ensure_ascii=False)
+with open(method_output_file, "w", encoding="utf-8") as f:
+    json.dump(method_avg_cosine_distance, f, indent=4, ensure_ascii=False)
 
-print(f"Global average cosine distance saved to {global_output_file}")
+print(f"Method average cosine distance saved to {method_output_file}")
