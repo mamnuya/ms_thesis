@@ -329,7 +329,7 @@ sacrebleu==2.5.1
 sacremoses==0.1.1
 safetensors==0.5.2
 scikit-image==0.19.3
-scikit-learn==1.1.1
+scikit-learn==1.6.1
 scipy==1.9.1
 semver==2.13.0
 Send2Trash==1.8.0
@@ -380,7 +380,7 @@ tf-estimator-nightly==2.8.0.dev2021122109
 tf2crf==0.1.33
 Theano==1.0.5
 thinc==8.3.2
-threadpoolctl==3.1.0
+threadpoolctl==3.5.0
 tifffile==2022.5.4
 tiktoken==0.7.0
 tokenizers==0.21.0

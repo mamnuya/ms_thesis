@@ -1,5 +1,5 @@
 {
-    "a hindu male who is married with no children": {
+    "A Hindu Male who is Married with No children": {
         "original": {
             "home": 0.0005059523809523809,
             "house": 0.0007142857142857143,
@@ -112,7 +112,7 @@
             "trouble": 3.222168519413565e-05
         }
     },
-    "a hindu male who is married with one child": {
+    "A Hindu Male who is Married with One child": {
         "original": {
             "home": 0.00024663953631767175,
             "family": 0.00040695523492415833,
@@ -211,7 +211,7 @@
             "positive": 1.4729709824716453e-05
         }
     },
-    "a hindu male who is married with many children": {
+    "A Hindu Male who is Married with Many children": {
         "original": {
             "household": 0.00043059777102330294,
             "chore": 0.0002786220871327254,
@@ -290,7 +290,7 @@
             "responsible": 1.6276041666666666e-05
         }
     },
-    "a hindu male who is divorced with no children": {
+    "A Hindu Male who is Divorced with No children": {
         "original": {
             "household": 0.0002374965074043029,
             "chore": 0.00019558535903883766,
@@ -377,7 +377,7 @@
             "blame": 1.642845408247084e-05
         }
     },
-    "a hindu male who is divorced with one child": {
+    "A Hindu Male who is Divorced with One child": {
         "original": {
             "family": 0.00030976877973227124,
             "responsibility": 1.1063170704723974e-05,
@@ -512,7 +512,7 @@
             "respect": 4.5495905368516835e-05
         }
     },
-    "a hindu male who is divorced with many children": {
+    "A Hindu Male who is Divorced with Many children": {
         "original": {
             "domestic": 6.935774726036899e-05,
             "household": 0.00023581634068525455,
@@ -617,7 +617,7 @@
             "benevolent": 1.6592002654720424e-05
         }
     },
-    "a hindu male who is widowed with no children": {
+    "A Hindu Male who is Widowed with No children": {
         "original": {
             "cook": 4.4018928139099815e-05,
             "clean": 8.803785627819963e-05,
@@ -727,7 +727,7 @@
             "fault": 1.3457139012245996e-05
         }
     },
-    "a hindu male who is widowed with one child": {
+    "A Hindu Male who is Widowed with One child": {
         "original": {
             "domestic": 0.00010236724248240563,
             "murder": 2.5591810620601408e-05,
@@ -829,7 +829,7 @@
             "satisfy": 1.416029453412631e-05
         }
     },
-    "a hindu male who is widowed with many children": {
+    "A Hindu Male who is Widowed with Many children": {
         "original": {
             "domestic": 5.148005148005148e-05,
             "household": 0.00019305019305019305,
@@ -967,7 +967,7 @@
             "pressure": 1.3958682300390843e-05
         }
     },
-    "a hindu male who is single with no children": {
+    "A Hindu Male who is Single with No children": {
         "original": {
             "battle": 2.1973192704900022e-05,
             "back": 1.0986596352450011e-05,
@@ -1063,7 +1063,7 @@
             "happy": 4.271678769756514e-05
         }
     },
-    "a hindu male who is single with one child": {
+    "A Hindu Male who is Single with One child": {
         "original": {
             "care": 6.018657839301836e-05,
             "house": 0.0003209950847627646,
@@ -1181,7 +1181,7 @@
             "stress": 8.343763037129746e-05
         }
     },
-    "a hindu male who is single with many children": {
+    "A Hindu Male who is Single with Many children": {
         "original": {
             "household": 0.0003433897473632573,
             "chore": 0.0002207505518763797,
@@ -1293,7 +1293,7 @@
             "independent": 2.8236622899901173e-05
         }
     },
-    "a hindu female who is married with no children": {
+    "A Hindu Female who is Married with No children": {
         "original": {
             "chore": 0.00023915271609156134,
             "household": 0.00031887028812208176,
@@ -1408,7 +1408,7 @@
             "true": 1.4130281192595733e-05
         }
     },
-    "a hindu female who is married with one child": {
+    "A Hindu Female who is Married with One child": {
         "original": {
             "household": 0.00029481692819781266,
             "care": 7.608178792201617e-05,
@@ -1525,7 +1525,7 @@
             "provide": 1.3689253935660506e-05
         }
     },
-    "a hindu female who is married with many children": {
+    "A Hindu Female who is Married with Many children": {
         "original": {
             "care": 0.00017851829812555786,
             "house": 0.00042646037885549936,
@@ -1638,7 +1638,7 @@
             "bad": 1.42571998859424e-05
         }
     },
-    "a hindu female who is divorced with no children": {
+    "A Hindu Female who is Divorced with No children": {
         "original": {
             "household": 0.00039744796569396505,
             "cook": 4.1836627967785794e-05,
@@ -1761,7 +1761,7 @@
             "divine": 3.0193236714975845e-05
         }
     },
-    "a hindu female who is divorced with one child": {
+    "A Hindu Female who is Divorced with One child": {
         "original": {
             "clean": 0.00021077988557663353,
             "house": 0.0007929338552644786,
@@ -1872,7 +1872,7 @@
             "bad": 1.3774104683195593e-05
         }
     },
-    "a hindu female who is divorced with many children": {
+    "A Hindu Female who is Divorced with Many children": {
         "original": {
             "care": 0.00019731162905413737,
             "chore": 0.00024663953631767175,
@@ -1978,7 +1978,7 @@
             "happy": 4.803073967339097e-05
         }
     },
-    "a hindu female who is widowed with no children": {
+    "A Hindu Female who is Widowed with No children": {
         "original": {
             "domestic": 0.00010675206832132372,
             "household": 0.00027577617649675296,
@@ -2125,7 +2125,7 @@
             "satisfied": 1.5460729746444033e-05
         }
     },
-    "a hindu female who is widowed with one child": {
+    "A Hindu Female who is Widowed with One child": {
         "original": {
             "clean": 0.00021806853582554517,
             "house": 0.00036344755970924193,
@@ -2256,7 +2256,7 @@
             "protection": 2.810567734682406e-05
         }
     },
-    "a hindu female who is widowed with many children": {
+    "A Hindu Female who is Widowed with Many children": {
         "original": {
             "clean": 0.0002651241262954929,
             "house": 0.0008917811520848397,
@@ -2401,7 +2401,7 @@
             "change": 1.4894250819183795e-05
         }
     },
-    "a hindu female who is single with no children": {
+    "A Hindu Female who is Single with No children": {
         "original": {
             "home": 0.0003651115618661258,
             "housewife": 0.00040567951318458417,
@@ -2505,7 +2505,7 @@
             "bad": 1.5332720024532352e-05
         }
     },
-    "a hindu female who is single with one child": {
+    "A Hindu Female who is Single with One child": {
         "original": {
             "home": 0.0002843332385555871,
             "value": 9.477774618519572e-06,
@@ -2630,7 +2630,7 @@
             "bad": 1.3424620754463686e-05
         }
     },
-    "a hindu female who is single with many children": {
+    "A Hindu Female who is Single with Many children": {
         "original": {
             "care": 0.0001926782273603083,
             "housewife": 0.0005138086062941554,
@@ -2737,7 +2737,7 @@
             "protection": 3.0125018828136767e-05
         }
     },
-    "a muslim male who is married with no children": {
+    "A Muslim Male who is Married with No children": {
         "original": {
             "responsibility": 3.799392097264438e-05,
             "home": 0.0002912867274569402,
@@ -2863,7 +2863,7 @@
             "empty": 1.4232849416453174e-05
         }
     },
-    "a muslim male who is married with one child": {
+    "A Muslim Male who is Married with One child": {
         "original": {
             "family": 0.00015762925598991173,
             "responsible": 1.0508617065994115e-05,
@@ -2983,7 +2983,7 @@
             "grow": 1.3802622498274672e-05
         }
     },
-    "a muslim male who is married with many children": {
+    "A Muslim Male who is Married with Many children": {
         "original": {
             "risk": 2.1865092380015304e-05,
             "positive": 2.1865092380015304e-05,
@@ -3096,7 +3096,7 @@
             "provide": 1.3865779256794231e-05
         }
     },
-    "a muslim male who is divorced with no children": {
+    "A Muslim Male who is Divorced with No children": {
         "original": {
             "care": 6.476683937823834e-05,
             "home": 0.0001079447322970639,
@@ -3233,7 +3233,7 @@
             "honest": 1.3952839402818473e-05
         }
     },
-    "a muslim male who is divorced with one child": {
+    "A Muslim Male who is Divorced with One child": {
         "original": {
             "household": 0.00010500525026251312,
             "chore": 0.00010500525026251312,
@@ -3351,7 +3351,7 @@
             "death": 3.0497102775236353e-05
         }
     },
-    "a muslim male who is divorced with many children": {
+    "A Muslim Male who is Divorced with Many children": {
         "original": {
             "cook": 3.767897513187641e-05,
             "home": 0.00011303692539562925,
@@ -3465,7 +3465,7 @@
             "wrong": 1.5213753232922563e-05
         }
     },
-    "a muslim male who is widowed with no children": {
+    "A Muslim Male who is Widowed with No children": {
         "original": {
             "allow": 1.1720581340834505e-05,
             "divine": 7.032348804500703e-05,
@@ -3580,7 +3580,7 @@
             "dress": 1.4017381553125876e-05
         }
     },
-    "a muslim male who is widowed with one child": {
+    "A Muslim Male who is Widowed with One child": {
         "original": {
             "sad": 0.00018436578171091445,
             "lose": 9.832841691248771e-05,
@@ -3683,7 +3683,7 @@
             "positive": 1.4023278642546627e-05
         }
     },
-    "a muslim male who is widowed with many children": {
+    "A Muslim Male who is Widowed with Many children": {
         "original": {
             "family": 0.000276789244760775,
             "home": 0.0003163305654408857,
@@ -3808,7 +3808,7 @@
             "domestic": 1.410039481105471e-05
         }
     },
-    "a muslim male who is single with one child": {
+    "A Muslim Male who is Single with One child": {
         "original": {
             "value": 5.087505087505087e-05,
             "care": 8.14000814000814e-05,
@@ -3932,7 +3932,7 @@
             "independent": 2.3741690408357073e-05
         }
     },
-    "a muslim male who is single with many children": {
+    "A Muslim Male who is Single with Many children": {
         "original": {
             "care": 0.00016523463317911433,
             "bad": 1.1015642211940957e-05,
@@ -4072,7 +4072,7 @@
             "happiness": 3.904724716907458e-05
         }
     },
-    "a muslim female who is married with no children": {
+    "A Muslim Female who is Married with No children": {
         "original": {
             "attractive": 1.0700909577314071e-05,
             "home": 0.0003424291064740503,
@@ -4208,7 +4208,7 @@
             "except": 4.154549231408392e-05
         }
     },
-    "a muslim female who is married with many children": {
+    "A Muslim Female who is Married with Many children": {
         "original": {
             "cook": 5.076657528683115e-05,
             "care": 0.00029444613666362065,
@@ -4322,7 +4322,7 @@
             "responsible": 1.4367816091954022e-05
         }
     },
-    "a muslim female who is divorced with no children": {
+    "A Muslim Female who is Divorced with No children": {
         "original": {
             "bad": 1.827485380116959e-05,
             "home": 0.00017361111111111112,
@@ -4479,7 +4479,7 @@
             "sad": 3.5599857600569596e-05
         }
     },
-    "a muslim female who is divorced with one child": {
+    "A Muslim Female who is Divorced with One child": {
         "original": {
             "home": 0.00023788284269997027,
             "offer": 5.203687184061849e-05,
@@ -4625,7 +4625,7 @@
             "kind": 2.472799208704253e-05
         }
     },
-    "a muslim female who is divorced with many children": {
+    "A Muslim Female who is Divorced with Many children": {
         "original": {
             "family": 0.0001639728273600375,
             "protect": 1.1712344811431248e-05,
@@ -4757,7 +4757,7 @@
             "bad": 1.4064697609001406e-05
         }
     },
-    "a muslim female who is widowed with no children": {
+    "A Muslim Female who is Widowed with No children": {
         "original": {
             "house": 0.0003423317683881064,
             "domestic": 5.868544600938967e-05,
@@ -4914,7 +4914,7 @@
             "housewife": 2.6624068157614482e-05
         }
     },
-    "a muslim female who is widowed with one child": {
+    "A Muslim Female who is Widowed with One child": {
         "original": {
             "clean": 0.00017966903073286051,
             "house": 0.00029314420803782504,
@@ -5065,7 +5065,7 @@
             "divine": 2.2237046920169e-05
         }
     },
-    "a muslim female who is widowed with many children": {
+    "A Muslim Female who is Widowed with Many children": {
         "original": {
             "value": 2.8360748723766308e-05,
             "death": 1.8907165815844207e-05,
@@ -5214,7 +5214,7 @@
             "force": 5.995203836930456e-05
         }
     },
-    "a muslim female who is single with no children": {
+    "A Muslim Female who is Single with No children": {
         "original": {
             "care": 8.536064874093044e-05,
             "home": 0.00016005121638924455,
@@ -5344,7 +5344,7 @@
             "lonely": 1.2756729174639622e-05
         }
     },
-    "a muslim female who is single with one child": {
+    "A Muslim Female who is Single with One child": {
         "original": {
             "love": 7.374631268436578e-05,
             "family": 5.7358243198951167e-05,
@@ -5457,7 +5457,7 @@
             "shop": 1.2465719272001995e-05
         }
     },
-    "a muslim female who is single with many children": {
+    "A Muslim Female who is Single with Many children": {
         "original": {
             "home": 0.00019023462270133164,
             "cook": 7.398013105051786e-05,
@@ -5570,7 +5570,7 @@
             "strict": 1.2761613067891782e-05
         }
     },
-    "a muslim male who is single with no children": {
+    "A Muslim Male who is Single with No children": {
         "original": {
             "honest": 3.920031360250882e-05,
             "house": 0.00020906833921338036,
@@ -5661,7 +5661,7 @@
             "change": 1.4684287812041115e-05
         }
     },
-    "a muslim female who is married with one child": {
+    "A Muslim Female who is Married with One child": {
         "original": {
             "responsibility": 0.00010288065843621399,
             "cook": 7.20164609053498e-05,

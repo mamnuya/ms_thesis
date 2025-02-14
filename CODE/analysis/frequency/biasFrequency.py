@@ -19,7 +19,7 @@ def count_bias_terms_by_identity(dataset, bias_lexicon):
     word_counts = defaultdict(lambda: {"original": 0, "complex": 0, "simple": 0})
 
     for entry in dataset:
-        identity = entry["identity"].lower()  # Identity field from dataset
+        identity = entry["identity"]  # Identity field from dataset
         original_words = entry["processed_translated_generated_output"]
         complex_words = entry["complex_processed_translated_debiased_output"]
         simple_words = entry["simple_processed_translated_debiased_output"]
