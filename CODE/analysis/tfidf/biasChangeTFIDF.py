@@ -174,39 +174,65 @@ with open(final_output_file, "w", encoding="utf-8") as f:
 
 print(f"Final comparison across languages saved to {final_output_file}")
 
-# Step 4: Compute overall averages by method across languages
-def calculate_avg_change_by_method(language_results):
-    """Compute overall average TF-IDF change and values for complex and simple methods."""
-    complex_changes = []
-    simple_changes = []
-    original_values = []
-    complex_values = []
-    simple_values = []
+def calculate_avg_change_by_language(language_results):
+    """Compute average TF-IDF change for complex and simple methods per language."""
+    avg_change_by_language = {}
 
-    for lang in languages:
+    for lang in language_results:
+        complex_changes = []
+        simple_changes = []
+
         for identity in language_results[lang]:
             complex_changes.append(language_results[lang][identity]["complex_avg_change"])
             simple_changes.append(language_results[lang][identity]["simple_avg_change"])
-            original_values.append(language_results[lang][identity]["original_avg_tfidf"])
-            complex_values.append(language_results[lang][identity]["complex_avg_tfidf"])
-            simple_values.append(language_results[lang][identity]["simple_avg_tfidf"])
 
-    # Store overall averages
-    avg_change_by_method = {
-        "complex_avg_change_from_original": np.mean(complex_changes),
-        "simple_avg_change_from_original": np.mean(simple_changes),
-        "original_avg_tfidf": np.mean(original_values),
-        "complex_avg_tfidf": np.mean(complex_values),
-        "simple_avg_tfidf": np.mean(simple_values)
-    }
+        avg_change_by_language[lang] = {
+            "complex_avg_change_from_original": np.mean(complex_changes),
+            "simple_avg_change_from_original": np.mean(simple_changes)
+        }
 
-    return avg_change_by_method
+    return avg_change_by_language
 
-# Compute and save overall averages
-avg_change_by_method = calculate_avg_change_by_method(language_results)
-method_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_method_ALL_languages.json"
+# Compute per-language averages
+avg_change_by_language = calculate_avg_change_by_language(language_results)
+
+# Save results
+method_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_language.json"
 
 with open(method_output_file, "w", encoding="utf-8") as f:
-    json.dump(avg_change_by_method, f, indent=4, ensure_ascii=False)
+    json.dump(avg_change_by_language, f, indent=4, ensure_ascii=False)
 
-print(f"Overall average bias change across languages saved to {method_output_file}")
+print(f"Per-language average bias change saved to {method_output_file}")
+
+def calculate_global_avg(avg_change_by_language):
+    """Compute the global average of TF-IDF changes across all languages."""
+    complex_changes = []
+    simple_changes = []
+
+    for lang, values in avg_change_by_language.items():
+        complex_changes.append(values["complex_avg_change_from_original"])
+        simple_changes.append(values["simple_avg_change_from_original"])
+
+    global_avg = {
+        "global_complex_avg_change_from_original": np.mean(complex_changes),
+        "global_simple_avg_change_from_original": np.mean(simple_changes)
+    }
+
+    return global_avg
+
+# Load per-language average results
+language_avg_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/average_bias_change_by_language.json"
+
+with open(language_avg_file, "r", encoding="utf-8") as f:
+    avg_change_by_language = json.load(f)
+
+# Compute global average
+global_avg = calculate_global_avg(avg_change_by_language)
+
+# Save the global average results
+global_output_file = "../../../data/lexicon_analysis/tfidf/bias_change/avg_bias_change_by_debiasing_method/global_average_bias_change.json"
+
+with open(global_output_file, "w", encoding="utf-8") as f:
+    json.dump(global_avg, f, indent=4, ensure_ascii=False)
+
+print(f"Global average bias change saved to {global_output_file}")

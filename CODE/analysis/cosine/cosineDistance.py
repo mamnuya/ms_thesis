@@ -96,7 +96,7 @@ for lang in languages:
 
 # Save results
 output_identity_file = os.path.join(output_folder, "average_cosine_distance_by_identity.json")
-output_language_file = os.path.join(output_folder, "average_cosine_distance_by_method_ALL_languages.json")
+output_language_file = os.path.join(output_folder, "average_cosine_distance_by_language.json")
 
 with open(output_identity_file, "w", encoding="utf-8") as f:
     json.dump(identity_level_results, f, indent=4, ensure_ascii=False)
@@ -136,3 +136,36 @@ with open(output_identity_across_languages, "w", encoding="utf-8") as f:
     json.dump(avg_identity_across_languages, f, indent=4, ensure_ascii=False)
 
 print(f"Identity-level averages across languages saved to {output_identity_across_languages}")
+
+def compute_global_avg_cosine_distance(language_level_results):
+    """Compute the global average of cosine distances across all languages."""
+    complex_distances = []
+    simple_distances = []
+
+    for lang, values in language_level_results.items():
+        complex_distances.append(values["complex_avg_change_from_original"])
+        simple_distances.append(values["simple_avg_change_from_original"])
+
+    global_avg = {
+        "global_complex_avg_change_from_original": np.mean(complex_distances),
+        "global_simple_avg_change_from_original": np.mean(simple_distances)
+    }
+
+    return global_avg
+
+# Load per-language average results
+language_avg_file = os.path.join(output_folder, "average_cosine_distance_by_language.json")
+
+with open(language_avg_file, "r", encoding="utf-8") as f:
+    language_level_results = json.load(f)
+
+# Compute global average
+global_avg_cosine_distance = compute_global_avg_cosine_distance(language_level_results)
+
+# Save the global average results
+global_output_file = os.path.join(output_folder, "global_average_cosine_distance.json")
+
+with open(global_output_file, "w", encoding="utf-8") as f:
+    json.dump(global_avg_cosine_distance, f, indent=4, ensure_ascii=False)
+
+print(f"Global average cosine distance saved to {global_output_file}")
