@@ -16,6 +16,7 @@ import nltk
 import spacy
 from nltk.tokenize import word_tokenize
 from tqdm import tqdm
+from langdetect import detect
 
 # Download necessary NLTK data if not already available
 nltk.download('punkt')
@@ -25,30 +26,59 @@ nltk.download('punkt')
 nlp = spacy.load("en_core_web_lg")
 
 def remove_duplicate_sentences(text):
-    """Removes duplicate sentences within a paragraph."""
+    """Removes duplicate sentences while preserving order."""
     sentences = text.split('. ')
-    unique_sentences = list(dict.fromkeys(sentences))  # Keeps order while removing duplicates
+    unique_sentences = list(dict.fromkeys(sentences))  # Keeps the first occurrence, removes duplicates
     return '. '.join(unique_sentences)
 
 def remove_repeated_phrases(text):
-    """Removes repetitive phrases in a text."""
-    text = re.sub(r'\b(\w+(?:\s+\w+){0,4})\b(?=.*\b\1\b)', '', text, flags=re.IGNORECASE)
-    return re.sub(r'\s+', ' ', text).strip()  # Normalize spaces
+    """Removes consecutive repeated phrases in a text."""
+    words = text.split()  # Split text into words
+    cleaned_words = []
+    prev_word = None
 
+    for word in words:
+        if word != prev_word:  # Only add if it's not a repeat
+            cleaned_words.append(word)
+        prev_word = word  # Update previous word
 
-# Function to clean text
+    return ' '.join(cleaned_words)
+
+def remove_repeated_phrases_by_special_chars(text):
+    """Removes repeated phrases enclosed by special characters while preserving order."""
+    # Define a list of special characters to split the text by
+    special_chars = ['-', ',', ';', ':', '!', '?', '.', '(', ')', '[', ']', '{', '}', '|']
+    
+    # Create a regex pattern that matches any of the special characters
+    pattern = r'([{}])'.format(re.escape(''.join(special_chars)))
+    
+    # Split the text by the special characters and remove any duplicates
+    parts = re.split(pattern, text)
+    
+    seen = set()
+    result = []
+    
+    for part in parts:
+        # If the part is not in 'seen' and it's not empty, append it to the result
+        if part and part not in seen:
+            seen.add(part)
+            result.append(part)
+    
+    return ''.join(result)
+
 def clean_text(text):
-    """Removes extra spaces, special characters, and normalizes text."""
+    """Removes extra spaces, special characters, duplicate sentences, and normalizes text."""
     if not text or not isinstance(text, str):
         return text  # Return as is if text is None or not a string
     
     text = text.strip()  # Remove leading/trailing spaces
     text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
+    text = remove_duplicate_sentences(text)  # Remove repeated sentences
+    text = remove_repeated_phrases(text)  # Remove consecutive duplicate words
+    text = remove_repeated_phrases_by_special_chars(text)  # Remove repeated phrases enclosed by special characters
     text = text.replace('-', ' ')  # Replace dashes with spaces
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
     text = text.replace('"', '')  # Remove quotation marks
-    text = remove_duplicate_sentences(text)  # Remove repeated sentences
-    text = remove_repeated_phrases(text)  # Remove repeated phrases
     return text.lower()  # Convert to lowercase
 
 # Function to tokenize & lemmatize text (consistent with lexicon curation)
@@ -57,10 +87,25 @@ def tokenize_lemmatize_text(text):
     doc = nlp(text)
     return [token.lemma_ for token in doc if token.is_alpha]  # Keep only words
 
+def contains_only_indic(text):
+    """Returns True if the text contains only foreign languages"""
+    
+    try:
+        # Attempt to detect the language
+        lang = detect(text)
+        
+        # If the detected language is not English, return True
+        if lang == 'en':
+            return False
+        return True
+    except Exception: # if lang not recognized, also return true since it's not English
+        return True
+
+
 # Function to check if an entry is low quality
 def is_low_quality_entry(entry):
     """Check if the generated response or debiased responses are low-quality and should be filtered out."""
-    
+
     def words_from_text(text):
         """Extracts words from a given text (removes punctuation and normalizes)."""
         return set(re.findall(r'\b\w+\b', text.lower().strip())) if text else set()
@@ -95,8 +140,19 @@ def is_low_quality_entry(entry):
     # 3. Remove if the simple debiased output has no new words beyond its debiasing prompt
     simple_low_quality = simple_output_words.issubset(simple_prompt_words)
 
+    org_output_foreign = entry.get("generated_output", "")
+    complex_output_foreign = entry.get("complex_debiased_output", "")
+    simple_output_foreign = entry.get("simple_debiased_output", "")
+
+    # 4. Ensure all outputs contain only Indic characters (no English)
+    contains_english = (
+        not contains_only_indic(org_output_foreign) or
+        not contains_only_indic(complex_output_foreign) or
+        not contains_only_indic(simple_output_foreign)
+    )
+
     # If any of these conditions are met, the entry is low quality and should be removed
-    return generated_low_quality or complex_low_quality or simple_low_quality
+    return generated_low_quality or complex_low_quality or simple_low_quality or contains_english
 
 # Process JSON file
 def process_json(input_file, output_file):

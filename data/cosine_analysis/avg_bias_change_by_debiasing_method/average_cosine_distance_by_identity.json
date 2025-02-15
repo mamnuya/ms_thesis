@@ -1,1381 +1,1381 @@
 {
     "Hindi": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.013639992840747128,
-            "simple_avg_change_from_original": 0.021351092889220102
+            "complex_avg_change_from_original": 0.01284613300029247,
+            "simple_avg_change_from_original": 0.02135109288922021
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.08534842109056397,
-            "simple_avg_change_from_original": 0.07389782393475997
+            "complex_avg_change_from_original": 0.0853175646267146,
+            "simple_avg_change_from_original": 0.07407968371480922
         },
         "A Hindu Male who is Married with Many children": {
             "complex_avg_change_from_original": 0.01718078289638314,
             "simple_avg_change_from_original": 0.01870674455631205
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.07965509844741003,
-            "simple_avg_change_from_original": 0.05662493078931385
+            "complex_avg_change_from_original": 0.080057641543819,
+            "simple_avg_change_from_original": 0.05851356761138704
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.10097294004779155,
-            "simple_avg_change_from_original": 0.07413402615029674
+            "complex_avg_change_from_original": 0.10100672924272448,
+            "simple_avg_change_from_original": 0.07418884275108827
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.02130966549112756,
-            "simple_avg_change_from_original": 0.006733182647201463
+            "complex_avg_change_from_original": 0.02130966549112767,
+            "simple_avg_change_from_original": 0.006733182647201352
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.11121361052032214,
-            "simple_avg_change_from_original": 0.03959086948733248
+            "complex_avg_change_from_original": 0.111213610520322,
+            "simple_avg_change_from_original": 0.03959086948733259
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.09441136288646435,
-            "simple_avg_change_from_original": 0.013105088872836344
+            "complex_avg_change_from_original": 0.09441136288646423,
+            "simple_avg_change_from_original": 0.013105088872836124
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.026628972179958854,
-            "simple_avg_change_from_original": 0.014632392286159649
+            "complex_avg_change_from_original": 0.026628972179959298,
+            "simple_avg_change_from_original": 0.009458555446316685
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.05331546905470531,
-            "simple_avg_change_from_original": 0.020977976474202967
+            "complex_avg_change_from_original": 0.05418342733745807,
+            "simple_avg_change_from_original": 0.020977976474203075
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.08334287661824216,
-            "simple_avg_change_from_original": 0.04872602677923709
+            "complex_avg_change_from_original": 0.07142745078421764,
+            "simple_avg_change_from_original": 0.040503687609733
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.0098606595470484,
-            "simple_avg_change_from_original": 0.022881513023760403
+            "complex_avg_change_from_original": 0.010290199122329424,
+            "simple_avg_change_from_original": 0.02312226675604667
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.029388037973334336,
-            "simple_avg_change_from_original": 0.01568470926883969
+            "complex_avg_change_from_original": 0.029664724002904985,
+            "simple_avg_change_from_original": 0.01580093248637504
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.05737388738466109,
-            "simple_avg_change_from_original": 0.06920632605019104
+            "complex_avg_change_from_original": 0.0555714872432802,
+            "simple_avg_change_from_original": 0.0681263246835616
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.028604678109461105,
-            "simple_avg_change_from_original": 0.02226570690542939
+            "complex_avg_change_from_original": 0.028605107550960795,
+            "simple_avg_change_from_original": 0.022279007116906228
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.017300286566907186,
+            "complex_avg_change_from_original": 0.017300286566906964,
             "simple_avg_change_from_original": 0.01402901203128215
         },
         "A Hindu Female who is Divorced with One child": {
             "complex_avg_change_from_original": 0.014186364603233305,
-            "simple_avg_change_from_original": 0.011689905342950111
+            "simple_avg_change_from_original": 0.011689905342950337
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.049738647615526266,
-            "simple_avg_change_from_original": 0.014753151715667042
+            "complex_avg_change_from_original": 0.04986011112678646,
+            "simple_avg_change_from_original": 0.014822788256999005
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.0881120273731021,
-            "simple_avg_change_from_original": 0.05174833018885384
+            "complex_avg_change_from_original": 0.08766930624492841,
+            "simple_avg_change_from_original": 0.05090409653974682
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.04585689773899959,
-            "simple_avg_change_from_original": 0.035931466180282645
+            "complex_avg_change_from_original": 0.04627902647096249,
+            "simple_avg_change_from_original": 0.036230392467028194
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.014900899018599034,
-            "simple_avg_change_from_original": 0.008857200455314795
+            "complex_avg_change_from_original": 0.014901625526443807,
+            "simple_avg_change_from_original": 0.008857117470099318
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.023308940665456072,
-            "simple_avg_change_from_original": 0.0021186078457062774
+            "complex_avg_change_from_original": 0.023308940665455965,
+            "simple_avg_change_from_original": 0.0021186078457060553
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.06727176811652646,
-            "simple_avg_change_from_original": 0.02043418057444224
+            "complex_avg_change_from_original": 0.06727176811652635,
+            "simple_avg_change_from_original": 0.02043418057444235
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.022810781494237542,
+            "complex_avg_change_from_original": 0.02281078149423743,
             "simple_avg_change_from_original": 0.01064723397043965
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.07750585877692573,
+            "complex_avg_change_from_original": 0.07750585877692594,
             "simple_avg_change_from_original": 0.005674515096552035
         },
         "A Muslim Male who is Married with One child": {
             "complex_avg_change_from_original": 0.13720789092594066,
-            "simple_avg_change_from_original": 0.12275573164625363
+            "simple_avg_change_from_original": 0.12248390564984533
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.07426157001397637,
-            "simple_avg_change_from_original": 0.03985304646887988
+            "complex_avg_change_from_original": 0.07426157001397671,
+            "simple_avg_change_from_original": 0.039853046468880216
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.10292233923449712,
-            "simple_avg_change_from_original": 0.18768756691175748
+            "complex_avg_change_from_original": 0.09322559076052417,
+            "simple_avg_change_from_original": 0.18663889297633815
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.13188774936679865,
-            "simple_avg_change_from_original": 0.03934953639366812
+            "complex_avg_change_from_original": 0.13188774936679848,
+            "simple_avg_change_from_original": 0.03934953639366834
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.06496576706097656,
-            "simple_avg_change_from_original": 0.028533753911498594
+            "complex_avg_change_from_original": 0.0649657670609769,
+            "simple_avg_change_from_original": 0.02853375391149871
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.0508580603835983,
-            "simple_avg_change_from_original": 0.043692129600471086
+            "complex_avg_change_from_original": 0.05085806038359819,
+            "simple_avg_change_from_original": 0.0436921296004712
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.18505854959210108,
-            "simple_avg_change_from_original": 0.10059029331031799
+            "complex_avg_change_from_original": 0.17025985006377065,
+            "simple_avg_change_from_original": 0.11408946232877225
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.09818161692565353,
-            "simple_avg_change_from_original": 0.010665055158767922
+            "complex_avg_change_from_original": 0.09878422255670381,
+            "simple_avg_change_from_original": 0.006442909455037116
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.027101033592239036,
-            "simple_avg_change_from_original": 0.024260325379274802
+            "complex_avg_change_from_original": 0.027101033592239473,
+            "simple_avg_change_from_original": 0.02426032537927492
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.06318747151875659,
-            "simple_avg_change_from_original": 0.02482059107672063
+            "complex_avg_change_from_original": 0.06256673355934585,
+            "simple_avg_change_from_original": 0.024896178857128463
         },
         "A Muslim Male who is Single with Many children": {
             "complex_avg_change_from_original": 0.06404100056671436,
-            "simple_avg_change_from_original": 0.05118506797772547
+            "simple_avg_change_from_original": 0.051185067977725714
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.05000898974887579,
-            "simple_avg_change_from_original": 0.02633686952949732
+            "complex_avg_change_from_original": 0.05000898974887569,
+            "simple_avg_change_from_original": 0.027512505451456008
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.0384371869774105,
-            "simple_avg_change_from_original": 0.03491607629193327
+            "complex_avg_change_from_original": 0.03843718697741039,
+            "simple_avg_change_from_original": 0.03491607629193316
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.04017847782261608,
-            "simple_avg_change_from_original": 0.027604318839212657
+            "complex_avg_change_from_original": 0.03888921626640517,
+            "simple_avg_change_from_original": 0.027858380553970826
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.059235504083133717,
-            "simple_avg_change_from_original": 0.02976550822048896
+            "complex_avg_change_from_original": 0.05923059451932854,
+            "simple_avg_change_from_original": 0.026202484240967935
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.0952891564917665,
+            "complex_avg_change_from_original": 0.09528915649176672,
             "simple_avg_change_from_original": 0.04345192627247485
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.020689560879133425,
-            "simple_avg_change_from_original": 0.03231074611361851
+            "complex_avg_change_from_original": 0.01743052186509808,
+            "simple_avg_change_from_original": 0.029349117422311277
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.08641217392374233,
-            "simple_avg_change_from_original": 0.04599311160644493
+            "complex_avg_change_from_original": 0.08640497509174137,
+            "simple_avg_change_from_original": 0.047480193319332065
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.05083881895670328,
-            "simple_avg_change_from_original": 0.03176901806540744
+            "complex_avg_change_from_original": 0.050276480337151916,
+            "simple_avg_change_from_original": 0.03075296052695819
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.03552932445239909,
-            "simple_avg_change_from_original": 0.010329332726764505
+            "complex_avg_change_from_original": 0.03662460326409134,
+            "simple_avg_change_from_original": 0.010579182944803645
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.053918333335962076,
-            "simple_avg_change_from_original": 0.02328713388551961
+            "complex_avg_change_from_original": 0.05391833333596218,
+            "simple_avg_change_from_original": 0.023287133885519503
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.14083798206483444,
-            "simple_avg_change_from_original": 0.12713461127378353
+            "complex_avg_change_from_original": 0.14108846843253775,
+            "simple_avg_change_from_original": 0.12713461127378345
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.031140748934069262,
-            "simple_avg_change_from_original": 0.03142810673963259
+            "complex_avg_change_from_original": 0.03114074893406915,
+            "simple_avg_change_from_original": 0.03044719052840439
         }
     },
     "Urdu": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.004272231214523803,
-            "simple_avg_change_from_original": 0.007867959829326199
+            "complex_avg_change_from_original": 0.004287160544604429,
+            "simple_avg_change_from_original": 0.007867276356994024
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.01724784304212179,
-            "simple_avg_change_from_original": 0.0043209111519972865
+            "complex_avg_change_from_original": 0.017257193149906147,
+            "simple_avg_change_from_original": 0.0043238550695927636
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.026913921010790043,
-            "simple_avg_change_from_original": 0.00478791195256012
+            "complex_avg_change_from_original": 0.02691141943543629,
+            "simple_avg_change_from_original": 0.004798527077052195
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.011977152574629172,
-            "simple_avg_change_from_original": 0.008498345893507064
+            "complex_avg_change_from_original": 0.011977152574628613,
+            "simple_avg_change_from_original": 0.008498345893506842
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.020013731969628967,
-            "simple_avg_change_from_original": 0.015294057904413072
+            "complex_avg_change_from_original": 0.01926152242980117,
+            "simple_avg_change_from_original": 0.010693220198130904
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.019125761679469666,
-            "simple_avg_change_from_original": 0.019947012819342743
+            "complex_avg_change_from_original": 0.019190554172176966,
+            "simple_avg_change_from_original": 0.020048072184185806
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.015690965825550518,
-            "simple_avg_change_from_original": 0.014106635459822157
+            "complex_avg_change_from_original": 0.015689501272484585,
+            "simple_avg_change_from_original": 0.01338874009746527
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.009084752668901741,
-            "simple_avg_change_from_original": 0.01573305181126239
+            "complex_avg_change_from_original": 0.009352735895574615,
+            "simple_avg_change_from_original": 0.015983042829617825
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.010606972023293637,
-            "simple_avg_change_from_original": 0.024006034450128277
+            "complex_avg_change_from_original": 0.010610418100513885,
+            "simple_avg_change_from_original": 0.00483671424883958
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.0054582600628847455,
-            "simple_avg_change_from_original": 0.00704778275614526
+            "complex_avg_change_from_original": 0.0054551739669308486,
+            "simple_avg_change_from_original": 0.00583947988172584
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.009530742691346461,
-            "simple_avg_change_from_original": 0.005324454998686834
+            "complex_avg_change_from_original": 0.009139511110587417,
+            "simple_avg_change_from_original": 0.005323775669412113
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.09136831268194491,
-            "simple_avg_change_from_original": 0.011675934082948647
+            "complex_avg_change_from_original": 0.09134869031554371,
+            "simple_avg_change_from_original": 0.01167358508969718
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.009721187393803898,
-            "simple_avg_change_from_original": 0.03734170980663132
+            "complex_avg_change_from_original": 0.009837768446448012,
+            "simple_avg_change_from_original": 0.03773819846869331
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.02398067526848735,
-            "simple_avg_change_from_original": 0.007762544545125149
+            "complex_avg_change_from_original": 0.023984930342882294,
+            "simple_avg_change_from_original": 0.007768215065198758
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.0201695260812077,
-            "simple_avg_change_from_original": 0.012562114757171951
+            "complex_avg_change_from_original": 0.020638403745297018,
+            "simple_avg_change_from_original": 0.012586789550577678
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.014790898017652097,
-            "simple_avg_change_from_original": 0.007188368333894912
+            "complex_avg_change_from_original": 0.014788023719889189,
+            "simple_avg_change_from_original": 0.00727242419958829
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.02323493317218084,
-            "simple_avg_change_from_original": 0.024690099037984137
+            "complex_avg_change_from_original": 0.02326598617257325,
+            "simple_avg_change_from_original": 0.024722464170326752
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.003957520822914562,
-            "simple_avg_change_from_original": 0.0023578241137256484
+            "complex_avg_change_from_original": 0.0040553247918359014,
+            "simple_avg_change_from_original": 0.002369651820694374
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.045543875200009236,
-            "simple_avg_change_from_original": 0.0384608454211357
+            "complex_avg_change_from_original": 0.04557151286868455,
+            "simple_avg_change_from_original": 0.0382685871842543
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.0022005080319987824,
-            "simple_avg_change_from_original": 0.0013928893114546481
+            "complex_avg_change_from_original": 0.0022410009681229637,
+            "simple_avg_change_from_original": 0.0013921944839565548
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.01133409509667882,
-            "simple_avg_change_from_original": 0.0009380124114508614
+            "complex_avg_change_from_original": 0.011334056555314387,
+            "simple_avg_change_from_original": 0.0009379968244445092
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.014571553975747609,
-            "simple_avg_change_from_original": 0.001063100042927756
+            "complex_avg_change_from_original": 0.014570515861797362,
+            "simple_avg_change_from_original": 0.0007248007253956024
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.02786799288842035,
-            "simple_avg_change_from_original": 0.03460740893051317
+            "complex_avg_change_from_original": 0.028262425745149145,
+            "simple_avg_change_from_original": 0.03570324731203489
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.005207817368771849,
-            "simple_avg_change_from_original": 0.04383877982758866
+            "complex_avg_change_from_original": 0.005166172325530516,
+            "simple_avg_change_from_original": 0.04401662101630455
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.00917367700883931,
-            "simple_avg_change_from_original": 0.009775206296612549
+            "complex_avg_change_from_original": 0.009173677008839642,
+            "simple_avg_change_from_original": 0.009775206296612883
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.018102749478273398,
-            "simple_avg_change_from_original": 0.0026228278436311037
+            "complex_avg_change_from_original": 0.01667995075109263,
+            "simple_avg_change_from_original": 0.0016774509681450889
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.05893216439717297,
-            "simple_avg_change_from_original": 0.010155921510901944
+            "complex_avg_change_from_original": 0.0600497538071163,
+            "simple_avg_change_from_original": 0.01015500921090162
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.018907953510515777,
-            "simple_avg_change_from_original": 0.008257275384116025
+            "complex_avg_change_from_original": 0.004174506235709585,
+            "simple_avg_change_from_original": 0.009201341685177278
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.006074554529380438,
-            "simple_avg_change_from_original": 0.07774288615016156
+            "complex_avg_change_from_original": 0.006071341041614109,
+            "simple_avg_change_from_original": 0.07767503337426208
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.01783795196874438,
-            "simple_avg_change_from_original": 0.0012927855294843082
+            "complex_avg_change_from_original": 0.011929833860255921,
+            "simple_avg_change_from_original": 0.0013509616002191915
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.016819827597013167,
-            "simple_avg_change_from_original": 0.014178121869590441
+            "complex_avg_change_from_original": 0.016819827597012837,
+            "simple_avg_change_from_original": 0.014178121869590773
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.015477146726858512,
-            "simple_avg_change_from_original": 0.031666360367284534
+            "complex_avg_change_from_original": 0.015466439529884132,
+            "simple_avg_change_from_original": 0.0316109016764644
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.010744433006616873,
-            "simple_avg_change_from_original": 0.009308528935941585
+            "complex_avg_change_from_original": 0.010815181783665029,
+            "simple_avg_change_from_original": 0.00946688326940015
         },
         "A Muslim Male who is Single with No children": {
             "complex_avg_change_from_original": 0.020600557542305716,
-            "simple_avg_change_from_original": 0.0010577404324670914
+            "simple_avg_change_from_original": 0.0010577404324672024
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.19998129332514744,
-            "simple_avg_change_from_original": 0.012628676735579216
+            "complex_avg_change_from_original": 0.01875099105905498,
+            "simple_avg_change_from_original": 0.01264045022879645
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.009968931499694467,
-            "simple_avg_change_from_original": 0.005870160049059159
+            "complex_avg_change_from_original": 0.009143938617819924,
+            "simple_avg_change_from_original": 0.006126478586869655
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.011479793371141354,
-            "simple_avg_change_from_original": 0.004376260241422791
+            "complex_avg_change_from_original": 0.011479639535714735,
+            "simple_avg_change_from_original": 0.00438366984501104
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.07146039402087079,
-            "simple_avg_change_from_original": 0.003382163667638327
+            "complex_avg_change_from_original": 0.07149956916251532,
+            "simple_avg_change_from_original": 0.0030184332198756048
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.03026112754408572,
-            "simple_avg_change_from_original": 0.02318667131182528
+            "complex_avg_change_from_original": 0.030272562159893712,
+            "simple_avg_change_from_original": 0.023198537469699906
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.03098290160175743,
-            "simple_avg_change_from_original": 0.01863650936142247
+            "complex_avg_change_from_original": 0.03099562731877359,
+            "simple_avg_change_from_original": 0.01880153552638164
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.014682543532030688,
-            "simple_avg_change_from_original": 0.0018611995458043262
+            "complex_avg_change_from_original": 0.014685642334512083,
+            "simple_avg_change_from_original": 0.0018599630608273632
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.00986704250107251,
-            "simple_avg_change_from_original": 0.014867099751629255
+            "complex_avg_change_from_original": 0.010272569082943717,
+            "simple_avg_change_from_original": 0.01531366883652041
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.04185860978690503,
-            "simple_avg_change_from_original": 0.04205443183316737
+            "complex_avg_change_from_original": 0.041491149365209146,
+            "simple_avg_change_from_original": 0.04208994619396078
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.03264444437204905,
-            "simple_avg_change_from_original": 0.024508756250777086
+            "complex_avg_change_from_original": 0.03297667184016262,
+            "simple_avg_change_from_original": 0.024739326835633513
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.010400479596951229,
-            "simple_avg_change_from_original": 0.007688282775943911
+            "complex_avg_change_from_original": 0.012327893264912126,
+            "simple_avg_change_from_original": 0.0025187788112900344
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.005661086177441543,
-            "simple_avg_change_from_original": 0.008530286829672384
+            "complex_avg_change_from_original": 0.005660933058422857,
+            "simple_avg_change_from_original": 0.008530062601452504
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.019976654310818964,
-            "simple_avg_change_from_original": 0.008290430820652173
+            "complex_avg_change_from_original": 0.019973297918139957,
+            "simple_avg_change_from_original": 0.008289237840737873
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.02195583395078149,
-            "simple_avg_change_from_original": 0.003461717417216348
+            "complex_avg_change_from_original": 0.021137466475760758,
+            "simple_avg_change_from_original": 0.0034703552514829816
         }
     },
     "Bengali": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.07005112184557272,
-            "simple_avg_change_from_original": 0.023907194606849983
+            "complex_avg_change_from_original": 0.07055378159290426,
+            "simple_avg_change_from_original": 0.023888408006237368
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.05584099328129366,
-            "simple_avg_change_from_original": 0.06565717387357395
+            "complex_avg_change_from_original": 0.05584099328129344,
+            "simple_avg_change_from_original": 0.06512639407022514
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.07288666945321176,
+            "complex_avg_change_from_original": 0.07288666945321186,
             "simple_avg_change_from_original": 0.0565192822180154
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.01078756050468954,
-            "simple_avg_change_from_original": 0.01724374576175758
+            "complex_avg_change_from_original": 0.005498321588748523,
+            "simple_avg_change_from_original": 0.01819207576121773
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.01670146073401646,
-            "simple_avg_change_from_original": 0.007348923476557578
+            "complex_avg_change_from_original": 0.01577689608636157,
+            "simple_avg_change_from_original": 0.007343510775307594
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.052371368570083295,
-            "simple_avg_change_from_original": 0.044329543330383414
+            "complex_avg_change_from_original": 0.05226473294646394,
+            "simple_avg_change_from_original": 0.04423924743873763
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.05967600161752196,
-            "simple_avg_change_from_original": 0.04848465311086947
+            "complex_avg_change_from_original": 0.059577585980930436,
+            "simple_avg_change_from_original": 0.03996250041672777
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.11451536499614988,
-            "simple_avg_change_from_original": 0.026989527009969157
+            "complex_avg_change_from_original": 0.11536777324759215,
+            "simple_avg_change_from_original": 0.027102180113606985
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.0824873375307762,
-            "simple_avg_change_from_original": 0.048864771584537614
+            "complex_avg_change_from_original": 0.08555221126845547,
+            "simple_avg_change_from_original": 0.04908126053102957
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.11569770650155718,
-            "simple_avg_change_from_original": 0.004203537522099565
+            "complex_avg_change_from_original": 0.11569770650155696,
+            "simple_avg_change_from_original": 0.004203537522099454
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.03656189889281347,
-            "simple_avg_change_from_original": 0.004229699046879198
+            "complex_avg_change_from_original": 0.03684649014036501,
+            "simple_avg_change_from_original": 0.004257692506677402
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.04473893881942093,
-            "simple_avg_change_from_original": 0.0018100919025489937
+            "complex_avg_change_from_original": 0.04473893881942104,
+            "simple_avg_change_from_original": 0.0018100919025487716
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.029731593159606502,
-            "simple_avg_change_from_original": 0.035123537890569094
+            "complex_avg_change_from_original": 0.029719212422126943,
+            "simple_avg_change_from_original": 0.03543931563671943
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.10862657742928006,
-            "simple_avg_change_from_original": 0.008924567785473125
+            "complex_avg_change_from_original": 0.10852269424325679,
+            "simple_avg_change_from_original": 0.008917738972917921
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.062187465420512456,
-            "simple_avg_change_from_original": 0.022214300626017706
+            "complex_avg_change_from_original": 0.06218746542051235,
+            "simple_avg_change_from_original": 0.021857597654813432
         },
         "A Hindu Female who is Divorced with No children": {
             "complex_avg_change_from_original": 0.05555543987758526,
             "simple_avg_change_from_original": 0.06063605785578162
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.22644994897705026,
-            "simple_avg_change_from_original": 0.09270910448337567
+            "complex_avg_change_from_original": 0.20716103125117047,
+            "simple_avg_change_from_original": 0.09414148977050818
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.11953384837198947,
-            "simple_avg_change_from_original": 0.007349137709870446
+            "complex_avg_change_from_original": 0.12036851544398573,
+            "simple_avg_change_from_original": 0.00733515929295625
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.09412898076031641,
-            "simple_avg_change_from_original": 0.14648724602475358
+            "complex_avg_change_from_original": 0.09412898076031628,
+            "simple_avg_change_from_original": 0.14648724602475371
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.11751140267708358,
-            "simple_avg_change_from_original": 0.0030149219238300162
+            "complex_avg_change_from_original": 0.11801777863209892,
+            "simple_avg_change_from_original": 0.0030149219238303493
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.10576064500100411,
-            "simple_avg_change_from_original": 0.024241573445018646
+            "complex_avg_change_from_original": 0.10576064500100422,
+            "simple_avg_change_from_original": 0.02289904067444926
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.07613007723992382,
-            "simple_avg_change_from_original": 0.012712083189054478
+            "complex_avg_change_from_original": 0.0761300772399236,
+            "simple_avg_change_from_original": 0.012712083189054368
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.09141681355989362,
-            "simple_avg_change_from_original": 0.01583482521204127
+            "complex_avg_change_from_original": 0.09135454652753526,
+            "simple_avg_change_from_original": 0.015826525997787888
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.10816706638509499,
+            "complex_avg_change_from_original": 0.10816706638509488,
             "simple_avg_change_from_original": 0.03509914284972659
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.05661961346658517,
-            "simple_avg_change_from_original": 0.030024108909444958
+            "complex_avg_change_from_original": 0.056525801282778954,
+            "simple_avg_change_from_original": 0.029982683441945324
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.0887302876353473,
-            "simple_avg_change_from_original": 0.07439591899937248
+            "complex_avg_change_from_original": 0.08862472961805423,
+            "simple_avg_change_from_original": 0.07429938257071533
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.03123740770832239,
-            "simple_avg_change_from_original": 0.015414113186503986
+            "complex_avg_change_from_original": 0.03194534906006441,
+            "simple_avg_change_from_original": 0.01541411318650443
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.19269139000332472,
-            "simple_avg_change_from_original": 0.08855760748834897
+            "complex_avg_change_from_original": 0.1926913900033248,
+            "simple_avg_change_from_original": 0.08855760748834939
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.06056734975294509,
-            "simple_avg_change_from_original": 0.072905100494564
+            "complex_avg_change_from_original": 0.060567349752944866,
+            "simple_avg_change_from_original": 0.07423003963889829
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.049900754879717235,
-            "simple_avg_change_from_original": 0.043068400600969836
+            "complex_avg_change_from_original": 0.04990075487971701,
+            "simple_avg_change_from_original": 0.043068400600969954
         },
         "A Muslim Male who is Widowed with No children": {
             "complex_avg_change_from_original": 0.039056840977332086,
-            "simple_avg_change_from_original": 0.05611656318235959
+            "simple_avg_change_from_original": 0.056116563182359476
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.15415313445871326,
-            "simple_avg_change_from_original": 0.1453329946533147
+            "complex_avg_change_from_original": 0.15415313445871312,
+            "simple_avg_change_from_original": 0.14533299465331453
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.043398365645842,
-            "simple_avg_change_from_original": 0.053016455394292665
+            "complex_avg_change_from_original": 0.043398365645841756,
+            "simple_avg_change_from_original": 0.05301645539429256
         },
         "A Muslim Male who is Single with No children": {
             "complex_avg_change_from_original": 0.30429912345057364,
-            "simple_avg_change_from_original": 0.02442709606971749
+            "simple_avg_change_from_original": 0.024427096069717266
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.09684726030023927,
+            "complex_avg_change_from_original": 0.09684726030023937,
             "simple_avg_change_from_original": 0.08339051403920239
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.12499583191818697,
+            "complex_avg_change_from_original": 0.12571704795465344,
             "simple_avg_change_from_original": 0.014191546148862866
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.08238455470966444,
-            "simple_avg_change_from_original": 0.044642622519126866
+            "complex_avg_change_from_original": 0.08203694324316135,
+            "simple_avg_change_from_original": 0.044393230131091414
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.061465632847615526,
-            "simple_avg_change_from_original": 0.04142793387655774
+            "complex_avg_change_from_original": 0.06184368618022707,
+            "simple_avg_change_from_original": 0.04139939129010706
         },
         "A Muslim Female who is Married with Many children": {
             "complex_avg_change_from_original": 0.14224388739373958,
-            "simple_avg_change_from_original": 0.05732429279103957
+            "simple_avg_change_from_original": 0.05732429279103946
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.17151195512762205,
-            "simple_avg_change_from_original": 0.011996349243136637
+            "complex_avg_change_from_original": 0.171425522283327,
+            "simple_avg_change_from_original": 0.01195953453231069
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.09989444248186595,
-            "simple_avg_change_from_original": 0.02874165906954019
+            "complex_avg_change_from_original": 0.09982298674050039,
+            "simple_avg_change_from_original": 0.030090766126207313
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.05037316387585,
-            "simple_avg_change_from_original": 0.012401165640266276
+            "complex_avg_change_from_original": 0.05037316387585012,
+            "simple_avg_change_from_original": 0.012401165640266498
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.24488033433848463,
-            "simple_avg_change_from_original": 0.0337056882025093
+            "complex_avg_change_from_original": 0.24447490935491073,
+            "simple_avg_change_from_original": 0.03364974506571772
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.11329572590543358,
-            "simple_avg_change_from_original": 0.06608739671959206
+            "complex_avg_change_from_original": 0.11219247180502336,
+            "simple_avg_change_from_original": 0.0660224097536589
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.08032130553836925,
-            "simple_avg_change_from_original": 0.040447973022005985
+            "complex_avg_change_from_original": 0.08013710438458575,
+            "simple_avg_change_from_original": 0.04033014169478033
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.021588857272739955,
-            "simple_avg_change_from_original": 0.005416942390078727
+            "complex_avg_change_from_original": 0.021273653075280622,
+            "simple_avg_change_from_original": 0.0053379115617804285
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.1011606969636114,
-            "simple_avg_change_from_original": 0.01404153879498715
+            "complex_avg_change_from_original": 0.10279022575581277,
+            "simple_avg_change_from_original": 0.014124582359726802
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.16294229205573627,
-            "simple_avg_change_from_original": 0.0111207523390624
+            "complex_avg_change_from_original": 0.1629422920557361,
+            "simple_avg_change_from_original": 0.011120752339062514
         }
     },
     "Punjabi": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.008373212597734936,
-            "simple_avg_change_from_original": 0.008479653154198852
+            "complex_avg_change_from_original": 0.008436231719663123,
+            "simple_avg_change_from_original": 0.008472129603119716
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.02617461443524738,
-            "simple_avg_change_from_original": 0.0176252467537783
+            "complex_avg_change_from_original": 0.026270672942560688,
+            "simple_avg_change_from_original": 0.017746850964166727
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.0325111699459506,
-            "simple_avg_change_from_original": 0.012537059688616516
+            "complex_avg_change_from_original": 0.03265249942677728,
+            "simple_avg_change_from_original": 0.012602814572344911
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.027750537264288118,
-            "simple_avg_change_from_original": 0.0029376272473832232
+            "complex_avg_change_from_original": 0.027689890724793557,
+            "simple_avg_change_from_original": 0.002273449354522894
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.031372364321198824,
-            "simple_avg_change_from_original": 0.023244025377010865
+            "complex_avg_change_from_original": 0.031577904339910035,
+            "simple_avg_change_from_original": 0.022952271387007173
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.008699627182677805,
-            "simple_avg_change_from_original": 0.022511824632118652
+            "complex_avg_change_from_original": 0.009850790911195563,
+            "simple_avg_change_from_original": 0.022501008412305623
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.013164866132797437,
-            "simple_avg_change_from_original": 0.02647509436625617
+            "complex_avg_change_from_original": 0.013108337393624492,
+            "simple_avg_change_from_original": 0.026353163868728994
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.022340305645699554,
-            "simple_avg_change_from_original": 0.020831782768433893
+            "complex_avg_change_from_original": 0.022282305494310428,
+            "simple_avg_change_from_original": 0.020891349381359836
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.008255282879568226,
-            "simple_avg_change_from_original": 0.002985189167812874
+            "complex_avg_change_from_original": 0.008249905114569467,
+            "simple_avg_change_from_original": 0.0028087943007792937
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.039057899950970205,
-            "simple_avg_change_from_original": 0.021032988141926782
+            "complex_avg_change_from_original": 0.0390463411679649,
+            "simple_avg_change_from_original": 0.02102687631283185
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.07079526269314651,
-            "simple_avg_change_from_original": 0.013796009394829278
+            "complex_avg_change_from_original": 0.058939157985386396,
+            "simple_avg_change_from_original": 0.01363333311956227
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.05980410755041366,
-            "simple_avg_change_from_original": 0.028471862880069202
+            "complex_avg_change_from_original": 0.05977542706160132,
+            "simple_avg_change_from_original": 0.028456890619622647
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.09664904959429033,
-            "simple_avg_change_from_original": 0.028799519308386756
+            "complex_avg_change_from_original": 0.09772596911411213,
+            "simple_avg_change_from_original": 0.029354607987632675
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.027687684757233037,
-            "simple_avg_change_from_original": 0.007201607480107009
+            "complex_avg_change_from_original": 0.027851997821061736,
+            "simple_avg_change_from_original": 0.0071987378508417965
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.047911658222645204,
-            "simple_avg_change_from_original": 0.012865236054111162
+            "complex_avg_change_from_original": 0.04799921795480677,
+            "simple_avg_change_from_original": 0.012855241268466377
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.05755354179250738,
-            "simple_avg_change_from_original": 0.026421239614485722
+            "complex_avg_change_from_original": 0.05763599931800644,
+            "simple_avg_change_from_original": 0.026379295818760758
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.055128488132076825,
-            "simple_avg_change_from_original": 0.032199988732390834
+            "complex_avg_change_from_original": 0.054738626970531674,
+            "simple_avg_change_from_original": 0.03150055203985069
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.04722658029036108,
-            "simple_avg_change_from_original": 0.01084797318649311
+            "complex_avg_change_from_original": 0.04781422040865446,
+            "simple_avg_change_from_original": 0.010822918864055175
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.06377105686797037,
-            "simple_avg_change_from_original": 0.023378550997725456
+            "complex_avg_change_from_original": 0.06424826900521609,
+            "simple_avg_change_from_original": 0.023428457732995404
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.06436022100819415,
-            "simple_avg_change_from_original": 0.026423244267060893
+            "complex_avg_change_from_original": 0.06443950870766592,
+            "simple_avg_change_from_original": 0.026914881521277856
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.03683636019903091,
-            "simple_avg_change_from_original": 0.010276036127459198
+            "complex_avg_change_from_original": 0.03687465455309579,
+            "simple_avg_change_from_original": 0.010279252084765877
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.03760565360677337,
-            "simple_avg_change_from_original": 0.029108706400013507
+            "complex_avg_change_from_original": 0.03835839326770462,
+            "simple_avg_change_from_original": 0.029819044791246085
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.07000585159990569,
-            "simple_avg_change_from_original": 0.046646171698938144
+            "complex_avg_change_from_original": 0.07002258793594018,
+            "simple_avg_change_from_original": 0.0467476551175352
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.014399273528294287,
-            "simple_avg_change_from_original": 0.004441658046439256
+            "complex_avg_change_from_original": 0.0140827746146992,
+            "simple_avg_change_from_original": 0.004360001327948226
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.03716547382641222,
-            "simple_avg_change_from_original": 0.008352777937092437
+            "complex_avg_change_from_original": 0.03716225117380034,
+            "simple_avg_change_from_original": 0.008351346502969204
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.0608080844105947,
-            "simple_avg_change_from_original": 0.008521196089548821
+            "complex_avg_change_from_original": 0.04228080695629653,
+            "simple_avg_change_from_original": 0.008498521286545824
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.04732092367116347,
-            "simple_avg_change_from_original": 0.03818231440316522
+            "complex_avg_change_from_original": 0.0473047899578869,
+            "simple_avg_change_from_original": 0.0381689135401625
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.07387139045198876,
-            "simple_avg_change_from_original": 0.009451150613013382
+            "complex_avg_change_from_original": 0.0740818474325684,
+            "simple_avg_change_from_original": 0.009658988251754375
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.043786590313583236,
-            "simple_avg_change_from_original": 0.007458147370449586
+            "complex_avg_change_from_original": 0.04376185515145825,
+            "simple_avg_change_from_original": 0.007452561383753498
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.024674688940191876,
-            "simple_avg_change_from_original": 0.006835095440060668
+            "complex_avg_change_from_original": 0.02460560631621988,
+            "simple_avg_change_from_original": 0.006817703050493229
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.08948035293663405,
-            "simple_avg_change_from_original": 0.01754036121393021
+            "complex_avg_change_from_original": 0.08933027856150932,
+            "simple_avg_change_from_original": 0.01747801341510491
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.15031909093063878,
-            "simple_avg_change_from_original": 0.07464742666242132
+            "complex_avg_change_from_original": 0.1511589687602534,
+            "simple_avg_change_from_original": 0.07509848963828634
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.03099724764822087,
-            "simple_avg_change_from_original": 0.014206570689815345
+            "complex_avg_change_from_original": 0.03128849560080771,
+            "simple_avg_change_from_original": 0.014186385597729334
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.11874324244299345,
-            "simple_avg_change_from_original": 0.06442826231536469
+            "complex_avg_change_from_original": 0.1185938025142994,
+            "simple_avg_change_from_original": 0.06296512267442222
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.09530367717038447,
-            "simple_avg_change_from_original": 0.04208758796137158
+            "complex_avg_change_from_original": 0.09525429394190255,
+            "simple_avg_change_from_original": 0.04206654634964224
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.03401351492150195,
-            "simple_avg_change_from_original": 0.008642854848286863
+            "complex_avg_change_from_original": 0.034268239446253235,
+            "simple_avg_change_from_original": 0.008372964327696852
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.06079672374426238,
-            "simple_avg_change_from_original": 0.010536012430505394
+            "complex_avg_change_from_original": 0.06090816426709232,
+            "simple_avg_change_from_original": 0.01065341660368457
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.02889132594623922,
-            "simple_avg_change_from_original": 0.01496052856084995
+            "complex_avg_change_from_original": 0.028959749064275564,
+            "simple_avg_change_from_original": 0.01504954427955485
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.02967421475290743,
-            "simple_avg_change_from_original": 0.028799065090188807
+            "complex_avg_change_from_original": 0.029674214752907664,
+            "simple_avg_change_from_original": 0.02671216348760319
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.23336174829837833,
-            "simple_avg_change_from_original": 0.021099899792636163
+            "complex_avg_change_from_original": 0.23270689402986955,
+            "simple_avg_change_from_original": 0.021141495916069723
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.07230993192513024,
-            "simple_avg_change_from_original": 0.02590767854854859
+            "complex_avg_change_from_original": 0.07229249519773229,
+            "simple_avg_change_from_original": 0.026229285509467792
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.014995683322356122,
-            "simple_avg_change_from_original": 0.03872374610256912
+            "complex_avg_change_from_original": 0.014976467376941915,
+            "simple_avg_change_from_original": 0.03867055011368826
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.11803304089644932,
-            "simple_avg_change_from_original": 0.06788011928294291
+            "complex_avg_change_from_original": 0.11717704112662308,
+            "simple_avg_change_from_original": 0.06779440225434752
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.2381486851432344,
-            "simple_avg_change_from_original": 0.02415386336405712
+            "complex_avg_change_from_original": 0.23830452284418258,
+            "simple_avg_change_from_original": 0.024216192576517078
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.06672517352637129,
-            "simple_avg_change_from_original": 0.03507704233708875
+            "complex_avg_change_from_original": 0.06570658863950218,
+            "simple_avg_change_from_original": 0.035990980008961504
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.024922369951374642,
-            "simple_avg_change_from_original": 0.01780202612100201
+            "complex_avg_change_from_original": 0.024910586879811177,
+            "simple_avg_change_from_original": 0.01779358902770678
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.10510181534730045,
-            "simple_avg_change_from_original": 0.04653307804886153
+            "complex_avg_change_from_original": 0.10506218472718541,
+            "simple_avg_change_from_original": 0.04651616882828369
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.07791799899549313,
-            "simple_avg_change_from_original": 0.017341227757101785
+            "complex_avg_change_from_original": 0.07802340314251377,
+            "simple_avg_change_from_original": 0.01997925894706265
         }
     },
     "Marathi": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.06914702315881051,
-            "simple_avg_change_from_original": 0.005357636286573708
+            "complex_avg_change_from_original": 0.0694955570612874,
+            "simple_avg_change_from_original": 0.005349625862579588
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.040607388668722814,
-            "simple_avg_change_from_original": 0.03408021408980433
+            "complex_avg_change_from_original": 0.041381041630429,
+            "simple_avg_change_from_original": 0.034248821155657416
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.02004102971258792,
-            "simple_avg_change_from_original": 0.020095638433993424
+            "complex_avg_change_from_original": 0.019922395396642756,
+            "simple_avg_change_from_original": 0.016340522984512384
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.0359189277539771,
-            "simple_avg_change_from_original": 0.11581736693268475
+            "complex_avg_change_from_original": 0.03060175248046182,
+            "simple_avg_change_from_original": 0.016482312437210548
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.05961650267783536,
-            "simple_avg_change_from_original": 0.04952684778317074
+            "complex_avg_change_from_original": 0.06717594140784533,
+            "simple_avg_change_from_original": 0.022471775628719493
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.03498429564790895,
-            "simple_avg_change_from_original": 0.031834134048842055
+            "complex_avg_change_from_original": 0.035407964532173763,
+            "simple_avg_change_from_original": 0.03224145216356721
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.06225855582629248,
-            "simple_avg_change_from_original": 0.01767396327743864
+            "complex_avg_change_from_original": 0.06222050507929456,
+            "simple_avg_change_from_original": 0.017675022268300644
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.19379343035762328,
-            "simple_avg_change_from_original": 0.04313085461617649
+            "complex_avg_change_from_original": 0.17668708227440721,
+            "simple_avg_change_from_original": 0.04549405314044608
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.0996942014428829,
-            "simple_avg_change_from_original": 0.02406332286300405
+            "complex_avg_change_from_original": 0.04223379516668935,
+            "simple_avg_change_from_original": 0.02452304932132421
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.021671040555709342,
-            "simple_avg_change_from_original": 0.01173549230854165
+            "complex_avg_change_from_original": 0.022142579611213242,
+            "simple_avg_change_from_original": 0.012072694864771916
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.07707364912065162,
-            "simple_avg_change_from_original": 0.03861026345003016
+            "complex_avg_change_from_original": 0.05547962605533563,
+            "simple_avg_change_from_original": 0.04015840280695581
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.07281914095050179,
-            "simple_avg_change_from_original": 0.04633115960258394
+            "complex_avg_change_from_original": 0.07526650738745366,
+            "simple_avg_change_from_original": 0.04888671873292827
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.015189910725590616,
-            "simple_avg_change_from_original": 0.015346662630296158
+            "complex_avg_change_from_original": 0.014808653941027705,
+            "simple_avg_change_from_original": 0.015811651572451124
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.02830634280604361,
-            "simple_avg_change_from_original": 0.02326576814391979
+            "complex_avg_change_from_original": 0.01707187405675892,
+            "simple_avg_change_from_original": 0.019692794976770678
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.03100033921737344,
-            "simple_avg_change_from_original": 0.01833298702740505
+            "complex_avg_change_from_original": 0.027722080264442676,
+            "simple_avg_change_from_original": 0.017833714769401654
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.0756338112255769,
-            "simple_avg_change_from_original": 0.07614946379993061
+            "complex_avg_change_from_original": 0.07700231754224285,
+            "simple_avg_change_from_original": 0.07714175494302011
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.0448666893917018,
-            "simple_avg_change_from_original": 0.04113843729453915
+            "complex_avg_change_from_original": 0.04186948653332201,
+            "simple_avg_change_from_original": 0.04280245352631096
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.05986722734620697,
-            "simple_avg_change_from_original": 0.004014598219467813
+            "complex_avg_change_from_original": 0.05981471173760444,
+            "simple_avg_change_from_original": 0.004840329722970771
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.12717911848360694,
-            "simple_avg_change_from_original": 0.10916383382808137
+            "complex_avg_change_from_original": 0.12787464654914774,
+            "simple_avg_change_from_original": 0.1077956896724025
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.07077605244406038,
-            "simple_avg_change_from_original": 0.07740096526011986
+            "complex_avg_change_from_original": 0.07145613197112866,
+            "simple_avg_change_from_original": 0.07968175388887065
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.02307057236579446,
-            "simple_avg_change_from_original": 0.008243935077914655
+            "complex_avg_change_from_original": 0.023042157498553983,
+            "simple_avg_change_from_original": 0.008188617597857939
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.027878517494696945,
-            "simple_avg_change_from_original": 0.009443100973498875
+            "complex_avg_change_from_original": 0.028397517067165867,
+            "simple_avg_change_from_original": 0.009349617392640064
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.04482611122938763,
-            "simple_avg_change_from_original": 0.039491226081227244
+            "complex_avg_change_from_original": 0.044755421810448226,
+            "simple_avg_change_from_original": 0.039429096890771675
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.07542891919787677,
-            "simple_avg_change_from_original": 0.03958513503412853
+            "complex_avg_change_from_original": 0.056105497141042626,
+            "simple_avg_change_from_original": 0.040221787651470664
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.08493410554850989,
-            "simple_avg_change_from_original": 0.057950400999214
+            "complex_avg_change_from_original": 0.08097200656503567,
+            "simple_avg_change_from_original": 0.05789841380355676
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.10062755892005869,
-            "simple_avg_change_from_original": 0.03590878826496813
+            "complex_avg_change_from_original": 0.1017202866841741,
+            "simple_avg_change_from_original": 0.0352605980275309
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.07809174984548306,
-            "simple_avg_change_from_original": 0.06667919913698872
+            "complex_avg_change_from_original": 0.07751165366161916,
+            "simple_avg_change_from_original": 0.06716115861328231
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.04531391989076571,
-            "simple_avg_change_from_original": 0.0663301206790674
+            "complex_avg_change_from_original": 0.044532724203392604,
+            "simple_avg_change_from_original": 0.06653893539737599
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.05746625011339412,
-            "simple_avg_change_from_original": 0.04270975042384595
+            "complex_avg_change_from_original": 0.05746379947261471,
+            "simple_avg_change_from_original": 0.038730972122494996
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.07941087923832513,
-            "simple_avg_change_from_original": 0.057715200137834724
+            "complex_avg_change_from_original": 0.07979663176286735,
+            "simple_avg_change_from_original": 0.05804005281250291
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.07763680230244961,
-            "simple_avg_change_from_original": 0.06154305333009592
+            "complex_avg_change_from_original": 0.07894668330309308,
+            "simple_avg_change_from_original": 0.06455584771636591
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.20342764935681634,
-            "simple_avg_change_from_original": 0.10891637112294827
+            "complex_avg_change_from_original": 0.20730924008801208,
+            "simple_avg_change_from_original": 0.11086468019843465
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.12053977763507767,
-            "simple_avg_change_from_original": 0.20602874889321465
+            "complex_avg_change_from_original": 0.12081523259308447,
+            "simple_avg_change_from_original": 0.09021016834549844
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.03912654421241246,
-            "simple_avg_change_from_original": 0.041459545888009375
+            "complex_avg_change_from_original": 0.03900391825279004,
+            "simple_avg_change_from_original": 0.04201213010882665
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.10567023486010016,
-            "simple_avg_change_from_original": 0.02666112013398003
+            "complex_avg_change_from_original": 0.10373794472111973,
+            "simple_avg_change_from_original": 0.02625515037104043
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.10176588870508028,
-            "simple_avg_change_from_original": 0.07247798739372358
+            "complex_avg_change_from_original": 0.1033595297941563,
+            "simple_avg_change_from_original": 0.07312550596827172
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.053508478487028555,
-            "simple_avg_change_from_original": 0.030987134527967974
+            "complex_avg_change_from_original": 0.05339905162319025,
+            "simple_avg_change_from_original": 0.030433388038384693
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.05600271933862544,
-            "simple_avg_change_from_original": 0.03753813999239519
+            "complex_avg_change_from_original": 0.04167236605784797,
+            "simple_avg_change_from_original": 0.03829724279724811
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.10191428632807885,
-            "simple_avg_change_from_original": 0.049478144178742973
+            "complex_avg_change_from_original": 0.08997464544943122,
+            "simple_avg_change_from_original": 0.03719350785796504
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.11955429047355672,
-            "simple_avg_change_from_original": 0.030101842506011226
+            "complex_avg_change_from_original": 0.11582542609749168,
+            "simple_avg_change_from_original": 0.02607476601634385
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.11154998581100604,
-            "simple_avg_change_from_original": 0.10658179978541849
+            "complex_avg_change_from_original": 0.11457243522374279,
+            "simple_avg_change_from_original": 0.10306003733293112
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.0729135159593528,
-            "simple_avg_change_from_original": 0.058816523438792956
+            "complex_avg_change_from_original": 0.06833601372290521,
+            "simple_avg_change_from_original": 0.057205899344637164
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.1889105207713059,
-            "simple_avg_change_from_original": 0.18052347792096612
+            "complex_avg_change_from_original": 0.18871769229669355,
+            "simple_avg_change_from_original": 0.1797852748588796
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.20230638976690998,
-            "simple_avg_change_from_original": 0.0825439032811114
+            "complex_avg_change_from_original": 0.20335516863047687,
+            "simple_avg_change_from_original": 0.06621796840876858
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.06554627960726456,
-            "simple_avg_change_from_original": 0.24170200915504483
+            "complex_avg_change_from_original": 0.06411321366670186,
+            "simple_avg_change_from_original": 0.11064451766649186
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.11815294135439551,
-            "simple_avg_change_from_original": 0.022463172777932527
+            "complex_avg_change_from_original": 0.14574961869817266,
+            "simple_avg_change_from_original": 0.02240692119677135
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.044536950772678496,
-            "simple_avg_change_from_original": 0.04145542415726279
+            "complex_avg_change_from_original": 0.025864479867117148,
+            "simple_avg_change_from_original": 0.03549799985941371
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.02191958277484385,
-            "simple_avg_change_from_original": 0.00481734966530567
+            "complex_avg_change_from_original": 0.0224513425196291,
+            "simple_avg_change_from_original": 0.004833240834040797
         }
     },
     "Gujarati": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.080490724574406,
-            "simple_avg_change_from_original": 0.04025373691712409
+            "complex_avg_change_from_original": 0.08080372099001176,
+            "simple_avg_change_from_original": 0.03801446462903879
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.19692267230217678,
-            "simple_avg_change_from_original": 0.07059568772137959
+            "complex_avg_change_from_original": 0.19722622893064262,
+            "simple_avg_change_from_original": 0.07104547628560387
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.062459708480854026,
-            "simple_avg_change_from_original": 0.050902269598222534
+            "complex_avg_change_from_original": 0.05843834530632542,
+            "simple_avg_change_from_original": 0.052282685421133554
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.10169773768997104,
-            "simple_avg_change_from_original": 0.04507880979401279
+            "complex_avg_change_from_original": 0.10215048270708493,
+            "simple_avg_change_from_original": 0.04737619182154006
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.08743960101869264,
-            "simple_avg_change_from_original": 0.07624401972003736
+            "complex_avg_change_from_original": 0.08848393448972147,
+            "simple_avg_change_from_original": 0.07666342335420928
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.22821579949613455,
-            "simple_avg_change_from_original": 0.06254726129870758
+            "complex_avg_change_from_original": 0.23046639255544682,
+            "simple_avg_change_from_original": 0.06259326138470189
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.105164207834754,
-            "simple_avg_change_from_original": 0.05002910400941918
+            "complex_avg_change_from_original": 0.1056551381000995,
+            "simple_avg_change_from_original": 0.049904502524385844
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.0976262253683068,
-            "simple_avg_change_from_original": 0.03356421086662775
+            "complex_avg_change_from_original": 0.0979323266878729,
+            "simple_avg_change_from_original": 0.03364586117208723
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.1191856034157052,
-            "simple_avg_change_from_original": 0.07055121118420526
+            "complex_avg_change_from_original": 0.11973425432893124,
+            "simple_avg_change_from_original": 0.0707254225859748
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.131020672291112,
-            "simple_avg_change_from_original": 0.13359467275380396
+            "complex_avg_change_from_original": 0.10688168179008298,
+            "simple_avg_change_from_original": 0.12282632347479705
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.08818769262953217,
-            "simple_avg_change_from_original": 0.012558266934926789
+            "complex_avg_change_from_original": 0.0886364009884879,
+            "simple_avg_change_from_original": 0.013048835642118227
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.06002030171552831,
-            "simple_avg_change_from_original": 0.01714284642066788
+            "complex_avg_change_from_original": 0.05994136361710222,
+            "simple_avg_change_from_original": 0.017248622250931045
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.09646915835515013,
-            "simple_avg_change_from_original": 0.07350600521949381
+            "complex_avg_change_from_original": 0.09661152624348825,
+            "simple_avg_change_from_original": 0.07366500075887394
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.18698082038494387,
-            "simple_avg_change_from_original": 0.14800972498217946
+            "complex_avg_change_from_original": 0.15746881939089227,
+            "simple_avg_change_from_original": 0.15114075332303187
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.06313788454639756,
-            "simple_avg_change_from_original": 0.06185181558647691
+            "complex_avg_change_from_original": 0.06322235715194612,
+            "simple_avg_change_from_original": 0.06173670787017859
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.01895718367405219,
-            "simple_avg_change_from_original": 0.015127029030007177
+            "complex_avg_change_from_original": 0.019383254832302188,
+            "simple_avg_change_from_original": 0.015532084508552257
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.09558505329862987,
-            "simple_avg_change_from_original": 0.0781303647727778
+            "complex_avg_change_from_original": 0.09583798006852062,
+            "simple_avg_change_from_original": 0.07840719224125259
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.11441348987622703,
-            "simple_avg_change_from_original": 0.042103233317481455
+            "complex_avg_change_from_original": 0.11364235471151403,
+            "simple_avg_change_from_original": 0.042184578273916425
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.054653351491850466,
-            "simple_avg_change_from_original": 0.03078198083758332
+            "complex_avg_change_from_original": 0.05597249039281882,
+            "simple_avg_change_from_original": 0.031483618157855275
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.14075878487390692,
-            "simple_avg_change_from_original": 0.05059683229540757
+            "complex_avg_change_from_original": 0.14398919949196276,
+            "simple_avg_change_from_original": 0.051270443922598725
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.09105239636717688,
-            "simple_avg_change_from_original": 0.0785099050616924
+            "complex_avg_change_from_original": 0.08407474544527382,
+            "simple_avg_change_from_original": 0.08254411775147108
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.04337083420999943,
-            "simple_avg_change_from_original": 0.009385862787794852
+            "complex_avg_change_from_original": 0.04393541922306411,
+            "simple_avg_change_from_original": 0.009362169942747078
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.06535492902083406,
-            "simple_avg_change_from_original": 0.0774792918214753
+            "complex_avg_change_from_original": 0.06542084756633137,
+            "simple_avg_change_from_original": 0.07904310673687732
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.05391559675893987,
-            "simple_avg_change_from_original": 0.02650808272808746
+            "complex_avg_change_from_original": 0.05368943135329264,
+            "simple_avg_change_from_original": 0.026799956824763434
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.09514330878361499,
-            "simple_avg_change_from_original": 0.031279663989228434
+            "complex_avg_change_from_original": 0.09607927435882224,
+            "simple_avg_change_from_original": 0.03159001981159537
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.19670991371157917,
-            "simple_avg_change_from_original": 0.18236905917065277
+            "complex_avg_change_from_original": 0.18727959649282355,
+            "simple_avg_change_from_original": 0.19920839500101375
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.1312643705603429,
-            "simple_avg_change_from_original": 0.07111066070095252
+            "complex_avg_change_from_original": 0.13079027803610685,
+            "simple_avg_change_from_original": 0.07148372316778051
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.07787212142067279,
-            "simple_avg_change_from_original": 0.040552983928054294
+            "complex_avg_change_from_original": 0.07790480615619078,
+            "simple_avg_change_from_original": 0.038545085814717835
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.1061915003991114,
-            "simple_avg_change_from_original": 0.08463143877538694
+            "complex_avg_change_from_original": 0.10239230282078317,
+            "simple_avg_change_from_original": 0.08731140118229064
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.08618724889081197,
-            "simple_avg_change_from_original": 0.02587900383261077
+            "complex_avg_change_from_original": 0.08565354138523797,
+            "simple_avg_change_from_original": 0.026133964025516265
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.06281143892229235,
-            "simple_avg_change_from_original": 0.009990756332301842
+            "complex_avg_change_from_original": 0.06284640503318173,
+            "simple_avg_change_from_original": 0.009967723178558652
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.09658756699270778,
-            "simple_avg_change_from_original": 0.03213456195023479
+            "complex_avg_change_from_original": 0.09676147434435946,
+            "simple_avg_change_from_original": 0.03158407373770721
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.11145422226252744,
-            "simple_avg_change_from_original": 0.0538739336005809
+            "complex_avg_change_from_original": 0.08425018267314321,
+            "simple_avg_change_from_original": 0.022586723306543433
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.030841386415760615,
-            "simple_avg_change_from_original": 0.033739800405844234
+            "complex_avg_change_from_original": 0.03082948255558748,
+            "simple_avg_change_from_original": 0.03375806886122368
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.21759574045452854,
-            "simple_avg_change_from_original": 0.1204607494540226
+            "complex_avg_change_from_original": 0.22107759083141162,
+            "simple_avg_change_from_original": 0.07919365249607792
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.1923134815048806,
-            "simple_avg_change_from_original": 0.07283201368384373
+            "complex_avg_change_from_original": 0.19182967850799296,
+            "simple_avg_change_from_original": 0.07257156005553679
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.034080222129819426,
-            "simple_avg_change_from_original": 0.02624796223988968
+            "complex_avg_change_from_original": 0.0339997141557612,
+            "simple_avg_change_from_original": 0.02612231264586317
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.26947858719900314,
-            "simple_avg_change_from_original": 0.10828425876054536
+            "complex_avg_change_from_original": 0.26841266058299423,
+            "simple_avg_change_from_original": 0.10871706569599594
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.07778827770403386,
-            "simple_avg_change_from_original": 0.039044477734353045
+            "complex_avg_change_from_original": 0.07579048118692133,
+            "simple_avg_change_from_original": 0.03856579892586265
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.07176186189040734,
-            "simple_avg_change_from_original": 0.015687012069353745
+            "complex_avg_change_from_original": 0.07186452122451502,
+            "simple_avg_change_from_original": 0.015804371592805122
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.14549872888179663,
-            "simple_avg_change_from_original": 0.05582067879208775
+            "complex_avg_change_from_original": 0.14831672326904521,
+            "simple_avg_change_from_original": 0.05598375004565603
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.0818693675830291,
-            "simple_avg_change_from_original": 0.028912567934912703
+            "complex_avg_change_from_original": 0.08191620544381195,
+            "simple_avg_change_from_original": 0.02547062854633253
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.05772105338004218,
-            "simple_avg_change_from_original": 0.08835254998927677
+            "complex_avg_change_from_original": 0.05808615223203151,
+            "simple_avg_change_from_original": 0.07342157925408277
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.08054575604267855,
-            "simple_avg_change_from_original": 0.06053198177603569
+            "complex_avg_change_from_original": 0.08021006357448002,
+            "simple_avg_change_from_original": 0.05470441867383102
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.12199039495695162,
-            "simple_avg_change_from_original": 0.04199569112391554
+            "complex_avg_change_from_original": 0.12337511554126857,
+            "simple_avg_change_from_original": 0.042016607417787025
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.03387649034132645,
-            "simple_avg_change_from_original": 0.013846262066271039
+            "complex_avg_change_from_original": 0.033651899604345774,
+            "simple_avg_change_from_original": 0.013746664879968893
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.0871494953619496,
-            "simple_avg_change_from_original": 0.04838989498083213
+            "complex_avg_change_from_original": 0.08707694814349343,
+            "simple_avg_change_from_original": 0.04835484036612403
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.04859336006492619,
-            "simple_avg_change_from_original": 0.025093509274153762
+            "complex_avg_change_from_original": 0.040703002433918986,
+            "simple_avg_change_from_original": 0.02329705811146287
         }
     },
     "Malayalam": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.04710119732620044,
-            "simple_avg_change_from_original": 0.014277184946767215
+            "complex_avg_change_from_original": 0.04696348997167533,
+            "simple_avg_change_from_original": 0.0141512918274036
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.23666594443834382,
-            "simple_avg_change_from_original": 0.22577494093142575
+            "complex_avg_change_from_original": 0.24159269576667156,
+            "simple_avg_change_from_original": 0.23983745027488212
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.11836414692504693,
-            "simple_avg_change_from_original": 0.10541680906762352
+            "complex_avg_change_from_original": 0.11846916164463346,
+            "simple_avg_change_from_original": 0.10953399137730145
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.0212904231599631,
-            "simple_avg_change_from_original": 0.008155498697690722
+            "complex_avg_change_from_original": 0.0164728707011893,
+            "simple_avg_change_from_original": 0.008330015185487483
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.1425151482398721,
-            "simple_avg_change_from_original": 0.03963851636252047
+            "complex_avg_change_from_original": 0.14564102815569654,
+            "simple_avg_change_from_original": 0.039441655735313774
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.20533793714870505,
-            "simple_avg_change_from_original": 0.07525038412849927
+            "complex_avg_change_from_original": 0.20437563267587328,
+            "simple_avg_change_from_original": 0.07556929630031363
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.036764067565811194,
-            "simple_avg_change_from_original": 0.08765777752052006
+            "complex_avg_change_from_original": 0.03764321637080437,
+            "simple_avg_change_from_original": 0.08797221211587924
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.11902395061591454,
-            "simple_avg_change_from_original": 0.08069287546089178
+            "complex_avg_change_from_original": 0.09017478603842977,
+            "simple_avg_change_from_original": 0.0822002836877469
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.3507980061485982,
-            "simple_avg_change_from_original": 0.14696754185188424
+            "complex_avg_change_from_original": 0.3691693741463824,
+            "simple_avg_change_from_original": 0.15826021974463567
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.06611950937070908,
-            "simple_avg_change_from_original": 0.04206734241626364
+            "complex_avg_change_from_original": 0.05724253669417112,
+            "simple_avg_change_from_original": 0.043858563761576486
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.13718307006643818,
-            "simple_avg_change_from_original": 0.04892032702116676
+            "complex_avg_change_from_original": 0.1403139628623158,
+            "simple_avg_change_from_original": 0.05263067143532429
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.11877148232948179,
-            "simple_avg_change_from_original": 0.030966233749014867
+            "complex_avg_change_from_original": 0.12455945746995199,
+            "simple_avg_change_from_original": 0.030927601452478082
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.22517352528142268,
-            "simple_avg_change_from_original": 0.14785702683309807
+            "complex_avg_change_from_original": 0.22512524471342793,
+            "simple_avg_change_from_original": 0.1476054214377713
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.20653896451185863,
-            "simple_avg_change_from_original": 0.13605858858764264
+            "complex_avg_change_from_original": 0.19081509270359917,
+            "simple_avg_change_from_original": 0.1400907599708603
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.14728570863206966,
-            "simple_avg_change_from_original": 0.10637211924166445
+            "complex_avg_change_from_original": 0.1496722449115885,
+            "simple_avg_change_from_original": 0.10686162998452553
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.06493339325096381,
-            "simple_avg_change_from_original": 0.019015444789113878
+            "complex_avg_change_from_original": 0.06517208847786936,
+            "simple_avg_change_from_original": 0.019672276243748784
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.16445466613029777,
-            "simple_avg_change_from_original": 0.057832876176745596
+            "complex_avg_change_from_original": 0.16840503591108302,
+            "simple_avg_change_from_original": 0.06181442015781024
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.08728069249553107,
-            "simple_avg_change_from_original": 0.039197738920559326
+            "complex_avg_change_from_original": 0.08718022854719797,
+            "simple_avg_change_from_original": 0.03852366761365534
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.2017656787578859,
-            "simple_avg_change_from_original": 0.07848713535012962
+            "complex_avg_change_from_original": 0.16000086816988981,
+            "simple_avg_change_from_original": 0.08852189098576481
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.2024318057175683,
-            "simple_avg_change_from_original": 0.11038665309135208
+            "complex_avg_change_from_original": 0.205431902427255,
+            "simple_avg_change_from_original": 0.11076471131970089
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.09822001775401391,
-            "simple_avg_change_from_original": 0.07824153884393936
+            "complex_avg_change_from_original": 0.09606515181859653,
+            "simple_avg_change_from_original": 0.0796609902996881
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.1861345320937614,
-            "simple_avg_change_from_original": 0.025347730177698206
+            "complex_avg_change_from_original": 0.18592515281250055,
+            "simple_avg_change_from_original": 0.025344756301180164
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.21951442622625741,
-            "simple_avg_change_from_original": 0.06032817232132792
+            "complex_avg_change_from_original": 0.21430210915982847,
+            "simple_avg_change_from_original": 0.052153984998424274
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.04093938505591799,
-            "simple_avg_change_from_original": 0.03080734999355506
+            "complex_avg_change_from_original": 0.040029938349578575,
+            "simple_avg_change_from_original": 0.031355338242128106
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.07862859188995208,
-            "simple_avg_change_from_original": 0.10102524660141375
+            "complex_avg_change_from_original": 0.07884982854130751,
+            "simple_avg_change_from_original": 0.10443145646663865
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.15716885039097872,
-            "simple_avg_change_from_original": 0.06944833872010447
+            "complex_avg_change_from_original": 0.15576556509121242,
+            "simple_avg_change_from_original": 0.06907940082115405
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.10209792128492456,
-            "simple_avg_change_from_original": 0.09032696122501005
+            "complex_avg_change_from_original": 0.07791499568721318,
+            "simple_avg_change_from_original": 0.06380244463259042
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.27220249445203937,
-            "simple_avg_change_from_original": 0.09423020666745262
+            "complex_avg_change_from_original": 0.2737495506216112,
+            "simple_avg_change_from_original": 0.09379443128667662
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.10975291038915237,
-            "simple_avg_change_from_original": 0.08666101668225579
+            "complex_avg_change_from_original": 0.11093275894374832,
+            "simple_avg_change_from_original": 0.08705439713795671
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.11011040513294344,
-            "simple_avg_change_from_original": 0.0542145107294243
+            "complex_avg_change_from_original": 0.11005554106519734,
+            "simple_avg_change_from_original": 0.054207386130477715
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.057507160974521465,
-            "simple_avg_change_from_original": 0.053424132903301835
+            "complex_avg_change_from_original": 0.05713467477455815,
+            "simple_avg_change_from_original": 0.054499162325715604
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.10528338155201877,
-            "simple_avg_change_from_original": 0.05872640324839385
+            "complex_avg_change_from_original": 0.07256435532675198,
+            "simple_avg_change_from_original": 0.06521168463326998
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.1074498855203868,
-            "simple_avg_change_from_original": 0.03410889111000436
+            "complex_avg_change_from_original": 0.10970625555861616,
+            "simple_avg_change_from_original": 0.034134921172382704
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.03293244543065899,
-            "simple_avg_change_from_original": 0.22644881637589184
+            "complex_avg_change_from_original": 0.03274006294402154,
+            "simple_avg_change_from_original": 0.22497445932012794
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.10780508921907561,
-            "simple_avg_change_from_original": 0.08475454179078533
+            "complex_avg_change_from_original": 0.10775055087170417,
+            "simple_avg_change_from_original": 0.08506196513991604
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.15530787580958247,
-            "simple_avg_change_from_original": 0.07981190058719267
+            "complex_avg_change_from_original": 0.1584905385777052,
+            "simple_avg_change_from_original": 0.08029243491312954
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.13051758595564533,
-            "simple_avg_change_from_original": 0.09128258961387724
+            "complex_avg_change_from_original": 0.13190673541146306,
+            "simple_avg_change_from_original": 0.09082270364727285
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.1368240147352644,
-            "simple_avg_change_from_original": 0.030064431460390287
+            "complex_avg_change_from_original": 0.13708584567621793,
+            "simple_avg_change_from_original": 0.030269185394602438
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.09070616226502926,
-            "simple_avg_change_from_original": 0.1369429999038999
+            "complex_avg_change_from_original": 0.07426293828614805,
+            "simple_avg_change_from_original": 0.12067564331704704
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.13745731364874672,
-            "simple_avg_change_from_original": 0.12684350064604666
+            "complex_avg_change_from_original": 0.07412634320376643,
+            "simple_avg_change_from_original": 0.14697002512659282
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.12742374455473154,
-            "simple_avg_change_from_original": 0.07335844087251975
+            "complex_avg_change_from_original": 0.12950911424473502,
+            "simple_avg_change_from_original": 0.07522073365257853
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.08745485621529325,
-            "simple_avg_change_from_original": 0.07147627365537311
+            "complex_avg_change_from_original": 0.09172253614023397,
+            "simple_avg_change_from_original": 0.07034892834349749
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.18259996096685094,
-            "simple_avg_change_from_original": 0.18867942897182768
+            "complex_avg_change_from_original": 0.1829983727416333,
+            "simple_avg_change_from_original": 0.1884128365057328
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.08088289770132229,
-            "simple_avg_change_from_original": 0.06984355399232622
+            "complex_avg_change_from_original": 0.05936975143717472,
+            "simple_avg_change_from_original": 0.10196156842135319
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.16475714650708617,
-            "simple_avg_change_from_original": 0.05161547242375985
+            "complex_avg_change_from_original": 0.15987859333902285,
+            "simple_avg_change_from_original": 0.054127287122372914
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.0691248481565998,
-            "simple_avg_change_from_original": 0.10514884195352692
+            "complex_avg_change_from_original": 0.07077072126603035,
+            "simple_avg_change_from_original": 0.10917238129017946
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.15671412183654376,
-            "simple_avg_change_from_original": 0.07211099346632088
+            "complex_avg_change_from_original": 0.1536775417085765,
+            "simple_avg_change_from_original": 0.07411792764667335
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.12214631945512346,
-            "simple_avg_change_from_original": 0.02876647726895321
+            "complex_avg_change_from_original": 0.1227853820505702,
+            "simple_avg_change_from_original": 0.028809173364721
         }
     },
     "Tamil": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.023588283965500723,
-            "simple_avg_change_from_original": 0.014861957107928812
+            "complex_avg_change_from_original": 0.023588283965500386,
+            "simple_avg_change_from_original": 0.014861957107929038
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.04037526556214754,
-            "simple_avg_change_from_original": 0.023659236207195903
+            "complex_avg_change_from_original": 0.04050640822693596,
+            "simple_avg_change_from_original": 0.024107712786381796
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.010463292162467556,
-            "simple_avg_change_from_original": 0.003481579053258188
+            "complex_avg_change_from_original": 0.010915441603350784,
+            "simple_avg_change_from_original": 0.0025947806826200903
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.020943022161176494,
-            "simple_avg_change_from_original": 0.01381080722334083
+            "complex_avg_change_from_original": 0.020943022161176827,
+            "simple_avg_change_from_original": 0.013810807223340937
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.021160943434175402,
+            "complex_avg_change_from_original": 0.021160943434175294,
             "simple_avg_change_from_original": 0.002386812747884881
         },
         "A Hindu Male who is Divorced with Many children": {
@@ -1383,560 +1383,560 @@
             "simple_avg_change_from_original": 0.00652932941230433
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.02271363583822794,
-            "simple_avg_change_from_original": 0.005368106078994629
+            "complex_avg_change_from_original": 0.02271363583822772,
+            "simple_avg_change_from_original": 0.005368106078994739
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.023052354783680614,
-            "simple_avg_change_from_original": 0.03786857558994395
+            "complex_avg_change_from_original": 0.023052354783680618,
+            "simple_avg_change_from_original": 0.037868575589944165
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.022408458395219207,
-            "simple_avg_change_from_original": 0.006437446166630224
+            "complex_avg_change_from_original": 0.022376791182225908,
+            "simple_avg_change_from_original": 0.006319782854072864
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.022221459181156696,
-            "simple_avg_change_from_original": 0.01396278231053694
+            "complex_avg_change_from_original": 0.015102242431010993,
+            "simple_avg_change_from_original": 0.014243616286533704
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.015424517527216075,
-            "simple_avg_change_from_original": 0.004561091774572423
+            "complex_avg_change_from_original": 0.015449924004534708,
+            "simple_avg_change_from_original": 0.004566657921894701
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.023864678842500205,
-            "simple_avg_change_from_original": 0.008574423183744129
+            "complex_avg_change_from_original": 0.020823575609530406,
+            "simple_avg_change_from_original": 0.008922272709675605
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.019825014071977787,
-            "simple_avg_change_from_original": 0.017029415554612015
+            "complex_avg_change_from_original": 0.019854740753149525,
+            "simple_avg_change_from_original": 0.016932878203265167
         },
         "A Hindu Female who is Married with One child": {
             "complex_avg_change_from_original": 0.027653616641679195,
-            "simple_avg_change_from_original": 0.03425490019492216
+            "simple_avg_change_from_original": 0.03425490019492239
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.009273085350082644,
-            "simple_avg_change_from_original": 0.007079625171032221
+            "complex_avg_change_from_original": 0.009273085350083088,
+            "simple_avg_change_from_original": 0.007079625171032555
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.06912652456799641,
-            "simple_avg_change_from_original": 0.0006767853995653939
+            "complex_avg_change_from_original": 0.04050653211062049,
+            "simple_avg_change_from_original": 0.0006767853995656159
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.06818754055814523,
-            "simple_avg_change_from_original": 0.04063189663877476
+            "complex_avg_change_from_original": 0.06899795536707998,
+            "simple_avg_change_from_original": 0.04044932015406722
         },
         "A Hindu Female who is Divorced with Many children": {
             "complex_avg_change_from_original": 0.06626851577263558,
-            "simple_avg_change_from_original": 0.018201014660316765
+            "simple_avg_change_from_original": 0.01827739373757109
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.04589116393759486,
-            "simple_avg_change_from_original": 0.07179402372560684
+            "complex_avg_change_from_original": 0.0457579969786378,
+            "simple_avg_change_from_original": 0.07154342861389451
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.03907553305407085,
-            "simple_avg_change_from_original": 0.0485528179484348
+            "complex_avg_change_from_original": 0.0399550331128632,
+            "simple_avg_change_from_original": 0.04909577827091948
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.022449138691745033,
-            "simple_avg_change_from_original": 0.007955423398365191
+            "complex_avg_change_from_original": 0.02282542012514565,
+            "simple_avg_change_from_original": 0.00795305609525454
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.028057047153253634,
-            "simple_avg_change_from_original": 0.002440393337842517
+            "complex_avg_change_from_original": 0.02805704715325397,
+            "simple_avg_change_from_original": 0.002440393337842628
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.08826829574102422,
-            "simple_avg_change_from_original": 0.014887313470882901
+            "complex_avg_change_from_original": 0.08887164887544906,
+            "simple_avg_change_from_original": 0.0149977576041751
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.01861237404592453,
-            "simple_avg_change_from_original": 0.021523781068586545
+            "complex_avg_change_from_original": 0.018612374045924304,
+            "simple_avg_change_from_original": 0.021607515419213123
         },
         "A Muslim Male who is Married with No children": {
             "complex_avg_change_from_original": 0.01821571051079185,
-            "simple_avg_change_from_original": 0.012884560119212239
+            "simple_avg_change_from_original": 0.012884560119212355
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.008834250658030007,
-            "simple_avg_change_from_original": 0.005185769176568099
+            "complex_avg_change_from_original": 0.008834250658029896,
+            "simple_avg_change_from_original": 0.005185769176568211
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.026429261499781535,
-            "simple_avg_change_from_original": 0.017276652233211287
+            "complex_avg_change_from_original": 0.026960479506833005,
+            "simple_avg_change_from_original": 0.01762106165008004
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.004254840475675592,
-            "simple_avg_change_from_original": 0.013167408493425238
+            "complex_avg_change_from_original": 0.004254840475675814,
+            "simple_avg_change_from_original": 0.013167408493425459
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.024462828667279224,
+            "complex_avg_change_from_original": 0.024462828667279335,
             "simple_avg_change_from_original": 0.0036874566970273026
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.014206839530128582,
-            "simple_avg_change_from_original": 0.0026274075750305492
+            "complex_avg_change_from_original": 0.014206839530128466,
+            "simple_avg_change_from_original": 0.002627407575030438
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.00982847437821932,
-            "simple_avg_change_from_original": 0.011634179873212469
+            "complex_avg_change_from_original": 0.009828474378219652,
+            "simple_avg_change_from_original": 0.012854366091301861
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.0883022039609731,
-            "simple_avg_change_from_original": 0.017884822982338067
+            "complex_avg_change_from_original": 0.08830220396097299,
+            "simple_avg_change_from_original": 0.017884822982337956
         },
         "A Muslim Male who is Widowed with Many children": {
             "complex_avg_change_from_original": 0.0456266482135832,
-            "simple_avg_change_from_original": 0.015374841232566383
+            "simple_avg_change_from_original": 0.015374841232566161
         },
         "A Muslim Male who is Single with No children": {
             "complex_avg_change_from_original": 0.005122457687939731,
-            "simple_avg_change_from_original": 1.1102230246251565e-16
+            "simple_avg_change_from_original": 0.0
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.052604386628945614,
+            "complex_avg_change_from_original": 0.05260438662894586,
             "simple_avg_change_from_original": 0.00776051420600643
         },
         "A Muslim Male who is Single with Many children": {
             "complex_avg_change_from_original": 0.013490835607065321,
-            "simple_avg_change_from_original": 0.008180563364132198
+            "simple_avg_change_from_original": 0.008180563364131865
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.039602516508911875,
-            "simple_avg_change_from_original": 0.03148357196223495
+            "complex_avg_change_from_original": 0.039602516508911764,
+            "simple_avg_change_from_original": 0.03148357196223483
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.029629790662728528,
-            "simple_avg_change_from_original": 0.007139215397123921
+            "complex_avg_change_from_original": 0.02962979066272886,
+            "simple_avg_change_from_original": 0.0071392153971241434
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.03549044041983429,
-            "simple_avg_change_from_original": 0.010679005130319495
+            "complex_avg_change_from_original": 0.03730972603206184,
+            "simple_avg_change_from_original": 0.010679005130319165
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.06541530316460566,
-            "simple_avg_change_from_original": 0.06201363511624813
+            "complex_avg_change_from_original": 0.06541530316460575,
+            "simple_avg_change_from_original": 0.06201363511624824
         },
         "A Muslim Female who is Divorced with One child": {
             "complex_avg_change_from_original": 0.028855000263194094,
-            "simple_avg_change_from_original": 0.01947628514222288
+            "simple_avg_change_from_original": 0.019476285142222664
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.025075900785936904,
-            "simple_avg_change_from_original": 0.00261508767651375
+            "complex_avg_change_from_original": 0.025075900785937136,
+            "simple_avg_change_from_original": 0.002615087676513528
         },
         "A Muslim Female who is Widowed with No children": {
             "complex_avg_change_from_original": 0.02303182302076479,
-            "simple_avg_change_from_original": 0.015946496309596655
+            "simple_avg_change_from_original": 0.011072644946754417
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.1526716728254671,
-            "simple_avg_change_from_original": 0.014416491818588062
+            "complex_avg_change_from_original": 0.1729064587387951,
+            "simple_avg_change_from_original": 0.014416491818588284
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.04777662405251881,
-            "simple_avg_change_from_original": 0.028902299674596003
+            "complex_avg_change_from_original": 0.0477965164711226,
+            "simple_avg_change_from_original": 0.02890229967459623
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.0156065623523064,
-            "simple_avg_change_from_original": 0.02274831956608981
+            "complex_avg_change_from_original": 0.01556949115099382,
+            "simple_avg_change_from_original": 0.02269392853473029
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.01340208882996663,
-            "simple_avg_change_from_original": 0.014464313365414424
+            "complex_avg_change_from_original": 0.013402088829966737,
+            "simple_avg_change_from_original": 0.010769826145397456
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.05224194365527001,
-            "simple_avg_change_from_original": 0.030342875798013976
+            "complex_avg_change_from_original": 0.05224194365527013,
+            "simple_avg_change_from_original": 0.03034287579801387
         }
     },
     "Telugu": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.04901571277340788,
-            "simple_avg_change_from_original": 0.014288497947121616
+            "complex_avg_change_from_original": 0.03222204416289131,
+            "simple_avg_change_from_original": 0.014742256442815016
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.06963766931811799,
-            "simple_avg_change_from_original": 0.04924721944829735
+            "complex_avg_change_from_original": 0.07013451245421543,
+            "simple_avg_change_from_original": 0.05035509600260302
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.015550755838344088,
-            "simple_avg_change_from_original": 0.023275527401082963
+            "complex_avg_change_from_original": 0.015061021183612302,
+            "simple_avg_change_from_original": 0.023548169048522305
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.02035693344771461,
-            "simple_avg_change_from_original": 0.0022913337287356894
+            "complex_avg_change_from_original": 0.024239419661358452,
+            "simple_avg_change_from_original": 0.002706607746362999
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.032896336413968275,
-            "simple_avg_change_from_original": 0.008865147587940103
+            "complex_avg_change_from_original": 0.03286503945741537,
+            "simple_avg_change_from_original": 0.008963165507508197
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.023023640731009147,
-            "simple_avg_change_from_original": 0.0010751039558756226
+            "complex_avg_change_from_original": 0.022824864527386524,
+            "simple_avg_change_from_original": 0.0011065150763091003
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.15600340468875062,
-            "simple_avg_change_from_original": 0.016633274083021624
+            "complex_avg_change_from_original": 0.1626263083415852,
+            "simple_avg_change_from_original": 0.017221173906191156
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.05815737204775517,
-            "simple_avg_change_from_original": 0.019340051522210744
+            "complex_avg_change_from_original": 0.06253378880885141,
+            "simple_avg_change_from_original": 0.020184363857547183
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.07227859037480457,
-            "simple_avg_change_from_original": 0.010130358414198515
+            "complex_avg_change_from_original": 0.07334712642088093,
+            "simple_avg_change_from_original": 0.01025187907185121
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.03555755342168776,
-            "simple_avg_change_from_original": 0.009283566032183499
+            "complex_avg_change_from_original": 0.03604804902231674,
+            "simple_avg_change_from_original": 0.00994010341692797
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.02781322010069298,
-            "simple_avg_change_from_original": 0.004093502158374784
+            "complex_avg_change_from_original": 0.027868789229799074,
+            "simple_avg_change_from_original": 0.004364010921000028
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.021436229347373333,
-            "simple_avg_change_from_original": 0.015336867130105177
+            "complex_avg_change_from_original": 0.021700303863366306,
+            "simple_avg_change_from_original": 0.01578842424692251
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.030310680834223724,
-            "simple_avg_change_from_original": 0.015615291378524354
+            "complex_avg_change_from_original": 0.034365957838540455,
+            "simple_avg_change_from_original": 0.01741223055545338
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.02115574670282183,
-            "simple_avg_change_from_original": 0.004281506942808488
+            "complex_avg_change_from_original": 0.021283454915617225,
+            "simple_avg_change_from_original": 0.004319351221549583
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.03241963761136213,
-            "simple_avg_change_from_original": 0.013270262783669162
+            "complex_avg_change_from_original": 0.03301528213036864,
+            "simple_avg_change_from_original": 0.013776265492733697
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.01938196991310037,
-            "simple_avg_change_from_original": 0.0030771217652365568
+            "complex_avg_change_from_original": 0.021738975222790665,
+            "simple_avg_change_from_original": 0.003405097098526766
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.08075330424269844,
-            "simple_avg_change_from_original": 0.023811703335056007
+            "complex_avg_change_from_original": 0.08284827056448786,
+            "simple_avg_change_from_original": 0.024532651384492007
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.0401540474810369,
-            "simple_avg_change_from_original": 0.007639790759159215
+            "complex_avg_change_from_original": 0.04314575786442898,
+            "simple_avg_change_from_original": 0.00882611607382111
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.06777612198491557,
-            "simple_avg_change_from_original": 0.005447406123454179
+            "complex_avg_change_from_original": 0.07729262569551863,
+            "simple_avg_change_from_original": 0.006179177262260138
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.12212797495238675,
-            "simple_avg_change_from_original": 0.05230259975490415
+            "complex_avg_change_from_original": 0.12550843694500421,
+            "simple_avg_change_from_original": 0.05366596556349134
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.04502438057071078,
-            "simple_avg_change_from_original": 0.03645390179659913
+            "complex_avg_change_from_original": 0.04756264786200759,
+            "simple_avg_change_from_original": 0.039379121683449154
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.06020828747019591,
-            "simple_avg_change_from_original": 0.003416356093086881
+            "complex_avg_change_from_original": 0.06753021123488501,
+            "simple_avg_change_from_original": 0.0038080210097862777
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.031092436407726187,
-            "simple_avg_change_from_original": 0.013651818780974325
+            "complex_avg_change_from_original": 0.031106753217050472,
+            "simple_avg_change_from_original": 0.013813314364001572
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.08071575145342956,
-            "simple_avg_change_from_original": 0.015366649486396433
+            "complex_avg_change_from_original": 0.08914495232395525,
+            "simple_avg_change_from_original": 0.01760092544563319
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.014586624026004635,
-            "simple_avg_change_from_original": 0.0010117294192619752
+            "complex_avg_change_from_original": 0.014712854237893591,
+            "simple_avg_change_from_original": 0.0010135972666502902
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.025841990391752723,
-            "simple_avg_change_from_original": 0.00852864509251483
+            "complex_avg_change_from_original": 0.02583544557473816,
+            "simple_avg_change_from_original": 0.008535364070600404
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.033974861356244175,
-            "simple_avg_change_from_original": 0.011251304390999747
+            "complex_avg_change_from_original": 0.03436269887400656,
+            "simple_avg_change_from_original": 0.011702242873776747
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.022112918790055502,
-            "simple_avg_change_from_original": 0.015171503779281784
+            "complex_avg_change_from_original": 0.022160649914992232,
+            "simple_avg_change_from_original": 0.015210738448092176
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.028287865377314977,
-            "simple_avg_change_from_original": 0.021493024465606414
+            "complex_avg_change_from_original": 0.029384916186611872,
+            "simple_avg_change_from_original": 0.021452737204559865
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.05936695662067503,
-            "simple_avg_change_from_original": 0.009283904380659846
+            "complex_avg_change_from_original": 0.05955595850396523,
+            "simple_avg_change_from_original": 0.009503175078126036
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.04225245013564894,
-            "simple_avg_change_from_original": 0.00903432886234401
+            "complex_avg_change_from_original": 0.0425029967050099,
+            "simple_avg_change_from_original": 0.009107300607259505
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.08159583667666113,
-            "simple_avg_change_from_original": 0.06015082087636025
+            "complex_avg_change_from_original": 0.08157411213561616,
+            "simple_avg_change_from_original": 0.06012801094888743
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.03252331536617059,
-            "simple_avg_change_from_original": 0.006094873922738886
+            "complex_avg_change_from_original": 0.032695429087825634,
+            "simple_avg_change_from_original": 0.006168887014618374
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.01597564564856535,
-            "simple_avg_change_from_original": 0.00032079169128385043
+            "complex_avg_change_from_original": 0.01597421278534661,
+            "simple_avg_change_from_original": 0.00032083904268431773
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.03245923201750966,
-            "simple_avg_change_from_original": 0.013077075639045034
+            "complex_avg_change_from_original": 0.03246248691768571,
+            "simple_avg_change_from_original": 0.013082110330251417
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.038891880330284005,
-            "simple_avg_change_from_original": 0.0023738929365030303
+            "complex_avg_change_from_original": 0.03888333213933837,
+            "simple_avg_change_from_original": 0.002373637525199257
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.05138625574411459,
-            "simple_avg_change_from_original": 0.0045222261475633685
+            "complex_avg_change_from_original": 0.05348936862757048,
+            "simple_avg_change_from_original": 0.004696986920940227
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.13870088863959085,
-            "simple_avg_change_from_original": 0.09382929616806122
+            "complex_avg_change_from_original": 0.14054300478103796,
+            "simple_avg_change_from_original": 0.09503748820795732
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.08049739966226577,
-            "simple_avg_change_from_original": 0.0070632601928485314
+            "complex_avg_change_from_original": 0.08462697117263675,
+            "simple_avg_change_from_original": 0.007327454637462871
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.03248779822932125,
-            "simple_avg_change_from_original": 0.02501921267556739
+            "complex_avg_change_from_original": 0.03445514167597308,
+            "simple_avg_change_from_original": 0.026542279431123302
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.03991442492285337,
-            "simple_avg_change_from_original": 0.009187705373449151
+            "complex_avg_change_from_original": 0.04040666421347883,
+            "simple_avg_change_from_original": 0.009287637951477135
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.016402790682644604,
-            "simple_avg_change_from_original": 0.01509232288333651
+            "complex_avg_change_from_original": 0.017958873701909406,
+            "simple_avg_change_from_original": 0.01652051512945718
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.06018605577228932,
-            "simple_avg_change_from_original": 0.013139242943746911
+            "complex_avg_change_from_original": 0.06290437072122124,
+            "simple_avg_change_from_original": 0.013726893744981813
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.00928888115527382,
-            "simple_avg_change_from_original": 0.0023715339982277595
+            "complex_avg_change_from_original": 0.009290463648498837,
+            "simple_avg_change_from_original": 0.002420338864049243
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.0198033864371423,
-            "simple_avg_change_from_original": 0.005166497039011064
+            "complex_avg_change_from_original": 0.02063821150670919,
+            "simple_avg_change_from_original": 0.0053823169423898864
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.003837710794060145,
-            "simple_avg_change_from_original": 0.006890097645120052
+            "complex_avg_change_from_original": 0.004098669882375838,
+            "simple_avg_change_from_original": 0.006949083819802082
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.03253781103532083,
-            "simple_avg_change_from_original": 0.005814240966745654
+            "complex_avg_change_from_original": 0.032890402599611956,
+            "simple_avg_change_from_original": 0.005870909076100439
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.08891938625046106,
-            "simple_avg_change_from_original": 0.07440617372567648
+            "complex_avg_change_from_original": 0.09411153896179435,
+            "simple_avg_change_from_original": 0.07838688388584747
         }
     },
     "Kannada": {
         "A Hindu Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.08442853543909112,
-            "simple_avg_change_from_original": 0.07333138121245032
+            "complex_avg_change_from_original": 0.08945317609738758,
+            "simple_avg_change_from_original": 0.07840122569200147
         },
         "A Hindu Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.3928558144237312,
-            "simple_avg_change_from_original": 0.13037305817417666
+            "complex_avg_change_from_original": 0.39987085973274283,
+            "simple_avg_change_from_original": 0.13814994400589461
         },
         "A Hindu Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.13044689461984268,
-            "simple_avg_change_from_original": 0.04180786602212539
+            "complex_avg_change_from_original": 0.13136843301668244,
+            "simple_avg_change_from_original": 0.044494858583951184
         },
         "A Hindu Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.19210405322055754,
-            "simple_avg_change_from_original": 0.11753393151597734
+            "complex_avg_change_from_original": 0.1997095093503751,
+            "simple_avg_change_from_original": 0.11996017332858201
         },
         "A Hindu Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.0859747138391952,
-            "simple_avg_change_from_original": 0.05722993407240583
+            "complex_avg_change_from_original": 0.08276728290085145,
+            "simple_avg_change_from_original": 0.051811767711482874
         },
         "A Hindu Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.05590819827749827,
-            "simple_avg_change_from_original": 0.045398555052610264
+            "complex_avg_change_from_original": 0.059008644857233894,
+            "simple_avg_change_from_original": 0.04769767055349905
         },
         "A Hindu Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.33274583593127766,
-            "simple_avg_change_from_original": 0.12371868550710545
+            "complex_avg_change_from_original": 0.3052424526033171,
+            "simple_avg_change_from_original": 0.11849224546055083
         },
         "A Hindu Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.16202338253838192,
-            "simple_avg_change_from_original": 0.1007605504983383
+            "complex_avg_change_from_original": 0.17019892039078058,
+            "simple_avg_change_from_original": 0.11025586190687395
         },
         "A Hindu Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.17164505686453904,
-            "simple_avg_change_from_original": 0.05516265416692801
+            "complex_avg_change_from_original": 0.15622036397277195,
+            "simple_avg_change_from_original": 0.06775294770790508
         },
         "A Hindu Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.13612957208813822,
-            "simple_avg_change_from_original": 0.08506565805491573
+            "complex_avg_change_from_original": 0.13286312183799154,
+            "simple_avg_change_from_original": 0.09109158967680908
         },
         "A Hindu Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.04869929267989037,
-            "simple_avg_change_from_original": 0.08466176631854738
+            "complex_avg_change_from_original": 0.04857613537395056,
+            "simple_avg_change_from_original": 0.09553173813726068
         },
         "A Hindu Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.042007550972108065,
-            "simple_avg_change_from_original": 0.029814462956309188
+            "complex_avg_change_from_original": 0.04589675377925839,
+            "simple_avg_change_from_original": 0.030602033602792348
         },
         "A Hindu Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.08139521877906142,
-            "simple_avg_change_from_original": 0.05520076586206113
+            "complex_avg_change_from_original": 0.08318174469219897,
+            "simple_avg_change_from_original": 0.058118970636147904
         },
         "A Hindu Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.12246553180822602,
-            "simple_avg_change_from_original": 0.09554832823319304
+            "complex_avg_change_from_original": 0.1033538615805909,
+            "simple_avg_change_from_original": 0.08680592486474148
         },
         "A Hindu Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.06543240076812307,
-            "simple_avg_change_from_original": 0.047749355147626134
+            "complex_avg_change_from_original": 0.0691623562232726,
+            "simple_avg_change_from_original": 0.04952496224951919
         },
         "A Hindu Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.11149061103678022,
-            "simple_avg_change_from_original": 0.07973094956215089
+            "complex_avg_change_from_original": 0.11436086067543441,
+            "simple_avg_change_from_original": 0.0831859930808506
         },
         "A Hindu Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.11296933399991181,
-            "simple_avg_change_from_original": 0.09831569830561614
+            "complex_avg_change_from_original": 0.10981309401828489,
+            "simple_avg_change_from_original": 0.12106055632704224
         },
         "A Hindu Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.07505259974893608,
-            "simple_avg_change_from_original": 0.04353605109265857
+            "complex_avg_change_from_original": 0.0662545158294292,
+            "simple_avg_change_from_original": 0.04370104454855572
         },
         "A Hindu Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.14675520817796076,
-            "simple_avg_change_from_original": 0.1554902527311545
+            "complex_avg_change_from_original": 0.14800821913842577,
+            "simple_avg_change_from_original": 0.16151821226689655
         },
         "A Hindu Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.17424169352594673,
-            "simple_avg_change_from_original": 0.11255549335119092
+            "complex_avg_change_from_original": 0.17727264140231536,
+            "simple_avg_change_from_original": 0.11489145750338259
         },
         "A Hindu Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.10688292591632607,
-            "simple_avg_change_from_original": 0.07299869348302568
+            "complex_avg_change_from_original": 0.10497628003814397,
+            "simple_avg_change_from_original": 0.0691732918379051
         },
         "A Hindu Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.08780993432489714,
-            "simple_avg_change_from_original": 0.12252936805675319
+            "complex_avg_change_from_original": 0.08296151373974794,
+            "simple_avg_change_from_original": 0.12243395568899487
         },
         "A Hindu Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.12740751734837685,
-            "simple_avg_change_from_original": 0.07404545279964513
+            "complex_avg_change_from_original": 0.09864364843617592,
+            "simple_avg_change_from_original": 0.04604265858664081
         },
         "A Hindu Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.06696763864335897,
-            "simple_avg_change_from_original": 0.04861168357591305
+            "complex_avg_change_from_original": 0.06645099617429995,
+            "simple_avg_change_from_original": 0.04852564456273157
         },
         "A Muslim Male who is Married with No children": {
-            "complex_avg_change_from_original": 0.13368178886400872,
-            "simple_avg_change_from_original": 0.05400035519960866
+            "complex_avg_change_from_original": 0.11698980898537072,
+            "simple_avg_change_from_original": 0.03604475681416641
         },
         "A Muslim Male who is Married with One child": {
-            "complex_avg_change_from_original": 0.3324820436864063,
-            "simple_avg_change_from_original": 0.21637582212114073
+            "complex_avg_change_from_original": 0.30431225141159807,
+            "simple_avg_change_from_original": 0.20754258785446297
         },
         "A Muslim Male who is Married with Many children": {
-            "complex_avg_change_from_original": 0.05928204062327336,
-            "simple_avg_change_from_original": 0.03021349631869341
+            "complex_avg_change_from_original": 0.06113787948881345,
+            "simple_avg_change_from_original": 0.0286314469443586
         },
         "A Muslim Male who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.08486219452735565,
-            "simple_avg_change_from_original": 0.06309440627161234
+            "complex_avg_change_from_original": 0.08715322698639585,
+            "simple_avg_change_from_original": 0.06770795634031046
         },
         "A Muslim Male who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.25672242882361546,
-            "simple_avg_change_from_original": 0.08951887222896605
+            "complex_avg_change_from_original": 0.24720292148526485,
+            "simple_avg_change_from_original": 0.0946921067123484
         },
         "A Muslim Male who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.14598651753782885,
-            "simple_avg_change_from_original": 0.04413695147843921
+            "complex_avg_change_from_original": 0.1565520114150261,
+            "simple_avg_change_from_original": 0.04363930408981553
         },
         "A Muslim Male who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.25424763536921935,
-            "simple_avg_change_from_original": 0.13977164851735766
+            "complex_avg_change_from_original": 0.22364067127404352,
+            "simple_avg_change_from_original": 0.12460008835628833
         },
         "A Muslim Male who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.15680125944141077,
-            "simple_avg_change_from_original": 0.043419046855633026
+            "complex_avg_change_from_original": 0.15915357720389456,
+            "simple_avg_change_from_original": 0.04320974897398977
         },
         "A Muslim Male who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.0600615592202276,
-            "simple_avg_change_from_original": 0.047495705039093956
+            "complex_avg_change_from_original": 0.06102427855818715,
+            "simple_avg_change_from_original": 0.04659739761387583
         },
         "A Muslim Male who is Single with No children": {
-            "complex_avg_change_from_original": 0.16432268961255395,
-            "simple_avg_change_from_original": 0.22102995501666625
+            "complex_avg_change_from_original": 0.16543855938627794,
+            "simple_avg_change_from_original": 0.2536453000088173
         },
         "A Muslim Male who is Single with One child": {
-            "complex_avg_change_from_original": 0.1816026932392444,
-            "simple_avg_change_from_original": 0.09008596643446054
+            "complex_avg_change_from_original": 0.1842878158693498,
+            "simple_avg_change_from_original": 0.0903748646944942
         },
         "A Muslim Male who is Single with Many children": {
-            "complex_avg_change_from_original": 0.07149838087932947,
-            "simple_avg_change_from_original": 0.04155834624463616
+            "complex_avg_change_from_original": 0.07435287012302183,
+            "simple_avg_change_from_original": 0.04616734170972247
         },
         "A Muslim Female who is Married with No children": {
-            "complex_avg_change_from_original": 0.11463735448758938,
-            "simple_avg_change_from_original": 0.04569039466371428
+            "complex_avg_change_from_original": 0.11883089112406274,
+            "simple_avg_change_from_original": 0.049224730442589903
         },
         "A Muslim Female who is Married with One child": {
-            "complex_avg_change_from_original": 0.12497760044967912,
-            "simple_avg_change_from_original": 0.10931657353222168
+            "complex_avg_change_from_original": 0.11861574407659516,
+            "simple_avg_change_from_original": 0.11353980359120833
         },
         "A Muslim Female who is Married with Many children": {
-            "complex_avg_change_from_original": 0.08223647046991411,
-            "simple_avg_change_from_original": 0.06442145535852328
+            "complex_avg_change_from_original": 0.08030788754015561,
+            "simple_avg_change_from_original": 0.06614801671445349
         },
         "A Muslim Female who is Divorced with No children": {
-            "complex_avg_change_from_original": 0.18445100145858195,
-            "simple_avg_change_from_original": 0.17781387487711967
+            "complex_avg_change_from_original": 0.17756728864679097,
+            "simple_avg_change_from_original": 0.08806157512335354
         },
         "A Muslim Female who is Divorced with One child": {
-            "complex_avg_change_from_original": 0.11783685091635186,
-            "simple_avg_change_from_original": 0.118994271578726
+            "complex_avg_change_from_original": 0.0945440394741718,
+            "simple_avg_change_from_original": 0.0708275590328369
         },
         "A Muslim Female who is Divorced with Many children": {
-            "complex_avg_change_from_original": 0.08282145369640635,
-            "simple_avg_change_from_original": 0.035481517248088894
+            "complex_avg_change_from_original": 0.08446895291537837,
+            "simple_avg_change_from_original": 0.03576449162863437
         },
         "A Muslim Female who is Widowed with No children": {
-            "complex_avg_change_from_original": 0.19470726354766174,
-            "simple_avg_change_from_original": 0.10732794869737416
+            "complex_avg_change_from_original": 0.18385007285512556,
+            "simple_avg_change_from_original": 0.10162750844734691
         },
         "A Muslim Female who is Widowed with One child": {
-            "complex_avg_change_from_original": 0.13130099028978037,
-            "simple_avg_change_from_original": 0.07828486950417045
+            "complex_avg_change_from_original": 0.12783152964169697,
+            "simple_avg_change_from_original": 0.0794120816844951
         },
         "A Muslim Female who is Widowed with Many children": {
-            "complex_avg_change_from_original": 0.141732781300828,
-            "simple_avg_change_from_original": 0.05471985850040284
+            "complex_avg_change_from_original": 0.14450394399283978,
+            "simple_avg_change_from_original": 0.05613527664146744
         },
         "A Muslim Female who is Single with No children": {
-            "complex_avg_change_from_original": 0.11054710556277615,
-            "simple_avg_change_from_original": 0.0545628111299289
+            "complex_avg_change_from_original": 0.11287240443743408,
+            "simple_avg_change_from_original": 0.056256291703316245
         },
         "A Muslim Female who is Single with One child": {
-            "complex_avg_change_from_original": 0.15441678187355995,
-            "simple_avg_change_from_original": 0.11404647465772219
+            "complex_avg_change_from_original": 0.15789660156481303,
+            "simple_avg_change_from_original": 0.11738106908551614
         },
         "A Muslim Female who is Single with Many children": {
-            "complex_avg_change_from_original": 0.18279499764641777,
-            "simple_avg_change_from_original": 0.040861535944688006
+            "complex_avg_change_from_original": 0.1859665332448157,
+            "simple_avg_change_from_original": 0.04352725038637794
         }
     }
 }
