@@ -24,6 +24,17 @@ nltk.download('punkt')
 # python -m spacy download en_core_web_lg
 nlp = spacy.load("en_core_web_lg")
 
+def remove_duplicate_sentences(text):
+    """Removes duplicate sentences within a paragraph."""
+    sentences = text.split('. ')
+    unique_sentences = list(dict.fromkeys(sentences))  # Keeps order while removing duplicates
+    return '. '.join(unique_sentences)
+
+def remove_repeated_phrases(text):
+    """Removes repetitive phrases in a text."""
+    text = re.sub(r'\b(\w+(?:\s+\w+){0,4})\b(?=.*\b\1\b)', '', text, flags=re.IGNORECASE)
+    return re.sub(r'\s+', ' ', text).strip()  # Normalize spaces
+
 
 # Function to clean text
 def clean_text(text):
@@ -36,6 +47,8 @@ def clean_text(text):
     text = text.replace('-', ' ')  # Replace dashes with spaces
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
     text = text.replace('"', '')  # Remove quotation marks
+    text = remove_duplicate_sentences(text)  # Remove repeated sentences
+    text = remove_repeated_phrases(text)  # Remove repeated phrases
     return text.lower()  # Convert to lowercase
 
 # Function to tokenize & lemmatize text (consistent with lexicon curation)
