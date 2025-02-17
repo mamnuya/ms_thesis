@@ -1,5 +1,6 @@
 '''
-split the sentences into words (tokens) and then apply Levenshtein to those word-level units
+Takes tokenized/processed bias terms, and 
+computes levenshtein distance across original, simple debiased, and complex debiased outputs.
 '''
 import json
 import os
@@ -8,7 +9,7 @@ from Levenshtein import distance as levenshtein_distance
 from collections import defaultdict
 
 # Directory containing input JSON files
-input_folder = "../../../data/complex_and_simple_debiaspromptsQs/cleaned_tokenized_lemmatized/"
+input_folder = "../../../data/levenshtein_analysis/word_level/biased_terms/"
 
 # List of languages
 languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
@@ -16,8 +17,9 @@ languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Mala
 # Function to compute Levenshtein distance at the word level (comparing tokenized lists)
 def compute_word_level_levenshtein(words1, words2):
     # Convert word lists back to space-separated strings for Levenshtein calculation
-    str1 = ' '.join(words1)
-    str2 = ' '.join(words2)
+    # Sort words alphabetically to remove order dependency
+    str1 = ' '.join(sorted(words1))
+    str2 = ' '.join(sorted(words2))
     
     return levenshtein_distance(str1, str2)
 
@@ -29,9 +31,9 @@ def compute_avg_distance_per_identity(language_data):
         identity = entry["identity"]
 
         # Get the tokenized and lemmatized word lists for the generated and debiased outputs
-        original_words = entry["processed_translated_generated_output"]
-        complex_words = entry["complex_processed_translated_debiased_output"]
-        simple_words = entry["simple_processed_translated_debiased_output"]
+        original_words = entry["biased_terms_original"]
+        complex_words = entry["biased_terms_complex"]
+        simple_words = entry["biased_terms_simple"]
 
         # Compute word-level Levenshtein distances
         complex_dist = compute_word_level_levenshtein(original_words, complex_words)
@@ -67,7 +69,7 @@ identity_level_results = {}
 language_level_results = {}
 
 for lang in languages:
-    input_file = os.path.join(input_folder, f"generated_data_{lang}_10k_mt0xxl_with_complex_and_simple_debiasing.json")
+    input_file = os.path.join(input_folder, f"bias_term_analysis_{lang}_mt0xxl_with_complex_and_simple_debiasing.json")
 
     # Load data
     with open(input_file, "r", encoding="utf-8") as f:
