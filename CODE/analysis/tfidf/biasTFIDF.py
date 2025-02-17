@@ -76,17 +76,18 @@ def count_bias_terms_by_identity(dataset, bias_lexicon):
         simple_words = entry["simple_processed_translated_debiased_output"]
 
         for category, bias_terms in bias_lexicon.items():
-            bias_terms_set = set(bias_terms)
+            if category in identity:
+                bias_terms_set = set(bias_terms)
 
-            for word in original_words:
-                if word in bias_terms_set:
-                    bias_term_counts[identity]["original"][word] += 1
-            for word in complex_words:
-                if word in bias_terms_set:
-                    bias_term_counts[identity]["complex"][word] += 1
-            for word in simple_words:
-                if word in bias_terms_set:
-                    bias_term_counts[identity]["simple"][word] += 1
+                for word in original_words:
+                    if word in bias_terms_set:
+                        bias_term_counts[identity]["original"][word] += 1
+                for word in complex_words:
+                    if word in bias_terms_set:
+                        bias_term_counts[identity]["complex"][word] += 1
+                for word in simple_words:
+                    if word in bias_terms_set:
+                        bias_term_counts[identity]["simple"][word] += 1
 
         word_counts[identity]["original"] += len(original_words)
         word_counts[identity]["complex"] += len(complex_words)
