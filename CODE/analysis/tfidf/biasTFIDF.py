@@ -22,6 +22,9 @@ def load_json(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
 
+'''
+computing Term Frequency (TF), which is the proportion of times a bias term appears relative to the total word count in a given identity group
+'''
 def compute_tf(bias_term_counts, word_counts):
     """Compute Term Frequency (TF) for each bias term per identity group."""
     tf_scores = defaultdict(lambda: {"original": {}, "complex": {}, "simple": {}})
@@ -41,7 +44,10 @@ def compute_idf(bias_term_counts, total_identities):
     
     # Count the number of identity groups each term appears in
     for identity_counts in bias_term_counts.values():
-        seen_terms = set()
+        '''
+        Use of set ensures that each bias term is only counted once per identity group, regardless of how many times it appears within that group.
+        '''
+        seen_terms = set() # set to hold identity groups that contain bias term in their documents
         for method in ["original", "complex", "simple"]:
             seen_terms.update(identity_counts[method].keys())  
         for term in seen_terms:
