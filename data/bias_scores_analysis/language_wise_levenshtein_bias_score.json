@@ -1,0 +1,42 @@
+{
+    "Hindi": {
+        "complex_bias_score": 0.9992382610723567,
+        "simple_bias_score": 0.9679825019375317
+    },
+    "Urdu": {
+        "complex_bias_score": 0.4296181938586875,
+        "simple_bias_score": 0.36104127212644566
+    },
+    "Bengali": {
+        "complex_bias_score": 0.5784131009131256,
+        "simple_bias_score": 0.45270548172564984
+    },
+    "Punjabi": {
+        "complex_bias_score": 0.8804447769982332,
+        "simple_bias_score": 0.6446588432869663
+    },
+    "Marathi": {
+        "complex_bias_score": 1.0133655733820899,
+        "simple_bias_score": 1.184458893070207
+    },
+    "Gujarati": {
+        "complex_bias_score": 1.0137328904578649,
+        "simple_bias_score": 0.941510815656008
+    },
+    "Malayalam": {
+        "complex_bias_score": 0.9056451125144976,
+        "simple_bias_score": 0.9288401897101783
+    },
+    "Tamil": {
+        "complex_bias_score": 0.757276633915996,
+        "simple_bias_score": 0.8428163902390192
+    },
+    "Telugu": {
+        "complex_bias_score": 0.8500367925383104,
+        "simple_bias_score": 0.52384549057553
+    },
+    "Kannada": {
+        "complex_bias_score": 2.5722286643488377,
+        "simple_bias_score": 3.152140121672464
+    }
+}
