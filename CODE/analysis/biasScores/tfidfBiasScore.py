@@ -47,6 +47,32 @@ with open(identity_bias_output, "w", encoding="utf-8") as f:
     json.dump(identity_bias_scores, f, indent=4, ensure_ascii=False)
 print(f"Identity-wise TF-IDF bias scores saved to {identity_bias_output}")
 
+# PRINT the identity with the highest and lowest absolute bias scores for each language
+for lang, identities in identity_bias_scores.items():
+    # Get the identity with the highest absolute complex bias score
+    top_complex_identity = max(identities.items(), key=lambda x: abs(x[1]["complex_bias_score"]))
+    top_complex_name, top_complex_values = top_complex_identity
+
+    # Get the identity with the lowest absolute complex bias score
+    lowest_complex_identity = min(identities.items(), key=lambda x: abs(x[1]["complex_bias_score"]))
+    lowest_complex_name, lowest_complex_values = lowest_complex_identity
+
+    # Get the identity with the highest absolute simple bias score
+    top_simple_identity = max(identities.items(), key=lambda x: abs(x[1]["simple_bias_score"]))
+    top_simple_name, top_simple_values = top_simple_identity
+
+    # Get the identity with the lowest absolute simple bias score
+    lowest_simple_identity = min(identities.items(), key=lambda x: abs(x[1]["simple_bias_score"]))
+    lowest_simple_name, lowest_simple_values = lowest_simple_identity
+
+    print(f" - TF IDF Bias Score - ")
+    print(f"Language: {lang}")
+    print(f"  Top Complex Bias Score: {top_complex_name} -> {top_complex_values['complex_bias_score']:.6f}")
+    print(f"  Top Simple Bias Score: {top_simple_name} -> {top_simple_values['simple_bias_score']:.6f}")
+    print(f"  Lowest Complex Bias Score: {lowest_complex_name} -> {lowest_complex_values['complex_bias_score']:.6f}")
+    print(f"  Lowest Simple Bias Score: {lowest_simple_name} -> {lowest_simple_values['simple_bias_score']:.6f}")
+    print("-" * 50)
+
 # Compute Language-Wise TF-IDF Bias Scores
 method_avg_complex = method_avg_change["method_complex_avg_change_from_original"]
 method_avg_simple = method_avg_change["method_simple_avg_change_from_original"]
