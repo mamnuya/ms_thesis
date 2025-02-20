@@ -44,6 +44,7 @@ print(f"Identity-wise Levenshtein bias scores saved to {identity_bias_score_file
 
 
 def print_high_low_scores():
+    
     for lang, identities in identity_bias_scores.items():
         # Get the identity with the highest absolute complex bias score
         top_complex_identity = max(identities.items(), key=lambda x: abs(x[1]["complex_bias_score"]))
@@ -96,18 +97,18 @@ def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_a
     """
     Generate a LaTeX table for the thresholds used to normalize Levenshtein-based bias scores.
     """
-    # Extract method-wide normalization thresholds
+    # Extract method-wide normalization factoes
     method_complex_threshold = method_avg_distance["method_complex_avg_change_from_original"]
     method_simple_threshold = method_avg_distance["method_simple_avg_change_from_original"]
 
     # Start LaTeX table
     latex_table = "\\begin{table}[h]\n"
     latex_table += "    \\centering\n"
-    latex_table += "    \\caption{Normalization Thresholds for Levenshtein Bias Scores}\n"
-    latex_table += "    \\label{tab:normalization_thresholds_levenshtein}\n"
+    latex_table += "    \\caption{Normalization Factors for Levenshtein Bias Scores}\n"
+    latex_table += "    \\label{tab:normalization_avgs_levenshtein}\n"
     latex_table += "    \\begin{tabular}{|l|c|c|}\n"
     latex_table += "        \\hline\n"
-    latex_table += "        \\textbf{Language} & \\textbf{Complex Score Threshold} & \\textbf{Simple Score Threshold} \\\\\n"
+    latex_table += "        \\textbf{Language} & \\textbf{Complex Average} & \\textbf{Simple Average} \\\\\n"
     latex_table += "        \\hline\n"
 
     for lang, values in language_avg_distances.items():
@@ -117,7 +118,7 @@ def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_a
 
     # Add method-wide thresholds
     latex_table += "        \\hline\n"
-    latex_table += f"        \\textbf{{Overall Method Threshold}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
+    latex_table += f"        \\textbf{{Method-Wise Averages}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
     latex_table += "        \\hline\n"
 
     # End table
@@ -128,4 +129,4 @@ def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_a
     print(latex_table)
 
 # Call the function to print the LaTeX table
-generate_latex_levenshtein_thresholds_table(language_avg_distances, method_avg_distance)
+#generate_latex_levenshtein_thresholds_table(language_avg_distances, method_avg_distance)

@@ -109,18 +109,18 @@ def generate_latex_thresholds_table(language_avg_change, method_avg_change):
     """
     Generate a LaTeX table for the thresholds used to normalize TF-IDF bias scores.
     """
-    # Extract the normalization thresholds
+    # Extract the normalization factors
     method_complex_threshold = method_avg_change["method_complex_avg_change_from_original"]
     method_simple_threshold = method_avg_change["method_simple_avg_change_from_original"]
 
     # Start LaTeX table
     latex_table = "\\begin{table}[h]\n"
     latex_table += "    \\centering\n"
-    latex_table += "    \\caption{Normalization Thresholds for TF-IDF Bias Scores}\n"
-    latex_table += "    \\label{tab:normalization_thresholds_tfidf}\n"
+    latex_table += "    \\caption{Normalization Factors for TF-IDF Bias Scores}\n"
+    latex_table += "    \\label{tab:normalization_avgs_tfidf}\n"
     latex_table += "    \\begin{tabular}{|l|c|c|}\n"
     latex_table += "        \\hline\n"
-    latex_table += "        \\textbf{Language} & \\textbf{Complex Score Threshold} & \\textbf{Simple Score Threshold} \\\\\n"
+    latex_table += "        \\textbf{Language} & \\textbf{Complex Average} & \\textbf{Simple Average} \\\\\n"
     latex_table += "        \\hline\n"
 
     for lang, values in language_avg_change.items():
@@ -130,7 +130,7 @@ def generate_latex_thresholds_table(language_avg_change, method_avg_change):
 
     # Add method-wide thresholds
     latex_table += "        \\hline\n"
-    latex_table += f"        \\textbf{{Overall Method Threshold}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
+    latex_table += f"        \\textbf{{Method-Wise Averages}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
     latex_table += "        \\hline\n"
     
     # End table
@@ -141,4 +141,4 @@ def generate_latex_thresholds_table(language_avg_change, method_avg_change):
     print(latex_table)
 
 # Call the function to print the LaTeX table
-generate_latex_thresholds_table(language_avg_change, method_avg_change)
+#generate_latex_thresholds_table(language_avg_change, method_avg_change)
