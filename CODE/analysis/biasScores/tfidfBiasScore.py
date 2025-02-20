@@ -130,7 +130,7 @@ def generate_latex_thresholds_table(language_avg_change, method_avg_change):
 
     # Add method-wide thresholds
     latex_table += "        \\hline\n"
-    latex_table += f"        \\textbf{{Method-Wise Averages}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
+    latex_table += f"        \\textbf{{Overall Method-Wise Averages}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
     latex_table += "        \\hline\n"
     
     # End table

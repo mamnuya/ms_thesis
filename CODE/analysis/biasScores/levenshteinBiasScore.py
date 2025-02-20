@@ -118,7 +118,7 @@ def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_a
 
     # Add method-wide thresholds
     latex_table += "        \\hline\n"
-    latex_table += f"        \\textbf{{Method-Wise Averages}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
+    latex_table += f"        \\textbf{{Overall Method-Wise Averages}} & {method_complex_threshold:.6f} & {method_simple_threshold:.6f} \\\\\n"
     latex_table += "        \\hline\n"
 
     # End table
