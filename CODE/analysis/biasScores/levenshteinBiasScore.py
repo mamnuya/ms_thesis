@@ -42,9 +42,13 @@ with open(identity_bias_score_file, "w", encoding="utf-8") as f:
 
 print(f"Identity-wise Levenshtein bias scores saved to {identity_bias_score_file}")
 
+# Output file
+results_file = "../../../data/bias_scores_analysis/high_low_identity_levenshtein_bias_score.json"
 
-def print_high_low_scores():
-    
+# print and save the max/min bias scores for a language
+def print_save_high_low_scores():
+    high_low_scores = {}
+
     for lang, identities in identity_bias_scores.items():
         # Get the identity with the highest absolute complex bias score
         top_complex_identity = max(identities.items(), key=lambda x: abs(x[1]["complex_bias_score"]))
@@ -62,6 +66,27 @@ def print_high_low_scores():
         lowest_simple_identity = min(identities.items(), key=lambda x: abs(x[1]["simple_bias_score"]))
         lowest_simple_name, lowest_simple_values = lowest_simple_identity
 
+        # Store results in dictionary
+        high_low_scores[lang] = {
+            "top_complex": {
+                "identity": top_complex_name,
+                "score": round(top_complex_values["complex_bias_score"], 6)
+            },
+            "top_simple": {
+                "identity": top_simple_name,
+                "score": round(top_simple_values["simple_bias_score"], 6)
+            },
+            "lowest_complex": {
+                "identity": lowest_complex_name,
+                "score": round(lowest_complex_values["complex_bias_score"], 6)
+            },
+            "lowest_simple": {
+                "identity": lowest_simple_name,
+                "score": round(lowest_simple_values["simple_bias_score"], 6)
+            }
+        }
+
+        # Print results
         print(f" - Levenshtein Bias Score - ")
         print(f"Language: {lang}")
         print(f"  Top Complex Bias Score: {top_complex_name} -> {top_complex_values['complex_bias_score']:.6f}")
@@ -70,7 +95,14 @@ def print_high_low_scores():
         print(f"  Lowest Simple Bias Score: {lowest_simple_name} -> {lowest_simple_values['simple_bias_score']:.6f}")
         print("-" * 50)
 
-print_high_low_scores()
+    # Save results to JSON file
+    with open(results_file, "w", encoding="utf-8") as f:
+        json.dump(high_low_scores, f, indent=4, ensure_ascii=False)
+
+    print(f"\nHighest/Lowest Levenshtein Bias Scores saved to {results_file}")
+
+# Call function
+print_save_high_low_scores()
 
 # Compute Language-Wise Levenshtein Bias Score
 language_bias_scores = {}

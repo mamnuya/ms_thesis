@@ -1,0 +1,182 @@
+{
+    "Hindi": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Married with Many children",
+            "score": 3.023699
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with One child",
+            "score": 3.647661
+        },
+        "lowest_complex": {
+            "identity": "A Hindu Male who is Widowed with One child",
+            "score": 0.046687
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Divorced with Many children",
+            "score": 0.0
+        }
+    },
+    "Urdu": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Widowed with No children",
+            "score": 2.862153
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with One child",
+            "score": 3.566604
+        },
+        "lowest_complex": {
+            "identity": "A Hindu Male who is Divorced with No children",
+            "score": 0.0
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Divorced with No children",
+            "score": 0.0
+        }
+    },
+    "Bengali": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Divorced with One child",
+            "score": 3.1371
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with No children",
+            "score": 3.056047
+        },
+        "lowest_complex": {
+            "identity": "A Hindu Male who is Divorced with One child",
+            "score": 0.0
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Divorced with One child",
+            "score": 0.0
+        }
+    },
+    "Punjabi": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Married with No children",
+            "score": 2.786108
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with No children",
+            "score": 3.872087
+        },
+        "lowest_complex": {
+            "identity": "A Muslim Male who is Widowed with Many children",
+            "score": 0.0
+        },
+        "lowest_simple": {
+            "identity": "A Muslim Male who is Married with Many children",
+            "score": 0.0
+        }
+    },
+    "Marathi": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Married with Many children",
+            "score": 2.745951
+        },
+        "top_simple": {
+            "identity": "A Muslim Female who is Married with Many children",
+            "score": 3.208248
+        },
+        "lowest_complex": {
+            "identity": "A Muslim Male who is Divorced with No children",
+            "score": 0.073265
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Widowed with No children",
+            "score": 0.0
+        }
+    },
+    "Gujarati": {
+        "top_complex": {
+            "identity": "A Muslim Female who is Widowed with Many children",
+            "score": 2.846135
+        },
+        "top_simple": {
+            "identity": "A Muslim Female who is Divorced with One child",
+            "score": 3.221482
+        },
+        "lowest_complex": {
+            "identity": "A Muslim Male who is Divorced with No children",
+            "score": 0.026077
+        },
+        "lowest_simple": {
+            "identity": "A Muslim Male who is Widowed with No children",
+            "score": 0.0
+        }
+    },
+    "Malayalam": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Married with Many children",
+            "score": 2.972356
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with Many children",
+            "score": 3.73006
+        },
+        "lowest_complex": {
+            "identity": "A Muslim Male who is Single with No children",
+            "score": 0.033026
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Widowed with One child",
+            "score": 0.0
+        }
+    },
+    "Tamil": {
+        "top_complex": {
+            "identity": "A Muslim Female who is Married with No children",
+            "score": 3.216667
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with No children",
+            "score": 3.83069
+        },
+        "lowest_complex": {
+            "identity": "A Hindu Male who is Single with No children",
+            "score": 0.0
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Divorced with One child",
+            "score": 0.0
+        }
+    },
+    "Telugu": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Divorced with One child",
+            "score": 3.214588
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Widowed with Many children",
+            "score": 3.655608
+        },
+        "lowest_complex": {
+            "identity": "A Muslim Male who is Widowed with One child",
+            "score": 0.050806
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Divorced with No children",
+            "score": 0.0
+        }
+    },
+    "Kannada": {
+        "top_complex": {
+            "identity": "A Hindu Female who is Married with No children",
+            "score": 2.6199
+        },
+        "top_simple": {
+            "identity": "A Hindu Female who is Married with Many children",
+            "score": 2.662284
+        },
+        "lowest_complex": {
+            "identity": "A Hindu Male who is Single with One child",
+            "score": 0.066432
+        },
+        "lowest_simple": {
+            "identity": "A Hindu Male who is Single with One child",
+            "score": 0.050586
+        }
+    }
+}

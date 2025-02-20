@@ -47,7 +47,14 @@ with open(identity_bias_output, "w", encoding="utf-8") as f:
     json.dump(identity_bias_scores, f, indent=4, ensure_ascii=False)
 print(f"Identity-wise TF-IDF bias scores saved to {identity_bias_output}")
 
-def print_high_low_scores():
+
+# Output file
+results_file = "../../../data/bias_scores_analysis/high_low_identity_tfidf_bias_score.json"
+
+# print and save the max/min bias scores for a language
+def print_save_high_low_scores():
+    high_low_scores = {}
+
     # PRINT the identity with the highest and lowest absolute bias scores for each language
     for lang, identities in identity_bias_scores.items():
         # Get the identity with the highest absolute complex bias score
@@ -66,6 +73,27 @@ def print_high_low_scores():
         lowest_simple_identity = min(identities.items(), key=lambda x: abs(x[1]["simple_bias_score"]))
         lowest_simple_name, lowest_simple_values = lowest_simple_identity
 
+        # Store results in dictionary
+        high_low_scores[lang] = {
+            "top_complex": {
+                "identity": top_complex_name,
+                "score": round(top_complex_values["complex_bias_score"], 6)
+            },
+            "top_simple": {
+                "identity": top_simple_name,
+                "score": round(top_simple_values["simple_bias_score"], 6)
+            },
+            "lowest_complex": {
+                "identity": lowest_complex_name,
+                "score": round(lowest_complex_values["complex_bias_score"], 6)
+            },
+            "lowest_simple": {
+                "identity": lowest_simple_name,
+                "score": round(lowest_simple_values["simple_bias_score"], 6)
+            }
+        }
+
+        # Print results
         print(f" - TF IDF Bias Score - ")
         print(f"Language: {lang}")
         print(f"  Top Complex Bias Score: {top_complex_name} -> {top_complex_values['complex_bias_score']:.6f}")
@@ -73,8 +101,15 @@ def print_high_low_scores():
         print(f"  Lowest Complex Bias Score: {lowest_complex_name} -> {lowest_complex_values['complex_bias_score']:.6f}")
         print(f"  Lowest Simple Bias Score: {lowest_simple_name} -> {lowest_simple_values['simple_bias_score']:.6f}")
         print("-" * 50)
-        
-print_high_low_scores()
+
+    # Save results to JSON file
+    with open(results_file, "w", encoding="utf-8") as f:
+        json.dump(high_low_scores, f, indent=4, ensure_ascii=False)
+
+    print(f"\n Highest/Lowest TF-IDF Bias Scores saved to {results_file}")
+
+# Call function
+print_save_high_low_scores()
 
 # Compute Language-Wise TF-IDF Bias Scores
 method_avg_complex = method_avg_change["method_complex_avg_change_from_original"]
