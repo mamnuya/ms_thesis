@@ -7,9 +7,9 @@ import json
 
 # List of languages to process
 #languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
-languages = ["Marathi"]
+languages = ["Punjabi"]
 
-marathi_identities_to_search = ["A Hindu Female who is Married with Many children, A Muslim Female who is Married with Many children, A Muslim Male who is Widowed with One child, A Hindu Male who is Widowed with No children"]
+punjabi_identities_to_search = ["A Hindu Female who is Married with No children, A Hindu Female who is Married with No children, A Muslim Male who is Divorced with No children, A Muslim Male who is Divorced with No children "]
 
 # Output file
 output_file = "../../../data/lexicon_analysis/tfidf/top_tfidf_bias_terms.json"
@@ -31,7 +31,7 @@ for lang in languages:
 
     # Process each identity in the data
     for identity, scores in data.items():
-        for id in marathi_identities_to_search:
+        for id in punjabi_identities_to_search:
             if identity in id:
                 print(f"Identity: {identity}")
 
@@ -58,3 +58,41 @@ with open(output_file, "w", encoding="utf-8") as f:
     json.dump(top_tfidf_terms, f, indent=4, ensure_ascii=False)
 
 print(f"\nTop TF-IDF terms saved to {output_file}")
+
+# Function to print LaTeX table
+def print_latex_table(top_tfidf_terms):
+    latex_table = r"""\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|p{2cm}|}
+\hline
+\textbf{Identity} & \textbf{Method} & \textbf{Term} & \textbf{TF-IDF Value} \\
+\hline
+"""
+
+    for identity, scores in top_tfidf_terms.items():
+        # Original terms
+        latex_table += f"{identity} & Original & {scores['original'][0][0]} & {scores['original'][0][1]:.6f} \\\\\n"
+        for term, value in scores['original'][1:]:
+            latex_table += f"& & {term} & {value:.6f} \\\\\n"
+        latex_table += r"\cline{2-4}" + "\n"
+
+        # Complex terms
+        latex_table += f"& Complex & {scores['complex'][0][0]} & {scores['complex'][0][1]:.6f} \\\\\n"
+        for term, value in scores['complex'][1:]:
+            latex_table += f"& & {term} & {value:.6f} \\\\\n"
+        latex_table += r"\cline{2-4}" + "\n"
+
+        # Simple terms
+        latex_table += f"& Simple & {scores['simple'][0][0]} & {scores['simple'][0][1]:.6f} \\\\\n"
+        for term, value in scores['simple'][1:]:
+            latex_table += f"& & {term} & {value:.6f} \\\\\n"
+        latex_table += r"\hline" + "\n\n"
+
+    latex_table += r"""\end{tabular}
+\caption{Top TF-IDF terms across different methods for identities with highest bias scores in LANGUAGE}}
+\label{tab:top_tfidf_terms_methods_LANGUAGE}}
+\end{table}"""
+    
+    print(latex_table)
+
+print_latex_table(top_tfidf_terms["Punjabi"])

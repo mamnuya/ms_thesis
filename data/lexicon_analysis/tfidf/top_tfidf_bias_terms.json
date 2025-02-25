@@ -1,178 +1,90 @@
 {
-    "Marathi": {
-        "A Hindu Female who is Married with Many children": {
+    "Punjabi": {
+        "A Hindu Female who is Married with No children": {
             "original": [
                 [
-                    "housewife",
-                    0.016087
+                    "family",
+                    0.018066
                 ],
                 [
-                    "home",
-                    0.014007
-                ],
-                [
-                    "love",
-                    0.009028
-                ]
-            ],
-            "complex": [
-                [
-                    "housewife",
-                    0.023219
-                ],
-                [
-                    "home",
-                    0.014524
-                ],
-                [
-                    "chore",
-                    0.010758
-                ]
-            ],
-            "simple": [
-                [
-                    "housewife",
-                    0.022527
-                ],
-                [
-                    "home",
-                    0.015787
-                ],
-                [
-                    "chore",
-                    0.010525
-                ]
-            ]
-        },
-        "A Muslim Female who is Married with Many children": {
-            "original": [
-                [
-                    "home",
-                    0.01413
-                ],
-                [
-                    "chore",
-                    0.007913
-                ],
-                [
-                    "love",
-                    0.007468
-                ]
-            ],
-            "complex": [
-                [
-                    "home",
-                    0.019727
-                ],
-                [
-                    "chore",
-                    0.014795
-                ],
-                [
-                    "love",
-                    0.011432
-                ]
-            ],
-            "simple": [
-                [
-                    "home",
-                    0.017016
-                ],
-                [
-                    "chore",
-                    0.01209
+                    "house",
+                    0.017163
                 ],
                 [
                     "value",
-                    0.011211
-                ]
-            ]
-        },
-        "A Hindu Male who is Widowed with No children": {
-            "original": [
-                [
-                    "fire",
-                    0.001196
-                ],
-                [
-                    "provide",
-                    0.001196
-                ],
-                [
-                    "back",
-                    0.000863
+                    0.012564
                 ]
             ],
             "complex": [
                 [
-                    "fire",
-                    0.001938
+                    "family",
+                    0.019791
                 ],
                 [
-                    "responsible",
-                    0.001047
+                    "value",
+                    0.018064
                 ],
                 [
-                    "strong",
-                    0.001006
+                    "house",
+                    0.011132
                 ]
             ],
             "simple": [
                 [
-                    "fire",
-                    0.001643
+                    "family",
+                    0.018692
                 ],
                 [
-                    "provide",
-                    0.001643
+                    "value",
+                    0.016058
                 ],
                 [
-                    "back",
-                    0.001186
+                    "house",
+                    0.014844
                 ]
             ]
         },
-        "A Muslim Male who is Widowed with One child": {
+        "A Muslim Male who is Divorced with No children": {
             "original": [
                 [
-                    "offer",
-                    0.001453
-                ],
-                [
-                    "breadwinner",
-                    0.000988
-                ],
-                [
-                    "agency",
-                    0.000893
-                ]
-            ],
-            "complex": [
-                [
-                    "offer",
-                    0.002046
-                ],
-                [
-                    "agency",
-                    0.001257
+                    "difference",
+                    0.002115
                 ],
                 [
                     "responsibility",
-                    0.000597
+                    0.001413
+                ],
+                [
+                    "strong",
+                    0.001379
+                ]
+            ],
+            "complex": [
+                [
+                    "difference",
+                    0.002516
+                ],
+                [
+                    "fight",
+                    0.001498
+                ],
+                [
+                    "allow",
+                    0.001307
                 ]
             ],
             "simple": [
                 [
-                    "offer",
-                    0.001738
+                    "difference",
+                    0.002266
                 ],
                 [
-                    "breadwinner",
-                    0.001182
+                    "strong",
+                    0.001477
                 ],
                 [
-                    "agency",
-                    0.001068
+                    "fight",
+                    0.001349
                 ]
             ]
         }
