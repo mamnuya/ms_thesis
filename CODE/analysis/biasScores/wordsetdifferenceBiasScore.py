@@ -2,13 +2,13 @@ import json
 import os
 
 # File paths for input data
-identity_avg_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_identity.json"
-language_avg_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_language.json"
-method_avg_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_method.json"
+identity_avg_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_identity.json"
+language_avg_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_language.json"
+method_avg_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_method.json"
 
 # Output file paths
-identity_bias_score_file = "../../../data/bias_scores_analysis/identity_wise_levenshtein_bias_score.json"
-language_bias_score_file = "../../../data/bias_scores_analysis/language_wise_levenshtein_bias_score.json"
+identity_bias_score_file = "../../../data/bias_scores_analysis/identity_wise_wordsetdifference_bias_score.json"
+language_bias_score_file = "../../../data/bias_scores_analysis/language_wise_wordsetdifference_bias_score.json"
 
 # Load data
 with open(identity_avg_file, "r", encoding="utf-8") as f:
@@ -20,7 +20,7 @@ with open(language_avg_file, "r", encoding="utf-8") as f:
 with open(method_avg_file, "r", encoding="utf-8") as f:
     method_avg_distance = json.load(f)
 
-# Compute Identity-Wise Levenshtein Bias Score
+# Compute Identity-Wise word set difference Bias Score
 identity_bias_scores = {}
 
 for lang, identities in identity_avg_distances.items():
@@ -40,10 +40,10 @@ for lang, identities in identity_avg_distances.items():
 with open(identity_bias_score_file, "w", encoding="utf-8") as f:
     json.dump(identity_bias_scores, f, indent=4, ensure_ascii=False)
 
-print(f"Identity-wise Levenshtein bias scores saved to {identity_bias_score_file}")
+print(f"Identity-wise Word set difference bias scores saved to {identity_bias_score_file}")
 
 # Output file
-results_file = "../../../data/bias_scores_analysis/high_low_identity_levenshtein_bias_score.json"
+results_file = "../../../data/bias_scores_analysis/high_low_identity_wordsetdifference_bias_score.json"
 
 # print and save the max/min bias scores for a language
 def print_save_high_low_scores():
@@ -87,7 +87,7 @@ def print_save_high_low_scores():
         }
 
         # Print results
-        print(f" - Levenshtein Bias Score - ")
+        print(f" - Word Set Difference Bias Score - ")
         print(f"Language: {lang}")
         print(f"  Top Complex Bias Score: {top_complex_name} -> {top_complex_values['complex_bias_score']:.6f}")
         print(f"  Top Simple Bias Score: {top_simple_name} -> {top_simple_values['simple_bias_score']:.6f}")
@@ -99,12 +99,12 @@ def print_save_high_low_scores():
     with open(results_file, "w", encoding="utf-8") as f:
         json.dump(high_low_scores, f, indent=4, ensure_ascii=False)
 
-    print(f"\nHighest/Lowest Levenshtein Bias Scores saved to {results_file}")
+    print(f"\nHighest/Lowest Word Set Difference Bias Scores saved to {results_file}")
 
 # Call function
 print_save_high_low_scores()
 
-# Compute Language-Wise Levenshtein Bias Score
+# Compute Language-Wise Word Set Difference Bias Score
 language_bias_scores = {}
 
 # Get overall method-wise averages
@@ -122,12 +122,12 @@ for lang, values in language_avg_distances.items():
 # Save Language-Wise Bias Scores
 with open(language_bias_score_file, "w", encoding="utf-8") as f:
     json.dump(language_bias_scores, f, indent=4, ensure_ascii=False)
-print(f"Language-wise Levenshtein bias scores saved to {language_bias_score_file}")
+print(f"Language-wise Word Set Difference bias scores saved to {language_bias_score_file}")
 
 
-def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_avg_distance):
+def generate_latex_wordsetdifference_thresholds_table(language_avg_distances, method_avg_distance):
     """
-    Generate a LaTeX table for the thresholds used to normalize Levenshtein-based bias scores.
+    Generate a LaTeX table for the thresholds used to normalize wordsetdifference-based bias scores.
     """
     # Extract method-wide normalization factoes
     method_complex_threshold = method_avg_distance["method_complex_avg_change_from_original"]
@@ -136,8 +136,8 @@ def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_a
     # Start LaTeX table
     latex_table = "\\begin{table}[h]\n"
     latex_table += "    \\centering\n"
-    latex_table += "    \\caption{Normalization Factors for Levenshtein Bias Scores}\n"
-    latex_table += "    \\label{tab:normalization_avgs_levenshtein}\n"
+    latex_table += "    \\caption{Normalization Factors for Word Set Difference Bias Scores}\n"
+    latex_table += "    \\label{tab:normalization_avgs_wordsetdifference}\n"
     latex_table += "    \\begin{tabular}{|l|c|c|}\n"
     latex_table += "        \\hline\n"
     latex_table += "        \\textbf{Language} & \\textbf{Complex Average} & \\textbf{Simple Average} \\\\\n"
@@ -161,4 +161,4 @@ def generate_latex_levenshtein_thresholds_table(language_avg_distances, method_a
     print(latex_table)
 
 # Call the function to print the LaTeX table
-#generate_latex_levenshtein_thresholds_table(language_avg_distances, method_avg_distance)
+generate_latex_wordsetdifference_thresholds_table(language_avg_distances, method_avg_distance)
