@@ -1,29 +1,26 @@
 '''
 Takes tokenized/processed bias terms, and 
-computes levenshtein distance across original, simple debiased, and complex debiased outputs.
+computes word set difference across original, simple debiased, and complex debiased outputs.
 '''
 import json
 import os
 import numpy as np
-from Levenshtein import distance as levenshtein_distance
 from collections import defaultdict
 
 # Directory containing input JSON files
-input_folder = "../../../data/levenshtein_analysis/word_level/biased_terms/"
+input_folder = "../../../data/wordsetdifference_analysis/word_level/biased_terms/"
 
 # List of languages
 languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
 
-# Function to compute Levenshtein distance at the word level (comparing tokenized lists)
-def compute_word_level_levenshtein(words1, words2):
-    # Convert word lists back to space-separated strings for Levenshtein calculation
-    # Sort words alphabetically to remove order dependency
-    str1 = ' '.join(sorted(words1))
-    str2 = ' '.join(sorted(words2))
-    
-    return levenshtein_distance(str1, str2)
 
-# Function to compute average word-level Levenshtein distance per identity within a language
+def compute_wordsetdifference(words1, words2):
+
+    set_diff = len(set(words1).symmetric_difference(set(words2)))
+    
+    return set_diff
+
+# Function to compute average word-level distance per identity within a language
 def compute_avg_distance_per_identity(language_data):
     identity_distances = defaultdict(lambda: {"complex": [], "simple": []})
 
@@ -35,9 +32,9 @@ def compute_avg_distance_per_identity(language_data):
         complex_words = entry["biased_terms_complex"]
         simple_words = entry["biased_terms_simple"]
 
-        # Compute word-level Levenshtein distances
-        complex_dist = compute_word_level_levenshtein(original_words, complex_words)
-        simple_dist = compute_word_level_levenshtein(original_words, simple_words)
+        # Compute word set differences
+        complex_dist = compute_wordsetdifference(original_words, complex_words)
+        simple_dist = compute_wordsetdifference(original_words, simple_words)
 
         # Store distances
         identity_distances[identity]["complex"].append(complex_dist)
@@ -54,7 +51,7 @@ def compute_avg_distance_per_identity(language_data):
 
     return avg_identity_distances
 
-# Function to compute overall average word-level Levenshtein distance for a language
+# Function to compute overall average word-level distance for a language
 def compute_avg_distance_across_identities(identity_avg_distances):
     complex_distances = [values["complex_avg_change_from_original"] for values in identity_avg_distances.values()]
     simple_distances = [values["simple_avg_change_from_original"] for values in identity_avg_distances.values()]
@@ -75,7 +72,7 @@ for lang in languages:
     with open(input_file, "r", encoding="utf-8") as f:
         language_data = json.load(f)
 
-    # Compute average word-level Levenshtein distance per identity
+    # Compute average word-level distance per identity
     avg_distance_per_identity = compute_avg_distance_per_identity(language_data)
 
     # Compute overall averages across all identities
@@ -86,8 +83,8 @@ for lang in languages:
     language_level_results[lang] = avg_distance_across_identities
 
 # Save results
-output_identity_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_identity.json"
-output_language_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_language.json"
+output_identity_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_identity.json"
+output_language_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_language.json"
 
 with open(output_identity_file, "w", encoding="utf-8") as f:
     json.dump(identity_level_results, f, indent=4, ensure_ascii=False)
@@ -98,7 +95,7 @@ with open(output_language_file, "w", encoding="utf-8") as f:
 print(f"Identity-level results saved to {output_identity_file}")
 print(f"Language-level results saved to {output_language_file}")
 
-# Function to compute the average word-level complex/simple Levenshtein distance per identity across all languages
+# Function to compute the average word-level complex/simple word set difference distance per identity across all languages
 def compute_avg_distance_across_languages(identity_level_results):
     identity_aggregated = defaultdict(lambda: {"complex": [], "simple": []})
 
@@ -122,7 +119,7 @@ def compute_avg_distance_across_languages(identity_level_results):
 # Compute averages across all languages and save the result
 avg_identity_across_languages = compute_avg_distance_across_languages(identity_level_results)
 '''
-output_identity_across_languages = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/word_level_levenshtein_distance_by_identity_ALL_languages.json"
+output_identity_across_languages = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/wordsetdifference_by_identity_ALL_languages.json"
 
 with open(output_identity_across_languages, "w", encoding="utf-8") as f:
     json.dump(avg_identity_across_languages, f, indent=4, ensure_ascii=False)
@@ -131,7 +128,7 @@ print(f"Identity-level averages across languages saved to {output_identity_acros
 '''
 
 def compute_method_avg_distance(language_level_results):
-    """Compute the method average of word-level Levenshtein distances across all languages."""
+    """Compute the method average of word set difference across all languages."""
     complex_distances = []
     simple_distances = []
 
@@ -147,7 +144,7 @@ def compute_method_avg_distance(language_level_results):
     return method_avg
 
 # Load per-language average results
-language_avg_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_language.json"
+language_avg_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_language.json"
 
 with open(language_avg_file, "r", encoding="utf-8") as f:
     language_level_results = json.load(f)
@@ -156,9 +153,9 @@ with open(language_avg_file, "r", encoding="utf-8") as f:
 method_avg_distance = compute_method_avg_distance(language_level_results)
 
 # Save the method average results
-method_output_file = "../../../data/levenshtein_analysis/word_level/avg_bias_change_by_debiasing_method/average_word_level_levenshtein_distance_by_method.json"
+method_output_file = "../../../data/wordsetdifference_analysis/word_level/avg_bias_change_by_debiasing_method/average_wordsetdifference_by_method.json"
 
 with open(method_output_file, "w", encoding="utf-8") as f:
     json.dump(method_avg_distance, f, indent=4, ensure_ascii=False)
 
-print(f"Method average word-level Levenshtein distance saved to {method_output_file}")
+print(f"Method average word set difference saved to {method_output_file}")
