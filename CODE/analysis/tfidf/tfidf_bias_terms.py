@@ -6,10 +6,10 @@ and top 3 terms with highest tfidf original score for each identity in each lang
 import json
 
 # List of languages to process
-#languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
-languages = ["Punjabi"]
+languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Malayalam", "Tamil", "Telugu", "Kannada"]
+#languages = ["Kannada"]
 
-punjabi_identities_to_search = ["A Hindu Female who is Married with No children, A Hindu Female who is Married with No children, A Muslim Male who is Divorced with No children, A Muslim Male who is Divorced with No children "]
+#telugu_identities_to_search = ["A Muslim Male who is Widowed with One child, A Hindu Male who is Widowed with Many children, A Hindu Female who is Married with Many children, A Hindu Female who is Married with Many children"]
 
 # Output file
 output_file = "../../../data/lexicon_analysis/tfidf/top_tfidf_bias_terms.json"
@@ -31,8 +31,8 @@ for lang in languages:
 
     # Process each identity in the data
     for identity, scores in data.items():
-        for id in punjabi_identities_to_search:
-            if identity in id:
+        #for id in telugu_identities_to_search:
+         #   if identity in id:
                 print(f"Identity: {identity}")
 
                 # Extract top 3 terms by TF-IDF scores
@@ -95,4 +95,4 @@ def print_latex_table(top_tfidf_terms):
     
     print(latex_table)
 
-print_latex_table(top_tfidf_terms["Punjabi"])
+#print_latex_table(top_tfidf_terms["Kannada"])
