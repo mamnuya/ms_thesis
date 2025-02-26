@@ -36,7 +36,7 @@ terms_to_remove = {
     "Married with One child": ["status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "pride", "recognition"],
     "Married with Many children": ["status", "prestige", "security", "acceptance", "success", "happiness", "fertile", "social", "pride", "recognition"],
     "Married with No children": ["hollow", "fruitless", "dried", "barren"],
-    "Muslim": ["violent", "militant", "misogynistic", "terrorist", "untrustworthy", "bad", "strict", "rude", "evil", "rapist", "villian", "jihad"],
+    "Muslim": ["violent", "militant", "misogynistic", "terrorist", "untrustworthy", "bad", "strict", "rude", "evil", "rapist", "villain", "jihad"],
     "Hindu": ["violent", "perpetrator", "conniving", "racist", "supremacist", "discriminatory", "evil", "intolerant", "anger", "casteist", "innocent", "backward", "victim", "uneducated", "weird"],
     "Female": ["affectionate", "helpful", "friendly", "kind", "sympathetic", "sensitive", "gentle", "soft", "submissive", "deference", "isolated", "depression", "forced", "excluded", "liability", "burden", "neglect", "murder", "inferior", "emotional", "unstable",
                "household", "chores", "domestic", "childcare", "shopping", "cook", "clean", "laundry", "dishes", "clothes", "iron", "care"],

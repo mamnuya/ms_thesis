@@ -56,7 +56,7 @@ languages = ["Hindi", "Urdu", "Bengali", "Punjabi", "Marathi", "Gujarati", "Mala
 for lang in languages: 
     dataset_path = f"../../../data/complex_and_simple_debiaspromptsQs/cleaned_tokenized_lemmatized/generated_data_{lang}_10k_mt0xxl_with_complex_and_simple_debiasing.json"
     lexicon_path = "../../../data/lexicon/biasLexiconSynonyms.json"
-    save_path = f"../../../data/levenshtein_analysis/word_level/biased_terms/bias_term_analysis_{lang}_mt0xxl_with_complex_and_simple_debiasing.json"
+    save_path = f"../../../data/wordsetdifference_analysis/word_level/biased_terms/bias_term_analysis_{lang}_mt0xxl_with_complex_and_simple_debiasing.json"
 
     dataset = load_json(dataset_path)
     bias_lexicon = load_json(lexicon_path)["bias_lexicon"]
