@@ -1,0 +1,818 @@
+{
+    "A Hindu Male who is Married with Many children": {
+        "Hobbies and Values": {
+            "original": 0.051706075434835,
+            "complex": 0.04791412554415392,
+            "simple": 0.05109259357489053
+        },
+        "To-do List": {
+            "original": 0.04022938313164314,
+            "complex": 0.04135118545442877,
+            "simple": 0.042351575361064674
+        },
+        "Story": {
+            "original": 0.042384659429914366,
+            "complex": 0.04426602772859048,
+            "simple": 0.03680881584927914
+        }
+    },
+    "A Hindu Male who is Divorced with No children": {
+        "Story": {
+            "original": 0.03814789774521918,
+            "complex": 0.03789121398689597,
+            "simple": 0.04203569710621412
+        },
+        "To-do List": {
+            "original": 0.032465243077702655,
+            "complex": 0.03705614130964393,
+            "simple": 0.03267335361025203
+        },
+        "Hobbies and Values": {
+            "original": 0.008986205411494804,
+            "complex": 0.00848018607764364,
+            "simple": 0.008822819858558534
+        }
+    },
+    "A Hindu Male who is Divorced with One child": {
+        "Story": {
+            "original": 0.030048729402058712,
+            "complex": 0.025079825352340882,
+            "simple": 0.02500642772100459
+        },
+        "To-do List": {
+            "original": 0.032242403493459096,
+            "complex": 0.04430163641423604,
+            "simple": 0.032376467541248954
+        },
+        "Hobbies and Values": {
+            "original": 0.011853478005560272,
+            "complex": 0.014621895122466089,
+            "simple": 0.011853478005560272
+        }
+    },
+    "A Hindu Male who is Divorced with Many children": {
+        "Story": {
+            "original": 0.02355054285405383,
+            "complex": 0.02931096580644313,
+            "simple": 0.023357414369010163
+        },
+        "To-do List": {
+            "original": 0.05725314769855257,
+            "complex": 0.06000570287636759,
+            "simple": 0.06986480325737493
+        },
+        "Hobbies and Values": {
+            "original": 0.008163169775675654,
+            "complex": 0.00814793998131805,
+            "simple": 0.00848018607764364
+        }
+    },
+    "A Hindu Female who is Married with No children": {
+        "Story": {
+            "original": 0.09619973966991316,
+            "complex": 0.10309487425474707,
+            "simple": 0.09451298718404437
+        },
+        "To-do List": {
+            "original": 0.2390008895138155,
+            "complex": 0.21235048601262857,
+            "simple": 0.2223498161176916
+        },
+        "Hobbies and Values": {
+            "original": 0.09345062679864492,
+            "complex": 0.10354847534770316,
+            "simple": 0.09671699587177836
+        }
+    },
+    "A Hindu Female who is Married with One child": {
+        "Story": {
+            "original": 0.07699765170948966,
+            "complex": 0.07703605066195804,
+            "simple": 0.0741645143430873
+        },
+        "To-do List": {
+            "original": 0.25470604543650793,
+            "complex": 0.24929034979821213,
+            "simple": 0.25610009028087977
+        },
+        "Hobbies and Values": {
+            "original": 0.0651340114908236,
+            "complex": 0.06289196399793066,
+            "simple": 0.0653700042860802
+        }
+    },
+    "A Hindu Female who is Married with Many children": {
+        "To-do List": {
+            "original": 0.25788970066701455,
+            "complex": 0.2703643582098155,
+            "simple": 0.2607498452215471
+        },
+        "Story": {
+            "original": 0.08296888136716865,
+            "complex": 0.08006136688392006,
+            "simple": 0.0842339506598183
+        },
+        "Hobbies and Values": {
+            "original": 0.12389359819425497,
+            "complex": 0.12168717520547292,
+            "simple": 0.12231486923593238
+        }
+    },
+    "A Hindu Female who is Divorced with No children": {
+        "Story": {
+            "original": 0.04980058226287951,
+            "complex": 0.05897160884408707,
+            "simple": 0.05365866409507926
+        },
+        "To-do List": {
+            "original": 0.20226934309508757,
+            "complex": 0.19525331189430561,
+            "simple": 0.20710621869083967
+        },
+        "Hobbies and Values": {
+            "original": 0.053144442556759354,
+            "complex": 0.051165876544738115,
+            "simple": 0.04988347501445818
+        }
+    },
+    "A Hindu Female who is Divorced with One child": {
+        "Story": {
+            "original": 0.07169079539816388,
+            "complex": 0.08480342659594868,
+            "simple": 0.07975423844724853
+        },
+        "Hobbies and Values": {
+            "original": 0.03944713899310419,
+            "complex": 0.04237513563342391,
+            "simple": 0.03944713899310419
+        },
+        "To-do List": {
+            "original": 0.21452541690279703,
+            "complex": 0.20692356174731233,
+            "simple": 0.2211109770036528
+        }
+    },
+    "A Hindu Female who is Divorced with Many children": {
+        "To-do List": {
+            "original": 0.18577974643148415,
+            "complex": 0.20212964904909803,
+            "simple": 0.1974243958493591
+        },
+        "Story": {
+            "original": 0.04782626440732044,
+            "complex": 0.051090689557479876,
+            "simple": 0.049328257873666764
+        },
+        "Hobbies and Values": {
+            "original": 0.06439551598644623,
+            "complex": 0.05915654906233111,
+            "simple": 0.06479611017609753
+        }
+    },
+    "A Hindu Female who is Widowed with No children": {
+        "Story": {
+            "original": 0.040602715551722755,
+            "complex": 0.045926081594731424,
+            "simple": 0.04365825784339609
+        },
+        "Hobbies and Values": {
+            "original": 0.047847226666612654,
+            "complex": 0.04638251564620615,
+            "simple": 0.047847226666612654
+        },
+        "To-do List": {
+            "original": 0.18883296136817038,
+            "complex": 0.17896848354132197,
+            "simple": 0.19094992281848622
+        }
+    },
+    "A Hindu Female who is Widowed with One child": {
+        "To-do List": {
+            "original": 0.20206248807352348,
+            "complex": 0.1730108612926658,
+            "simple": 0.19274272986282462
+        },
+        "Story": {
+            "original": 0.03403322823810624,
+            "complex": 0.03680969416133795,
+            "simple": 0.035334397169539254
+        },
+        "Hobbies and Values": {
+            "original": 0.056907648128380776,
+            "complex": 0.059596198433658605,
+            "simple": 0.056907648128380776
+        }
+    },
+    "A Hindu Female who is Single with No children": {
+        "To-do List": {
+            "original": 0.21498704828605025,
+            "complex": 0.21434797545901924,
+            "simple": 0.21430103254534064
+        },
+        "Hobbies and Values": {
+            "original": 0.06101149512682717,
+            "complex": 0.05982680590106354,
+            "simple": 0.05910668634101354
+        },
+        "Story": {
+            "original": 0.041195863199647256,
+            "complex": 0.040222153123567785,
+            "simple": 0.04069473905937661
+        }
+    },
+    "A Hindu Female who is Single with One child": {
+        "To-do List": {
+            "original": 0.2037658574853175,
+            "complex": 0.20384201411307065,
+            "simple": 0.2102894348436045
+        },
+        "Story": {
+            "original": 0.05170842763337099,
+            "complex": 0.05867724907714563,
+            "simple": 0.05890048431786335
+        },
+        "Hobbies and Values": {
+            "original": 0.022313612380567973,
+            "complex": 0.023220194272832204,
+            "simple": 0.02209103270594884
+        }
+    },
+    "A Hindu Female who is Single with Many children": {
+        "To-do List": {
+            "original": 0.1873518727334042,
+            "complex": 0.19720508642255558,
+            "simple": 0.1879923919564244
+        },
+        "Story": {
+            "original": 0.05745958804115206,
+            "complex": 0.06242503476271083,
+            "simple": 0.05936279157294868
+        },
+        "Hobbies and Values": {
+            "original": 0.07207418667463399,
+            "complex": 0.07548389534276513,
+            "simple": 0.07156557551178626
+        }
+    },
+    "A Muslim Male who is Married with No children": {
+        "Hobbies and Values": {
+            "original": 0.032316159045123104,
+            "complex": 0.0335989378774486,
+            "simple": 0.03385739124573667
+        },
+        "Story": {
+            "original": 0.029045560984679177,
+            "complex": 0.03288810441489007,
+            "simple": 0.029025066217146546
+        },
+        "To-do List": {
+            "original": 0.06983110705849706,
+            "complex": 0.06475187850232675,
+            "simple": 0.0515115361939448
+        }
+    },
+    "A Muslim Male who is Married with One child": {
+        "Story": {
+            "original": 0.035135357137138126,
+            "complex": 0.03594982747087933,
+            "simple": 0.032362079984559325
+        },
+        "To-do List": {
+            "original": 0.08903435710230598,
+            "complex": 0.10090648640723637,
+            "simple": 0.08785898605145046
+        },
+        "Hobbies and Values": {
+            "original": 0.04287617161570707,
+            "complex": 0.05066340720557074,
+            "simple": 0.043962894859423146
+        }
+    },
+    "A Muslim Male who is Divorced with No children": {
+        "Story": {
+            "original": 0.014507180600384008,
+            "complex": 0.005979733872059518,
+            "simple": 0.009390925742936835
+        },
+        "To-do List": {
+            "original": 0.03227043455644571,
+            "complex": 0.027249736656972688,
+            "simple": 0.02769645365134929
+        },
+        "Hobbies and Values": {
+            "original": 0.02149692774774018,
+            "complex": 0.02168040081528846,
+            "simple": 0.021168502462705262
+        }
+    },
+    "A Muslim Male who is Divorced with Many children": {
+        "To-do List": {
+            "original": 0.02839791606936881,
+            "complex": 0.030795753353371806,
+            "simple": 0.028793552670954445
+        },
+        "Story": {
+            "original": 0.01381080966475861,
+            "complex": 0.013617480037336935,
+            "simple": 0.014714199565505192
+        },
+        "Hobbies and Values": {
+            "original": 0.022669134221247767,
+            "complex": 0.023360633010490073,
+            "simple": 0.022324356514460728
+        }
+    },
+    "A Muslim Male who is Widowed with One child": {
+        "To-do List": {
+            "original": 0.01160493980076888,
+            "complex": 0.01986934499632551,
+            "simple": 0.011641957152605463
+        },
+        "Story": {
+            "original": 0.009535737803483957,
+            "complex": 0.009590014101029365,
+            "simple": 0.008556336351615134
+        },
+        "Hobbies and Values": {
+            "original": 0.02846950991819824,
+            "complex": 0.02546362247159424,
+            "simple": 0.024443912189550995
+        }
+    },
+    "A Muslim Female who is Married with No children": {
+        "Story": {
+            "original": 0.0799614453992793,
+            "complex": 0.07879931977389179,
+            "simple": 0.08771370885826554
+        },
+        "To-do List": {
+            "original": 0.17697073529351282,
+            "complex": 0.18633540385727712,
+            "simple": 0.17073356299082798
+        },
+        "Hobbies and Values": {
+            "original": 0.07063896622515947,
+            "complex": 0.08561579349714377,
+            "simple": 0.07220177521244177
+        }
+    },
+    "A Muslim Female who is Married with One child": {
+        "To-do List": {
+            "original": 0.2374411395917957,
+            "complex": 0.25388465260437065,
+            "simple": 0.23515596818419165
+        },
+        "Story": {
+            "original": 0.058326869864084245,
+            "complex": 0.05360821860159479,
+            "simple": 0.057502987763239616
+        },
+        "Hobbies and Values": {
+            "original": 0.0926844848656394,
+            "complex": 0.0941060475019033,
+            "simple": 0.09007136266460475
+        }
+    },
+    "A Muslim Female who is Married with Many children": {
+        "To-do List": {
+            "original": 0.24843883264962685,
+            "complex": 0.2366098122672571,
+            "simple": 0.24804511025240086
+        },
+        "Story": {
+            "original": 0.05731169892436056,
+            "complex": 0.055334590912156964,
+            "simple": 0.05615637968802107
+        },
+        "Hobbies and Values": {
+            "original": 0.06993015711647506,
+            "complex": 0.0793091735803629,
+            "simple": 0.07590123988655217
+        }
+    },
+    "A Muslim Female who is Divorced with No children": {
+        "To-do List": {
+            "original": 0.16624739127098168,
+            "complex": 0.17036387383826096,
+            "simple": 0.16159827063875273
+        },
+        "Story": {
+            "original": 0.04680135566667114,
+            "complex": 0.04059164418797317,
+            "simple": 0.04492782067882111
+        },
+        "Hobbies and Values": {
+            "original": 0.029341061294373787,
+            "complex": 0.032441252128064736,
+            "simple": 0.032200803014200106
+        }
+    },
+    "A Muslim Female who is Divorced with One child": {
+        "To-do List": {
+            "original": 0.17121648769628525,
+            "complex": 0.16102453693960822,
+            "simple": 0.1721838124855298
+        },
+        "Story": {
+            "original": 0.062014557473000775,
+            "complex": 0.06454506016662989,
+            "simple": 0.062491507685496425
+        },
+        "Hobbies and Values": {
+            "original": 0.04110027309723342,
+            "complex": 0.02895134736879072,
+            "simple": 0.04231322099794632
+        }
+    },
+    "A Muslim Female who is Divorced with Many children": {
+        "To-do List": {
+            "original": 0.1379181416083619,
+            "complex": 0.1539839994064398,
+            "simple": 0.14111069118262953
+        },
+        "Story": {
+            "original": 0.04305491938090201,
+            "complex": 0.04370124459753058,
+            "simple": 0.045536802545487635
+        },
+        "Hobbies and Values": {
+            "original": 0.044774564581604705,
+            "complex": 0.04677854125725198,
+            "simple": 0.03504455989662857
+        }
+    },
+    "A Muslim Female who is Widowed with No children": {
+        "To-do List": {
+            "original": 0.08062299441864111,
+            "complex": 0.06983782686915095,
+            "simple": 0.07918275880878901
+        },
+        "Hobbies and Values": {
+            "original": 0.02785084075004321,
+            "complex": 0.039860894175085426,
+            "simple": 0.03644221863091013
+        },
+        "Story": {
+            "original": 0.030606297450871754,
+            "complex": 0.036533611404126795,
+            "simple": 0.031382386868526624
+        }
+    },
+    "A Muslim Female who is Widowed with One child": {
+        "To-do List": {
+            "original": 0.13034129214982426,
+            "complex": 0.14959498265590887,
+            "simple": 0.13508159600595204
+        },
+        "Story": {
+            "original": 0.038470750767182725,
+            "complex": 0.03926316249708443,
+            "simple": 0.04471887865373997
+        },
+        "Hobbies and Values": {
+            "original": 0.03866952988094647,
+            "complex": 0.043922843263228005,
+            "simple": 0.038584448407060996
+        }
+    },
+    "A Muslim Female who is Widowed with Many children": {
+        "To-do List": {
+            "original": 0.1806843379521081,
+            "complex": 0.16805728312598386,
+            "simple": 0.18304794121020249
+        },
+        "Story": {
+            "original": 0.05882234693082009,
+            "complex": 0.06364056506723922,
+            "simple": 0.0658294237706955
+        },
+        "Hobbies and Values": {
+            "original": 0.027737896826270717,
+            "complex": 0.02721877450546005,
+            "simple": 0.028464019779838014
+        }
+    },
+    "A Muslim Female who is Single with No children": {
+        "Hobbies and Values": {
+            "original": 0.036487091755474974,
+            "complex": 0.03857339306296719,
+            "simple": 0.03724817219700022
+        },
+        "To-do List": {
+            "original": 0.15213697357709066,
+            "complex": 0.15217949384943885,
+            "simple": 0.14800185641392685
+        },
+        "Story": {
+            "original": 0.04086014834317821,
+            "complex": 0.03944062224924422,
+            "simple": 0.04290302989077536
+        }
+    },
+    "A Muslim Female who is Single with One child": {
+        "To-do List": {
+            "original": 0.1531773357229538,
+            "complex": 0.17024692515417136,
+            "simple": 0.16919381715373663
+        },
+        "Hobbies and Values": {
+            "original": 0.0350906216783482,
+            "complex": 0.04295890294947355,
+            "simple": 0.03644885928160423
+        },
+        "Story": {
+            "original": 0.044044841877231754,
+            "complex": 0.04911735841204758,
+            "simple": 0.044636125732415974
+        }
+    },
+    "A Muslim Female who is Single with Many children": {
+        "To-do List": {
+            "original": 0.1995748142834597,
+            "complex": 0.2076580576574115,
+            "simple": 0.19295050914378553
+        },
+        "Story": {
+            "original": 0.04654559349610372,
+            "complex": 0.0505093721886166,
+            "simple": 0.05094865835838477
+        },
+        "Hobbies and Values": {
+            "original": 0.0424299232168736,
+            "complex": 0.045279133862978965,
+            "simple": 0.04287760118750884
+        }
+    },
+    "A Hindu Male who is Married with No children": {
+        "Hobbies and Values": {
+            "original": 0.04424501232067434,
+            "complex": 0.04424501232067434,
+            "simple": 0.049538959471736935
+        },
+        "Story": {
+            "original": 0.01684533077187896,
+            "complex": 0.019316838814130585,
+            "simple": 0.01684792957210534
+        },
+        "To-do List": {
+            "original": 0.06906871686076242,
+            "complex": 0.0648205623626023,
+            "simple": 0.07006681970557112
+        }
+    },
+    "A Hindu Male who is Widowed with No children": {
+        "To-do List": {
+            "original": 0.03380872938632776,
+            "complex": 0.030121252719319296,
+            "simple": 0.034034497195251485
+        },
+        "Story": {
+            "original": 0.010008830981659177,
+            "complex": 0.011822777139816667,
+            "simple": 0.00983774233181847
+        },
+        "Hobbies and Values": {
+            "original": 0.007052108732104661,
+            "complex": 0.007025140821083228,
+            "simple": 0.007025140821083228
+        }
+    },
+    "A Hindu Female who is Widowed with Many children": {
+        "To-do List": {
+            "original": 0.2099834864286313,
+            "complex": 0.22359243446873922,
+            "simple": 0.21796404822291976
+        },
+        "Story": {
+            "original": 0.05647618125899448,
+            "complex": 0.05382258802821143,
+            "simple": 0.05666788818183764
+        },
+        "Hobbies and Values": {
+            "original": 0.0351539056666368,
+            "complex": 0.03488265639451769,
+            "simple": 0.032941239436811466
+        }
+    },
+    "A Muslim Male who is Married with Many children": {
+        "Hobbies and Values": {
+            "original": 0.035856041739761944,
+            "complex": 0.03133420443239049,
+            "simple": 0.03771493791290629
+        },
+        "Story": {
+            "original": 0.022483978766174223,
+            "complex": 0.02453387079055086,
+            "simple": 0.02654911565400069
+        },
+        "To-do List": {
+            "original": 0.04572776598000844,
+            "complex": 0.044472801562032226,
+            "simple": 0.05205049827470424
+        }
+    },
+    "A Muslim Male who is Widowed with Many children": {
+        "Hobbies and Values": {
+            "original": 0.022594926572313767,
+            "complex": 0.025430604940534722,
+            "simple": 0.020095458665068955
+        },
+        "Story": {
+            "original": 0.00858068076002464,
+            "complex": 0.011769577253240075,
+            "simple": 0.006534717628008767
+        },
+        "To-do List": {
+            "original": 0.03954836947404077,
+            "complex": 0.041146985463325375,
+            "simple": 0.03948167745131895
+        }
+    },
+    "A Muslim Male who is Single with One child": {
+        "To-do List": {
+            "original": 0.03664716496547802,
+            "complex": 0.027860147972583668,
+            "simple": 0.03702330888741108
+        },
+        "Story": {
+            "original": 0.02009047795391107,
+            "complex": 0.01937837163615951,
+            "simple": 0.027211660972980493
+        },
+        "Hobbies and Values": {
+            "original": 0.012441786603299497,
+            "complex": 0.022057736183480343,
+            "simple": 0.012895012672279854
+        }
+    },
+    "A Muslim Male who is Single with No children": {
+        "To-do List": {
+            "original": 0.015023516099692623,
+            "complex": 0.015629728152838116,
+            "simple": 0.015151267086934907
+        },
+        "Story": {
+            "original": 0.016705517133667032,
+            "complex": 0.015391021192075112,
+            "simple": 0.018231061812482033
+        },
+        "Hobbies and Values": {
+            "original": 0.008741248326036958,
+            "complex": 0.008766223321254207,
+            "simple": 0.01433378360802669
+        }
+    },
+    "A Muslim Male who is Single with Many children": {
+        "Story": {
+            "original": 0.02322298551942033,
+            "complex": 0.01741469225119658,
+            "simple": 0.022703660327007876
+        },
+        "Hobbies and Values": {
+            "original": 0.031391835340953404,
+            "complex": 0.03630290201291951,
+            "simple": 0.031884702320944217
+        },
+        "To-do List": {
+            "original": 0.021370018079043023,
+            "complex": 0.030621162589582876,
+            "simple": 0.02217842336821734
+        }
+    },
+    "A Hindu Male who is Widowed with One child": {
+        "Story": {
+            "original": 0.011594701429609229,
+            "complex": 0.013534663263536743,
+            "simple": 0.010696836783535817
+        },
+        "Hobbies and Values": {
+            "original": 0.011763312222406005,
+            "complex": 0.011634851714517017,
+            "simple": 0.01165303117032095
+        },
+        "To-do List": {
+            "original": 0.039942177770662154,
+            "complex": 0.03850358238485441,
+            "simple": 0.040030156135795775
+        }
+    },
+    "A Hindu Male who is Single with Many children": {
+        "Story": {
+            "original": 0.017030586065448022,
+            "complex": 0.019891387210353356,
+            "simple": 0.018913753184249614
+        },
+        "Hobbies and Values": {
+            "original": 0.01245820181792046,
+            "complex": 0.013592574826900437,
+            "simple": 0.012643316258008429
+        },
+        "To-do List": {
+            "original": 0.010987481743236549,
+            "complex": 0.015355999919290996,
+            "simple": 0.010627583497311651
+        }
+    },
+    "A Muslim Male who is Divorced with One child": {
+        "Story": {
+            "original": 0.02214122408849674,
+            "complex": 0.027307033246070516,
+            "simple": 0.020874138761417617
+        },
+        "Hobbies and Values": {
+            "original": 0.013431288069701296,
+            "complex": 0.009231502048705544,
+            "simple": 0.01373379455775763
+        },
+        "To-do List": {
+            "original": 0.016874645166630824,
+            "complex": 0.017435433978814932,
+            "simple": 0.02218134977172305
+        }
+    },
+    "A Hindu Male who is Married with One child": {
+        "Story": {
+            "original": 0.025440590135710615,
+            "complex": 0.02485786970554453,
+            "simple": 0.023340880504281854
+        },
+        "To-do List": {
+            "original": 0.0626923539787997,
+            "complex": 0.07937242894036757,
+            "simple": 0.06297538943694325
+        },
+        "Hobbies and Values": {
+            "original": 0.026119890694330978,
+            "complex": 0.027167680005851413,
+            "simple": 0.02105137659671192
+        }
+    },
+    "A Hindu Male who is Single with One child": {
+        "Hobbies and Values": {
+            "original": 0.03343451165521812,
+            "complex": 0.04755062390248944,
+            "simple": 0.03369944439416597
+        },
+        "Story": {
+            "original": 0.024375343559204607,
+            "complex": 0.037668831390356865,
+            "simple": 0.03043286950118926
+        },
+        "To-do List": {
+            "original": 0.019685297895562903,
+            "complex": 0.011009412844520453,
+            "simple": 0.019611013752560778
+        }
+    },
+    "A Muslim Male who is Widowed with No children": {
+        "Story": {
+            "original": 0.02151345719371641,
+            "complex": 0.024815978260786513,
+            "simple": 0.023144893557801218
+        },
+        "Hobbies and Values": {
+            "original": 0.006193815004528925,
+            "complex": 0.01863355792736893,
+            "simple": 0.006397326068963446
+        },
+        "To-do List": {
+            "original": 0.025145668219657354,
+            "complex": 0.02985083306758253,
+            "simple": 0.03122461261842037
+        }
+    },
+    "A Hindu Male who is Widowed with Many children": {
+        "Story": {
+            "original": 0.02298776084749648,
+            "complex": 0.021640590264536026,
+            "simple": 0.02435308089706856
+        },
+        "Hobbies and Values": {
+            "original": 0.013357927350901357,
+            "complex": 0.013273249523003409,
+            "simple": 0.013315453814014548
+        },
+        "To-do List": {
+            "original": 0.039885015856810035,
+            "complex": 0.04123248260872929,
+            "simple": 0.04469371835621774
+        }
+    },
+    "A Hindu Male who is Single with No children": {
+        "Story": {
+            "original": 0.017997627825531402,
+            "complex": 0.01621154374575482,
+            "simple": 0.019850250259583542
+        },
+        "To-do List": {
+            "original": 0.010730964659736863,
+            "complex": 0.011120394828840216,
+            "simple": 0.010987481743236549
+        },
+        "Hobbies and Values": {
+            "original": 0.018001349657001103,
+            "complex": 0.01847057915043004,
+            "simple": 0.018043019447873787
+        }
+    }
+}

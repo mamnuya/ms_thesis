@@ -1,0 +1,1472 @@
+{
+    "Hindi": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 1.0316367590747189,
+                    "Muslim_original": 0.8595086268695147,
+                    "Hindu_simple": 1.0392039198000804,
+                    "Muslim_simple": 0.8994174406638674,
+                    "Hindu_complex": 1.041469732922841,
+                    "Muslim_complex": 0.9074308842174214
+                },
+                "sum_gender": {
+                    "Male_original": 0.4215144487921557,
+                    "Female_original": 1.4696309371520777,
+                    "Male_simple": 0.43573476738923866,
+                    "Female_simple": 1.502886593074709,
+                    "Male_complex": 0.4294745759197221,
+                    "Female_complex": 1.5194260412205403
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.37252103410779236,
+                    "Married_original": 0.7479607496588992,
+                    "Divorced_original": 0.3808836947108932,
+                    "Widowed_original": 0.3897799074666484,
+                    "Single_simple": 0.38547234370328953,
+                    "Married_simple": 0.7550854595589466,
+                    "Divorced_simple": 0.4099185896389303,
+                    "Widowed_simple": 0.3881449675627813,
+                    "Single_complex": 0.38560999337948365,
+                    "Married_complex": 0.7654890515679907,
+                    "Divorced_complex": 0.3960691015417536,
+                    "Widowed_complex": 0.4017324706510344
+                },
+                "sum_children_count": {
+                    "No children_original": 0.6453824230221865,
+                    "One child_original": 0.6393794785129627,
+                    "Many children_original": 0.606383484409084,
+                    "No children_simple": 0.6662842272360558,
+                    "One child_simple": 0.63708943592434,
+                    "Many children_simple": 0.635247697303552,
+                    "No children_complex": 0.6476503875526409,
+                    "One child_complex": 0.6429853607744251,
+                    "Many children_complex": 0.6582648688131965
+                },
+                "aggregate_original_application": 1.8911453859442333,
+                "aggregate_simple_application": 1.938621360463948,
+                "aggregate_complex_application": 1.9489006171402625
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 2.1512778115025166,
+                    "Muslim_original": 1.8639262877477742,
+                    "Hindu_simple": 2.173796418309082,
+                    "Muslim_simple": 1.8815946577323146,
+                    "Hindu_complex": 2.1232375502480894,
+                    "Muslim_complex": 1.9126511446168275
+                },
+                "sum_gender": {
+                    "Male_original": 0.6726634736780384,
+                    "Female_original": 3.3425406255722527,
+                    "Male_simple": 0.7206575776853931,
+                    "Female_simple": 3.3347334983560035,
+                    "Male_complex": 0.729968603074918,
+                    "Female_complex": 3.305920091789999
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.8466731692658233,
+                    "Married_original": 1.4495351074784986,
+                    "Divorced_original": 1.0568308525239318,
+                    "Widowed_original": 0.6621649699820376,
+                    "Single_simple": 0.8694503573481279,
+                    "Married_simple": 1.4204302467247756,
+                    "Divorced_simple": 1.077598969175559,
+                    "Widowed_simple": 0.6879115027929334,
+                    "Single_complex": 0.885599038723944,
+                    "Married_complex": 1.4397845482677174,
+                    "Divorced_complex": 1.0739397908128754,
+                    "Widowed_complex": 0.6365653170603804
+                },
+                "sum_children_count": {
+                    "No children_original": 1.2266591028722011,
+                    "One child_original": 1.2398257736996978,
+                    "Many children_original": 1.5487192226783921,
+                    "No children_simple": 1.259936447986276,
+                    "One child_simple": 1.22229622219838,
+                    "Many children_simple": 1.5731584058567407,
+                    "No children_complex": 1.2202470304283757,
+                    "One child_complex": 1.2598566648525387,
+                    "Many children_complex": 1.5557849995840025
+                },
+                "aggregate_original_application": 4.015204099250291,
+                "aggregate_simple_application": 4.055391076041396,
+                "aggregate_complex_application": 4.0358886948649175
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 8.826134515828574,
+                    "Muslim_original": 5.8174406322501255,
+                    "Hindu_simple": 8.829535291982058,
+                    "Muslim_simple": 5.805926966940573,
+                    "Hindu_complex": 8.192260733072759,
+                    "Muslim_complex": 5.860666458047264
+                },
+                "sum_gender": {
+                    "Male_original": 1.2885784596154817,
+                    "Female_original": 13.354996688463217,
+                    "Male_simple": 1.2956657870888375,
+                    "Female_simple": 13.339796471833793,
+                    "Male_complex": 1.3919177531761369,
+                    "Female_complex": 12.661009437943889
+                },
+                "sum_marital_status": {
+                    "Single_original": 3.6887615127878637,
+                    "Married_original": 4.1268811737744056,
+                    "Divorced_original": 3.2514868104639385,
+                    "Widowed_original": 3.5764456510524902,
+                    "Single_simple": 3.7078396113097782,
+                    "Married_simple": 4.148733756125185,
+                    "Divorced_simple": 3.2160740276503823,
+                    "Widowed_simple": 3.562814863837286,
+                    "Single_complex": 3.522076730016651,
+                    "Married_complex": 3.9042649018545,
+                    "Divorced_complex": 3.150632480043435,
+                    "Widowed_complex": 3.4759530792054383
+                },
+                "sum_children_count": {
+                    "No children_original": 5.202172777631187,
+                    "One child_original": 4.700720745186464,
+                    "Many children_original": 4.740681625261047,
+                    "No children_simple": 5.238290897418667,
+                    "One child_simple": 4.6767128543698835,
+                    "Many children_simple": 4.720458507134081,
+                    "No children_complex": 4.9131833355592995,
+                    "One child_complex": 4.475896740552917,
+                    "Many children_complex": 4.663847115007808
+                },
+                "aggregate_original_application": 14.643575148078698,
+                "aggregate_simple_application": 14.635462258922633,
+                "aggregate_complex_application": 14.052927191120025
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 20.54992463327322,
+            "final_aggregate_simple": 20.629474695427977,
+            "final_aggregate_complex": 20.037716503125203
+        }
+    },
+    "Urdu": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.8996868296398874,
+                    "Muslim_original": 0.7936066704256926,
+                    "Hindu_simple": 0.93071926141124,
+                    "Muslim_simple": 0.7924661612562116,
+                    "Hindu_complex": 0.8852737431347488,
+                    "Muslim_complex": 0.7999208697448168
+                },
+                "sum_gender": {
+                    "Male_original": 0.4131741004456876,
+                    "Female_original": 1.2801193996198925,
+                    "Male_simple": 0.4269298970471144,
+                    "Female_simple": 1.2962555256203372,
+                    "Male_complex": 0.4119442647951288,
+                    "Female_complex": 1.2732503480844368
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.3620960503152091,
+                    "Married_original": 0.5961051644329832,
+                    "Divorced_original": 0.36058549405782847,
+                    "Widowed_original": 0.37450679125955916,
+                    "Single_simple": 0.36940372122271165,
+                    "Married_simple": 0.5875306674575329,
+                    "Divorced_simple": 0.3801426338489557,
+                    "Widowed_simple": 0.3861084001382513,
+                    "Single_complex": 0.36332756378701686,
+                    "Married_complex": 0.5875025792635283,
+                    "Divorced_complex": 0.360403386547622,
+                    "Widowed_complex": 0.3739610832813982
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5276821402339524,
+                    "One child_original": 0.6363038799052645,
+                    "Many children_original": 0.5293074799263631,
+                    "No children_simple": 0.5434420799462003,
+                    "One child_simple": 0.6434858314000852,
+                    "Many children_simple": 0.5362575113211661,
+                    "No children_complex": 0.5381825525808832,
+                    "One child_complex": 0.6376067154548806,
+                    "Many children_complex": 0.5094053448438018
+                },
+                "aggregate_original_application": 1.69329350006558,
+                "aggregate_simple_application": 1.7231854226674517,
+                "aggregate_complex_application": 1.6851946128795656
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 1.7437638939829,
+                    "Muslim_original": 1.232168880351482,
+                    "Hindu_simple": 1.7283278497415973,
+                    "Muslim_simple": 1.2414677671252223,
+                    "Hindu_complex": 1.7272987155833122,
+                    "Muslim_complex": 1.245704307078493
+                },
+                "sum_gender": {
+                    "Male_original": 0.6346261556696591,
+                    "Female_original": 2.3413066186647233,
+                    "Male_simple": 0.629000910210204,
+                    "Female_simple": 2.3407947066566153,
+                    "Male_complex": 0.6231009239790722,
+                    "Female_complex": 2.3499020986827333
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.6236202458813095,
+                    "Married_original": 1.2794501600934576,
+                    "Divorced_original": 0.6091071313509884,
+                    "Widowed_original": 0.4637552370086272,
+                    "Single_simple": 0.6308717609658487,
+                    "Married_simple": 1.265226491493926,
+                    "Divorced_simple": 0.6078172384462979,
+                    "Widowed_simple": 0.46588012596074635,
+                    "Single_complex": 0.6126594872428218,
+                    "Married_complex": 1.292022290095893,
+                    "Divorced_complex": 0.6141376774616396,
+                    "Widowed_complex": 0.4541835678614506
+                },
+                "sum_children_count": {
+                    "No children_original": 0.9970464086491124,
+                    "One child_original": 0.8622629162660366,
+                    "Many children_original": 1.1166234494192337,
+                    "No children_simple": 0.9987786830675002,
+                    "One child_simple": 0.8354833933224959,
+                    "Many children_simple": 1.1355335404768232,
+                    "No children_complex": 0.9896785738458087,
+                    "One child_complex": 0.8769814114135734,
+                    "Many children_complex": 1.1063430374024232
+                },
+                "aggregate_original_application": 2.975932774334382,
+                "aggregate_simple_application": 2.9697956168668194,
+                "aggregate_complex_application": 2.9730030226618056
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 4.889943291660108,
+                    "Muslim_original": 3.9195383012581093,
+                    "Hindu_simple": 4.89064409279535,
+                    "Muslim_simple": 3.8958121131607784,
+                    "Hindu_complex": 4.785076309096105,
+                    "Muslim_complex": 3.9641876575512804
+                },
+                "sum_gender": {
+                    "Male_original": 0.8397715755715844,
+                    "Female_original": 7.9697100173466335,
+                    "Male_simple": 0.8444938219045722,
+                    "Female_simple": 7.941962384051555,
+                    "Male_complex": 0.8689157856186178,
+                    "Female_complex": 7.8803481810287686
+                },
+                "sum_marital_status": {
+                    "Single_original": 2.1761811705047442,
+                    "Married_original": 2.7139596759874003,
+                    "Divorced_original": 2.1594200005450843,
+                    "Widowed_original": 1.7599207458809882,
+                    "Single_simple": 2.1550264402206287,
+                    "Married_simple": 2.701782291137167,
+                    "Divorced_simple": 2.1732431660143012,
+                    "Widowed_simple": 1.7564043085840313,
+                    "Single_complex": 2.172132128516412,
+                    "Married_complex": 2.64383479599641,
+                    "Divorced_complex": 2.1880034837076243,
+                    "Widowed_complex": 1.7452935584269402
+                },
+                "sum_children_count": {
+                    "No children_original": 3.180557041399174,
+                    "One child_original": 2.8036326170275383,
+                    "Many children_original": 2.825291934491505,
+                    "No children_simple": 3.1759282187035245,
+                    "One child_simple": 2.7824341289104844,
+                    "Many children_simple": 2.828093858342119,
+                    "No children_complex": 3.1442305090431635,
+                    "One child_complex": 2.827523057901543,
+                    "Many children_complex": 2.77751039970268
+                },
+                "aggregate_original_application": 8.80948159291822,
+                "aggregate_simple_application": 8.786456205956126,
+                "aggregate_complex_application": 8.749263966647385
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 13.478707867318182,
+            "final_aggregate_simple": 13.479437245490397,
+            "final_aggregate_complex": 13.407461602188757
+        }
+    },
+    "Bengali": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.5201098315679239,
+                    "Muslim_original": 0.5315316052060484,
+                    "Hindu_simple": 0.5181983545618212,
+                    "Muslim_simple": 0.48182060219413925,
+                    "Hindu_complex": 0.48569758870629753,
+                    "Muslim_complex": 0.464979011018809
+                },
+                "sum_gender": {
+                    "Male_original": 0.27720065277127726,
+                    "Female_original": 0.7744407840026949,
+                    "Male_simple": 0.2268852202077002,
+                    "Female_simple": 0.7731337365482603,
+                    "Male_complex": 0.2573824242440824,
+                    "Female_complex": 0.6932941754810242
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.17455825826115448,
+                    "Married_original": 0.4259096659764126,
+                    "Divorced_original": 0.23645413941563537,
+                    "Widowed_original": 0.21471937312076972,
+                    "Single_simple": 0.16261003894487408,
+                    "Married_simple": 0.38691691652613786,
+                    "Divorced_simple": 0.2504907000974424,
+                    "Widowed_simple": 0.20000130118750611,
+                    "Single_complex": 0.13994479015624292,
+                    "Married_complex": 0.39106974102643904,
+                    "Divorced_complex": 0.22294674083049407,
+                    "Widowed_complex": 0.19671532771193048
+                },
+                "sum_children_count": {
+                    "No children_original": 0.322786247963924,
+                    "One child_original": 0.38452468098554315,
+                    "Many children_original": 0.3443305078245049,
+                    "No children_simple": 0.3008521611357736,
+                    "One child_simple": 0.37407448455283454,
+                    "Many children_simple": 0.32509231106735237,
+                    "No children_complex": 0.289582099109423,
+                    "One child_complex": 0.34647423015971984,
+                    "Many children_complex": 0.3146202704559637
+                },
+                "aggregate_original_application": 1.051641436773972,
+                "aggregate_simple_application": 1.0000189567559605,
+                "aggregate_complex_application": 0.9506765997251065
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 1.0122841017860456,
+                    "Muslim_original": 1.0050827052463855,
+                    "Hindu_simple": 0.9604692443881884,
+                    "Muslim_simple": 0.954316864912393,
+                    "Hindu_complex": 0.9246995849699305,
+                    "Muslim_complex": 0.875421752503994
+                },
+                "sum_gender": {
+                    "Male_original": 0.36060183746255636,
+                    "Female_original": 1.6567649695698745,
+                    "Male_simple": 0.33479722857010663,
+                    "Female_simple": 1.5799888807304747,
+                    "Male_complex": 0.35514419519958834,
+                    "Female_complex": 1.444977142274336
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.5080994707093974,
+                    "Married_original": 0.9512147639633208,
+                    "Divorced_original": 0.31926893282817415,
+                    "Widowed_original": 0.23878363953153864,
+                    "Single_simple": 0.48828049994453876,
+                    "Married_simple": 0.8942501669382144,
+                    "Divorced_simple": 0.30475025572552833,
+                    "Widowed_simple": 0.22750518669229963,
+                    "Single_complex": 0.4382654191455704,
+                    "Married_complex": 0.8295063140347445,
+                    "Divorced_complex": 0.312492832105355,
+                    "Widowed_complex": 0.21985677218825456
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5449107882434083,
+                    "One child_original": 0.8305093901161461,
+                    "Many children_original": 0.6419466286728766,
+                    "No children_simple": 0.5437401242861776,
+                    "One child_simple": 0.7741165841427634,
+                    "Many children_simple": 0.5969294008716403,
+                    "No children_complex": 0.5384154760702559,
+                    "One child_complex": 0.6696825675457015,
+                    "Many children_complex": 0.592023293857967
+                },
+                "aggregate_original_application": 2.0173668070324307,
+                "aggregate_simple_application": 1.9147861093005814,
+                "aggregate_complex_application": 1.8001213374739247
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 2.38937290948778,
+                    "Muslim_original": 1.8357821265107892,
+                    "Hindu_simple": 2.46378793398676,
+                    "Muslim_simple": 1.959659142666048,
+                    "Hindu_complex": 2.7440838869724984,
+                    "Muslim_complex": 2.2978635721798666
+                },
+                "sum_gender": {
+                    "Male_original": 1.1291252565326477,
+                    "Female_original": 3.0960297794659213,
+                    "Male_simple": 1.170691761867897,
+                    "Female_simple": 3.2527553147849106,
+                    "Male_complex": 1.288134887211165,
+                    "Female_complex": 3.7538125719411997
+                },
+                "sum_marital_status": {
+                    "Single_original": 1.092331920072427,
+                    "Married_original": 1.2233744112610374,
+                    "Divorced_original": 1.0115298783693956,
+                    "Widowed_original": 0.8979188262957092,
+                    "Single_simple": 1.1472139926806093,
+                    "Married_simple": 1.2456447298099378,
+                    "Divorced_simple": 1.0948083457226114,
+                    "Widowed_simple": 0.9357800084396494,
+                    "Single_complex": 1.372649596820491,
+                    "Married_complex": 1.457401203698331,
+                    "Divorced_complex": 1.170193793971976,
+                    "Widowed_complex": 1.041702864661567
+                },
+                "sum_children_count": {
+                    "No children_original": 1.188650178304957,
+                    "One child_original": 1.2922767495751053,
+                    "Many children_original": 1.7442281081185067,
+                    "No children_simple": 1.290365528165628,
+                    "One child_simple": 1.347878728188676,
+                    "Many children_simple": 1.7852028202985037,
+                    "No children_complex": 1.3704040527329764,
+                    "One child_complex": 1.5610514221963672,
+                    "Many children_complex": 2.1104919842230214
+                },
+                "aggregate_original_application": 4.225155035998569,
+                "aggregate_simple_application": 4.423447076652808,
+                "aggregate_complex_application": 5.0419474591523645
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 7.294163279804971,
+            "final_aggregate_simple": 7.33825214270935,
+            "final_aggregate_complex": 7.792745396351396
+        }
+    },
+    "Punjabi": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.9873725197857137,
+                    "Muslim_original": 0.8435937931795405,
+                    "Hindu_simple": 1.0117528688272466,
+                    "Muslim_simple": 0.8740455670693313,
+                    "Hindu_complex": 1.0544333519541458,
+                    "Muslim_complex": 0.8537204745844104
+                },
+                "sum_gender": {
+                    "Male_original": 0.5171855686536388,
+                    "Female_original": 1.3137807443116154,
+                    "Male_simple": 0.5207795546548022,
+                    "Female_simple": 1.3650188812417756,
+                    "Male_complex": 0.5401282389345745,
+                    "Female_complex": 1.368025587603982
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.40123700064786644,
+                    "Married_original": 0.6231017641597912,
+                    "Divorced_original": 0.4633948589439088,
+                    "Widowed_original": 0.34323268921368794,
+                    "Single_simple": 0.43478908498925756,
+                    "Married_simple": 0.6192184162778491,
+                    "Divorced_simple": 0.47107609459188826,
+                    "Widowed_simple": 0.36071484003758303,
+                    "Single_complex": 0.4263476372392289,
+                    "Married_complex": 0.6297469600128546,
+                    "Divorced_complex": 0.4828899262507962,
+                    "Widowed_complex": 0.36916930303567663
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5907995507808985,
+                    "One child_original": 0.6156492844702433,
+                    "Many children_original": 0.6245174777141125,
+                    "No children_simple": 0.6078151610783731,
+                    "One child_simple": 0.6359843646932145,
+                    "Many children_simple": 0.6419989101249903,
+                    "No children_complex": 0.6078971268587786,
+                    "One child_complex": 0.6572266563396647,
+                    "Many children_complex": 0.643030043340113
+                },
+                "aggregate_original_application": 1.8309663129652543,
+                "aggregate_simple_application": 1.8857984358965778,
+                "aggregate_complex_application": 1.9081538265385563
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 0.9819146517418154,
+                    "Muslim_original": 0.8352142554930552,
+                    "Hindu_simple": 0.9762068218585731,
+                    "Muslim_simple": 0.8506103542341199,
+                    "Hindu_complex": 1.0023413007731743,
+                    "Muslim_complex": 0.9115398293997565
+                },
+                "sum_gender": {
+                    "Male_original": 0.5256200872827349,
+                    "Female_original": 1.2915088199521358,
+                    "Male_simple": 0.5300308925683926,
+                    "Female_simple": 1.2967862835243005,
+                    "Male_complex": 0.5686475912375769,
+                    "Female_complex": 1.3452335389353538
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.38587586423315545,
+                    "Married_original": 0.7488511955414299,
+                    "Divorced_original": 0.35880319974094166,
+                    "Widowed_original": 0.3235986477193436,
+                    "Single_simple": 0.3928372059261609,
+                    "Married_simple": 0.7597944008187951,
+                    "Divorced_simple": 0.350068445569121,
+                    "Widowed_simple": 0.3241171237786162,
+                    "Single_complex": 0.43208296478955455,
+                    "Married_complex": 0.7820819965166063,
+                    "Divorced_complex": 0.34639125905051243,
+                    "Widowed_complex": 0.35332490981625747
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5668045774185997,
+                    "One child_original": 0.5717372692994656,
+                    "Many children_original": 0.6785870605168054,
+                    "No children_simple": 0.5908342959330994,
+                    "One child_simple": 0.564526659910501,
+                    "Many children_simple": 0.6714562202490926,
+                    "No children_complex": 0.6183150446141635,
+                    "One child_complex": 0.6064139520759158,
+                    "Many children_complex": 0.6891521334828514
+                },
+                "aggregate_original_application": 1.8171289072348706,
+                "aggregate_simple_application": 1.826817176092693,
+                "aggregate_complex_application": 1.9138811301729306
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 3.0101457719750595,
+                    "Muslim_original": 2.4662463787865794,
+                    "Hindu_simple": 3.049373763006399,
+                    "Muslim_simple": 2.4630795176497595,
+                    "Hindu_complex": 3.0015293546719457,
+                    "Muslim_complex": 2.5303671409282718
+                },
+                "sum_gender": {
+                    "Male_original": 0.8804668181251933,
+                    "Female_original": 4.595925332636446,
+                    "Male_simple": 0.8970864827718633,
+                    "Female_simple": 4.615366797884295,
+                    "Male_complex": 0.9248410753661938,
+                    "Female_complex": 4.6070554202340235
+                },
+                "sum_marital_status": {
+                    "Single_original": 1.225438345531026,
+                    "Married_original": 1.79103102726429,
+                    "Divorced_original": 1.2774603170671572,
+                    "Widowed_original": 1.1824624608991656,
+                    "Single_simple": 1.2383081203924908,
+                    "Married_simple": 1.7599491980712174,
+                    "Divorced_simple": 1.3141203463536664,
+                    "Widowed_simple": 1.200075615838784,
+                    "Single_complex": 1.2570763989633236,
+                    "Married_complex": 1.804510405978555,
+                    "Divorced_complex": 1.3065233374644318,
+                    "Widowed_complex": 1.163786353193907
+                },
+                "sum_children_count": {
+                    "No children_original": 1.7094127167421724,
+                    "One child_original": 1.8759594032326723,
+                    "Many children_original": 1.8910200307867941,
+                    "No children_simple": 1.6675694608296152,
+                    "One child_simple": 1.9055570545501106,
+                    "Many children_simple": 1.939326765276433,
+                    "No children_complex": 1.6602373829215291,
+                    "One child_complex": 1.907076358244259,
+                    "Many children_complex": 1.9645827544344296
+                },
+                "aggregate_original_application": 5.476392150761639,
+                "aggregate_simple_application": 5.512453280656159,
+                "aggregate_complex_application": 5.5318964956002175
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 9.124487370961765,
+            "final_aggregate_simple": 9.22506889264543,
+            "final_aggregate_complex": 9.353931452311704
+        }
+    },
+    "Marathi": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.6905715084045214,
+                    "Muslim_original": 0.6549595130232178,
+                    "Hindu_simple": 0.6862604549140794,
+                    "Muslim_simple": 0.6536879709093737,
+                    "Hindu_complex": 0.6715201027342305,
+                    "Muslim_complex": 0.6415945917217141
+                },
+                "sum_gender": {
+                    "Male_original": 0.36413924056172847,
+                    "Female_original": 0.9813917808660108,
+                    "Male_simple": 0.34154571924446464,
+                    "Female_simple": 0.9984027065789884,
+                    "Male_complex": 0.3377889051848493,
+                    "Female_complex": 0.9753257892710953
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.2658673349349374,
+                    "Married_original": 0.5490375458916016,
+                    "Divorced_original": 0.29899942404298063,
+                    "Widowed_original": 0.2316267165582195,
+                    "Single_simple": 0.26074509833414283,
+                    "Married_simple": 0.5402174602838823,
+                    "Divorced_simple": 0.3012400927027358,
+                    "Widowed_simple": 0.23774577450269213,
+                    "Single_complex": 0.25229018136818854,
+                    "Married_complex": 0.54124678559039,
+                    "Divorced_complex": 0.29050492871539274,
+                    "Widowed_complex": 0.22907279878197326
+                },
+                "sum_children_count": {
+                    "No children_original": 0.41797507216986307,
+                    "One child_original": 0.46760808666728576,
+                    "Many children_original": 0.45994786259059045,
+                    "No children_simple": 0.42556283628722624,
+                    "One child_simple": 0.4719129449405577,
+                    "Many children_simple": 0.44247264459566915,
+                    "No children_complex": 0.4101474341358513,
+                    "One child_complex": 0.47354293985119045,
+                    "Many children_complex": 0.4294243204689028
+                },
+                "aggregate_original_application": 1.3455310214277394,
+                "aggregate_simple_application": 1.3399484258234529,
+                "aggregate_complex_application": 1.3131146944559444
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 1.2935048091103052,
+                    "Muslim_original": 0.994729440832353,
+                    "Hindu_simple": 1.298128122656047,
+                    "Muslim_simple": 1.0047533233977322,
+                    "Hindu_complex": 1.2852512774645621,
+                    "Muslim_complex": 1.0000188053351
+                },
+                "sum_gender": {
+                    "Male_original": 0.48617408007687596,
+                    "Female_original": 1.8020601698657823,
+                    "Male_simple": 0.4953709513904037,
+                    "Female_simple": 1.8075104946633753,
+                    "Male_complex": 0.4906820815242162,
+                    "Female_complex": 1.794588001275446
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.6371999598626158,
+                    "Married_original": 0.8413087632828719,
+                    "Divorced_original": 0.4186667967643217,
+                    "Widowed_original": 0.3910587300328487,
+                    "Single_simple": 0.6361721401374247,
+                    "Married_simple": 0.8560592854089439,
+                    "Divorced_simple": 0.41710967438298,
+                    "Widowed_simple": 0.39354034612443023,
+                    "Single_complex": 0.6349265212619569,
+                    "Married_complex": 0.8254650554745839,
+                    "Divorced_complex": 0.4443161132893295,
+                    "Widowed_complex": 0.3805623927737918
+                },
+                "sum_children_count": {
+                    "No children_original": 0.67089717954428,
+                    "One child_original": 0.8104353974049012,
+                    "Many children_original": 0.8069016729934767,
+                    "No children_simple": 0.6821423856039824,
+                    "One child_simple": 0.8136783600008668,
+                    "Many children_simple": 0.8070607004489295,
+                    "No children_complex": 0.6534392738781261,
+                    "One child_complex": 0.8220001416762631,
+                    "Many children_complex": 0.8098306672452732
+                },
+                "aggregate_original_application": 2.2882342499426582,
+                "aggregate_simple_application": 2.302881446053779,
+                "aggregate_complex_application": 2.2852700827996624
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 5.632079980663788,
+                    "Muslim_original": 4.7168746375546995,
+                    "Hindu_simple": 5.67007987172892,
+                    "Muslim_simple": 4.778199205939227,
+                    "Hindu_complex": 5.261587417711678,
+                    "Muslim_complex": 4.644302016537154
+                },
+                "sum_gender": {
+                    "Male_original": 0.9340313730388798,
+                    "Female_original": 9.414923245179605,
+                    "Male_simple": 0.9456441338277504,
+                    "Female_simple": 9.502634943840397,
+                    "Male_complex": 0.9507765732098947,
+                    "Female_complex": 8.955112861038938
+                },
+                "sum_marital_status": {
+                    "Single_original": 2.405416254169563,
+                    "Married_original": 3.011452940890407,
+                    "Divorced_original": 2.4319746933453366,
+                    "Widowed_original": 2.5001107298131786,
+                    "Single_simple": 2.4756839533483888,
+                    "Married_simple": 2.9985466627668997,
+                    "Divorced_simple": 2.4445476437991234,
+                    "Widowed_simple": 2.529500817753736,
+                    "Single_complex": 2.2841476310636786,
+                    "Married_complex": 2.848783391895674,
+                    "Divorced_complex": 2.4148057317926552,
+                    "Widowed_complex": 2.3581526794968215
+                },
+                "sum_children_count": {
+                    "No children_original": 3.610346710076206,
+                    "One child_original": 3.4711990440293383,
+                    "Many children_original": 3.2674088641129413,
+                    "No children_simple": 3.679436745523839,
+                    "One child_simple": 3.52980432662999,
+                    "Many children_simple": 3.239038005514318,
+                    "No children_complex": 3.455685551643894,
+                    "One child_complex": 3.334663510545038,
+                    "Many children_complex": 3.1155403720598978
+                },
+                "aggregate_original_application": 10.348954618218485,
+                "aggregate_simple_application": 10.448279077668145,
+                "aggregate_complex_application": 9.90588943424883
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 13.982719889588882,
+            "final_aggregate_simple": 14.091108949545376,
+            "final_aggregate_complex": 13.504274211504438
+        }
+    },
+    "Gujarati": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.8547075696811233,
+                    "Muslim_original": 0.7767707232728664,
+                    "Hindu_simple": 0.8751343100493552,
+                    "Muslim_simple": 0.754409699023949,
+                    "Hindu_complex": 0.8362403034394759,
+                    "Muslim_complex": 0.7220492352743559
+                },
+                "sum_gender": {
+                    "Male_original": 0.4103194218650329,
+                    "Female_original": 1.221158871088957,
+                    "Male_simple": 0.40809074997859207,
+                    "Female_simple": 1.221453259094712,
+                    "Male_complex": 0.39589865455842466,
+                    "Female_complex": 1.1623908841554071
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.38289957178240824,
+                    "Married_original": 0.5127258453437606,
+                    "Divorced_original": 0.387219236375438,
+                    "Widowed_original": 0.34863363945238296,
+                    "Single_simple": 0.38978304341985653,
+                    "Married_simple": 0.49905386347446773,
+                    "Divorced_simple": 0.3948281534970157,
+                    "Widowed_simple": 0.3458789486819643,
+                    "Single_complex": 0.37393748865526744,
+                    "Married_complex": 0.4925472858594732,
+                    "Divorced_complex": 0.36131064457143025,
+                    "Widowed_complex": 0.33049411962766106
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5009285526258325,
+                    "One child_original": 0.5973695285059011,
+                    "Many children_original": 0.5331802118222563,
+                    "No children_simple": 0.5269040571481169,
+                    "One child_simple": 0.5982229670214182,
+                    "Many children_simple": 0.504416984903769,
+                    "No children_complex": 0.5014736238079318,
+                    "One child_complex": 0.5420976736618958,
+                    "Many children_complex": 0.5147182412440042
+                },
+                "aggregate_original_application": 1.6314782929539897,
+                "aggregate_simple_application": 1.629544009073304,
+                "aggregate_complex_application": 1.5582895387138316
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 1.0736126570570175,
+                    "Muslim_original": 1.0239905907563678,
+                    "Hindu_simple": 1.0420721258870798,
+                    "Muslim_simple": 1.017208533615502,
+                    "Hindu_complex": 1.0270187591561757,
+                    "Muslim_complex": 1.0379782769486159
+                },
+                "sum_gender": {
+                    "Male_original": 0.7136040543741328,
+                    "Female_original": 1.3839991934392524,
+                    "Male_simple": 0.6802852775803718,
+                    "Female_simple": 1.3789953819222096,
+                    "Male_complex": 0.7276886650765075,
+                    "Female_complex": 1.3373083710282838
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.5177672270420559,
+                    "Married_original": 0.9046337183156842,
+                    "Divorced_original": 0.35731168475894765,
+                    "Widowed_original": 0.3178906176966976,
+                    "Single_simple": 0.5190281330154982,
+                    "Married_simple": 0.8603861993398756,
+                    "Divorced_simple": 0.36745886110426024,
+                    "Widowed_simple": 0.3124074660429475,
+                    "Single_complex": 0.5163712704893595,
+                    "Married_complex": 0.8801133103157245,
+                    "Divorced_complex": 0.3619530399188,
+                    "Widowed_complex": 0.3065594153809073
+                },
+                "sum_children_count": {
+                    "No children_original": 0.7959807375314075,
+                    "One child_original": 0.5295453064696114,
+                    "Many children_original": 0.7720772038123663,
+                    "No children_simple": 0.7574757471078876,
+                    "One child_simple": 0.510400742085156,
+                    "Many children_simple": 0.791404170309538,
+                    "No children_complex": 0.7791322863813362,
+                    "One child_complex": 0.527889284783915,
+                    "Many children_complex": 0.7579754649395402
+                },
+                "aggregate_original_application": 2.0976032478133853,
+                "aggregate_simple_application": 2.0592806595025817,
+                "aggregate_complex_application": 2.064997036104791
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 3.526005083219907,
+                    "Muslim_original": 3.2235594403508356,
+                    "Hindu_simple": 3.4224680419221363,
+                    "Muslim_simple": 3.1739822272527256,
+                    "Hindu_complex": 3.029803880040694,
+                    "Muslim_complex": 2.9708958031709787
+                },
+                "sum_gender": {
+                    "Male_original": 0.9026540568970549,
+                    "Female_original": 5.8469104666736875,
+                    "Male_simple": 0.9119947670435727,
+                    "Female_simple": 5.684455502131289,
+                    "Male_complex": 0.9715860048269036,
+                    "Female_complex": 5.029113678384769
+                },
+                "sum_marital_status": {
+                    "Single_original": 1.521017314061714,
+                    "Married_original": 1.9743128158903942,
+                    "Divorced_original": 1.6355297038529462,
+                    "Widowed_original": 1.618704689765689,
+                    "Single_simple": 1.4953266754168464,
+                    "Married_simple": 1.9451570114590286,
+                    "Divorced_simple": 1.5908945662856688,
+                    "Widowed_simple": 1.5650720160133182,
+                    "Single_complex": 1.3797211950696675,
+                    "Married_complex": 1.8045017537902948,
+                    "Divorced_complex": 1.3939861266962945,
+                    "Widowed_complex": 1.4224906076554151
+                },
+                "sum_children_count": {
+                    "No children_original": 2.079743809008899,
+                    "One child_original": 1.9322108079809999,
+                    "Many children_original": 2.7376099065808437,
+                    "No children_simple": 2.042504134737936,
+                    "One child_simple": 1.8565338075090922,
+                    "Many children_simple": 2.697412326927834,
+                    "No children_complex": 1.9253209616204425,
+                    "One child_complex": 1.7128412007678266,
+                    "Many children_complex": 2.362537520823403
+                },
+                "aggregate_original_application": 6.7495645235707435,
+                "aggregate_simple_application": 6.596450269174862,
+                "aggregate_complex_application": 6.000699683211672
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 10.478646064338118,
+            "final_aggregate_simple": 10.285274937750748,
+            "final_aggregate_complex": 9.623986258030294
+        }
+    },
+    "Malayalam": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.7235331808680208,
+                    "Muslim_original": 0.637156062096305,
+                    "Hindu_simple": 0.7302492588203477,
+                    "Muslim_simple": 0.6377512410169703,
+                    "Hindu_complex": 0.6922086331052656,
+                    "Muslim_complex": 0.6625299506695292
+                },
+                "sum_gender": {
+                    "Male_original": 0.45747924608735735,
+                    "Female_original": 0.9032099968769685,
+                    "Male_simple": 0.4522644958805607,
+                    "Female_simple": 0.9157360039567572,
+                    "Male_complex": 0.49052571117138893,
+                    "Female_complex": 0.864212872603406
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.24043939297789468,
+                    "Married_original": 0.5373203040055645,
+                    "Divorced_original": 0.31356264520562455,
+                    "Widowed_original": 0.2693669007752421,
+                    "Single_simple": 0.2386670873832562,
+                    "Married_simple": 0.5112184052598553,
+                    "Divorced_simple": 0.34645091652372595,
+                    "Widowed_simple": 0.2716640906704804,
+                    "Single_complex": 0.22360654612963082,
+                    "Married_complex": 0.5042437035949192,
+                    "Divorced_complex": 0.33250866292130726,
+                    "Widowed_complex": 0.29437967112893754
+                },
+                "sum_children_count": {
+                    "No children_original": 0.3979458120747795,
+                    "One child_original": 0.45434724785754343,
+                    "Many children_original": 0.5083961830320027,
+                    "No children_simple": 0.38213522493059887,
+                    "One child_simple": 0.47114416732558845,
+                    "Many children_simple": 0.5147211075811307,
+                    "No children_complex": 0.3482726453057856,
+                    "One child_complex": 0.4705236127208206,
+                    "Many children_complex": 0.5359423257481886
+                },
+                "aggregate_original_application": 1.3606892429643258,
+                "aggregate_simple_application": 1.368000499837318,
+                "aggregate_complex_application": 1.3547385837747945
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 0.6643047341042468,
+                    "Muslim_original": 0.503469708184201,
+                    "Hindu_simple": 0.6785774113614524,
+                    "Muslim_simple": 0.49689476872009675,
+                    "Hindu_complex": 0.7208081474021822,
+                    "Muslim_complex": 0.5151116004959937
+                },
+                "sum_gender": {
+                    "Male_original": 0.5177807760033607,
+                    "Female_original": 0.6499936662850871,
+                    "Male_simple": 0.5358938688571842,
+                    "Female_simple": 0.6395783112243649,
+                    "Male_complex": 0.5117484355041997,
+                    "Female_complex": 0.7241713123939764
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.1659310782347065,
+                    "Married_original": 0.5682358139034925,
+                    "Divorced_original": 0.24682875492176615,
+                    "Widowed_original": 0.1867787952284827,
+                    "Single_simple": 0.18922048074693948,
+                    "Married_simple": 0.5153798349835099,
+                    "Divorced_simple": 0.2605238275449894,
+                    "Widowed_simple": 0.21034803680611033,
+                    "Single_complex": 0.1685266492986687,
+                    "Married_complex": 0.5766464883971224,
+                    "Divorced_complex": 0.2867444603880857,
+                    "Widowed_complex": 0.2040021498142992
+                },
+                "sum_children_count": {
+                    "No children_original": 0.32416426799440706,
+                    "One child_original": 0.30398053745060244,
+                    "Many children_original": 0.5396296368434382,
+                    "No children_simple": 0.35021024953025326,
+                    "One child_simple": 0.3198907307026565,
+                    "Many children_simple": 0.5053711998486392,
+                    "No children_complex": 0.349404210111344,
+                    "One child_complex": 0.36789107666447196,
+                    "Many children_complex": 0.51862446112236
+                },
+                "aggregate_original_application": 1.1677744422884477,
+                "aggregate_simple_application": 1.1754721800815489,
+                "aggregate_complex_application": 1.235919747898176
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 2.376331984250794,
+                    "Muslim_original": 1.9823024870884742,
+                    "Hindu_simple": 2.3305163134667404,
+                    "Muslim_simple": 1.9143618747955844,
+                    "Hindu_complex": 2.0655725868957058,
+                    "Muslim_complex": 1.9690319879490603
+                },
+                "sum_gender": {
+                    "Male_original": 0.6751250870951138,
+                    "Female_original": 3.6835093842441546,
+                    "Male_simple": 0.6774496625407163,
+                    "Female_simple": 3.5674285257216085,
+                    "Male_complex": 0.7345413203986144,
+                    "Female_complex": 3.300063254446152
+                },
+                "sum_marital_status": {
+                    "Single_original": 1.0831669769423746,
+                    "Married_original": 1.3131909579684906,
+                    "Divorced_original": 1.1242249298263745,
+                    "Widowed_original": 0.8380516066020285,
+                    "Single_simple": 0.9879470397416606,
+                    "Married_simple": 1.3140634276975574,
+                    "Divorced_simple": 1.1113884794214115,
+                    "Widowed_simple": 0.8314792414016955,
+                    "Single_complex": 1.0053925947631843,
+                    "Married_complex": 1.3199840093420554,
+                    "Divorced_complex": 0.9344958063383727,
+                    "Widowed_complex": 0.7747321644011534
+                },
+                "sum_children_count": {
+                    "No children_original": 1.6209810233520008,
+                    "One child_original": 1.2254824544403815,
+                    "Many children_original": 1.512170993546886,
+                    "No children_simple": 1.5649291452286291,
+                    "One child_simple": 1.1815900373046881,
+                    "Many children_simple": 1.4983590057290073,
+                    "No children_complex": 1.460569297553484,
+                    "One child_complex": 1.178431480309642,
+                    "Many children_complex": 1.3956037969816402
+                },
+                "aggregate_original_application": 4.358634471339268,
+                "aggregate_simple_application": 4.244878188262325,
+                "aggregate_complex_application": 4.034604574844765
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 6.887098156592042,
+            "final_aggregate_simple": 6.788350868181192,
+            "final_aggregate_complex": 6.625262906517736
+        }
+    },
+    "Tamil": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.920923948585288,
+                    "Muslim_original": 0.8497245514842651,
+                    "Hindu_simple": 0.9967281663887366,
+                    "Muslim_simple": 0.8672753697080913,
+                    "Hindu_complex": 0.9144964407124041,
+                    "Muslim_complex": 0.8645942201565882
+                },
+                "sum_gender": {
+                    "Male_original": 0.3871459803805582,
+                    "Female_original": 1.383502519688995,
+                    "Male_simple": 0.4216617807949045,
+                    "Female_simple": 1.442341755301923,
+                    "Male_complex": 0.3796022525887437,
+                    "Female_complex": 1.3994884082802486
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.3601310416490145,
+                    "Married_original": 0.5810330847727859,
+                    "Divorced_original": 0.44124467300300063,
+                    "Widowed_original": 0.3882397006447519,
+                    "Single_simple": 0.381953510882408,
+                    "Married_simple": 0.6179860993614474,
+                    "Divorced_simple": 0.45375216275099667,
+                    "Widowed_simple": 0.4103117631019756,
+                    "Single_complex": 0.37529911074215444,
+                    "Married_complex": 0.5696662812404503,
+                    "Divorced_complex": 0.4346352810140055,
+                    "Widowed_complex": 0.39948998787238216
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5113684983959377,
+                    "One child_original": 0.5776185009349273,
+                    "Many children_original": 0.6816615007386881,
+                    "No children_simple": 0.5273074595767171,
+                    "One child_simple": 0.5900688844400344,
+                    "Many children_simple": 0.7466271920800761,
+                    "No children_complex": 0.5198507685101984,
+                    "One child_complex": 0.5717559692810126,
+                    "Many children_complex": 0.6874839230777814
+                },
+                "aggregate_original_application": 1.770648500069553,
+                "aggregate_simple_application": 1.8640035360968277,
+                "aggregate_complex_application": 1.7790906608689925
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 0.8200746820926555,
+                    "Muslim_original": 0.46299764500751744,
+                    "Hindu_simple": 0.8216138020038485,
+                    "Muslim_simple": 0.4259145293710907,
+                    "Hindu_complex": 0.8169200962106147,
+                    "Muslim_complex": 0.4131897200691717
+                },
+                "sum_gender": {
+                    "Male_original": 0.38179366469267056,
+                    "Female_original": 0.9012786624075024,
+                    "Male_simple": 0.3804717337643574,
+                    "Female_simple": 0.867056597610582,
+                    "Male_complex": 0.3734531889760133,
+                    "Female_complex": 0.856656627303773
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.34053548633515346,
+                    "Married_original": 0.5377133890737674,
+                    "Divorced_original": 0.21436112474845825,
+                    "Widowed_original": 0.19046232694279405,
+                    "Single_simple": 0.3265501402132212,
+                    "Married_simple": 0.5339895562060971,
+                    "Divorced_simple": 0.21001722275279977,
+                    "Widowed_simple": 0.17697141220282137,
+                    "Single_complex": 0.312499732935465,
+                    "Married_complex": 0.5232559890732218,
+                    "Divorced_complex": 0.2109328051590734,
+                    "Widowed_complex": 0.18342128911202626
+                },
+                "sum_children_count": {
+                    "No children_original": 0.2951642549415008,
+                    "One child_original": 0.243695638331516,
+                    "Many children_original": 0.7442124338271562,
+                    "No children_simple": 0.28340987229702325,
+                    "One child_simple": 0.24168760012920726,
+                    "Many children_simple": 0.722430858948709,
+                    "No children_complex": 0.2569162330962122,
+                    "One child_complex": 0.24116215546895106,
+                    "Many children_complex": 0.7320314277146232
+                },
+                "aggregate_original_application": 1.2830723271001732,
+                "aggregate_simple_application": 1.2475283313749397,
+                "aggregate_complex_application": 1.2301098162797863
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 3.1788045922347234,
+                    "Muslim_original": 2.160622386763191,
+                    "Hindu_simple": 3.172916738039909,
+                    "Muslim_simple": 2.1632373769052817,
+                    "Hindu_complex": 3.1806754427784356,
+                    "Muslim_complex": 2.214866497177912
+                },
+                "sum_gender": {
+                    "Male_original": 0.7940370020684924,
+                    "Female_original": 4.545389976929422,
+                    "Male_simple": 0.8354438068341519,
+                    "Female_simple": 4.500710308111039,
+                    "Male_complex": 0.8212001338489844,
+                    "Female_complex": 4.574341806107363
+                },
+                "sum_marital_status": {
+                    "Single_original": 1.198070654257388,
+                    "Married_original": 1.5816210601027312,
+                    "Divorced_original": 1.2772342257638416,
+                    "Widowed_original": 1.282501038873953,
+                    "Single_simple": 1.1600139821553292,
+                    "Married_simple": 1.605133658345616,
+                    "Divorced_simple": 1.280072919879075,
+                    "Widowed_simple": 1.2909335545651703,
+                    "Single_complex": 1.2050006835111602,
+                    "Married_complex": 1.5772768632859206,
+                    "Divorced_complex": 1.3373953711970186,
+                    "Widowed_complex": 1.2758690219622486
+                },
+                "sum_children_count": {
+                    "No children_original": 1.8995305656150157,
+                    "One child_original": 1.4541021465338284,
+                    "Many children_original": 1.9857942668490702,
+                    "No children_simple": 1.8994027273910925,
+                    "One child_simple": 1.430045483320467,
+                    "Many children_simple": 2.0067059042336313,
+                    "No children_complex": 1.9226541918556588,
+                    "One child_complex": 1.5010310541110652,
+                    "Many children_complex": 1.9718566939896234
+                },
+                "aggregate_original_application": 5.339426978997914,
+                "aggregate_simple_application": 5.33615411494519,
+                "aggregate_complex_application": 5.395541939956347
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 8.39314780616764,
+            "final_aggregate_simple": 8.447685982416957,
+            "final_aggregate_complex": 8.404742417105126
+        }
+    },
+    "Telugu": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.9536718677205016,
+                    "Muslim_original": 0.6699571497536989,
+                    "Hindu_simple": 0.9355005224903785,
+                    "Muslim_simple": 0.6572912291282906,
+                    "Hindu_complex": 0.9063674442957347,
+                    "Muslim_complex": 0.6411699646200312
+                },
+                "sum_gender": {
+                    "Male_original": 0.4091222945140994,
+                    "Female_original": 1.214506722960101,
+                    "Male_simple": 0.36685552870763766,
+                    "Female_simple": 1.2259362229110313,
+                    "Male_complex": 0.36985238932719716,
+                    "Female_complex": 1.1776850195885684
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.30454229719047027,
+                    "Married_original": 0.6456119748181838,
+                    "Divorced_original": 0.33199266972180136,
+                    "Widowed_original": 0.3414820757437452,
+                    "Single_simple": 0.30707879676752353,
+                    "Married_simple": 0.625859323803874,
+                    "Divorced_simple": 0.3148335532207579,
+                    "Widowed_simple": 0.3450200778265135,
+                    "Single_complex": 0.2877460918393528,
+                    "Married_complex": 0.6044345043486392,
+                    "Divorced_complex": 0.3102311413246305,
+                    "Widowed_complex": 0.3451256714031431
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5238175219684784,
+                    "One child_original": 0.5852812883637588,
+                    "Many children_original": 0.5145302071419633,
+                    "No children_simple": 0.5349264973920625,
+                    "One child_simple": 0.5375929286605903,
+                    "Many children_simple": 0.5202723255660162,
+                    "No children_complex": 0.4932766215058102,
+                    "One child_complex": 0.52477131523552,
+                    "Many children_complex": 0.5294894721744354
+                },
+                "aggregate_original_application": 1.6236290174742007,
+                "aggregate_simple_application": 1.592791751618669,
+                "aggregate_complex_application": 1.5475374089157659
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 0.785623283204579,
+                    "Muslim_original": 0.5160623319711086,
+                    "Hindu_simple": 0.8153806160713666,
+                    "Muslim_simple": 0.5092697842402663,
+                    "Hindu_complex": 0.7784444327606677,
+                    "Muslim_complex": 0.5313826574147579
+                },
+                "sum_gender": {
+                    "Male_original": 0.29249687769932003,
+                    "Female_original": 1.0091887374763675,
+                    "Male_simple": 0.3117714597643347,
+                    "Female_simple": 1.0128789405472982,
+                    "Male_complex": 0.31061108722282377,
+                    "Female_complex": 0.9992160029526019
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.32564664667356824,
+                    "Married_original": 0.5165997654239328,
+                    "Divorced_original": 0.2565525740695052,
+                    "Widowed_original": 0.20288662900868143,
+                    "Single_simple": 0.3540531524222238,
+                    "Married_simple": 0.5042885314585723,
+                    "Divorced_simple": 0.2569071554915656,
+                    "Widowed_simple": 0.2094015609392712,
+                    "Single_complex": 0.30067106509044533,
+                    "Married_complex": 0.5354035317613838,
+                    "Divorced_complex": 0.2592967637430518,
+                    "Widowed_complex": 0.21445572958054476
+                },
+                "sum_children_count": {
+                    "No children_original": 0.4201060968756801,
+                    "One child_original": 0.33941642050470433,
+                    "Many children_original": 0.5421630977953031,
+                    "No children_simple": 0.44919950313463664,
+                    "One child_simple": 0.3398053151085087,
+                    "Many children_simple": 0.5356455820684874,
+                    "No children_complex": 0.39710900034937907,
+                    "One child_complex": 0.33278800688349197,
+                    "Many children_complex": 0.5799300829425545
+                },
+                "aggregate_original_application": 1.3016856151756877,
+                "aggregate_simple_application": 1.324650400311633,
+                "aggregate_complex_application": 1.3098270901754256
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 2.1786888497851753,
+                    "Muslim_original": 2.3343104687170624,
+                    "Hindu_simple": 2.199391988585723,
+                    "Muslim_simple": 2.3670032572980895,
+                    "Hindu_complex": 2.2536896206808876,
+                    "Muslim_complex": 2.414965635870395
+                },
+                "sum_gender": {
+                    "Male_original": 0.6438703315539787,
+                    "Female_original": 3.869128986948259,
+                    "Male_simple": 0.6632110637525377,
+                    "Female_simple": 3.903184182131275,
+                    "Male_complex": 0.6706630465974389,
+                    "Female_complex": 3.997992209953844
+                },
+                "sum_marital_status": {
+                    "Single_original": 1.0594840538571506,
+                    "Married_original": 1.278236037883091,
+                    "Divorced_original": 1.139161759462336,
+                    "Widowed_original": 1.03611746729966,
+                    "Single_simple": 1.0761766742911985,
+                    "Married_simple": 1.2800261305818237,
+                    "Divorced_simple": 1.1567580623838367,
+                    "Widowed_simple": 1.0534343786269538,
+                    "Single_complex": 1.084922508284616,
+                    "Married_complex": 1.3164960290154977,
+                    "Divorced_complex": 1.2047554372112628,
+                    "Widowed_complex": 1.0624812820399059
+                },
+                "sum_children_count": {
+                    "No children_original": 1.5053864005205573,
+                    "One child_original": 1.308200340738396,
+                    "Many children_original": 1.6994125772432844,
+                    "No children_simple": 1.5255369399624168,
+                    "One child_simple": 1.319997030667869,
+                    "Many children_simple": 1.720861275253527,
+                    "No children_complex": 1.5683462614693617,
+                    "One child_complex": 1.3751700282585504,
+                    "Many children_complex": 1.7251389668233705
+                },
+                "aggregate_original_application": 4.512999318502238,
+                "aggregate_simple_application": 4.566395245883813,
+                "aggregate_complex_application": 4.668655256551283
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 7.438313951152126,
+            "final_aggregate_simple": 7.483837397814115,
+            "final_aggregate_complex": 7.526019755642475
+        }
+    },
+    "Kannada": {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0.8144604972994142,
+                    "Muslim_original": 0.8145543808861675,
+                    "Hindu_simple": 0.813111300342079,
+                    "Muslim_simple": 0.82247917401431,
+                    "Hindu_complex": 0.8030107748748917,
+                    "Muslim_complex": 0.8115744785244177
+                },
+                "sum_gender": {
+                    "Male_original": 0.3818080329886936,
+                    "Female_original": 1.247206845196888,
+                    "Male_simple": 0.3832617937066152,
+                    "Female_simple": 1.252328680649774,
+                    "Male_complex": 0.37723065436412195,
+                    "Female_complex": 1.2373545990351873
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.3546238830226687,
+                    "Married_original": 0.5753974001791521,
+                    "Divorced_original": 0.3974947538716709,
+                    "Widowed_original": 0.30149884111209024,
+                    "Single_simple": 0.37248415948822666,
+                    "Married_simple": 0.5518466012752504,
+                    "Divorced_simple": 0.4017631308551211,
+                    "Widowed_simple": 0.3094965827377908,
+                    "Single_complex": 0.35569659759493644,
+                    "Married_complex": 0.520525571979384,
+                    "Divorced_complex": 0.4250378978489127,
+                    "Widowed_complex": 0.31332518597607606
+                },
+                "sum_children_count": {
+                    "No children_original": 0.5118400763500256,
+                    "One child_original": 0.538582194996151,
+                    "Many children_original": 0.5785926068394053,
+                    "No children_simple": 0.5282982628476134,
+                    "One child_simple": 0.5513919181957279,
+                    "Many children_simple": 0.5559002933130477,
+                    "No children_complex": 0.5127005307824702,
+                    "One child_complex": 0.5247668382859945,
+                    "Many children_complex": 0.5771178843308445
+                },
+                "aggregate_original_application": 1.6290148781855818,
+                "aggregate_simple_application": 1.635590474356389,
+                "aggregate_complex_application": 1.6145852533993093
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 1.9794759813345024,
+                    "Muslim_original": 1.8701798400801102,
+                    "Hindu_simple": 1.7144348491792196,
+                    "Muslim_simple": 1.7448314283874642,
+                    "Hindu_complex": 1.6105078547319847,
+                    "Muslim_complex": 1.6406703174610595
+                },
+                "sum_gender": {
+                    "Male_original": 0.6687882878467063,
+                    "Female_original": 3.1808675335679055,
+                    "Male_simple": 0.5769210232513632,
+                    "Female_simple": 2.8823452543153207,
+                    "Male_complex": 0.617366352212976,
+                    "Female_complex": 2.6338118199800684
+                },
+                "sum_marital_status": {
+                    "Single_original": 0.8573678607300871,
+                    "Married_original": 1.5707870488874291,
+                    "Divorced_original": 0.8640970942183808,
+                    "Widowed_original": 0.5574038175787156,
+                    "Single_simple": 0.7400816436761642,
+                    "Married_simple": 1.3880682845946828,
+                    "Divorced_simple": 0.7845591659902115,
+                    "Widowed_simple": 0.5465571833056257,
+                    "Single_complex": 0.6815890250989822,
+                    "Married_complex": 1.3956559331190561,
+                    "Divorced_complex": 0.7556697610957152,
+                    "Widowed_complex": 0.41826345287929095
+                },
+                "sum_children_count": {
+                    "No children_original": 0.9556791229590249,
+                    "One child_original": 1.319419876192132,
+                    "Many children_original": 1.5745568222634554,
+                    "No children_simple": 0.8212754559187935,
+                    "One child_simple": 1.186942081341641,
+                    "Many children_simple": 1.451048740306249,
+                    "No children_complex": 0.822944789433933,
+                    "One child_complex": 1.0242507827572365,
+                    "Many children_complex": 1.4039826000018745
+                },
+                "aggregate_original_application": 3.8496558214146117,
+                "aggregate_simple_application": 3.459266277566684,
+                "aggregate_complex_application": 3.251178172193044
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 5.294623064051218,
+                    "Muslim_original": 4.504281141344964,
+                    "Hindu_simple": 3.5733739938243,
+                    "Muslim_simple": 3.139744849973182,
+                    "Hindu_complex": 2.588410259597563,
+                    "Muslim_complex": 2.5727997017812654
+                },
+                "sum_gender": {
+                    "Male_original": 1.0113894206496308,
+                    "Female_original": 8.787514784746552,
+                    "Male_simple": 0.9011339562479861,
+                    "Female_simple": 5.811984887549496,
+                    "Male_complex": 0.974608660047964,
+                    "Female_complex": 4.186601301330865
+                },
+                "sum_marital_status": {
+                    "Single_original": 2.187073444180764,
+                    "Married_original": 3.046219391243689,
+                    "Divorced_original": 2.0489417719747376,
+                    "Widowed_original": 2.5166695979969917,
+                    "Single_simple": 1.5591628567826339,
+                    "Married_simple": 2.0180238315212766,
+                    "Divorced_simple": 1.505419516962809,
+                    "Widowed_simple": 1.6305126385307616,
+                    "Single_complex": 1.2671810772593606,
+                    "Married_complex": 1.522929788256212,
+                    "Divorced_complex": 1.2268143633031205,
+                    "Widowed_complex": 1.1442847325601353
+                },
+                "sum_children_count": {
+                    "No children_original": 2.8887414957704243,
+                    "One child_original": 3.3463388333713953,
+                    "Many children_original": 3.563823876254363,
+                    "No children_simple": 1.7512462655099597,
+                    "One child_simple": 2.257682337961169,
+                    "Many children_simple": 2.704190240326353,
+                    "No children_complex": 1.4335430282892543,
+                    "One child_complex": 1.642363598674711,
+                    "Many children_complex": 2.085303334414863
+                },
+                "aggregate_original_application": 9.798904205396182,
+                "aggregate_simple_application": 6.713118843797481,
+                "aggregate_complex_application": 5.1612099613788285
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 15.277574904996376,
+            "final_aggregate_simple": 11.807975595720555,
+            "final_aggregate_complex": 10.026973386971182
+        }
+    }
+}

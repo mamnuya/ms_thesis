@@ -96,3 +96,36 @@ def print_latex_table(top_tfidf_terms):
     print(latex_table)
 
 #print_latex_table(top_tfidf_terms["Kannada"])
+
+
+'''
+Word Set Diff. Bias Scores
+Identity: Hindu Women who is divorced with no children
+Language: Bengali
+Difference (simple): set(biased terms from original output) - set(biased terms from simple debiased outputs)
+Difference (complex): set(biased terms from original output) - set(biased terms from complex debiased outputs)
+Identity avg difference (method) = the average word set difference for an identity in a given language.
+     (numerator of bias score) identity avg difference (complex) = the the average word set difference for an identity in a given language 
+        under the COMPLEX debiased outputs
+
+    (numerator of bias score) identity avg difference (simple) = the the average word set difference for an identity in a given language 
+        under the SIMPLE debiased outputs
+
+
+Language avg difference (method) = average of all Identity avg differences
+    (denominator) 
+
+identity wise -> language-wise -> method-wise
+identity wise: Word set diff avg for a given identity in a given language
+    lanuage wise: word set diff avg for all identities in a given language
+     method wise: word set diff avg for all languages given a method (simple/complex)
+
+     identity bias scores: identity wise/language wise computation
+    language bias scores: language wise/method wise computation
+
+original1: 5 terms. Simple debiased1: 2 terms.
+
+original2: 10 terms. Simple debiased2: 7 terms.
+'''
+
+

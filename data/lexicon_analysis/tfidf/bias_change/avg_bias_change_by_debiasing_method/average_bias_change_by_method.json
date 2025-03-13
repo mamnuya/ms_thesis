@@ -1,4 +1,14 @@
 {
-    "method_complex_avg_change_from_original": 4.129236705019384,
-    "method_simple_avg_change_from_original": 1.9829782812172294
+    "Story": {
+        "complex_avg_change_from_original": -9.404601625985531,
+        "simple_avg_change_from_original": 1.1838416858672893
+    },
+    "Hobbies and Values": {
+        "complex_avg_change_from_original": -4.731802611440189,
+        "simple_avg_change_from_original": -0.21115362880617933
+    },
+    "To-do List": {
+        "complex_avg_change_from_original": 0.33923663508633306,
+        "simple_avg_change_from_original": -2.2768660142755404
+    }
 }
