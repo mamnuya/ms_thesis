@@ -93,12 +93,20 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
     Generates LaTeX tables for the highest TF-IDF terms per application, then per identity.
     Each application gets a separate table.
     """
-    
+
+    application_order = ["Story", "Hobbies and Values", "To-do List"]  # Enforce order
+
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
         if lang == "Hindi":  # Only process certain lang
             
-            for application, identity_data in application_data.items():
-                print(f"\n\\section*{{Top Overall Terms for {lang} - {application}}}")
+            # Iterate over applications in the enforced order
+            for application in application_order:
+                if application not in application_data:
+                    continue  # Skip applications that don't exist in the data
+                
+                identity_data = application_data[application]
+                
+                print(f"\n\\section{{Top Overall Terms for {lang} - {application}}}")
 
                 # Calculate mean and standard deviation for TF-IDF values
                 tfidf_values = [entry["tfidf_value"] for entry in identity_data.values()]
@@ -213,7 +221,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
 
                 print(f"\\end{{tabular}}")
                 print(f"\\end{{table}}")
-                print()
+                print()  
 generate_latex_tables_by_application(top_tfidf_per_identity_group_and_application)
 
 print("Overall term extraction and LaTeX formatting completed.")

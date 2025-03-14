@@ -36,126 +36,7 @@ def compute_bias_score(tf_idf_scores):
 
 
 import numpy as np
-'''
-def calculate_avg_scores_per_language(language_bias_scores):
-    """Calculate average scores for each application within a language, then compute final aggregate scores per method."""
-    avg_scores_by_language = {}
 
-    for lang, bias_scores in language_bias_scores.items():
-        avg_scores_by_application = {}
-        final_aggregate_scores = {"original": [], "simple": [], "complex": []}
-
-        # Initialize structure for applications
-        for app in ["Story", "Hobbies and Values", "To-do List"]:
-            avg_scores_by_application[app] = {
-                "avg_religion": {"Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0, "Hindu_complex": 0, "Muslim_complex": 0},
-                "avg_gender": {"Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0, "Male_complex": 0, "Female_complex": 0},
-                "avg_marital_status": {"Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
-                                       "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
-                                       "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0},
-                "avg_children_count": {"No children_original": 0, "One child_original": 0, "Many children_original": 0,
-                                       "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
-                                       "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0},
-                "aggregate_original_application": 0, "aggregate_simple_application": 0, "aggregate_complex_application": 0
-            }
-
-        # Temporary storage for accumulating values
-        scores_by_application = {
-            app: {
-                "religion": {"Hindu_original": [], "Muslim_original": [], "Hindu_simple": [], "Muslim_simple": [], "Hindu_complex": [], "Muslim_complex": []},
-                "gender": {"Male_original": [], "Female_original": [], "Male_simple": [], "Female_simple": [], "Male_complex": [], "Female_complex": []},
-                "marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
-                                   "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
-                                   "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
-                "children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
-                                   "No children_simple": [], "One child_simple": [], "Many children_simple": [],
-                                   "No children_complex": [], "One child_complex": [], "Many children_complex": []},
-                "aggregate_original_application": [], "aggregate_simple_application": [], "aggregate_complex_application": []
-            }
-            for app in ["Story", "Hobbies and Values", "To-do List"]
-        }
-
-        # Iterate over identities and applications
-        for identity, applications in bias_scores.items():
-            for application, methods in applications.items():
-                if application not in scores_by_application:
-                    continue  # Skip unknown applications
-
-                app_scores = scores_by_application[application]
-
-                # Religion scores
-                if "Hindu" in identity:
-                    app_scores["religion"]["Hindu_original"].append(methods["original"])
-                    app_scores["religion"]["Hindu_simple"].append(methods["simple"])
-                    app_scores["religion"]["Hindu_complex"].append(methods["complex"])
-                elif "Muslim" in identity:
-                    app_scores["religion"]["Muslim_original"].append(methods["original"])
-                    app_scores["religion"]["Muslim_simple"].append(methods["simple"])
-                    app_scores["religion"]["Muslim_complex"].append(methods["complex"])
-
-                # Gender scores
-                if "Male" in identity:
-                    app_scores["gender"]["Male_original"].append(methods["original"])
-                    app_scores["gender"]["Male_simple"].append(methods["simple"])
-                    app_scores["gender"]["Male_complex"].append(methods["complex"])
-                elif "Female" in identity:
-                    app_scores["gender"]["Female_original"].append(methods["original"])
-                    app_scores["gender"]["Female_simple"].append(methods["simple"])
-                    app_scores["gender"]["Female_complex"].append(methods["complex"])
-
-                # Marital status scores
-                for status in ["Single", "Married", "Divorced", "Widowed"]:
-                    if status in identity:
-                        app_scores["marital_status"][f"{status}_original"].append(methods["original"])
-                        app_scores["marital_status"][f"{status}_simple"].append(methods["simple"])
-                        app_scores["marital_status"][f"{status}_complex"].append(methods["complex"])
-
-                # Children count scores
-                for child_status in ["No children", "One child", "Many children"]:
-                    if child_status in identity:
-                        app_scores["children_count"][f"{child_status}_original"].append(methods["original"])
-                        app_scores["children_count"][f"{child_status}_simple"].append(methods["simple"])
-                        app_scores["children_count"][f"{child_status}_complex"].append(methods["complex"])
-
-                # Aggregate scores for this application
-                app_scores["aggregate_original_application"].append(methods["original"])
-                app_scores["aggregate_simple_application"].append(methods["simple"])
-                app_scores["aggregate_complex_application"].append(methods["complex"])
-
-        # Compute averages per application
-        for app, categories in scores_by_application.items():
-            avg_app_scores = avg_scores_by_application[app]
-
-            for category, subcategories in categories.items():
-                if isinstance(subcategories, dict):
-                    for subcategory, values in subcategories.items():
-                        avg_app_scores[f"avg_{category}"][subcategory] = np.mean(values) if values else 0
-
-            # Compute application-level aggregate scores
-            avg_app_scores["aggregate_original_application"] = np.mean(categories["aggregate_original_application"]) if categories["aggregate_original_application"] else 0
-            avg_app_scores["aggregate_simple_application"] = np.mean(categories["aggregate_simple_application"]) if categories["aggregate_simple_application"] else 0
-            avg_app_scores["aggregate_complex_application"] = np.mean(categories["aggregate_complex_application"]) if categories["aggregate_complex_application"] else 0
-
-            # Collect scores for final aggregate computation
-            final_aggregate_scores["original"].append(avg_app_scores["aggregate_original_application"])
-            final_aggregate_scores["simple"].append(avg_app_scores["aggregate_simple_application"])
-            final_aggregate_scores["complex"].append(avg_app_scores["aggregate_complex_application"])
-
-        # Compute final aggregate scores across all applications
-        final_aggregate = {
-            "final_aggregate_original": np.mean(final_aggregate_scores["original"]) if final_aggregate_scores["original"] else 0,
-            "final_aggregate_simple": np.mean(final_aggregate_scores["simple"]) if final_aggregate_scores["simple"] else 0,
-            "final_aggregate_complex": np.mean(final_aggregate_scores["complex"]) if final_aggregate_scores["complex"] else 0
-        }
-
-        # Store results for this language
-        avg_scores_by_language[lang] = {
-            "applications": avg_scores_by_application,
-            "final_aggregate": final_aggregate
-        }
-
-    return avg_scores_by_language
-'''
 
 def calculate_summed_scores_per_language(language_bias_scores):
     """Calculate summed bias scores for each application within a language, then compute final aggregate scores per method."""
@@ -357,11 +238,25 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
     Now includes a NormBias column placed before the term column, with color coding based on bias severity.
     """
 
+    application_order = ["Story", "Hobbies and Values", "To-do List"]  # Enforce order
+
+    # Define all possible identity combinations
+    identity_combinations = [
+        (religion, gender, marital_status, children)
+        for religion in ["Hindu", "Muslim"]
+        for gender in ["Male", "Female"]
+        for marital_status in ["Single", "Divorced", "Widowed", "Married"]
+        for children in ["No children", "One child", "Many children"]
+    ]
+
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
-        if lang == "Hindi":  # Process only Hindi for now
-            
-            for application, identity_data in application_data.items():
-                print(f"\n\\section*{{Top Bias Terms for {lang} - {application}}}")
+        if lang == "Urdu":  # Process only certain langs 
+            for application in application_order:  # Iterate in specified order
+                if application not in application_data:
+                    continue  # Skip if application is not present
+                
+                identity_data = application_data[application]
+                print(f"\n\\section{{Top Bias Terms for {lang} - {application}}}")
 
                 # Calculate mean and standard deviation for TF-IDF values
                 tfidf_values = [entry["tfidf_value"] for entry in identity_data.values()]
@@ -372,7 +267,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
                 lower_tfidf_threshold = mean_tfidf - std_dev_tfidf
                 upper_tfidf_threshold = mean_tfidf + std_dev_tfidf
 
-                # Collect NormBias scores
+                # Collect Bias scores
                 bias_score_scores = [
                     language_bias_scores.get(lang, {}).get(entry["identity"], {}).get(application, {}).get("original", 0)
                     for entry in identity_data.values()
@@ -380,7 +275,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
                 mean_bias_score = sum(bias_score_scores) / len(bias_score_scores)
                 std_dev_bias_score = (sum((x - mean_bias_score) ** 2 for x in bias_score_scores) / len(bias_score_scores)) ** 0.5
 
-                # Define thresholds for NormBias color coding
+                # Define thresholds for Bias color coding
                 lower_bias_score_threshold = mean_bias_score - std_dev_bias_score
                 upper_bias_score_threshold = mean_bias_score + std_dev_bias_score
 
@@ -399,6 +294,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
                 # Dictionary to store identity-wise data
                 identity_grouped_entries = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 
+                # Process identity data
                 for entry in identity_data.values():
                     identity = entry["identity"]
                     term = entry["term"]
@@ -458,6 +354,23 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
                 marital_status_order = ["Single", "Married", "Divorced", "Widowed"]
                 children_order = ["No children", "One child", "Many children"]
 
+                # Fill missing identities with default values
+                for combination in identity_combinations:
+                    religion, gender, marital_status, children = combination
+                    identity_key = f"{religion} {gender}"
+                    
+                    if identity_key not in identity_grouped_entries:
+                        identity_grouped_entries[identity_key] = defaultdict(lambda: defaultdict(list))
+
+                    if marital_status not in identity_grouped_entries[identity_key]:
+                        identity_grouped_entries[identity_key][marital_status] = defaultdict(list)
+
+                    if children not in identity_grouped_entries[identity_key][marital_status]:
+                        identity_grouped_entries[identity_key][marital_status][children] = [
+                            ("\\cellcolor{green!30}0.000", "N/A", "\\cellcolor{green!30}", "N/A")
+                        ]
+
+                # Now print the table data
                 for main_identity in sorted_main_identities:
                     marital_groups = identity_grouped_entries[main_identity]
                     sorted_marital_statuses = sorted(marital_groups.keys(), key=lambda x: marital_status_order.index(x))
@@ -486,7 +399,11 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
                                 print("& ", end="")
 
                             for bias_score_display, term, tfidf_color, tfidf_value in entries:
-                                print(f"& {children} & {bias_score_display} & {term} & {tfidf_color}{tfidf_value:.3f} \\\\")
+                                if isinstance(tfidf_value, (int, float)):
+                                    print(f"& {children} & {bias_score_display} & {term} & {tfidf_color}{tfidf_value:.3f} \\\\")
+                                else:
+                                    print(f"& {children} & {str(bias_score_display)} & {str(term)} & {tfidf_color}{'N/A'} \\\\")
+                               # print(f"& {children} & {bias_score_display} & {term} & {tfidf_color}{tfidf_value:.3f} \\\\")
 
                             if idx < len(sorted_children_list) - 1:
                                 print(f"\\cline{{3-6}}")
@@ -515,137 +432,124 @@ sum_scores_by_language = calculate_summed_scores_per_language(language_bias_scor
 save_json(sum_scores_by_language, "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json")
 
 
+
 '''
-Automatically Adjusts Colors for Each Table
+def calculate_avg_scores_per_language(language_bias_scores):
+    """Calculate average scores for each application within a language, then compute final aggregate scores per method."""
+    avg_scores_by_language = {}
 
-Red (> mean + std_dev) → Well above the mean.
-Yellow (± std_dev) → Around the mean.
-Green (< mean - std_dev) → Well below the mean.
+    for lang, bias_scores in language_bias_scores.items():
+        avg_scores_by_application = {}
+        final_aggregate_scores = {"original": [], "simple": [], "complex": []}
+
+        # Initialize structure for applications
+        for app in ["Story", "Hobbies and Values", "To-do List"]:
+            avg_scores_by_application[app] = {
+                "avg_religion": {"Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0, "Hindu_complex": 0, "Muslim_complex": 0},
+                "avg_gender": {"Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0, "Male_complex": 0, "Female_complex": 0},
+                "avg_marital_status": {"Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
+                                       "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
+                                       "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0},
+                "avg_children_count": {"No children_original": 0, "One child_original": 0, "Many children_original": 0,
+                                       "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
+                                       "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0},
+                "aggregate_original_application": 0, "aggregate_simple_application": 0, "aggregate_complex_application": 0
+            }
+
+        # Temporary storage for accumulating values
+        scores_by_application = {
+            app: {
+                "religion": {"Hindu_original": [], "Muslim_original": [], "Hindu_simple": [], "Muslim_simple": [], "Hindu_complex": [], "Muslim_complex": []},
+                "gender": {"Male_original": [], "Female_original": [], "Male_simple": [], "Female_simple": [], "Male_complex": [], "Female_complex": []},
+                "marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
+                                   "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
+                                   "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
+                "children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+                                   "No children_simple": [], "One child_simple": [], "Many children_simple": [],
+                                   "No children_complex": [], "One child_complex": [], "Many children_complex": []},
+                "aggregate_original_application": [], "aggregate_simple_application": [], "aggregate_complex_application": []
+            }
+            for app in ["Story", "Hobbies and Values", "To-do List"]
+        }
+
+        # Iterate over identities and applications
+        for identity, applications in bias_scores.items():
+            for application, methods in applications.items():
+                if application not in scores_by_application:
+                    continue  # Skip unknown applications
+
+                app_scores = scores_by_application[application]
+
+                # Religion scores
+                if "Hindu" in identity:
+                    app_scores["religion"]["Hindu_original"].append(methods["original"])
+                    app_scores["religion"]["Hindu_simple"].append(methods["simple"])
+                    app_scores["religion"]["Hindu_complex"].append(methods["complex"])
+                elif "Muslim" in identity:
+                    app_scores["religion"]["Muslim_original"].append(methods["original"])
+                    app_scores["religion"]["Muslim_simple"].append(methods["simple"])
+                    app_scores["religion"]["Muslim_complex"].append(methods["complex"])
+
+                # Gender scores
+                if "Male" in identity:
+                    app_scores["gender"]["Male_original"].append(methods["original"])
+                    app_scores["gender"]["Male_simple"].append(methods["simple"])
+                    app_scores["gender"]["Male_complex"].append(methods["complex"])
+                elif "Female" in identity:
+                    app_scores["gender"]["Female_original"].append(methods["original"])
+                    app_scores["gender"]["Female_simple"].append(methods["simple"])
+                    app_scores["gender"]["Female_complex"].append(methods["complex"])
+
+                # Marital status scores
+                for status in ["Single", "Married", "Divorced", "Widowed"]:
+                    if status in identity:
+                        app_scores["marital_status"][f"{status}_original"].append(methods["original"])
+                        app_scores["marital_status"][f"{status}_simple"].append(methods["simple"])
+                        app_scores["marital_status"][f"{status}_complex"].append(methods["complex"])
+
+                # Children count scores
+                for child_status in ["No children", "One child", "Many children"]:
+                    if child_status in identity:
+                        app_scores["children_count"][f"{child_status}_original"].append(methods["original"])
+                        app_scores["children_count"][f"{child_status}_simple"].append(methods["simple"])
+                        app_scores["children_count"][f"{child_status}_complex"].append(methods["complex"])
+
+                # Aggregate scores for this application
+                app_scores["aggregate_original_application"].append(methods["original"])
+                app_scores["aggregate_simple_application"].append(methods["simple"])
+                app_scores["aggregate_complex_application"].append(methods["complex"])
+
+        # Compute averages per application
+        for app, categories in scores_by_application.items():
+            avg_app_scores = avg_scores_by_application[app]
+
+            for category, subcategories in categories.items():
+                if isinstance(subcategories, dict):
+                    for subcategory, values in subcategories.items():
+                        avg_app_scores[f"avg_{category}"][subcategory] = np.mean(values) if values else 0
+
+            # Compute application-level aggregate scores
+            avg_app_scores["aggregate_original_application"] = np.mean(categories["aggregate_original_application"]) if categories["aggregate_original_application"] else 0
+            avg_app_scores["aggregate_simple_application"] = np.mean(categories["aggregate_simple_application"]) if categories["aggregate_simple_application"] else 0
+            avg_app_scores["aggregate_complex_application"] = np.mean(categories["aggregate_complex_application"]) if categories["aggregate_complex_application"] else 0
+
+            # Collect scores for final aggregate computation
+            final_aggregate_scores["original"].append(avg_app_scores["aggregate_original_application"])
+            final_aggregate_scores["simple"].append(avg_app_scores["aggregate_simple_application"])
+            final_aggregate_scores["complex"].append(avg_app_scores["aggregate_complex_application"])
+
+        # Compute final aggregate scores across all applications
+        final_aggregate = {
+            "final_aggregate_original": np.mean(final_aggregate_scores["original"]) if final_aggregate_scores["original"] else 0,
+            "final_aggregate_simple": np.mean(final_aggregate_scores["simple"]) if final_aggregate_scores["simple"] else 0,
+            "final_aggregate_complex": np.mean(final_aggregate_scores["complex"]) if final_aggregate_scores["complex"] else 0
+        }
+
+        # Store results for this language
+        avg_scores_by_language[lang] = {
+            "applications": avg_scores_by_application,
+            "final_aggregate": final_aggregate
+        }
+
+    return avg_scores_by_language
 '''
-'''
-# Loop over each language and their corresponding data
-for lang, identity_data in top_tfidf_per_identity_group.items():
-    if lang == "Urdu":  # Only process Hindi
-        print(f"\n\\section*{{Bias Terms for {lang}}}")
-
-        # Calculate mean and standard deviation for TF-IDF values
-        tfidf_values = [entry["tfidf_value"] for entry in identity_data.values()]
-        mean_tfidf = sum(tfidf_values) / len(tfidf_values)
-        std_dev_tfidf = (sum((x - mean_tfidf) ** 2 for x in tfidf_values) / len(tfidf_values)) ** 0.5
-
-        # Thresholds for color coding
-        lower_threshold = mean_tfidf - std_dev_tfidf
-        upper_threshold = mean_tfidf + std_dev_tfidf
-
-        print(f"\\begin{{table}}[h!]")
-        print(f"\\centering")
-        print(f"\\caption{{Highest Bias TF-IDF terms and values for all identities, with the corresponding application in which the highest Bias TF-IDF term appeared for {lang} outputs under the original prompting method.}}")
-        print(f"\\scriptsize")
-        print(f"\\label{{tab:tfidf_comparison_identity_bias_{lang}}}")
-
-        # Adjusted table structure with 'Application' moved to the end
-        print(f"\\begin{{tabular}}{{|p{{1.9cm}}|p{{1.3cm}}|l|l|p{{0.7cm}}|l|}}")
-        print(f"\\hline")
-        print(f"\\textbf{{Religion \\& Gender}} & \\textbf{{Marital Status}} & \\textbf{{Children}} & \\textbf{{Term}} & \\textbf{{Bias TF-IDF}} & \\textbf{{Application}} \\\\")
-        print(f"\\hline")
-
-        # Dictionary to track multirow formatting
-        identity_grouped_entries = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-
-        for entry in identity_data.values():
-            identity = entry["identity"]
-            application = entry["application"]
-            term = entry["term"]
-            tfidf_value = entry["tfidf_value"]
-
-            # Determine color based on threshold
-            if tfidf_value > upper_threshold:
-                color = "\\cellcolor{red!30}"
-            elif tfidf_value < lower_threshold:
-                color = "\\cellcolor{green!30}"
-            else:
-                color = "\\cellcolor{yellow!30}"
-
-            # Extract key identity components
-            parts = identity.split("who is")  # Split identity into base (religion & gender) and marital/children details
-            main_identity = parts[0].strip().replace("A ","")  # "A Hindu Male"
-            details = parts[1].strip() if len(parts) > 1 else ""  # "Married with No children"
-            
-            # Extract marital status and children count
-            marital_status = "Single"  # Default
-            if "Married" in details:
-                marital_status = "Married"
-            elif "Divorced" in details:
-                marital_status = "Divorced"
-            elif "Widowed" in details:
-                marital_status = "Widowed"
-
-            children = "No children"  # Default
-            if "One child" in details:
-                children = "One child"
-            elif "Many children" in details:
-                children = "Many children"
-
-            # Store in dictionary for hierarchical LaTeX formatting
-            identity_grouped_entries[main_identity][marital_status][children].append((application, term, tfidf_value, color))
-
-        # Sort identities alphabetically to ensure consistent order
-        sorted_main_identities = sorted(identity_grouped_entries.keys())
-        
-        # Define consistent sorting order for marital status and children
-        marital_status_order = ["Single", "Married", "Divorced", "Widowed"]
-        children_order = ["No children", "One child", "Many children"]
-        
-        for main_identity in sorted_main_identities:
-            marital_groups = identity_grouped_entries[main_identity]
-            
-            # Sort marital status and children groups to ensure consistent order
-            sorted_marital_statuses = sorted(marital_groups.keys(), key=lambda x: marital_status_order.index(x))
-            
-            num_rows_identity = sum(len(children_list) for children_list in marital_groups.values())  # Total rows for religion & gender
-            first_identity = True  # Track first row for \multirow
-
-            print(f"\\hline")  # Horizontal line before a new Religion & Gender group
-
-            for marital_status in sorted_marital_statuses:
-                children_list = marital_groups[marital_status]
-                num_rows_marital = len(children_list)  # Rows for this marital status
-                first_marital = True  # Track first row for \multirow in marital status
-
-                # Sort children and entries to ensure consistent order
-                sorted_children_list = sorted(children_list.items(), key=lambda x: children_order.index(x[0]))  # Sort by children category
-
-                for idx, (children, entries) in enumerate(sorted_children_list):
-                    if first_identity:
-                        print(f"\\multirow{{{num_rows_identity}}}{{*}}{{{main_identity}}} ", end="")
-                        first_identity = False
-                    else:
-                        print(" ", end="")  # No multirow, just align
-
-                    if first_marital:
-                        print(f"& \\multirow{{{num_rows_marital}}}{{*}}{{{marital_status}}} ", end="")
-                        first_marital = False
-                    else:
-                        print("& ", end="")  # No multirow, just align
-
-                    # Print the row for children, term, tfidf value, and application
-                    for application, term, tfidf_value, color in entries:
-                        print(f"& {children} & {term} & {color}{tfidf_value:.3f} & {application} \\\\")
-
-                    # Add horizontal lines after each Children category
-                    if idx < len(sorted_children_list) - 1:
-                        print(f"\\cline{{3-6}}")  # Separates Children, Term, TF-IDF, Application
-
-                print(f"\\cline{{2-6}}")  # Horizontal line after all Children under a Marital Status
-
-            print(f"\\hline")  # Horizontal line after all Marital Status under a Religion & Gender
-
-        print(f"\\end{{tabular}}")
-        print(f"\\end{{table}}")
-        print()
-'''
- 
-
-
-
-
