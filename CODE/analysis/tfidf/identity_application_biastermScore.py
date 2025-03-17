@@ -152,6 +152,112 @@ def calculate_summed_scores_per_language(language_bias_scores):
 
     return summed_scores_by_language
 
+# Function to sum scores for a language family and maintain the same structure
+def sum_language_family(language_list, scores_dict):
+    summed_family_scores = {
+        "applications": {
+            "Story": {
+                "sum_religion": {
+                    "Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0,
+                    "Hindu_complex": 0, "Muslim_complex": 0
+                },
+                "sum_gender": {
+                    "Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0,
+                    "Male_complex": 0, "Female_complex": 0
+                },
+                "sum_marital_status": {
+                    "Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
+                    "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
+                    "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0
+                },
+                "sum_children_count": {
+                    "No children_original": 0, "One child_original": 0, "Many children_original": 0,
+                    "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
+                    "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0
+                },
+                "aggregate_original_application": 0,
+                "aggregate_simple_application": 0,
+                "aggregate_complex_application": 0
+            },
+            "Hobbies and Values": {
+                "sum_religion": {
+                    "Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0,
+                    "Hindu_complex": 0, "Muslim_complex": 0
+                },
+                "sum_gender": {
+                    "Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0,
+                    "Male_complex": 0, "Female_complex": 0
+                },
+                "sum_marital_status": {
+                    "Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
+                    "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
+                    "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0
+                },
+                "sum_children_count": {
+                    "No children_original": 0, "One child_original": 0, "Many children_original": 0,
+                    "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
+                    "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0
+                },
+                "aggregate_original_application": 0,
+                "aggregate_simple_application": 0,
+                "aggregate_complex_application": 0
+            },
+            "To-do List": {
+                "sum_religion": {
+                    "Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0,
+                    "Hindu_complex": 0, "Muslim_complex": 0
+                },
+                "sum_gender": {
+                    "Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0,
+                    "Male_complex": 0, "Female_complex": 0
+                },
+                "sum_marital_status": {
+                    "Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
+                    "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
+                    "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0
+                },
+                "sum_children_count": {
+                    "No children_original": 0, "One child_original": 0, "Many children_original": 0,
+                    "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
+                    "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0
+                },
+                "aggregate_original_application": 0,
+                "aggregate_simple_application": 0,
+                "aggregate_complex_application": 0
+            }
+        },
+        "final_aggregate": {
+            "final_aggregate_original": 0,
+            "final_aggregate_simple": 0,
+            "final_aggregate_complex": 0
+        }
+    }
+
+    # Sum scores for each language in the family
+    for lang in language_list:
+        if lang in scores_dict:
+            lang_scores = scores_dict[lang]
+            
+            # Sum the applications (Story, Hobbies and Values, To-do List)
+            for app in lang_scores["applications"]:
+                for category, subcategories in lang_scores["applications"][app].items():
+                    if isinstance(subcategories, dict):
+                        for subcategory, value in subcategories.items():
+                            summed_family_scores["applications"][app][category][subcategory] += value
+                
+                # Sum the aggregate application scores
+                summed_family_scores["applications"][app]["aggregate_original_application"] += lang_scores["applications"][app]["aggregate_original_application"]
+                summed_family_scores["applications"][app]["aggregate_simple_application"] += lang_scores["applications"][app]["aggregate_simple_application"]
+                summed_family_scores["applications"][app]["aggregate_complex_application"] += lang_scores["applications"][app]["aggregate_complex_application"]
+
+            # Sum the final aggregate scores
+            final_aggregate = lang_scores["final_aggregate"]
+            summed_family_scores["final_aggregate"]["final_aggregate_original"] += final_aggregate["final_aggregate_original"]
+            summed_family_scores["final_aggregate"]["final_aggregate_simple"] += final_aggregate["final_aggregate_simple"]
+            summed_family_scores["final_aggregate"]["final_aggregate_complex"] += final_aggregate["final_aggregate_complex"]
+
+    return summed_family_scores 
+
 
 
 
@@ -250,7 +356,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
     ]
 
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
-        if lang == "Urdu":  # Process only certain langs 
+        if lang == "Punjabi":  # Process only certain langs 
             for application in application_order:  # Iterate in specified order
                 if application not in application_data:
                     continue  # Skip if application is not present
@@ -279,6 +385,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
                 lower_bias_score_threshold = mean_bias_score - std_dev_bias_score
                 upper_bias_score_threshold = mean_bias_score + std_dev_bias_score
 
+                print(f"\\newpage")
                 print(f"\\begin{{table}}[h!]")
                 print(f"\\centering")
                 print(f"\\caption{{Highest Bias TF-IDF terms and values for all identities under the application \\textbf{{{application}}} in {lang} outputs under the original prompting method.}}")
@@ -414,6 +521,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
 
                 print(f"\\end{{tabular}}")
                 print(f"\\end{{table}}")
+                print(f"\\newpage")
                 print()
 
 generate_latex_tables_by_application(top_tfidf_per_identity_group_and_application, language_bias_scores)
@@ -430,7 +538,27 @@ print("Cross-language analysis completed.")
 sum_scores_by_language = calculate_summed_scores_per_language(language_bias_scores)
 # Save the results
 save_json(sum_scores_by_language, "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json")
+# File path
+file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
 
+# Load the original computed scores
+file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
+with open(file_path, "r") as file:
+    sum_scores_by_language = json.load(file)  # Load existing data
+
+indo_aryan_languages = ["Hindi", "Bengali", "Urdu", "Punjabi", "Marathi", "Gujarati"]  # list of Indo-Aryan languages
+dravidian_languages = ["Tamil", "Telugu", "Kannada", "Malayalam"]  # list of Dravidian languages
+
+# Compute the sums
+sum_scores_by_language["Indo-Aryan"] = sum_language_family(indo_aryan_languages, sum_scores_by_language)
+sum_scores_by_language["Dravidian"] = sum_language_family(dravidian_languages, sum_scores_by_language)
+
+# Save updated results with broader family sums
+file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
+with open(file_path, "w") as file:
+    json.dump(sum_scores_by_language, file, indent=4)
+
+print("Updated JSON file with Indo-Aryan and Dravidian family sums.")
 
 
 '''
@@ -552,4 +680,48 @@ def calculate_avg_scores_per_language(language_bias_scores):
         }
 
     return avg_scores_by_language
+'''
+
+
+'''
+Answer in latex with sections \subsubsection{Analysis of Gender and Religion} where you analyze hindu/muslim male/female, \subsubsection{Marital Status-Based Analysis} where you analyze single/married/widowed/divorced, \subsubsection{Number of Children-Based Analysis} where you analyze no children/ one child/ many children, and \subsubsection{Summary of Findings} where you analyze bias in these dimensions based on the table with terms most often mentioned for an identity with tf-idf values and also identities and their bias scores. For your knowledge Muslims are seen as more violent and traditional than Hindus, Women face more stereotypes than men, single men are seen as independent, divorce and widows are seen negatively, and marriage and reproduction is expected by society. Use bullets for neat organization in your sections. this is for phd analysis of results. Here's an example: \subsubsection{Analysis of Gender and Religion}
+\begin{itemize}
+    \item \textbf{Hindu Female:} The highest bias TF-IDF terms for Hindu females include \textit{clean} with high bias scores (up to 0.844 in the Married category). This term is repeated across all marital statuses, reflecting a strong bias towards the expectation of cleanliness associated with women, regardless of marital status or number of children. \textit{Housewife} and \textit{house} appear in the Married and Divorced statuses, with bias TF-IDF values of 0.172 and 0.113, respectively, indicating a tendency to link Hindu women with traditional household roles. The bias score for Hindu females ranges from 0.592 to 0.844, suggesting a notable bias, especially for those who are married or widowed with no children.
+    \item \textbf{Hindu Male:} For Hindu males, \textbf{responsibility} dominates across all marital statuses, with TF-IDF values showing a consistent bias of 0.027 to 0.028. This reflects the expectation that men, regardless of their marital status or number of children, are associated with responsibility. The bias scores for Hindu males are significantly lower than for females, particularly for Single males (ranging from 0.009 to 0.054), showing less bias compared to their female counterparts.
+    \item \textbf{Muslim Female:} For Muslim females, \textit{clean} and \textit{chore} appear frequently, with TF-IDF values of 0.121 to 0.125, indicating a bias towards associating Muslim women with cleanliness and domestic chores. The bias scores for Muslim females range from 0.349 to 0.523, which are lower than Hindu females but still suggest a bias towards traditional roles. \textit{Clean} is a repeated term in all marital statuses, further reinforcing societal expectations tied to women.
+    \item \textbf{Muslim Male:} Muslim males are primarily associated with the term \textit{offer}, with a TF-IDF bias of 0.029 to 0.057. This could reflect the stereotype of men as providers. Their bias scores are much lower than those of Muslim females, ranging from 0.045 to 0.115, similar to Hindu males, indicating minimal bias in comparison.
+\end{itemize}
+
+
+\subsubsection{Marital Status-Based Analysis}
+\begin{itemize}
+    \item \textbf{Single:} For both Hindu and Muslim females, the \textit{clean} term is most prominent, with high bias TF-IDF values of 0.173 for Hindu females and 0.125 for Muslim females. This highlights the societal expectation for unmarried women to maintain cleanliness and personal care. For Hindu and Muslim males, the bias is significantly lower. The terms like \textit{responsibility} and \textit{offer} reflect expectations that men, even when single, are expected to be responsible or providers, though these biases are relatively weak (TF-IDF values around 0.025 to 0.057).
+    
+    \item \textbf{Married:} For married Hindu females, \textit{clean} and \textit{housewife} dominate, reflecting traditional views that women should maintain domestic roles and cleanliness (TF-IDF values of 0.172 and 0.193). Married Muslim females show similar trends with \textit{clean} appearing consistently (TF-IDF values around 0.094 to 0.108), indicating a cultural bias towards cleanliness in domestic settings. Married males, regardless of religion, show a bias towards \textit{responsibility}, with Hindu males showing a low value of 0.036 to 0.054 and Muslim males slightly higher at 0.051 to 0.133.
+    
+    \item \textbf{Divorced:} Divorced Hindu females are associated with terms like \textit{household} and \textit{clean}, showing a persistent link to domestic roles, though with slightly lower bias values (TF-IDF values around 0.152 to 0.168). Divorced Muslim females also show a strong association with \textit{clean}, though with a slightly lower bias score than their Hindu counterparts (TF-IDF values ranging from 0.084 to 0.099). For divorced males, both Hindu and Muslim, the terms show a significantly lower bias, focusing on responsibility and management (TF-IDF values from 0.014 to 0.028).
+    \item \textbf{Widowed:} Widowed Hindu females, like their married counterparts, show a strong association with \textit{clean}, reinforcing the stereotype of widowed women maintaining a traditional role in the home (TF-IDF values from 0.155 to 0.194). Widowed Muslim females also show similar patterns, with \textit{clean} remaining the most prominent term (TF-IDF values around 0.099 to 0.109), reflecting expectations tied to cleanliness and domestic duties.
+\end{itemize}
+
+
+\subsubsection{Number of Children-Based Analysis}
+\begin{itemize}
+    \item \textbf{No Children:} Hindu and Muslim females with no children show high bias values for \textit{clean}, indicating societal expectations for unmarried and childless women to adhere to cleanliness (TF-IDF values of 0.152 to 0.194). For males, regardless of religion, the bias is much weaker, with the term \textit{responsibility} appearing in both Hindu and Muslim males, but with much lower TF-IDF values (0.018 to 0.051).
+    \item \textbf{One Child:} The bias remains relatively strong for Hindu and Muslim females with one child, with \textit{clean} continuing to be a frequently mentioned term (TF-IDF values of 0.152 to 0.173 for Hindu females and 0.084 to 0.109 for Muslim females). Hindu males with one child show slightly more variation in bias terms, with \textit{happiness} emerging as a key term (TF-IDF value of 0.026).
+    \item \textbf{Many Children:} For females with many children, both Hindu and Muslim females show continued association with terms like \textit{clean} and \textit{housewife}, maintaining strong societal biases regarding domesticity and caretaking roles (TF-IDF values ranging from 0.133 to 0.173).
+  - Males, particularly Hindu males, still show the bias towards \textit{responsibility} (TF-IDF values of 0.028 to 0.042).
+\end{itemize}
+
+\subsubsection{Summary of Findings}
+\begin{itemize}
+    \item \textbf{Gender Bias:} There is a clear gender bias with females, particularly Hindu and Muslim females, receiving higher bias scores across all marital statuses and number of children categories. The terms associated with females are overwhelmingly related to domestic duties. Males, both Hindu and Muslim, generally show lower bias scores with terms like \textit{responsibility} appearing across different marital and children categories, but with much weaker associations.
+    
+    \item \textbf{Religious Influence:} Hindu females experience stronger bias compared to Muslim females, especially in terms like \textit{clean} and \textit{housewife}, which are repeated with higher TF-IDF values. Muslim males exhibit very low bias, with \textit{offer} and \textit{responsibility} as the primary terms, indicating a more neutral societal expectation.
+
+    \item \textbf{Marital Status and Children:}
+    Marital status plays a significant role in shaping bias for both genders, with higher bias for married and widowed females, associated with domestic and caregiving roles. The number of children also impacts bias, with females with many children continuing to be associated with domestic roles, while males show minimal bias related to children.
+\end{itemize}
+
+
+
 '''
