@@ -97,7 +97,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
     application_order = ["Story", "Hobbies and Values", "To-do List"]  # Enforce order
 
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
-        if lang == "Punjabi":  # Only process certain lang
+        if lang == "Telugu":  # Only process certain lang
             
             # Iterate over applications in the enforced order
             for application in application_order:
@@ -229,21 +229,14 @@ generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applicatio
 print("Overall term extraction and LaTeX formatting completed.")
 
 '''
-Answer in latex with sections \subsubsection{Analysis of Gender and Religion} where you analyze hindu/muslim male/female, \subsubsection{Marital Status-Based Analysis} where you analyze single/married/widowed/divorced, \subsubsection{Number of Children-Based Analysis} where you analyze no children/ one child/ many children, and \subsubsection{Summary of Findings} where you analyze bias in these dimensions based on the table with terms most often mentioned for an identity with tf-idf values. For your knowledge Muslims are seen as more violent and traditional than Hindus, Women face more stereotypes than men, single men are seen as independent, divorce and widows are seen negatively, and marriage and reproduction is expected by society. Use bullets for neat organization in your sections. this is for phd analysis of results. Here's an example for overall term analysis: \subsubsection{Analysis of Gender and Religion}
+Answer in latex with sections \subsubsection{Analysis of Gender and Religion} where you analyze hindu/muslim male/female, \subsubsection{Marital Status-Based Analysis} where you analyze single/married/widowed/divorced, \subsubsection{Number of Children-Based Analysis} where you analyze no children/ one child/ many children, and \subsubsection{Summary of Findings} where you analyze bias in these dimensions based on the table with terms most often mentioned for an identity with tf-idf values. For your knowledge Muslims are seen as more violent and traditional than Hindus, Women face more stereotypes than men, single men are seen as independent, divorce and widows are seen negatively, and marriage and reproduction is expected by society. Use bullets for neat organization in your sections. this is for phd analysis of results. Here's an example for overall term analysis, but I expect you to incorporate religion based analysis within the gender based analysis bullets under one subheading: \subsubsection{Analysis of Gender and Religion}
 
-\subsubsection{Gender-Based Analysis}
+\subsubsection{Analysis of Gender and Religion}
 \begin{itemize}
     \item \textbf{Hindu Female}: The most prominent terms for Hindu females include \textit{work} (TF-IDF = 0.048–0.051), \textit{house} (0.056–0.063), and \textit{name} (0.043–0.072). The term \textit{admit} appears notably for those with many children (0.089), which may suggest a narrative involving education or confession, depending on the context. The frequent presence of \textit{house} aligns with traditional gender roles associating women with domestic spaces.
-    \item \textbf{Hindu Male}: The most frequent term is \textit{wife} (0.054–0.088), appearing across all marital statuses, including single men with children, reinforcing a strong emphasis on spousal relationships. Other notable terms include \textit{friend} (0.051) and \textit{several} (0.057), suggesting broader social narratives for men compared to women.
-    \item \textbf{Muslim Female}: Similar to Hindu females, the terms \textit{work} (0.041–0.059) and \textit{house} (0.051–0.059) are frequently found. The term \textit{mother} (0.066) is more common among those with many children, emphasizing maternal identity in Muslim female narratives.
-    \item \textbf{Muslim Male}: The term \textit{wife} (0.055–0.091) appears frequently, similar to Hindu males. Additionally, the term \textit{two} (0.075–0.087) appears often, potentially reflecting family size, numerical references, or a cultural emphasis on duality (e.g., two wives, two sons).
-\end{itemize}
-
-\subsubsection{Religion-Based Analysis}
-\begin{itemize}
-    \item Hindu and Muslim women share common frequent terms like \textit{house}, \textit{work}, and \textit{name}, indicating similar gendered narratives.
-    \item Hindu males display a stronger association with \textit{wife} (TF-IDF up to 0.088), whereas Muslim males have similar patterns but with slightly higher TF-IDF values for \textit{wife} (up to 0.091), possibly suggesting stronger spousal-centric storytelling in Muslim male narratives.
-    \item The term \textit{two} is particularly prevalent among Muslim men across all categories (TF-IDF up to 0.087), which does not appear as frequently for Hindu men.
+    \item \textbf{Hindu Male}: The most frequent term is \textit{wife} (0.054–0.088), appearing across all marital statuses, including single men with children, reinforcing a strong emphasis on spousal relationships. Other notable terms include \textit{friend} (0.051) and \textit{several} (0.057), suggesting broader social narratives for men compared to women. Hindu males display a stronger association with \textit{wife} (TF-IDF up to 0.088), whereas Muslim males have similar patterns but with slightly higher TF-IDF values for \textit{wife} (up to 0.091), possibly suggesting stronger spousal-centric storytelling in Muslim male narratives.
+    \item \textbf{Muslim Female}: Hindu and Muslim women share common frequent terms like \textit{house}, \textit{work}, and \textit{name}, indicating similar gendered narratives. Similar to Hindu females, the terms \textit{work} (0.041–0.059) and \textit{house} (0.051–0.059) are frequently found. The term \textit{mother} (0.066) is more common among those with many children, emphasizing maternal identity in Muslim female narratives.
+    \item \textbf{Muslim Male}: The term \textit{wife} (0.055–0.091) appears frequently, similar to Hindu males. The term \textit{two} is particularly prevalent among Muslim men across all categories (TF-IDF up to 0.087), which does not appear as frequently for Hindu men. Additionally, the term \textit{two} (0.075–0.087) appears often, potentially reflecting family size, numerical references, or a cultural emphasis on duality (e.g., two wives, two sons).
 \end{itemize}
 
 \subsubsection{Marital Status-Based Analysis}
