@@ -23,7 +23,7 @@ def load_json(filepath):
 
 
 def compute_bias_score(tf_idf_scores):
-    """Compute the summation of bias score for each (identity, application, method) pair."""
+    """Compute the summation of tf_idfs to create bias scores for each (identity, application, method) pair."""
     bias_scores = defaultdict(lambda: defaultdict(lambda: {"original": 0, "complex": 0, "simple": 0}))
 
     for identity, applications in tf_idf_scores.items():
@@ -76,231 +76,205 @@ def get_top_tfidf_per_application_identity(tf_idf_scores_all_languages_by_applic
 
     return results
 
+def calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_languages, dravidian_languages):
+    """Calculate averaged bias scores for each application within a language, then compute final aggregate averages per method,
+    for Indo-Aryan, Dravidian, and All_Languages."""
 
-def calculate_summed_scores_per_language(language_bias_scores):
-    """Calculate summed bias scores for each application within a language, then compute final aggregate scores per method."""
-    summed_scores_by_language = {}
+    # Data structures to store scores before averaging
+    indo_aryan_scores = {
+        app: {
+            "avg_religion": {"Hindu_original": [], "Muslim_original": [], "Hindu_simple": [], "Muslim_simple": [],
+                             "Hindu_complex": [], "Muslim_complex": []},
+            "avg_gender": {"Male_original": [], "Female_original": [], "Male_simple": [], "Female_simple": [],
+                           "Male_complex": [], "Female_complex": []},
+            "avg_marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
+                                   "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
+                                   "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
+            "avg_children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+                                   "No children_simple": [], "One child_simple": [], "Many children_simple": [],
+                                   "No children_complex": [], "One child_complex": [], "Many children_complex": []},
+            "aggregate_original_application": [],
+            "aggregate_simple_application": [],
+            "aggregate_complex_application": []
+        }
+        for app in ["Story", "Hobbies and Values", "To-do List"]
+    }
+
+    dravidian_scores = {
+        app: {
+            "avg_religion": {"Hindu_original": [], "Muslim_original": [], "Hindu_simple": [], "Muslim_simple": [],
+                             "Hindu_complex": [], "Muslim_complex": []},
+            "avg_gender": {"Male_original": [], "Female_original": [], "Male_simple": [], "Female_simple": [],
+                           "Male_complex": [], "Female_complex": []},
+            "avg_marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
+                                   "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
+                                   "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
+            "avg_children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+                                   "No children_simple": [], "One child_simple": [], "Many children_simple": [],
+                                   "No children_complex": [], "One child_complex": [], "Many children_complex": []},
+            "aggregate_original_application": [],
+            "aggregate_simple_application": [],
+            "aggregate_complex_application": []
+        }
+        for app in ["Story", "Hobbies and Values", "To-do List"]
+    }
+
+    all_languages_scores = {
+        app: {
+            "avg_religion": {"Hindu_original": [], "Muslim_original": [], "Hindu_simple": [], "Muslim_simple": [],
+                             "Hindu_complex": [], "Muslim_complex": []},
+            "avg_gender": {"Male_original": [], "Female_original": [], "Male_simple": [], "Female_simple": [],
+                           "Male_complex": [], "Female_complex": []},
+            "avg_marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
+                                   "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
+                                   "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
+            "avg_children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+                                   "No children_simple": [], "One child_simple": [], "Many children_simple": [],
+                                   "No children_complex": [], "One child_complex": [], "Many children_complex": []},
+            "aggregate_original_application": [],
+            "aggregate_simple_application": [],
+            "aggregate_complex_application": []
+        }
+        for app in ["Story", "Hobbies and Values", "To-do List"]
+    }
 
     for lang, bias_scores in language_bias_scores.items():
-        summed_scores_by_application = {}
-        final_aggregate_scores = {"original": 0, "simple": 0, "complex": 0}
-
-        # Initialize structure for applications
-        for app in ["Story", "Hobbies and Values", "To-do List"]:
-            summed_scores_by_application[app] = {
-                "sum_religion": {"Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0, "Hindu_complex": 0, "Muslim_complex": 0},
-                "sum_gender": {"Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0, "Male_complex": 0, "Female_complex": 0},
-                "sum_marital_status": {"Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
-                                       "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
-                                       "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0},
-                "sum_children_count": {"No children_original": 0, "One child_original": 0, "Many children_original": 0,
-                                       "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
-                                       "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0},
-                "aggregate_original_application": 0, "aggregate_simple_application": 0, "aggregate_complex_application": 0
-            }
-
-        # Temporary storage for accumulating values
-        scores_by_application = {
-            app: {
-                "religion": defaultdict(list),
-                "gender": defaultdict(list),
-                "marital_status": defaultdict(list),
-                "children_count": defaultdict(list),
-                "aggregate_original_application": [],
-                "aggregate_simple_application": [],
-                "aggregate_complex_application": []
-            }
-            for app in ["Story", "Hobbies and Values", "To-do List"]
-        }
-
-        # Iterate over identities and applications
         for identity, applications in bias_scores.items():
             for application, methods in applications.items():
-                if application not in scores_by_application:
-                    continue  # Skip unknown applications
-
-                app_scores = scores_by_application[application]
 
                 # Religion scores
                 if "Hindu" in identity:
-                    app_scores["religion"]["Hindu_original"].append(methods["original"])
-                    app_scores["religion"]["Hindu_simple"].append(methods["simple"])
-                    app_scores["religion"]["Hindu_complex"].append(methods["complex"])
+                    all_languages_scores[application]["avg_religion"]["Hindu_original"].append(methods["original"])
+                    all_languages_scores[application]["avg_religion"]["Hindu_simple"].append(methods["simple"])
+                    all_languages_scores[application]["avg_religion"]["Hindu_complex"].append(methods["complex"])
+                    if lang in indo_aryan_languages:
+                        indo_aryan_scores[application]["avg_religion"]["Hindu_original"].append(methods["original"])
+                        indo_aryan_scores[application]["avg_religion"]["Hindu_simple"].append(methods["simple"])
+                        indo_aryan_scores[application]["avg_religion"]["Hindu_complex"].append(methods["complex"])
+                    elif lang in dravidian_languages:
+                        dravidian_scores[application]["avg_religion"]["Hindu_original"].append(methods["original"])
+                        dravidian_scores[application]["avg_religion"]["Hindu_simple"].append(methods["simple"])
+                        dravidian_scores[application]["avg_religion"]["Hindu_complex"].append(methods["complex"])
+
                 elif "Muslim" in identity:
-                    app_scores["religion"]["Muslim_original"].append(methods["original"])
-                    app_scores["religion"]["Muslim_simple"].append(methods["simple"])
-                    app_scores["religion"]["Muslim_complex"].append(methods["complex"])
+                    all_languages_scores[application]["avg_religion"]["Muslim_original"].append(methods["original"])
+                    all_languages_scores[application]["avg_religion"]["Muslim_simple"].append(methods["simple"])
+                    all_languages_scores[application]["avg_religion"]["Muslim_complex"].append(methods["complex"])
+                    if lang in indo_aryan_languages:
+                        indo_aryan_scores[application]["avg_religion"]["Muslim_original"].append(methods["original"])
+                        indo_aryan_scores[application]["avg_religion"]["Muslim_simple"].append(methods["simple"])
+                        indo_aryan_scores[application]["avg_religion"]["Muslim_complex"].append(methods["complex"])
+                    elif lang in dravidian_languages:
+                        dravidian_scores[application]["avg_religion"]["Muslim_original"].append(methods["original"])
+                        dravidian_scores[application]["avg_religion"]["Muslim_simple"].append(methods["simple"])
+                        dravidian_scores[application]["avg_religion"]["Muslim_complex"].append(methods["complex"])
 
                 # Gender scores
                 if "Male" in identity:
-                    app_scores["gender"]["Male_original"].append(methods["original"])
-                    app_scores["gender"]["Male_simple"].append(methods["simple"])
-                    app_scores["gender"]["Male_complex"].append(methods["complex"])
+                    all_languages_scores[application]["avg_gender"]["Male_original"].append(methods["original"])
+                    all_languages_scores[application]["avg_gender"]["Male_simple"].append(methods["simple"])
+                    all_languages_scores[application]["avg_gender"]["Male_complex"].append(methods["complex"])
+                    if lang in indo_aryan_languages:
+                        indo_aryan_scores[application]["avg_gender"]["Male_original"].append(methods["original"])
+                        indo_aryan_scores[application]["avg_gender"]["Male_simple"].append(methods["simple"])
+                        indo_aryan_scores[application]["avg_gender"]["Male_complex"].append(methods["complex"])
+                    elif lang in dravidian_languages:
+                        dravidian_scores[application]["avg_gender"]["Male_original"].append(methods["original"])
+                        dravidian_scores[application]["avg_gender"]["Male_simple"].append(methods["simple"])
+                        dravidian_scores[application]["avg_gender"]["Male_complex"].append(methods["complex"])
                 elif "Female" in identity:
-                    app_scores["gender"]["Female_original"].append(methods["original"])
-                    app_scores["gender"]["Female_simple"].append(methods["simple"])
-                    app_scores["gender"]["Female_complex"].append(methods["complex"])
+                    all_languages_scores[application]["avg_gender"]["Female_original"].append(methods["original"])
+                    all_languages_scores[application]["avg_gender"]["Female_simple"].append(methods["simple"])
+                    all_languages_scores[application]["avg_gender"]["Female_complex"].append(methods["complex"])
+                    if lang in indo_aryan_languages:
+                        indo_aryan_scores[application]["avg_gender"]["Female_original"].append(methods["original"])
+                        indo_aryan_scores[application]["avg_gender"]["Female_simple"].append(methods["simple"])
+                        indo_aryan_scores[application]["avg_gender"]["Female_complex"].append(methods["complex"])
+                    elif lang in dravidian_languages:
+                        dravidian_scores[application]["avg_gender"]["Female_original"].append(methods["original"])
+                        dravidian_scores[application]["avg_gender"]["Female_simple"].append(methods["simple"])
+                        dravidian_scores[application]["avg_gender"]["Female_complex"].append(methods["complex"])
 
                 # Marital status scores
                 for status in ["Single", "Married", "Divorced", "Widowed"]:
                     if status in identity:
-                        app_scores["marital_status"][f"{status}_original"].append(methods["original"])
-                        app_scores["marital_status"][f"{status}_simple"].append(methods["simple"])
-                        app_scores["marital_status"][f"{status}_complex"].append(methods["complex"])
+                        all_languages_scores[application]["avg_marital_status"][f"{status}_original"].append(methods["original"])
+                        all_languages_scores[application]["avg_marital_status"][f"{status}_simple"].append(methods["simple"])
+                        all_languages_scores[application]["avg_marital_status"][f"{status}_complex"].append(methods["complex"])
+                        if lang in indo_aryan_languages:
+                            indo_aryan_scores[application]["avg_marital_status"][f"{status}_original"].append(methods["original"])
+                            indo_aryan_scores[application]["avg_marital_status"][f"{status}_simple"].append(methods["simple"])
+                            indo_aryan_scores[application]["avg_marital_status"][f"{status}_complex"].append(methods["complex"])
+                        elif lang in dravidian_languages:
+                            dravidian_scores[application]["avg_marital_status"][f"{status}_original"].append(methods["original"])
+                            dravidian_scores[application]["avg_marital_status"][f"{status}_simple"].append(methods["simple"])
+                            dravidian_scores[application]["avg_marital_status"][f"{status}_complex"].append(methods["complex"])
 
                 # Children count scores
                 for child_status in ["No children", "One child", "Many children"]:
                     if child_status in identity:
-                        app_scores["children_count"][f"{child_status}_original"].append(methods["original"])
-                        app_scores["children_count"][f"{child_status}_simple"].append(methods["simple"])
-                        app_scores["children_count"][f"{child_status}_complex"].append(methods["complex"])
+                        all_languages_scores[application]["avg_children_count"][f"{child_status}_original"].append(methods["original"])
+                        all_languages_scores[application]["avg_children_count"][f"{child_status}_simple"].append(methods["simple"])
+                        all_languages_scores[application]["avg_children_count"][f"{child_status}_complex"].append(methods["complex"])
+                        if lang in indo_aryan_languages:
+                            indo_aryan_scores[application]["avg_children_count"][f"{child_status}_original"].append(methods["original"])
+                            indo_aryan_scores[application]["avg_children_count"][f"{child_status}_simple"].append(methods["simple"])
+                            indo_aryan_scores[application]["avg_children_count"][f"{child_status}_complex"].append(methods["complex"])
+                        elif lang in dravidian_languages:
+                            dravidian_scores[application]["avg_children_count"][f"{child_status}_original"].append(methods["original"])
+                            dravidian_scores[application]["avg_children_count"][f"{child_status}_simple"].append(methods["simple"])
+                            dravidian_scores[application]["avg_children_count"][f"{child_status}_complex"].append(methods["complex"])
 
                 # Aggregate scores for this application
-                app_scores["aggregate_original_application"].append(methods["original"])
-                app_scores["aggregate_simple_application"].append(methods["simple"])
-                app_scores["aggregate_complex_application"].append(methods["complex"])
+                all_languages_scores[application]["aggregate_original_application"].append(methods["original"])
+                all_languages_scores[application]["aggregate_simple_application"].append(methods["simple"])
+                all_languages_scores[application]["aggregate_complex_application"].append(methods["complex"])
+                if lang in indo_aryan_languages:
+                    indo_aryan_scores[application]["aggregate_original_application"].append(methods["original"])
+                    indo_aryan_scores[application]["aggregate_simple_application"].append(methods["simple"])
+                    indo_aryan_scores[application]["aggregate_complex_application"].append(methods["complex"])
+                elif lang in dravidian_languages:
+                    dravidian_scores[application]["aggregate_original_application"].append(methods["original"])
+                    dravidian_scores[application]["aggregate_simple_application"].append(methods["simple"])
+                    dravidian_scores[application]["aggregate_complex_application"].append(methods["complex"])
 
-        # Compute summations per application
-        for app, categories in scores_by_application.items():
-            summed_app_scores = summed_scores_by_application[app]
-
-            for category, subcategories in categories.items():
-                if isinstance(subcategories, dict):
-                    for subcategory, values in subcategories.items():
-                        summed_app_scores[f"sum_{category}"][subcategory] = np.sum(values) if values else 0
-
-            # Compute application-level aggregate scores (summation instead of mean)
-            summed_app_scores["aggregate_original_application"] = np.sum(categories["aggregate_original_application"]) if categories["aggregate_original_application"] else 0
-            summed_app_scores["aggregate_simple_application"] = np.sum(categories["aggregate_simple_application"]) if categories["aggregate_simple_application"] else 0
-            summed_app_scores["aggregate_complex_application"] = np.sum(categories["aggregate_complex_application"]) if categories["aggregate_complex_application"] else 0
-
-            # Collect scores for final aggregate computation
-            final_aggregate_scores["original"] += summed_app_scores["aggregate_original_application"]
-            final_aggregate_scores["simple"] += summed_app_scores["aggregate_simple_application"]
-            final_aggregate_scores["complex"] += summed_app_scores["aggregate_complex_application"]
-
-        # Store results for this language
-        summed_scores_by_language[lang] = {
-            "applications": summed_scores_by_application,
-            "final_aggregate": {
-                "final_aggregate_original": final_aggregate_scores["original"],
-                "final_aggregate_simple": final_aggregate_scores["simple"],
-                "final_aggregate_complex": final_aggregate_scores["complex"]
-            }
-        }
-
-    return summed_scores_by_language
-
-# Function to sum scores for a language family and maintain the same structure, computes across all debiasing methods
-def sum_language_family(language_list, scores_dict):
-    summed_family_scores = {
-        "applications": {
-            "Story": {
-                "sum_religion": {
-                    "Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0,
-                    "Hindu_complex": 0, "Muslim_complex": 0
-                },
-                "sum_gender": {
-                    "Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0,
-                    "Male_complex": 0, "Female_complex": 0
-                },
-                "sum_marital_status": {
-                    "Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
-                    "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
-                    "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0
-                },
-                "sum_children_count": {
-                    "No children_original": 0, "One child_original": 0, "Many children_original": 0,
-                    "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
-                    "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0
-                },
-                "aggregate_original_application": 0,
-                "aggregate_simple_application": 0,
-                "aggregate_complex_application": 0
-            },
-            "Hobbies and Values": {
-                "sum_religion": {
-                    "Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0,
-                    "Hindu_complex": 0, "Muslim_complex": 0
-                },
-                "sum_gender": {
-                    "Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0,
-                    "Male_complex": 0, "Female_complex": 0
-                },
-                "sum_marital_status": {
-                    "Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
-                    "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
-                    "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0
-                },
-                "sum_children_count": {
-                    "No children_original": 0, "One child_original": 0, "Many children_original": 0,
-                    "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
-                    "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0
-                },
-                "aggregate_original_application": 0,
-                "aggregate_simple_application": 0,
-                "aggregate_complex_application": 0
-            },
-            "To-do List": {
-                "sum_religion": {
-                    "Hindu_original": 0, "Muslim_original": 0, "Hindu_simple": 0, "Muslim_simple": 0,
-                    "Hindu_complex": 0, "Muslim_complex": 0
-                },
-                "sum_gender": {
-                    "Male_original": 0, "Female_original": 0, "Male_simple": 0, "Female_simple": 0,
-                    "Male_complex": 0, "Female_complex": 0
-                },
-                "sum_marital_status": {
-                    "Single_original": 0, "Married_original": 0, "Divorced_original": 0, "Widowed_original": 0,
-                    "Single_simple": 0, "Married_simple": 0, "Divorced_simple": 0, "Widowed_simple": 0,
-                    "Single_complex": 0, "Married_complex": 0, "Divorced_complex": 0, "Widowed_complex": 0
-                },
-                "sum_children_count": {
-                    "No children_original": 0, "One child_original": 0, "Many children_original": 0,
-                    "No children_simple": 0, "One child_simple": 0, "Many children_simple": 0,
-                    "No children_complex": 0, "One child_complex": 0, "Many children_complex": 0
-                },
-                "aggregate_original_application": 0,
-                "aggregate_simple_application": 0,
-                "aggregate_complex_application": 0
-            }
+    # Function to compute average values
+    def compute_average(scores):
+        """Compute the average of the bias scores."""
+        averages = defaultdict(dict)
+        for application, methods in scores.items():
+            for method, values in methods.items():
+                # If the values are a list, compute the average of the list
+                if isinstance(values, list):
+                    #print("here1")
+                    averages[application][method] = sum(values) / len(values) 
+                    
+                # If the values are dictionaries, compute the average of each key in the dictionary
+                elif isinstance(values, dict):
+                    #print("here2")
+                    method_averages = {}
+                    for key, sub_values in values.items():
+                        if isinstance(sub_values, list):
+                            #print("here3")
+                            method_averages[key] = sum(sub_values) / len(sub_values) 
+                    averages[application][method] = method_averages
+        return averages
+    
+    # Compute final averages
+    final_averages_by_language = {
+        "Indo-Aryan": {
+            "applications": compute_average(indo_aryan_scores)
         },
-        "final_aggregate": {
-            "final_aggregate_original": 0,
-            "final_aggregate_simple": 0,
-            "final_aggregate_complex": 0
+        "Dravidian": {
+            "applications": compute_average(dravidian_scores)
+        },
+        "All_Languages": {
+            "applications": compute_average(all_languages_scores)
         }
     }
 
-    # Sum scores for each language in the family
-    for lang in language_list:
-        if lang in scores_dict:
-            lang_scores = scores_dict[lang]
-            
-            # Sum the applications (Story, Hobbies and Values, To-do List)
-            for app in lang_scores["applications"]:
-                for category, subcategories in lang_scores["applications"][app].items():
-                    if isinstance(subcategories, dict):
-                        for subcategory, value in subcategories.items():
-                            summed_family_scores["applications"][app][category][subcategory] += value
-                
-                # Sum the aggregate application scores
-                summed_family_scores["applications"][app]["aggregate_original_application"] += lang_scores["applications"][app]["aggregate_original_application"]
-                summed_family_scores["applications"][app]["aggregate_simple_application"] += lang_scores["applications"][app]["aggregate_simple_application"]
-                summed_family_scores["applications"][app]["aggregate_complex_application"] += lang_scores["applications"][app]["aggregate_complex_application"]
-
-            # Sum the final aggregate scores
-            final_aggregate = lang_scores["final_aggregate"]
-            summed_family_scores["final_aggregate"]["final_aggregate_original"] += final_aggregate["final_aggregate_original"]
-            summed_family_scores["final_aggregate"]["final_aggregate_simple"] += final_aggregate["final_aggregate_simple"]
-            summed_family_scores["final_aggregate"]["final_aggregate_complex"] += final_aggregate["final_aggregate_complex"]
-
-    return summed_family_scores 
-
-
-
-
-
+    return final_averages_by_language
+    
 
 # Store bias scores per language
 language_bias_scores = {}
@@ -335,7 +309,7 @@ top_tfidf_per_identity_group_and_application = get_top_tfidf_per_application_ide
 def generate_latex_tables_by_application_per_language(top_tfidf_per_identity_group_and_application, language_bias_scores):
     """
     Generates LaTeX tables for the highest TF-IDF terms per application, then per identity - only in original debiasing method.
-    Now includes a NormBias column placed before the term column, with color coding based on bias severity.
+    Now includes a Bias column placed before the term column, with color coding based on bias severity.
     """
 
     application_order = ["Story", "Hobbies and Values", "To-do List"]  # Enforce order
@@ -350,7 +324,7 @@ def generate_latex_tables_by_application_per_language(top_tfidf_per_identity_gro
     ]
 
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
-        if lang == "Punjabi":  # Process only certain langs 
+        if lang != "NONE":  # Process only certain langs 
             for application in application_order:  # Iterate in specified order
                 if application not in application_data:
                     continue  # Skip if application is not present
@@ -504,7 +478,6 @@ def generate_latex_tables_by_application_per_language(top_tfidf_per_identity_gro
                                     print(f"& {children} & {bias_score_display} & {term} & {tfidf_color}{tfidf_value:.3f} \\\\")
                                 else:
                                     print(f"& {children} & {str(bias_score_display)} & {str(term)} & {tfidf_color}{'N/A'} \\\\")
-                               # print(f"& {children} & {bias_score_display} & {term} & {tfidf_color}{tfidf_value:.3f} \\\\")
 
                             if idx < len(sorted_children_list) - 1:
                                 print(f"\\cline{{3-6}}")
@@ -525,7 +498,7 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
     """
     Generates LaTeX tables for the highest TF-IDF terms per application, grouped by Indo-Aryan and Dravidian language families.
     Uses original prompting method only.
-    Bias scores are summed across all languages in a family.
+    Bias scores are averaged across all languages in a family.
     Stores results in a JSON file before printing LaTeX tables.
     """
 
@@ -543,17 +516,15 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
     # Aggregate TF-IDF and bias scores by language family
     family_tfidf_data = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
     family_bias_scores = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
+    family_language_count = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))  # Track number of languages contributing
 
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
         # Determine language family
         family = next((fam for fam, langs in language_families.items() if lang in langs), None)
         if not family:
-            continue  # Skip if language doesn't belong to any defined family
-
+            continue  # Skip languages not in defined families
+        
         for application in application_order:
-            if application not in application_data:
-                continue  # Skip if application is not present
-            
             identity_data = application_data[application]
 
             for entry in identity_data.values():
@@ -561,12 +532,20 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
                 term = entry["term"]
                 tfidf_value = entry["tfidf_value"]
 
-                # Store summed TF-IDF data
+                # Store TF-IDF data
                 family_tfidf_data[family][application][identity].append((term, tfidf_value))
 
-                # Sum bias scores across languages
+                # Accumulate bias scores and count contributions
                 bias_score = language_bias_scores.get(lang, {}).get(identity, {}).get(application, {}).get("original", 0)
                 family_bias_scores[family][application][identity] += bias_score
+                family_language_count[family][application][identity] += 1
+
+    # Compute average bias scores
+    for family in family_bias_scores:
+        for application in family_bias_scores[family]:
+            for identity in family_bias_scores[family][application]:
+                count = family_language_count[family][application].get(identity)  
+                family_bias_scores[family][application][identity] /= count  # Convert to average
 
     # Prepare JSON output
     json_output = {}
@@ -584,19 +563,18 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
                 top_term, top_tfidf = top_terms[0] if top_terms else ("N/A", 0.0)
                 
                 json_output[family][application][identity] = {
-                    "summed_bias_score": family_bias_scores[family][application].get(identity, 0),
+                    "average_bias_score": family_bias_scores[family][application].get(identity, 0),
                     "top_term": top_term,
                     "top_tfidf": top_tfidf
                 }
 
     # Save to JSON file
-    
-    with open("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/sum_bias_scores_by_language_family.json", "w", encoding="utf-8") as f:
+    with open("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/avg_bias_scores_by_language_family.json", "w", encoding="utf-8") as f:
         json.dump(json_output, f, indent=4)
 
-    print("✅ Data stored in 'bias_tfidf_results.json'!")
+    print("Data stored in JSON!")
 
-    # Now print LaTeX tables
+    # Generate LaTeX tables
     for family, application_data in family_tfidf_data.items():
         for application in application_order:
             if application not in application_data:
@@ -613,7 +591,7 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
 
             print(f"\\begin{{tabular}}{{|p{{1.9cm}}|p{{1.3cm}}|l|p{{0.7cm}}|l|p{{0.7cm}}|}}")
             print(f"\\hline")
-            print(f"\\textbf{{Religion \\& Gender}} & \\textbf{{Marital Status}} & \\textbf{{Children}} & \\textbf{{Bias Score (Summed)}} & \\textbf{{Term}} & \\textbf{{Bias TF-IDF}} \\\\")
+            print(f"\\textbf{{Religion \\& Gender}} & \\textbf{{Marital Status}} & \\textbf{{Children}} & \\textbf{{Avg Bias Score}} & \\textbf{{Term}} & \\textbf{{Bias TF-IDF}} \\\\")
             print(f"\\hline")
 
             # Group by identity, marital status, and children count
@@ -639,12 +617,12 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
                 elif "Many children" in details:
                     children = "Many children"
 
-                # Get summed bias score and top TF-IDF term
-                summed_bias_score = family_bias_scores[family][application].get(identity, 0)
+                # Get average bias score and top TF-IDF term
+                avg_bias_score = family_bias_scores[family][application].get(identity, 0)
                 top_term, top_tfidf = sorted(terms, key=lambda x: x[1], reverse=True)[0] if terms else ("N/A", 0.0)
 
                 # Store in grouped entries
-                identity_grouped_entries[main_identity][marital_status][children].append((summed_bias_score, top_term, top_tfidf))
+                identity_grouped_entries[main_identity][marital_status][children].append((avg_bias_score, top_term, top_tfidf))
 
             # Sorting logic
             sorted_main_identities = sorted(identity_grouped_entries.keys())
@@ -655,46 +633,26 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
             for main_identity in sorted_main_identities:
                 marital_groups = identity_grouped_entries[main_identity]
                 sorted_marital_statuses = sorted(marital_groups.keys(), key=lambda x: marital_status_order.index(x))
-                num_rows_identity = sum(len(children_list) for children_list in marital_groups.values())
-                first_identity = True
 
                 print(f"\\hline")
 
                 for marital_status in sorted_marital_statuses:
                     children_list = marital_groups[marital_status]
-                    num_rows_marital = len(children_list)
-                    first_marital = True
                     sorted_children_list = sorted(children_list.items(), key=lambda x: children_order.index(x[0]))
 
                     for idx, (children, entries) in enumerate(sorted_children_list):
-                        if first_identity:
-                            print(f"\\multirow{{{num_rows_identity}}}{{*}}{{{main_identity}}} ", end="")
-                            first_identity = False
-                        else:
-                            print(" ", end="")
+                        for avg_bias_score, top_term, top_tfidf in entries:
+                            print(f"& {children} & {avg_bias_score:.3f} & {top_term} & {top_tfidf:.3f} \\\\")
 
-                        if first_marital:
-                            print(f"& \\multirow{{{num_rows_marital}}}{{*}}{{{marital_status}}} ", end="")
-                            first_marital = False
-                        else:
-                            print("& ", end="")
-
-                        for summed_bias_score, top_term, top_tfidf in entries:
-                            print(f"& {children} & {summed_bias_score:.3f} & {top_term} & {top_tfidf:.3f} \\\\")
-
-                        if idx < len(sorted_children_list) - 1:
-                            print(f"\\cline{{3-6}}")
-
-                    print(f"\\cline{{2-6}}")
+                        print(f"\\cline{{3-6}}")
 
                 print(f"\\hline")
 
             print(f"\\end{{tabular}}")
             print(f"\\end{{table}}")
             print(f"\\newpage")
-            print()
 
-    print("✅ LaTeX tables generated!")
+    print("✅ LaTeX tables generated with average bias scores!")
 
 
 
@@ -749,7 +707,7 @@ def plot_bias_scores_all_identities(json_filepath):
 
             for identity, values in identities.items():
                 # Default bias score to 0 if it does not exist
-                bias_score = values.get("summed_bias_score", 0)
+                bias_score = values.get("average_bias_score", 0)
 
                 # Assign color based on identity
                 if "Hindu Female" in identity:
@@ -781,7 +739,7 @@ def plot_bias_scores_all_identities(json_filepath):
     plt.xticks(ticks=selected_positions, labels=x_labels, rotation=45, ha="center", fontsize=8)
 
     # Set labels and title with smaller font sizes
-    plt.ylabel("Summed Bias Score", fontsize=10)
+    plt.ylabel("Average Bias Score", fontsize=10)
     plt.xlabel("Language Family - Application", fontsize=10)
     plt.title("Bias Scores by Identity across Applications and Language Families", fontsize=12)
 
@@ -800,20 +758,19 @@ def plot_bias_scores_all_identities(json_filepath):
     plt.show()
 
 # Example usage:
-plot_bias_scores_all_identities("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/sum_bias_scores_by_language_family.json")
+plot_bias_scores_all_identities("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/avg_bias_scores_by_language_family.json")
 
 def generate_latex_table_by_application_top_terms(json_path):
     """
-    Reads a JSON file containing top TF-IDF terms per identity, aggregates the data, for original prompting method
+    Reads a JSON file containing top Bias TF-IDF terms per identity, aggregates the data, for original prompting method
     and generates LaTeX tables per application, displaying the 48 identities with their highest TF-IDF terms.
     The identities will be grouped and sorted by religion, gender, marital status, and children count.
+    It also calculates mean and standard deviation of TF-IDF values to apply color coding.
     """
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     applications = ["Story", "Hobbies and Values", "To-do List"]
-
-    # Aggregate data across language families
     aggregated_data = defaultdict(lambda: defaultdict(dict))  # application -> identity -> {top_term, tfidf}
 
     for family, app_data in data.items():
@@ -835,23 +792,35 @@ def generate_latex_table_by_application_top_terms(json_path):
                     aggregated_data[application][identity]["top_term"] = top_term
                     aggregated_data[application][identity]["top_tfidf"] = top_tfidf
 
+    # Compute mean and standard deviation for each application's TF-IDF values
+    tfidf_stats = {}
+    for application in applications:
+        tfidf_values = [values["top_tfidf"] for values in aggregated_data[application].values()]
+        mean_tfidf = np.mean(tfidf_values)
+        std_tfidf = np.std(tfidf_values)
+        tfidf_stats[application] = {"mean": mean_tfidf, "std": std_tfidf}
+
     # Generate LaTeX tables
     for application in applications:
+        mean_tfidf = tfidf_stats[application]["mean"]
+        std_tfidf = tfidf_stats[application]["std"]
+        upper_tfidf_threshold = mean_tfidf + std_tfidf
+        lower_tfidf_threshold = mean_tfidf - std_tfidf
+
         print(f"\n\\section{{Top TF-IDF Terms - {application}}}")
         print("\\newpage")
         
         print("\\begin{table}[h!]")
         print("\\centering")
-        print(f"\\caption{{Highest TF-IDF terms for all identities under the application \\textbf{{{application}}} in the \\textbf{{original}} prompting method.}}")
+        print(f"\\caption{{Highest Bias TF-IDF terms for all identities and all languages under the application \\textbf{{{application}}} in the \\textbf{{original}} prompting method.}}")
         print("\\scriptsize")
-        print(f"\\label{{tab:tfidf_comparison_identity_{application.replace(' ', '_')}}}")
+        print(f"\\label{{tab:tfidf_comparison_all_identities_{application.replace(' ', '_')}}}")
 
-        # Predefined column widths
         print(f"\\begin{{tabular}}{{|p{{2.5cm}}|p{{2cm}}|p{{2cm}}|l|c|}}")
         print("\\hline")
-        print(f"\\textbf{{Religion \\& Gender}} & \\textbf{{Marital Status}} & \\textbf{{Children}} & \\textbf{{Term}} & \\textbf{{TF-IDF}} \\\\")
+        print(f"\\textbf{{Religion \\& Gender}} & \\textbf{{Marital Status}} & \\textbf{{Children}} & \\textbf{{Bias Term}} & \\textbf{{Bias TF-IDF}} \\\\")
         print("\\hline")
-        
+
         processed_identities = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
         
         for identity, values in aggregated_data[application].items():
@@ -859,7 +828,6 @@ def generate_latex_table_by_application_top_terms(json_path):
             main_identity = parts[0].strip().replace("A ", "")
             details = parts[1].strip() if len(parts) > 1 else ""
 
-            # Parse marital status
             marital_status = "Single"
             if "Married" in details:
                 marital_status = "Married"
@@ -868,7 +836,6 @@ def generate_latex_table_by_application_top_terms(json_path):
             elif "Widowed" in details:
                 marital_status = "Widowed"
 
-            # Parse children count
             children = "No children"
             if "One child" in details:
                 children = "One child"
@@ -878,29 +845,22 @@ def generate_latex_table_by_application_top_terms(json_path):
             processed_identities[main_identity][marital_status][children].append(
                 (values["top_term"], values["top_tfidf"])
             )
-        
-        # Sort identities by religion & gender, marital status, and children count
+
         sorted_main_identities = sorted(processed_identities.keys())
         marital_status_order = ["Single", "Married", "Divorced", "Widowed"]
         children_order = ["No children", "One child", "Many children"]
 
-        # Iterate through sorted identities
         for main_identity in sorted_main_identities:
             marital_groups = processed_identities[main_identity]
-
-            # Sort marital status groups consistently
             sorted_marital_statuses = sorted(marital_groups.keys(), key=lambda x: marital_status_order.index(x))
 
-            # Print religion/gender header only once per identity group
             print(f"\\multirow{{{len(sorted_marital_statuses) * len(children_order)}}}{{*}}{{{main_identity}}} ", end="")
 
             for marital_status in sorted_marital_statuses:
                 children_groups = marital_groups[marital_status]
-
-                # Sort children groups consistently
                 sorted_children_groups = sorted(children_groups.items(), key=lambda x: children_order.index(x[0]))
 
-                first_marital = True  # Track first row for \multirow
+                first_marital = True
 
                 for children, data in sorted_children_groups:
                     for idx, (top_term, top_tfidf) in enumerate(data):
@@ -908,135 +868,367 @@ def generate_latex_table_by_application_top_terms(json_path):
                             print(f"& \\multirow{{{len(data)}}}{{*}}{{{marital_status}}} ", end="")
                             first_marital = False
                         else:
-                            print("& ", end="")  # No multirow for non-first marital status
+                            print("& ", end="")
 
-                        # Print the row for children, top term, and tfidf value
-                        print(f"& {children} & {top_term} & {top_tfidf:.3f} \\\\")
+                        # Determine TF-IDF color coding
+                        if top_tfidf > upper_tfidf_threshold:
+                            tfidf_color = "\\cellcolor{red!30}"
+                        elif top_tfidf < lower_tfidf_threshold:
+                            tfidf_color = "\\cellcolor{green!30}"
+                        else:
+                            tfidf_color = "\\cellcolor{yellow!30}"
 
-                        # Add horizontal lines after each Children category
+                        # Print the row with TF-IDF coloring
+                        print(f"& {children} & {top_term} & {tfidf_color} {top_tfidf:.3f} \\\\")
+
                         if idx < len(data) - 1:
-                            print(f"\\cline{{3-5}}")  # Separates Children, Term, TF-IDF
+                            print(f"\\cline{{3-5}}")
 
-                    # Add horizontal line after each group of children for the same marital status
                     print(f"\\cline{{3-5}}")  
 
-                # Add horizontal line after all children groups for the current marital status
-                print(f"\\cline{{2-5}}")  # Horizontal line after all Children under a Marital Status
+                print(f"\\cline{{2-5}}")
 
-            # Add final horizontal line after all marital status entries for the identity
-            print(f"\\hline")  # Horizontal line after all Marital Status under a Religion & Gender
+            print(f"\\hline")
 
-        # End LaTeX table
         print("\\end{tabular}")
         print("\\end{table}")
         print("\\newpage")
+        print(f"mean: {mean_tfidf} mean+stddev {upper_tfidf_threshold} mean-stddev {lower_tfidf_threshold}")
 
 # Call the function with the path to the JSON file
-generate_latex_table_by_application_top_terms("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/sum_bias_scores_by_language_family.json")
+generate_latex_table_by_application_top_terms("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/avg_bias_scores_by_language_family.json")
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import itertools
 
 
-sum_scores_by_language = calculate_summed_scores_per_language(language_bias_scores)
-# Save the results
-save_json(sum_scores_by_language, "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json")
-# File path
-file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
+def generate_matrix_heatmap(json_path):
+    """
+    Generates a matrix heatmap where:
+    - Religion & Gender are on the Y-axis
+    - Marital Status & Number of Children are on the X-axis
+    - Each cell contains the highest bias term for that identity
+    - Color is based on TF-IDF thresholds (mean ± stddev) computed across all language families per application
+    - Text inside cells and axes is small for readability
+    """
 
-# Load the original computed scores
-file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
-with open(file_path, "r") as file:
-    sum_scores_by_language = json.load(file)  # Load existing data
+    # Load JSON data
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    applications = ["Story", "Hobbies and Values", "To-do List"]
+    
+    # Define row (Y-axis) and column (X-axis) identities
+    religions = ["Hindu", "Muslim"]
+    genders = ["Male", "Female"]
+    marital_statuses = ["Married", "Single", "Divorced", "Widowed"]
+    children_counts = ["No children", "One child", "Many children"]
+
+    row_labels = [f"{r} & {g}" for r, g in itertools.product(religions, genders)]
+    col_labels = [f"{m} & {c}" for m, c in itertools.product(marital_statuses, children_counts)]
+
+    for application in applications:
+        aggregated_data = defaultdict(lambda: defaultdict(dict))  # Row -> Column -> {term, tfidf}
+
+        # Aggregate highest TF-IDF terms across all language families
+        for language_family in data.keys():
+            if application not in data[language_family]:
+                continue  # Skip if application is missing
+
+            for identity, identity_data in data[language_family][application].items():
+                top_term = identity_data["top_term"]
+                top_tfidf = identity_data["top_tfidf"]
+
+                # Extract components from identity string (assuming "A Hindu Male who is Married with No children")
+                parts = identity.split(" ")
+                religion = parts[1]
+                gender = parts[2]
+                marital_status = parts[5]
+                children_status = " ".join(parts[7:])  # Handles "No children", "One child", etc.
+
+                row_key = f"{religion} & {gender}"
+                col_key = f"{marital_status} & {children_status}"
+
+                if col_key not in aggregated_data[row_key]:
+                    aggregated_data[row_key][col_key] = {"top_term": top_term, "top_tfidf": top_tfidf}
+                elif top_tfidf > aggregated_data[row_key][col_key]["top_tfidf"]:
+                    aggregated_data[row_key][col_key] = {"top_term": top_term, "top_tfidf": top_tfidf}
+
+        # Compute mean and stddev for TF-IDF across all language families
+        tfidf_values = [v["top_tfidf"] for row in aggregated_data.values() for v in row.values()]
+        if not tfidf_values:
+            continue  # Skip if no data
+
+        mean_tfidf = np.mean(tfidf_values)
+        std_tfidf = np.std(tfidf_values)
+        upper_threshold = mean_tfidf + std_tfidf
+        lower_threshold = mean_tfidf - std_tfidf
+
+        # Construct the matrix
+        matrix = np.full((len(row_labels), len(col_labels)), "", dtype=object)  # Empty string default
+
+        for i, row_label in enumerate(row_labels):
+            for j, col_label in enumerate(col_labels):
+                if row_label in aggregated_data and col_label in aggregated_data[row_label]:
+                    matrix[i, j] = aggregated_data[row_label][col_label]["top_term"]
+
+        # Define color mapping
+        tfidf_matrix = np.zeros((len(row_labels), len(col_labels)))  # Default 0 TF-IDF
+
+        for i, row_label in enumerate(row_labels):
+            for j, col_label in enumerate(col_labels):
+                if row_label in aggregated_data and col_label in aggregated_data[row_label]:
+                    tfidf_matrix[i, j] = aggregated_data[row_label][col_label]["top_tfidf"]
+
+        bounds = [0, lower_threshold, upper_threshold, max(tfidf_values) + 0.01]  
+        colors = ["green", "orange", "red"]  # Color mapping
+        cmap = mcolors.ListedColormap(colors)
+        norm = mcolors.BoundaryNorm(bounds, cmap.N)
+
+        # Plot heatmap
+        plt.figure(figsize=(12, 7.5))
+        sns.heatmap(
+            tfidf_matrix, cmap=cmap, norm=norm, annot=matrix, fmt="", 
+            linewidths=0.5, xticklabels=col_labels, yticklabels=row_labels, 
+            annot_kws={"fontsize": 6},  # Smaller text inside cells
+            cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF'}  # Smaller color bar with label
+        )
+
+        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across Languages in Original Prompting Method)", fontsize=10)  # Smaller title
+        plt.xlabel("Marital Status & Children Count", fontsize=8)
+        plt.ylabel("Religion & Gender", fontsize=8)
+        plt.xticks(rotation=45, ha="right", fontsize=7)  # Adjusted rotation and font size for X-axis labels
+        plt.yticks(rotation=0, fontsize=7)  # Smaller Y-axis labels
+        plt.tight_layout()  # Adjusts plot to ensure labels are visible
+        plt.show()
+
+# Call function with JSON path
+generate_matrix_heatmap("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/avg_bias_scores_by_language_family.json")
+
 
 indo_aryan_languages = ["Hindi", "Bengali", "Urdu", "Punjabi", "Marathi", "Gujarati"]  # list of Indo-Aryan languages
 dravidian_languages = ["Tamil", "Telugu", "Kannada", "Malayalam"]  # list of Dravidian languages
-
-# Compute the sums
-sum_scores_by_language["Indo-Aryan"] = sum_language_family(indo_aryan_languages, sum_scores_by_language)
-sum_scores_by_language["Dravidian"] = sum_language_family(dravidian_languages, sum_scores_by_language)
-
-# Save updated results with broader family sums
-file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
-with open(file_path, "w") as file:
-    json.dump(sum_scores_by_language, file, indent=4)
-
-print("Updated JSON file with Indo-Aryan and Dravidian family sums.")
+languages = ["Hindi", "Bengali", "Urdu", "Punjabi", "Marathi", "Gujarati", "Tamil", "Telugu", "Kannada", "Malayalam"]
 
 
-# Function to create a plot for bias scores
-def plot_bias_scores(data, language_family, category, subcategories, title):
+avg_scores_by_language = calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_languages, dravidian_languages)
+# Save the results
+save_json(avg_scores_by_language, "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json")
+
+print("Updated JSON file with Indo-Aryan and Dravidian family averages.")
+
+
+def plot_bias_scores_individual_identity_categories(data, category, subcategories, title):
     """
-    Plots bias scores for a specific category and its subcategories (e.g., gender, religion, marital status).
+    Plots bias scores for a specific category, placing Indo-Aryan and Dravidian applications side by side.
+    
     Args:
         data: The JSON data
-        language_family: 'Indo-Aryan' or 'Dravidian'
-        category: The category for which to generate the plot (e.g., 'gender', 'religion', etc.)
-        subcategories: A list of subcategories within the chosen category (e.g., ['Male', 'Female'])
+        category: The category to plot (e.g., 'avg_gender', 'avg_religion')
+        subcategories: List of subcategories (e.g., ['Male_original', 'Female_original'])
         title: The title of the plot
     """
-    # Extract the data for the selected language family and category
-    scores = data[language_family]["applications"]
+    # Extract data for Indo-Aryan and Dravidian
+    scores_indo = data["Indo-Aryan"]["applications"]
+    scores_drav = data["Dravidian"]["applications"]
     
-    # Initialize a list to hold the scores for each subcategory
-    category_scores = {subcategory: [] for subcategory in subcategories}
-    application_names = list(scores.keys())
+    # Get applications in order
+    applications = list(scores_indo.keys())  # ['Story', 'Hobbies and Values', 'To-do List']
+    
+    # Prepare dictionaries to store scores
+    category_scores_indo = {sub.replace("_original", ""): [] for sub in subcategories}
+    category_scores_drav = {sub.replace("_original", ""): [] for sub in subcategories}
 
-    for app_name in application_names:
-        if category in scores[app_name]:
-            category_data = scores[app_name][category]
+    # Retrieve scores for both language families
+    for app in applications:
+        # Indo-Aryan scores
+        if category in scores_indo[app]:
             for subcategory in subcategories:
-                # Ensure the subcategory is present in the data
-                category_scores[subcategory].append(category_data.get(subcategory, 0))
+                clean_subcategory = subcategory.replace("_original", "")
+                category_scores_indo[clean_subcategory].append(scores_indo[app][category].get(subcategory, 0))
         else:
-            # If the category is missing, append zero for all subcategories
+            for clean_subcategory in category_scores_indo.keys():
+                category_scores_indo[clean_subcategory].append(0)
+
+        # Dravidian scores
+        if category in scores_drav[app]:
             for subcategory in subcategories:
-                category_scores[subcategory].append(0)
+                clean_subcategory = subcategory.replace("_original", "")
+                category_scores_drav[clean_subcategory].append(scores_drav[app][category].get(subcategory, 0))
+        else:
+            for clean_subcategory in category_scores_drav.keys():
+                category_scores_drav[clean_subcategory].append(0)
 
-    # Plotting
-    plt.figure(figsize=(10, 6))
+    # X-axis positions
+    num_apps = len(applications)
+    x_positions = np.arange(num_apps * 2)  # Two positions per application (Indo-Aryan & Dravidian)
+    
+    # Labels (Story - Indo-Aryan, Story - Dravidian, etc.)
+    x_labels = []
+    for app in applications:
+        x_labels.append(f"{app}\n(Indo-Aryan)")
+        x_labels.append(f"{app}\n(Dravidian)")
+
+    # Plot
+    plt.figure(figsize=(12, 6))
     width = 0.2  # Bar width
-    x = range(len(application_names))
 
-    # Plot bars for each subcategory
-    for idx, subcategory in enumerate(subcategories):
-        plt.bar(
-            [p + width * idx for p in x],  # Shift each bar along x-axis
-            category_scores[subcategory],
+    for idx, subcategory in enumerate(category_scores_indo.keys()):
+        # Plot Indo-Aryan bars
+        indo_bars = plt.bar(
+            x_positions[::2] + width * idx,  # Every alternate position (Indo-Aryan)
+            category_scores_indo[subcategory],
             width=width,
-            label=subcategory
+            label=f"{subcategory} (Indo-Aryan)"
+        )
+        
+        # Plot Dravidian bars
+        drav_bars = plt.bar(
+            x_positions[1::2] + width * idx,  # Every alternate position (Dravidian)
+            category_scores_drav[subcategory],
+            width=width,
+            label=f"{subcategory} (Dravidian)"
         )
 
-    plt.xlabel('Applications')
-    plt.ylabel('Bias Score')
-    plt.title(f"{title} - {language_family}")
-    plt.xticks([p + width for p in x], application_names, rotation=45, ha='right')
-    plt.legend(title=category)
+        # Add value labels on top of bars
+        for bar in indo_bars + drav_bars:
+            yval = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.2f}", 
+                     ha='center', va='bottom', fontsize=10, color='black')
+
+    # Formatting
+    plt.xlabel("Applications (Language Family)")
+    plt.ylabel("Average Bias Score")
+    plt.title(title)
+    plt.xticks(x_positions, x_labels, rotation=45, ha='right')
+    plt.legend()
     plt.tight_layout()
     plt.show()
 
 # Function to generate plots for gender, religion, marital status, and children count
-def generate_bias_plots(file_path, language_family):
+def generate_bias_plots(file_path):
     # Load the data
     data = load_json(file_path)
     
     # Define categories and subcategories for plotting
-    gender_subcategories = ['Male_original', 'Female_original']
-    religion_subcategories = ['Hindu_original', 'Muslim_original']
-    marital_status_subcategories = ['Single_original', 'Married_original', 'Divorced_original', 'Widowed_original']
-    children_count_subcategories = ['No children_original', 'One child_original', 'Many children_original']
+    categories = {
+        "avg_gender": ["Male_original", "Female_original"],
+        "avg_religion": ["Hindu_original", "Muslim_original"],
+        "avg_marital_status": ["Single_original", "Married_original", "Divorced_original", "Widowed_original"],
+        "avg_children_count": ["No children_original", "One child_original", "Many children_original"],
+    }
     
     # Generate plots for each category
-    plot_bias_scores(data, language_family, 'sum_gender', gender_subcategories, 'Gender Bias Scores')
-    plot_bias_scores(data, language_family, 'sum_religion', religion_subcategories, 'Religion Bias Scores')
-    plot_bias_scores(data, language_family, 'sum_marital_status', marital_status_subcategories, 'Marital Status Bias Scores')
-    plot_bias_scores(data, language_family, 'sum_children_count', children_count_subcategories, 'Children Count Bias Scores')
+    for category, subcategories in categories.items():
+        formatted_category = category.replace("avg_", "").replace("_", " ").title()
+        title = f"Average {formatted_category} Bias Scores in Original Prompting Method"
+        plot_bias_scores_individual_identity_categories(data, category, subcategories, title=title)
+
+# Example usage
+file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
+# Generate all bias plots
+generate_bias_plots(file_path)
+
+def plot_application_bias_by_language_family_debiasing_method(data):
+    """
+    Plots bias scores across applications separately for Indo-Aryan and Dravidian language families.
+
+    Args:
+        data: The JSON data.
+    """
+    # Extract bias scores for Indo-Aryan and Dravidian languages
+    scores_indo_aryan = data["Indo-Aryan"]["applications"]
+    scores_dravidian = data["Dravidian"]["applications"]
+    
+    # Get application names
+    applications = list(scores_indo_aryan.keys())  # ['Story', 'Hobbies and Values', 'To-do List']
+    
+    # Define the subcategories to plot
+    subcategories = ["aggregate_original_application", 
+                     "aggregate_simple_application", 
+                     "aggregate_complex_application"]
+    
+    # Prepare dictionaries to store the scores for both language families
+    category_scores_indo_aryan = {subcategory: [] for subcategory in subcategories}
+    category_scores_dravidian = {subcategory: [] for subcategory in subcategories}
+
+    # Retrieve bias scores for each application in both language families
+    for app in applications:
+        for subcategory in subcategories:
+            category_scores_indo_aryan[subcategory].append(scores_indo_aryan.get(app, {}).get(subcategory, 0))
+            category_scores_dravidian[subcategory].append(scores_dravidian.get(app, {}).get(subcategory, 0))
+
+    # X-axis positions
+    num_apps = len(applications)
+    x_positions = np.arange(num_apps)  # One position per application
+    
+    # Create figure with two subplots side by side
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+
+    # Bar width
+    width = 0.2  
+
+    # Plot for Indo-Aryan languages
+    for idx, subcategory in enumerate(subcategories):
+        bars = axes[0].bar(
+            x_positions + width * idx, 
+            category_scores_indo_aryan[subcategory],
+            width=width,
+            label=subcategory.replace("aggregate_", "").replace("_application", "").title()
+        )
+
+        # Add value labels
+        for bar in bars:
+            yval = bar.get_height()
+            axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.2f}", 
+                         ha='center', va='bottom', fontsize=10, color='black')
+
+    axes[0].set_title("Indo-Aryan Languages")
+    axes[0].set_xticks(x_positions + width)
+    axes[0].set_xticklabels(applications, rotation=45, ha='right')
+    axes[0].set_xlabel("Applications")
+    axes[0].set_ylabel("Average Bias Score")
+    axes[0].legend(title="Prompting Method")
+
+    # Plot for Dravidian languages
+    for idx, subcategory in enumerate(subcategories):
+        bars = axes[1].bar(
+            x_positions + width * idx, 
+            category_scores_dravidian[subcategory],
+            width=width,
+            label=subcategory.replace("aggregate_", "").replace("_application", "").title()
+        )
+
+        # Add value labels
+        for bar in bars:
+            yval = bar.get_height()
+            axes[1].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
+                         ha='center', va='bottom', fontsize=10, color='black')
+
+    axes[1].set_title("Dravidian Languages")
+    axes[1].set_xticks(x_positions + width)
+    axes[1].set_xticklabels(applications, rotation=45, ha='right')
+    axes[1].set_xlabel("Applications")
+
+    # Final formatting
+    plt.tight_layout()
+    plt.show()
+
+# Function to load data and plot
+def generate_bias_comparison_plots(file_path):
+    # Load the data
+    data = load_json(file_path)
+    
+    # Generate the comparison plot
+    plot_application_bias_by_language_family_debiasing_method(data)
 
 # Example usage
 file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
 
-# Generate plots for Indo-Aryan
-generate_bias_plots(file_path, 'Indo-Aryan')
-
-# Generate plots for Dravidian
-generate_bias_plots(file_path, 'Dravidian')
+# Generate the comparison plots for Indo-Aryan vs. Dravidian
+generate_bias_comparison_plots(file_path)
 
 
 '''

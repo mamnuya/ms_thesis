@@ -97,7 +97,7 @@ def generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applic
     application_order = ["Story", "Hobbies and Values", "To-do List"]  # Enforce order
 
     for lang, application_data in top_tfidf_per_identity_group_and_application.items():
-        if lang == "Telugu":  # Only process certain lang
+        if lang != "NONE":  # Only process certain lang
             
             # Iterate over applications in the enforced order
             for application in application_order:
