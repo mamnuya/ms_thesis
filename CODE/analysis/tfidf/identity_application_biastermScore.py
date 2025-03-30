@@ -246,16 +246,13 @@ def calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_lang
             for method, values in methods.items():
                 # If the values are a list, compute the average of the list
                 if isinstance(values, list):
-                    #print("here1")
                     averages[application][method] = sum(values) / len(values) 
                     
                 # If the values are dictionaries, compute the average of each key in the dictionary
                 elif isinstance(values, dict):
-                    #print("here2")
                     method_averages = {}
                     for key, sub_values in values.items():
                         if isinstance(sub_values, list):
-                            #print("here3")
                             method_averages[key] = sum(sub_values) / len(sub_values) 
                     averages[application][method] = method_averages
         return averages
