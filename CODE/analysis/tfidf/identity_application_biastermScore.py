@@ -491,7 +491,7 @@ def generate_latex_tables_by_application_per_language(top_tfidf_per_identity_gro
 #generate_latex_tables_by_application_per_language(top_tfidf_per_identity_group_and_application, language_bias_scores)
 
 
-def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and_application, language_bias_scores):
+def save_data_by_application_family(top_tfidf_per_identity_group_and_application, language_bias_scores):
     """
     Generates LaTeX tables for the highest TF-IDF terms per application, grouped by Indo-Aryan and Dravidian language families.
     Uses original prompting method only.
@@ -571,91 +571,11 @@ def generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and
 
     print("Data stored in JSON!")
 
-    # Generate LaTeX tables
-    for family, application_data in family_tfidf_data.items():
-        for application in application_order:
-            if application not in application_data:
-                continue  # Skip if application is missing
-            
-            print(f"\n\\section{{Top Bias Terms for {family} - {application}}}")
-
-            print(f"\\newpage")
-            print(f"\\begin{{table}}[h!]")
-            print(f"\\centering")
-            print(f"\\caption{{Highest Bias TF-IDF terms and values for all identities under the application \\textbf{{{application}}} in {family} languages.}}")
-            print(f"\\scriptsize")
-            print(f"\\label{{tab:tfidf_comparison_identity_bias_{family}_{application.replace(' ', '_')}}}")
-
-            print(f"\\begin{{tabular}}{{|p{{1.9cm}}|p{{1.3cm}}|l|p{{0.7cm}}|l|p{{0.7cm}}|}}")
-            print(f"\\hline")
-            print(f"\\textbf{{Religion \\& Gender}} & \\textbf{{Marital Status}} & \\textbf{{Children}} & \\textbf{{Avg Bias Score}} & \\textbf{{Term}} & \\textbf{{Bias TF-IDF}} \\\\")
-            print(f"\\hline")
-
-            # Group by identity, marital status, and children count
-            identity_grouped_entries = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-            for identity, terms in application_data[application].items():
-                # Extract identity components
-                parts = identity.split("who is")
-                main_identity = parts[0].strip().replace("A ", "")
-                details = parts[1].strip() if len(parts) > 1 else ""
-
-                # Extract marital status and children count
-                marital_status = "Single"
-                if "Married" in details:
-                    marital_status = "Married"
-                elif "Divorced" in details:
-                    marital_status = "Divorced"
-                elif "Widowed" in details:
-                    marital_status = "Widowed"
-
-                children = "No children"
-                if "One child" in details:
-                    children = "One child"
-                elif "Many children" in details:
-                    children = "Many children"
-
-                # Get average bias score and top TF-IDF term
-                avg_bias_score = family_bias_scores[family][application].get(identity, 0)
-                top_term, top_tfidf = sorted(terms, key=lambda x: x[1], reverse=True)[0] if terms else ("N/A", 0.0)
-
-                # Store in grouped entries
-                identity_grouped_entries[main_identity][marital_status][children].append((avg_bias_score, top_term, top_tfidf))
-
-            # Sorting logic
-            sorted_main_identities = sorted(identity_grouped_entries.keys())
-            marital_status_order = ["Single", "Married", "Divorced", "Widowed"]
-            children_order = ["No children", "One child", "Many children"]
-
-            # Fill missing identities with default values
-            for main_identity in sorted_main_identities:
-                marital_groups = identity_grouped_entries[main_identity]
-                sorted_marital_statuses = sorted(marital_groups.keys(), key=lambda x: marital_status_order.index(x))
-
-                print(f"\\hline")
-
-                for marital_status in sorted_marital_statuses:
-                    children_list = marital_groups[marital_status]
-                    sorted_children_list = sorted(children_list.items(), key=lambda x: children_order.index(x[0]))
-
-                    for idx, (children, entries) in enumerate(sorted_children_list):
-                        for avg_bias_score, top_term, top_tfidf in entries:
-                            print(f"& {children} & {avg_bias_score:.3f} & {top_term} & {top_tfidf:.3f} \\\\")
-
-                        print(f"\\cline{{3-6}}")
-
-                print(f"\\hline")
-
-            print(f"\\end{{tabular}}")
-            print(f"\\end{{table}}")
-            print(f"\\newpage")
-
-    print("✅ LaTeX tables generated with average bias scores!")
-
 
 
 
 # Call the function with your data
-generate_latex_tables_by_application_family(top_tfidf_per_identity_group_and_application, language_bias_scores)
+save_data_by_application_family(top_tfidf_per_identity_group_and_application, language_bias_scores)
 
 print("Bias term extraction and LaTeX formatting completed.")
 
@@ -755,7 +675,7 @@ def plot_bias_scores_all_identities(json_filepath):
     plt.show()
 
 # Example usage:
-plot_bias_scores_all_identities("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/avg_bias_scores_by_language_family.json")
+#plot_bias_scores_all_identities("../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/avg_bias_scores_by_language_family.json")
 
 def generate_latex_table_by_application_top_terms(json_path):
     """
@@ -809,7 +729,7 @@ def generate_latex_table_by_application_top_terms(json_path):
         
         print("\\begin{table}[h!]")
         print("\\centering")
-        print(f"\\caption{{Highest Bias TF-IDF terms for all identities and all languages under the application \\textbf{{{application}}} in the \\textbf{{original}} prompting method.}}")
+        print(f"\\caption{{Highest Bias TF-IDF Terms for All identities Under the Application \\textbf{{{application}}} (All Languages with \\textbf{{Original}} Prompting Method)}}")
         print("\\scriptsize")
         print(f"\\label{{tab:tfidf_comparison_all_identities_{application.replace(' ', '_')}}}")
 
@@ -980,25 +900,31 @@ def generate_matrix_heatmap(json_path):
                     tfidf_matrix[i, j] = aggregated_data[row_label][col_label]["top_tfidf"]
 
         bounds = [0, lower_threshold, upper_threshold, max(tfidf_values) + 0.01]  
-        colors = ["green", "orange", "red"]  # Color mapping
+        colors = ["#b2ffb2", "#fff7c5", "#ffb2b2"] #["green", "orange", "red"] color mapping
         cmap = mcolors.ListedColormap(colors)
         norm = mcolors.BoundaryNorm(bounds, cmap.N)
 
         # Plot heatmap
-        plt.figure(figsize=(12, 7.5))
-        sns.heatmap(
+        plt.figure(figsize=(14, 5))
+        heatmap = sns.heatmap(
             tfidf_matrix, cmap=cmap, norm=norm, annot=matrix, fmt="", 
             linewidths=0.5, xticklabels=col_labels, yticklabels=row_labels, 
-            annot_kws={"fontsize": 6},  # Smaller text inside cells
+            annot_kws={"fontsize": 8},  # Smaller text inside cells
             cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF'}  # Smaller color bar with label
         )
 
-        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across Languages in Original Prompting Method)", fontsize=10)  # Smaller title
-        plt.xlabel("Marital Status & Children Count", fontsize=8)
-        plt.ylabel("Religion & Gender", fontsize=8)
-        plt.xticks(rotation=45, ha="right", fontsize=7)  # Adjusted rotation and font size for X-axis labels
-        plt.yticks(rotation=0, fontsize=7)  # Smaller Y-axis labels
+        # Set color bar tick labels to 3 decimal places
+        cbar = heatmap.collections[0].colorbar  # Access the color bar
+        cbar.set_ticks(bounds)  # Set tick locations
+        cbar.set_ticklabels([f"{b:.3f}" for b in bounds])  # Format labels to .3f
+
+        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=12)  # Smaller title
+        plt.xlabel("Marital Status & Children Count", fontsize=10)
+        plt.ylabel("Religion & Gender", fontsize=10)
+        plt.xticks(rotation=45, ha="right", fontsize=10)  # Adjusted rotation and font size for X-axis labels
+        plt.yticks(rotation=0, fontsize=10)  # Smaller Y-axis labels
         plt.tight_layout()  # Adjusts plot to ensure labels are visible
+        plt.savefig(f"../../../data/figures/top_bias_terms_{application}.pdf", bbox_inches='tight')
         plt.show()
 
 # Call function with JSON path
@@ -1019,7 +945,7 @@ print("Updated JSON file with Indo-Aryan and Dravidian family averages.")
 
 def plot_bias_scores_individual_identity_categories(data, category, subcategories, title):
     """
-    Plots bias scores for a specific category, placing Indo-Aryan and Dravidian applications side by side.
+    Plots bias scores for a specific category, separating Indo-Aryan and Dravidian applications into subplots.
     
     Args:
         data: The JSON data
@@ -1060,48 +986,97 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
 
     # X-axis positions
     num_apps = len(applications)
-    x_positions = np.arange(num_apps * 2)  # Two positions per application (Indo-Aryan & Dravidian)
+    x_positions = np.arange(num_apps)  # One position per application
     
-    # Labels (Story - Indo-Aryan, Story - Dravidian, etc.)
-    x_labels = []
-    for app in applications:
-        x_labels.append(f"{app}\n(Indo-Aryan)")
-        x_labels.append(f"{app}\n(Dravidian)")
+    # Define dynamic color palette based on number of subcategories
+    color_palette = {
+        2: ["#FFA491", "#78D39A"],  # Two colors 
+        3: ["#FFA491", "#78D39A", "#8FC6FF"],  # Three colors 
+        4: ["#FFA491", "#78D39A", "#8FC6FF", "#FFCE86"],  # Four colors 
+    }
+    
+    num_subcategories = len(subcategories)
+    colors = color_palette.get(num_subcategories, sns.color_palette("tab10", num_subcategories))  # Default to tab10 if not predefined
+    
+    # Create figure with two subplots
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharey=True)
 
-    # Plot
-    plt.figure(figsize=(12, 6))
-    width = 0.2  # Bar width
+    # Bar width
+    width = 0.2  
 
+    # Plot for Indo-Aryan languages
     for idx, subcategory in enumerate(category_scores_indo.keys()):
-        # Plot Indo-Aryan bars
-        indo_bars = plt.bar(
-            x_positions[::2] + width * idx,  # Every alternate position (Indo-Aryan)
+        bars = axes[0].bar(
+            x_positions + width * idx, 
             category_scores_indo[subcategory],
             width=width,
-            label=f"{subcategory} (Indo-Aryan)"
+            label=subcategory.title(),
+            color=colors[idx]  # Assign custom color
         )
-        
-        # Plot Dravidian bars
-        drav_bars = plt.bar(
-            x_positions[1::2] + width * idx,  # Every alternate position (Dravidian)
+
+        # Add value labels
+        for bar in bars:
+            yval = bar.get_height()
+            axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
+                         ha='center', va='bottom', fontsize=10, color='black')
+
+
+    tick_adjustment = (num_subcategories - 1) * width / 2  # Center tick between bars
+
+    axes[0].set_title(f"{title} (Indo-Aryan)")
+    axes[0].set_xticks(x_positions + tick_adjustment)
+    axes[0].set_xticklabels(applications, rotation=45, ha='right')
+    axes[0].set_xlabel("Applications")
+    axes[0].set_ylabel("Average Bias Score")
+
+    # Dynamically set the legend title
+    if "gender" in category:
+        axes[0].legend(title="Genders")
+    elif "religion" in category:
+        axes[0].legend(title="Religions")
+    elif "marital_status" in category:
+        axes[0].legend(title="Marital Statuses")
+    elif "children_count" in category:
+        axes[0].legend(title="Number of Children")
+    else:
+        axes[0].legend(title="Identity Subcategory")
+
+    # Plot for Dravidian languages
+    for idx, subcategory in enumerate(category_scores_drav.keys()):
+        bars = axes[1].bar(
+            x_positions + width * idx, 
             category_scores_drav[subcategory],
             width=width,
-            label=f"{subcategory} (Dravidian)"
+            label=subcategory.title(),
+            color=colors[idx]  # Assign custom color
         )
 
-        # Add value labels on top of bars
-        for bar in indo_bars + drav_bars:
+        # Add value labels
+        for bar in bars:
             yval = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.2f}", 
-                     ha='center', va='bottom', fontsize=10, color='black')
+            axes[1].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
+                         ha='center', va='bottom', fontsize=10, color='black')
 
-    # Formatting
-    plt.xlabel("Applications (Language Family)")
-    plt.ylabel("Average Bias Score")
-    plt.title(title)
-    plt.xticks(x_positions, x_labels, rotation=45, ha='right')
-    plt.legend()
-    plt.tight_layout()
+    axes[1].set_title(f"{title} (Dravidian)")
+    axes[1].set_xticks(x_positions + width)
+    axes[1].set_xticks(x_positions + tick_adjustment)
+    axes[1].set_xticklabels(applications, rotation=45, ha='right')
+    axes[1].set_xlabel("Applications")
+
+    # Set the overall title
+    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=12)
+
+    # Adjust font sizes for subplots
+    for ax in axes:
+        ax.set_title(ax.get_title(), fontsize=10)  # Set subplot title font size
+        ax.set_xlabel("Applications", fontsize=10)  # Set x-axis label font size
+        ax.set_ylabel("Average Bias Score", fontsize=10)  # Set y-axis label font size
+
+    # Adjust layout and bring the suptitle as close as possible
+    plt.subplots_adjust(top=0.86)  # Move suptitle even closer
+    # Final formatting
+    plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit title
+    plt.savefig(f"../../../data/figures/bias_scores_{category}.pdf", bbox_inches='tight')
     plt.show()
 
 # Function to generate plots for gender, religion, marital status, and children count
@@ -1120,7 +1095,7 @@ def generate_bias_plots(file_path):
     # Generate plots for each category
     for category, subcategories in categories.items():
         formatted_category = category.replace("avg_", "").replace("_", " ").title()
-        title = f"Average {formatted_category} Bias Scores in Original Prompting Method"
+        title = f"Average {formatted_category} Bias Scores"
         plot_bias_scores_individual_identity_categories(data, category, subcategories, title=title)
 
 # Example usage
@@ -1128,12 +1103,21 @@ file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasSco
 # Generate all bias plots
 generate_bias_plots(file_path)
 
-def plot_application_bias_by_language_family_debiasing_method(data):
+# Function to load data and plot
+def generate_bias_comparison_plots(file_path):
+    # Load the data
+    data = load_json(file_path)
+    
+    # Generate the comparison plot
+    plot_application_bias_by_language_family_debiasing_method(data)
+
+def plot_application_bias_by_language_family_debiasing_method(data, title="Application"):
     """
     Plots bias scores across applications separately for Indo-Aryan and Dravidian language families.
 
     Args:
         data: The JSON data.
+        title: The title prefix for the plot.
     """
     # Extract bias scores for Indo-Aryan and Dravidian languages
     scores_indo_aryan = data["Indo-Aryan"]["applications"]
@@ -1160,9 +1144,12 @@ def plot_application_bias_by_language_family_debiasing_method(data):
     # X-axis positions
     num_apps = len(applications)
     x_positions = np.arange(num_apps)  # One position per application
-    
+
+    # Define color palette for three subcategories
+    colors = ["#FFA491", "#78D39A", "#8FC6FF"]
+
     # Create figure with two subplots side by side
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharey=True)
 
     # Bar width
     width = 0.2  
@@ -1173,21 +1160,22 @@ def plot_application_bias_by_language_family_debiasing_method(data):
             x_positions + width * idx, 
             category_scores_indo_aryan[subcategory],
             width=width,
-            label=subcategory.replace("aggregate_", "").replace("_application", "").title()
+            label=subcategory.replace("aggregate_", "").replace("_application", "").title(),
+            color=colors[idx]  # Assign custom color
         )
 
         # Add value labels
         for bar in bars:
             yval = bar.get_height()
-            axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.2f}", 
+            axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
                          ha='center', va='bottom', fontsize=10, color='black')
 
-    axes[0].set_title("Indo-Aryan Languages")
+    axes[0].set_title("Indo-Aryan Languages", fontsize=10)
     axes[0].set_xticks(x_positions + width)
     axes[0].set_xticklabels(applications, rotation=45, ha='right')
-    axes[0].set_xlabel("Applications")
-    axes[0].set_ylabel("Average Bias Score")
-    axes[0].legend(title="Prompting Method")
+    axes[0].set_xlabel("Applications", fontsize=10)
+    axes[0].set_ylabel("Average Bias Score", fontsize=10)
+    axes[0].legend(title="Prompting Methods")
 
     # Plot for Dravidian languages
     for idx, subcategory in enumerate(subcategories):
@@ -1195,7 +1183,8 @@ def plot_application_bias_by_language_family_debiasing_method(data):
             x_positions + width * idx, 
             category_scores_dravidian[subcategory],
             width=width,
-            label=subcategory.replace("aggregate_", "").replace("_application", "").title()
+            label=subcategory.replace("aggregate_", "").replace("_application", "").title(),
+            color=colors[idx]  # Assign custom color
         )
 
         # Add value labels
@@ -1204,28 +1193,28 @@ def plot_application_bias_by_language_family_debiasing_method(data):
             axes[1].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
                          ha='center', va='bottom', fontsize=10, color='black')
 
-    axes[1].set_title("Dravidian Languages")
+    axes[1].set_title("Dravidian Languages", fontsize=10)
     axes[1].set_xticks(x_positions + width)
     axes[1].set_xticklabels(applications, rotation=45, ha='right')
-    axes[1].set_xlabel("Applications")
+    axes[1].set_ylabel("Average Bias Score", fontsize=10)
+    axes[1].set_xlabel("Applications", fontsize=10)
 
+    # Super title
+    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=12)
+
+    # Adjust layout and bring the suptitle as close as possible
+    plt.subplots_adjust(top=0.86)  # Move suptitle even closer
     # Final formatting
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit title
+    plt.savefig(f"../../../data/figures/bias_scores_debiasing_methods.pdf", bbox_inches='tight')
     plt.show()
-
-# Function to load data and plot
-def generate_bias_comparison_plots(file_path):
-    # Load the data
-    data = load_json(file_path)
-    
-    # Generate the comparison plot
-    plot_application_bias_by_language_family_debiasing_method(data)
 
 # Example usage
 file_path = "../../../data/lexicon_analysis/tfidf/tfidf_values/biasTerms/BiasScore/aggregated_bias_scores_by_language.json"
 
 # Generate the comparison plots for Indo-Aryan vs. Dravidian
 generate_bias_comparison_plots(file_path)
+
 
 
 '''
