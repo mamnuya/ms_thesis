@@ -90,7 +90,7 @@ def calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_lang
             "avg_marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
                                    "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
                                    "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
-            "avg_children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+            "avg_child_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
                                    "No children_simple": [], "One child_simple": [], "Many children_simple": [],
                                    "No children_complex": [], "One child_complex": [], "Many children_complex": []},
             "aggregate_original_application": [],
@@ -109,7 +109,7 @@ def calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_lang
             "avg_marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
                                    "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
                                    "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
-            "avg_children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+            "avg_child_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
                                    "No children_simple": [], "One child_simple": [], "Many children_simple": [],
                                    "No children_complex": [], "One child_complex": [], "Many children_complex": []},
             "aggregate_original_application": [],
@@ -128,7 +128,7 @@ def calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_lang
             "avg_marital_status": {"Single_original": [], "Married_original": [], "Divorced_original": [], "Widowed_original": [],
                                    "Single_simple": [], "Married_simple": [], "Divorced_simple": [], "Widowed_simple": [],
                                    "Single_complex": [], "Married_complex": [], "Divorced_complex": [], "Widowed_complex": []},
-            "avg_children_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
+            "avg_child_count": {"No children_original": [], "One child_original": [], "Many children_original": [],
                                    "No children_simple": [], "One child_simple": [], "Many children_simple": [],
                                    "No children_complex": [], "One child_complex": [], "Many children_complex": []},
             "aggregate_original_application": [],
@@ -210,20 +210,20 @@ def calculate_averaged_scores_per_language(language_bias_scores, indo_aryan_lang
                             dravidian_scores[application]["avg_marital_status"][f"{status}_simple"].append(methods["simple"])
                             dravidian_scores[application]["avg_marital_status"][f"{status}_complex"].append(methods["complex"])
 
-                # Children count scores
+                # Child count scores
                 for child_status in ["No children", "One child", "Many children"]:
                     if child_status in identity:
-                        all_languages_scores[application]["avg_children_count"][f"{child_status}_original"].append(methods["original"])
-                        all_languages_scores[application]["avg_children_count"][f"{child_status}_simple"].append(methods["simple"])
-                        all_languages_scores[application]["avg_children_count"][f"{child_status}_complex"].append(methods["complex"])
+                        all_languages_scores[application]["avg_child_count"][f"{child_status}_original"].append(methods["original"])
+                        all_languages_scores[application]["avg_child_count"][f"{child_status}_simple"].append(methods["simple"])
+                        all_languages_scores[application]["avg_child_count"][f"{child_status}_complex"].append(methods["complex"])
                         if lang in indo_aryan_languages:
-                            indo_aryan_scores[application]["avg_children_count"][f"{child_status}_original"].append(methods["original"])
-                            indo_aryan_scores[application]["avg_children_count"][f"{child_status}_simple"].append(methods["simple"])
-                            indo_aryan_scores[application]["avg_children_count"][f"{child_status}_complex"].append(methods["complex"])
+                            indo_aryan_scores[application]["avg_child_count"][f"{child_status}_original"].append(methods["original"])
+                            indo_aryan_scores[application]["avg_child_count"][f"{child_status}_simple"].append(methods["simple"])
+                            indo_aryan_scores[application]["avg_child_count"][f"{child_status}_complex"].append(methods["complex"])
                         elif lang in dravidian_languages:
-                            dravidian_scores[application]["avg_children_count"][f"{child_status}_original"].append(methods["original"])
-                            dravidian_scores[application]["avg_children_count"][f"{child_status}_simple"].append(methods["simple"])
-                            dravidian_scores[application]["avg_children_count"][f"{child_status}_complex"].append(methods["complex"])
+                            dravidian_scores[application]["avg_child_count"][f"{child_status}_original"].append(methods["original"])
+                            dravidian_scores[application]["avg_child_count"][f"{child_status}_simple"].append(methods["simple"])
+                            dravidian_scores[application]["avg_child_count"][f"{child_status}_complex"].append(methods["complex"])
 
                 # Aggregate scores for this application
                 all_languages_scores[application]["aggregate_original_application"].append(methods["original"])
@@ -377,7 +377,7 @@ def generate_latex_tables_by_application_per_language(top_tfidf_per_identity_gro
                     main_identity = parts[0].strip().replace("A ", "")
                     details = parts[1].strip() if len(parts) > 1 else ""
 
-                    # Extract marital status and children count
+                    # Extract marital status and child count
                     marital_status = "Single"
                     if "Married" in details:
                         marital_status = "Married"
@@ -681,7 +681,7 @@ def generate_latex_table_by_application_top_terms(json_path):
     """
     Reads a JSON file containing top Bias TF-IDF terms per identity, aggregates the data, for original prompting method
     and generates LaTeX tables per application, displaying the 48 identities with their highest TF-IDF terms.
-    The identities will be grouped and sorted by religion, gender, marital status, and children count.
+    The identities will be grouped and sorted by religion, gender, marital status, and child count.
     It also calculates mean and standard deviation of TF-IDF values to apply color coding.
     """
     with open(json_path, "r", encoding="utf-8") as f:
@@ -841,10 +841,10 @@ def generate_matrix_heatmap(json_path):
     religions = ["Hindu", "Muslim"]
     genders = ["Male", "Female"]
     marital_statuses = ["Married", "Single", "Divorced", "Widowed"]
-    children_counts = ["No children", "One child", "Many children"]
+    child_counts = ["No children", "One child", "Many children"]
 
     row_labels = [f"{r} & {g}" for r, g in itertools.product(religions, genders)]
-    col_labels = [f"{m} & {c}" for m, c in itertools.product(marital_statuses, children_counts)]
+    col_labels = [f"{m} & {c}" for m, c in itertools.product(marital_statuses, child_counts)]
 
     for application in applications:
         aggregated_data = defaultdict(lambda: defaultdict(dict))  # Row -> Column -> {term, tfidf}
@@ -919,7 +919,7 @@ def generate_matrix_heatmap(json_path):
         cbar.set_ticklabels([f"{b:.3f}" for b in bounds])  # Format labels to .3f
 
         plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=12)  # Smaller title
-        plt.xlabel("Marital Status & Children Count", fontsize=10)
+        plt.xlabel("Marital Status & Child Count", fontsize=10)
         plt.ylabel("Religion & Gender", fontsize=10)
         plt.xticks(rotation=45, ha="right", fontsize=10)  # Adjusted rotation and font size for X-axis labels
         plt.yticks(rotation=0, fontsize=10)  # Smaller Y-axis labels
@@ -964,25 +964,35 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
     category_scores_indo = {sub.replace("_original", ""): [] for sub in subcategories}
     category_scores_drav = {sub.replace("_original", ""): [] for sub in subcategories}
 
+    print(f"\n### Extracted Bias Scores for {title} ###\n")
+
     # Retrieve scores for both language families
     for app in applications:
+        print(f"\nApplication: {app}")
+
         # Indo-Aryan scores
         if category in scores_indo[app]:
             for subcategory in subcategories:
                 clean_subcategory = subcategory.replace("_original", "")
-                category_scores_indo[clean_subcategory].append(scores_indo[app][category].get(subcategory, 0))
+                score = scores_indo[app][category].get(subcategory, 0)
+                category_scores_indo[clean_subcategory].append(score)
+                print(f"  Indo-Aryan - {clean_subcategory}: {score:.3f}")
         else:
             for clean_subcategory in category_scores_indo.keys():
                 category_scores_indo[clean_subcategory].append(0)
+                print(f"  Indo-Aryan - {clean_subcategory}: 0.000 (No Data)")
 
         # Dravidian scores
         if category in scores_drav[app]:
             for subcategory in subcategories:
                 clean_subcategory = subcategory.replace("_original", "")
-                category_scores_drav[clean_subcategory].append(scores_drav[app][category].get(subcategory, 0))
+                score = scores_drav[app][category].get(subcategory, 0)
+                category_scores_drav[clean_subcategory].append(score)
+                print(f"  Dravidian - {clean_subcategory}: {score:.3f}")
         else:
             for clean_subcategory in category_scores_drav.keys():
                 category_scores_drav[clean_subcategory].append(0)
+                print(f"  Dravidian - {clean_subcategory}: 0.000 (No Data)")
 
     # X-axis positions
     num_apps = len(applications)
@@ -1036,10 +1046,8 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
         axes[0].legend(title="Religions")
     elif "marital_status" in category:
         axes[0].legend(title="Marital Statuses")
-    elif "children_count" in category:
+    elif "child_count" in category:
         axes[0].legend(title="Number of Children")
-    else:
-        axes[0].legend(title="Identity Subcategory")
 
     # Plot for Dravidian languages
     for idx, subcategory in enumerate(category_scores_drav.keys()):
@@ -1079,7 +1087,7 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
     plt.savefig(f"../../../data/figures/bias_scores_{category}.pdf", bbox_inches='tight')
     plt.show()
 
-# Function to generate plots for gender, religion, marital status, and children count
+# Function to generate plots for gender, religion, marital status, and child count
 def generate_bias_plots(file_path):
     # Load the data
     data = load_json(file_path)
@@ -1089,7 +1097,7 @@ def generate_bias_plots(file_path):
         "avg_gender": ["Male_original", "Female_original"],
         "avg_religion": ["Hindu_original", "Muslim_original"],
         "avg_marital_status": ["Single_original", "Married_original", "Divorced_original", "Widowed_original"],
-        "avg_children_count": ["No children_original", "One child_original", "Many children_original"],
+        "avg_child_count": ["No children_original", "One child_original", "Many children_original"],
     }
     
     # Generate plots for each category

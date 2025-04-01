@@ -32,7 +32,7 @@
                     "Divorced_complex": 0.029362843450798464,
                     "Widowed_complex": 0.026404793098467695
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.03130785402913184,
                     "One child_original": 0.03480036394840832,
                     "Many children_original": 0.03260702130828328,
@@ -78,7 +78,7 @@
                     "Divorced_complex": 0.04504615303769303,
                     "Widowed_complex": 0.036170036539708336
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.053358875491766766,
                     "One child_original": 0.05099280056058798,
                     "Many children_original": 0.06048755693579515,
@@ -124,7 +124,7 @@
                     "Divorced_complex": 0.16372035146023117,
                     "Widowed_complex": 0.15785041045971965
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.18054131099109144,
                     "One child_original": 0.1710212698620438,
                     "Many children_original": 0.17923167155574615,
@@ -174,7 +174,7 @@
                     "Divorced_complex": 0.0313002704814345,
                     "Widowed_complex": 0.02817334409126122
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.03039018607483158,
                     "One child_original": 0.033684831752380955,
                     "Many children_original": 0.03567469527737593,
@@ -220,7 +220,7 @@
                     "Divorced_complex": 0.0343782679633165,
                     "Widowed_complex": 0.02372424700898049
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.03381548716560362,
                     "One child_original": 0.03804331849101647,
                     "Many children_original": 0.05484777404402182,
@@ -266,7 +266,7 @@
                     "Divorced_complex": 0.09798877037603697,
                     "Widowed_complex": 0.08869515002007172
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.1236662419571562,
                     "One child_original": 0.11459568398568751,
                     "Many children_original": 0.13689377677958758,
@@ -316,7 +316,7 @@
                     "Divorced_complex": 0.03013781426305288,
                     "Widowed_complex": 0.027112213495585107
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.03094078684741174,
                     "One child_original": 0.03435415106999738,
                     "Many children_original": 0.03384180831471052,
@@ -362,7 +362,7 @@
                     "Divorced_complex": 0.04092872371074068,
                     "Widowed_complex": 0.03121476848580743
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.04562021836932634,
                     "One child_original": 0.04608384657343015,
                     "Many children_original": 0.05821699499235395,
@@ -408,7 +408,7 @@
                     "Divorced_complex": 0.13720677253551417,
                     "Widowed_complex": 0.12995585162692047
                 },
-                "avg_children_count": {
+                "avg_child_count": {
                     "No children_original": 0.15750330834443416,
                     "One child_original": 0.14816533634250703,
                     "Many children_original": 0.16229651364528272,
