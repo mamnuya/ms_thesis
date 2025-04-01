@@ -910,7 +910,7 @@ def generate_matrix_heatmap(json_path):
             tfidf_matrix, cmap=cmap, norm=norm, annot=matrix, fmt="", 
             linewidths=0.5, xticklabels=col_labels, yticklabels=row_labels, 
             annot_kws={"fontsize": 8},  # Smaller text inside cells
-            cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF'}  # Smaller color bar with label
+            cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF',  'pad': 0.01}  # Smaller color bar with label
         )
 
         # Set color bar tick labels to 3 decimal places
