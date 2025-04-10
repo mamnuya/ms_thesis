@@ -1103,7 +1103,7 @@ def generate_bias_plots(file_path):
     # Generate plots for each category
     for category, subcategories in categories.items():
         formatted_category = category.replace("avg_", "").replace("_", " ").title()
-        title = f"Average {formatted_category} Bias Scores"
+        title = f"Average {formatted_category}"
         plot_bias_scores_individual_identity_categories(data, category, subcategories, title=title)
 
 # Example usage
@@ -1122,6 +1122,7 @@ def generate_bias_comparison_plots(file_path):
 def plot_application_bias_by_language_family_debiasing_method(data, title="Application"):
     """
     Plots bias scores across applications separately for Indo-Aryan and Dravidian language families.
+    Also prints extracted bias scores in the terminal.
 
     Args:
         data: The JSON data.
@@ -1144,10 +1145,18 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
     category_scores_dravidian = {subcategory: [] for subcategory in subcategories}
 
     # Retrieve bias scores for each application in both language families
+    print("\n### Extracted Bias Scores ###")
     for app in applications:
+        print(f"\nApplication: {app}")
         for subcategory in subcategories:
-            category_scores_indo_aryan[subcategory].append(scores_indo_aryan.get(app, {}).get(subcategory, 0))
-            category_scores_dravidian[subcategory].append(scores_dravidian.get(app, {}).get(subcategory, 0))
+            ia_score = scores_indo_aryan.get(app, {}).get(subcategory, 0)
+            dr_score = scores_dravidian.get(app, {}).get(subcategory, 0)
+
+            category_scores_indo_aryan[subcategory].append(ia_score)
+            category_scores_dravidian[subcategory].append(dr_score)
+
+            print(f"  {subcategory.replace('aggregate_', '').replace('_application', '').title()}:")
+            print(f"    Indo-Aryan: {ia_score:.3f}, Dravidian: {dr_score:.3f}")
 
     # X-axis positions
     num_apps = len(applications)
