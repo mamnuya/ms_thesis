@@ -1,16 +1,36 @@
-'''
-1. Computing Term Scores (compute_term_score function)
-Purpose: This function calculates the overall term score for each identity-application pair, 
-considering the TF-IDF scores across different methods ("original", "complex", "simple").
+"""
+This script loads precomputed TF-IDF values for terms extracted from language model outputs 
+across multiple South Asian languages. 
 
-How: It sums the TF-IDF scores for each term within each identity-application-method grouping.
-Output: A dictionary (term_scores) containing summed term scores for each (identity, application, method) pair.
+It identifies the highest TF-IDF scoring term for each 
+application (e.g., 'Story', 'Hobbies and Values', 'To-do List') and identity group 
+(e.g., 'Muslim Male who is Married with No children') under the 'original' prompting method 
+(i.e., before debiasing). 
 
-3. Aggregating Term Scores Across Languages (aggregate_term_scores_across_languages function)
-Purpose: This function computes summary statistics
-of term scores across all languages.
+Generates LaTeX-formatted tables summarizing these top terms 
+to visually represent dominant associations and potential cultural or gendered biases in model outputs.
 
-'''
+`get_top_tfidf_per_application_identity(...)`:
+   For each language and identity group, extracts the term with the highest TF-IDF score 
+   (from the 'original' version) for each application.
+
+`generate_latex_tables_by_application(...)`:
+   Generates a series of LaTeX tables showing top TF-IDF terms organized by:
+   - Religion & Gender
+   - Marital Status
+   - Number of Children
+   Each cell is color-coded by z-score thresholding:
+     - Red: High TF-IDF (above mean + 1 SD)
+     - Yellow: Medium TF-IDF (within 1 SD of mean)
+     - Green: Low TF-IDF (below mean - 1 SD)
+
+
+This script supports qualitative evaluation of how identity-related biases manifest in generated 
+text and how prominent those associations are before any debiasing is applied. The LaTeX tables 
+can be used in publications or appendices to present language-specific findings in a structured, 
+interpretable format.
+
+"""
 
 from collections import defaultdict
 import numpy as np
