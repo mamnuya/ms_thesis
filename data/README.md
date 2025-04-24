@@ -24,33 +24,6 @@ This directory contains all datasets, processed data, model experiment results, 
 - Useful for analyses comparing performance between original and complex debiasing strategies.
 - This version was not used in our study.
 
-### `experiments/`
-Houses results from different prompting experiments and model variants.
-
-- **`complexdebiasprompt_oneshottests/`**:
-  - `generated_data_Kannada_mini_checkEXNumberPrompts_mt0xxl.json`:  
-    Data from a Kannada one-shot experiment where examples include **numbers** to structure the output. Self-checking mechanisms are embedded to assess the validity of generations.
-  
-  - `generated_data_Kannada_mini_exAndcheckAll_mt0xxl2.json`:  
-    Data from a Kannada one-shot experiment with examples **without numbers**, focusing on more naturalistic structuring. Also includes self-checking.
-
-- **`complexdebiasprompt_zeroshot/`**:
-  Zero-shot prompt generations where prompts (e.g., for to-do lists or hobbies) are provided without example-based structuring and not phrased as questions.
-
-- **`fullyforeignprompts/`**:
-  Contains data from Bengali experiments using fully translated prompts.
-  - Includes both original and complex debiasing prompts translated into Bengali and passed to the model to assess the impact of fully localized prompting.
-
-- **`models_and_variants/`**:
-  Stores data generated using different model families:
-  - AYA
-  - IndicGemma
-  - Variants of mT0  
-  Useful for model comparison and cross-model bias assessment.
-
-### `figures/`
-- Relevant figures (e.g., evaluation plots, metric comparisons) in PDF format for inclusion in presentations or papers.
-
   ### `lexicon/`
 
 This directory contains the curated bias lexicons used for TF-IDF-based bias analysis. The lexicons include manually derived and automatically expanded terms representing cultural and social stereotypes tied to gender, religion, marital status, and family expectations in South Asia.
@@ -125,3 +98,29 @@ This directory contains TF-IDF values computed during bias analysis, including b
 - Includes results for **Indo-Aryan**, **Dravidian**, and **All_Languages** groups.
 - Used in high-level evaluations of debiasing performance.
 
+### `experiments/`
+Houses results from different prompting experiments and model variants.
+
+- **`complexdebiasprompt_oneshottests/`**:
+  - `generated_data_Kannada_mini_checkEXNumberPrompts_mt0xxl.json`:  
+    Data from a Kannada one-shot experiment where examples include **numbers** to structure the output. Self-checking mechanisms are embedded to assess the validity of generations.
+  
+  - `generated_data_Kannada_mini_exAndcheckAll_mt0xxl2.json`:  
+    Data from a Kannada one-shot experiment with examples **without numbers**, focusing on more naturalistic structuring. Also includes self-checking.
+
+- **`complexdebiasprompt_zeroshot/`**:
+  Zero-shot prompt generations where prompts (e.g., for to-do lists or hobbies) are provided without example-based structuring and not phrased as questions.
+
+- **`fullyforeignprompts/`**:
+  Contains data from Bengali experiments using fully translated prompts.
+  - Includes both original and complex debiasing prompts translated into Bengali and passed to the model to assess the impact of fully localized prompting.
+
+- **`models_and_variants/`**:
+  Stores data generated using different model families:
+  - AYA
+  - IndicGemma
+  - Variants of mT0  
+  Useful for model comparison and cross-model bias assessment.
+
+### `figures/`
+- Relevant figures (e.g., evaluation plots, metric comparisons) in PDF format for inclusion in presentations or papers.
