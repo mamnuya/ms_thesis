@@ -47,7 +47,7 @@ This directory contains the curated bias lexicons used for TF-IDF-based bias ana
 ---
 
 #### 📄 `biasLexiconSubLists.json`  
-- Subdivides the bias lexicon (`biasLexicon.json`) into two categories. This version was not used in our study.:  
+- Subdivides the bias lexicon (`biasLexicon.json`) into two categories:  
   - `"activities"` – e.g., *cooking, raising children, going to temple*  
   - `"descriptions"` – e.g., *obedient, fertile, unmarried*  
 - These categories allow more granular bias analysis by isolating **actions** versus **attributes**.
