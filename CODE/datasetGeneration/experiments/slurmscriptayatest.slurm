@@ -28,7 +28,7 @@
 
 ## Email Notifications
 #SBATCH --mail-type=END,FAIL       # Notify on job end and failure
-#SBATCH --mail-user=mrinki@gmu.edu # Use your GMU email address for notifications
+#SBATCH --mail-user=EXAMPLE_EMAIL@gmu.edu # Use your GMU email address for notifications
 
 ## Task and Node Specifications
 #SBATCH --nodes=1                  # Run on a single node
@@ -46,5 +46,5 @@ module load python                 # Ensure Python environment is loaded
 source venv/bin/activate           # Activate your Python virtual environment
 
 ## Run the Dataset Generation Script
-python generateDataset.py          # Replace with your script filename
+python generateDataset_aya.py          # Replace with your script filename
 
