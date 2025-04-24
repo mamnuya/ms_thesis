@@ -10,6 +10,7 @@ This directory contains all datasets, processed data, model experiment results, 
   - Original prompts
   - Complex self-debiasing prompts
   - Simple self-debiasing prompts
+  - This version was implemented in our study.
 
 - **`cleaned_tokenized_lemmatized/`**:  
   Processed version of the above data, including:
@@ -21,6 +22,7 @@ This directory contains all datasets, processed data, model experiment results, 
 ### `complexdebiaspromptsQs/`
 - Stores raw generated data using original and complex prompting methods (without simple prompts).
 - Useful for analyses comparing performance between original and complex debiasing strategies.
+- This version was not used in our study.
 
 ### `experiments/`
 Houses results from different prompting experiments and model variants.
@@ -49,12 +51,42 @@ Houses results from different prompting experiments and model variants.
 ### `figures/`
 - Relevant figures (e.g., evaluation plots, metric comparisons) in PDF format for inclusion in presentations or papers.
 
-### `lexicon/`
-- `biasLexicon.json`:  
-  Core bias lexicon derived from literature review and manually added synonyms related to South Asian gender, religion, marital status, and family size stereotypes.
-  
-- `biasLexiconSynonyms.json`:  
-  Expanded lexicon using automated synonym generation techniques on the initial manual + literature terms.
+  ### `lexicon/`
+
+This directory contains the curated bias lexicons used for TF-IDF-based bias analysis. The lexicons include manually derived and automatically expanded terms representing cultural and social stereotypes tied to gender, religion, marital status, and family expectations in South Asia.
+
+---
+
+#### 📄 `biasLexicon.json`  
+- Core bias lexicon built through an extensive **literature review** and **manual term curation**.  
+- Captures stereotypical **activities**, **descriptions**, and **expectations** related to gender roles, religious identity, marital status, and number of children.  
+- Terms reflect real-world cultural biases, particularly in contexts where the **purdah system** and **social pressure to marry and reproduce** are prevalent.
+- This version was implemented in our study.
+
+---
+
+#### 📄 `biasLexiconSynonyms.json`  
+- Expanded version of `biasLexicon.json` that includes **automatically generated synonyms**.  
+- Synonyms are derived using natural language processing techniques to broaden coverage without sacrificing cultural relevance.  
+- Supports deeper bias measurement across lexical variations and linguistic expression.
+- This version was implemented in our study.
+
+---
+
+#### 📄 `biasLexiconSubLists.json`  
+- Subdivides the bias lexicon (`biasLexicon.json`) into two categories. This version was not used in our study.:  
+  - `"activities"` – e.g., *cooking, raising children, going to temple*  
+  - `"descriptions"` – e.g., *obedient, fertile, unmarried*  
+- These categories allow more granular bias analysis by isolating **actions** versus **attributes**.
+- This version was not implemented in our study.
+
+---
+
+#### 📄 `biasLexiconSynonymsSubLists.json`  
+- Subdivides the **expanded synonym lexicon** (`biasLexiconSynonyms.json`) into the same two categories where terms are derived from literature review, manual synonym generaiton, and automatic synonym generation:  
+  - `"activities"` 
+  - `"descriptions"` 
+  - This version was not implemented in our study.
 
 ### `lexicon_analysis/tfidf/tfidf_values/`
 
