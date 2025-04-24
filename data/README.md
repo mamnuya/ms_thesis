@@ -18,13 +18,14 @@ This directory contains all datasets, processed data, model experiment results, 
   - Tokenization
   - Lemmatization  
   This processed data is used for downstream analysis, such as Bias TF-IDF and bias score computation.
-
+---
 ### `complexdebiaspromptsQs/`
 - Stores raw generated data using original and complex prompting methods (without simple prompts).
 - Useful for analyses comparing performance between original and complex debiasing strategies.
 - This version was not used in our study.
 
-  ### `lexicon/`
+---
+### `lexicon/`
 
 This directory contains the curated bias lexicons used for TF-IDF-based bias analysis. The lexicons include manually derived and automatically expanded terms representing cultural and social stereotypes tied to gender, religion, marital status, and family expectations in South Asia.
 
@@ -61,6 +62,7 @@ This directory contains the curated bias lexicons used for TF-IDF-based bias ana
   - `"descriptions"` 
   - This version was not implemented in our study.
 
+---
 ### `lexicon_analysis/tfidf/tfidf_values/`
 
 This directory contains TF-IDF values computed during bias analysis, including both general term-level TF-IDF scores and bias-specific TF-IDF scores. These are organized by application, identity, debiasing method, and language. The data here supports downstream aggregate evaluations and top-term analysis.
@@ -98,6 +100,7 @@ This directory contains TF-IDF values computed during bias analysis, including b
 - Includes results for **Indo-Aryan**, **Dravidian**, and **All_Languages** groups.
 - Used in high-level evaluations of debiasing performance.
 
+---
 ### `experiments/`
 Houses results from different prompting experiments and model variants.
 
@@ -122,5 +125,6 @@ Houses results from different prompting experiments and model variants.
   - Variants of mT0  
   Useful for model comparison and cross-model bias assessment.
 
+---
 ### `figures/`
 - Relevant figures (e.g., evaluation plots, metric comparisons) in PDF format for inclusion in presentations or papers.
