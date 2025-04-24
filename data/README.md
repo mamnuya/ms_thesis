@@ -56,7 +56,7 @@ This directory contains the curated bias lexicons used for TF-IDF-based bias ana
 ---
 
 #### 📄 `biasLexiconSynonymsSubLists.json`  
-- Subdivides the **expanded synonym lexicon** (`biasLexiconSynonyms.json`) into the same two categories where terms are derived from literature review, manual synonym generaiton, and automatic synonym generation:  
+- Subdivides the **expanded synonym lexicon** (`biasLexiconSynonyms.json`) into the same two categories where terms are derived from literature review, manual synonym generation, and automatic synonym generation:  
   - `"activities"` 
   - `"descriptions"` 
   - This version was not implemented in our study.
