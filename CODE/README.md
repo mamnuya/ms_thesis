@@ -63,11 +63,13 @@ python cleanLemmatizeTokenizeData.py
 ```
 ---
 ### `lexiconCuration/`
-- `biasLexiconFindSynonymsFlatList.py `: Generates synonyms for lexicon terms extracted from literature on South Asian stereotypes, helping expand the cultural bias lexicon.
-- `lexicon_synonym_words_counts.py`: Counts and prints:
+- `biasLexiconFindSynonymsFlatList.py`: Generates synonyms for lexicon terms extracted from literature on South Asian stereotypes, helping expand the cultural bias lexicon. This version was implemented in our study.
+- `lexicon_synonym_words_counts.py`: Counts and prints the following using the flat list bias lexicon:
   - Number of terms from literature review
   - Number of terms added manually
   - Total number of terms after synonym generation
+- `biasLexiconFindSynonymsSubList.py `
+  Generates synonyms for lexicon terms extracted from literature on South Asian stereotypes, and stored into sub-categories of `"activities"` and `"descriptions"`. This version was not implemented in our study.
 
 This ensures transparency in the lexicon development process.
 
