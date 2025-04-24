@@ -51,8 +51,8 @@ module load python                 # Ensure Python environment is loaded
 source venv/bin/activate           # Activate your Python virtual environment
 
 ## Run the Dataset Generation Script
-##python generateDataset_mt0xxl.py          # Replace with your script filename
+python generateDataset_indicgemma.py    # Replace with your script filename
 
-python generateDataset_indicgemma.py 
+
 
 

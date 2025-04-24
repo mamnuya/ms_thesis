@@ -228,38 +228,3 @@ generate_latex_tables_by_application(top_tfidf_per_identity_group_and_applicatio
 
 print("Overall term extraction and LaTeX formatting completed.")
 
-'''
-Answer in latex with sections \subsubsection{Analysis of Gender and Religion} where you analyze hindu/muslim male/female, \subsubsection{Marital Status-Based Analysis} where you analyze single/married/widowed/divorced, \subsubsection{Number of Children-Based Analysis} where you analyze no children/ one child/ many children, and \subsubsection{Summary of Findings} where you analyze bias in these dimensions based on the table with terms most often mentioned for an identity with tf-idf values. For your knowledge Muslims are seen as more violent and traditional than Hindus, Women face more stereotypes than men, single men are seen as independent, divorce and widows are seen negatively, and marriage and reproduction is expected by society. Use bullets for neat organization in your sections. this is for phd analysis of results. Here's an example for overall term analysis, but I expect you to incorporate religion based analysis within the gender based analysis bullets under one subheading: \subsubsection{Analysis of Gender and Religion}
-
-\subsubsection{Analysis of Gender and Religion}
-\begin{itemize}
-    \item \textbf{Hindu Female}: The most prominent terms for Hindu females include \textit{work} (TF-IDF = 0.048–0.051), \textit{house} (0.056–0.063), and \textit{name} (0.043–0.072). The term \textit{admit} appears notably for those with many children (0.089), which may suggest a narrative involving education or confession, depending on the context. The frequent presence of \textit{house} aligns with traditional gender roles associating women with domestic spaces.
-    \item \textbf{Hindu Male}: The most frequent term is \textit{wife} (0.054–0.088), appearing across all marital statuses, including single men with children, reinforcing a strong emphasis on spousal relationships. Other notable terms include \textit{friend} (0.051) and \textit{several} (0.057), suggesting broader social narratives for men compared to women. Hindu males display a stronger association with \textit{wife} (TF-IDF up to 0.088), whereas Muslim males have similar patterns but with slightly higher TF-IDF values for \textit{wife} (up to 0.091), possibly suggesting stronger spousal-centric storytelling in Muslim male narratives.
-    \item \textbf{Muslim Female}: Hindu and Muslim women share common frequent terms like \textit{house}, \textit{work}, and \textit{name}, indicating similar gendered narratives. Similar to Hindu females, the terms \textit{work} (0.041–0.059) and \textit{house} (0.051–0.059) are frequently found. The term \textit{mother} (0.066) is more common among those with many children, emphasizing maternal identity in Muslim female narratives.
-    \item \textbf{Muslim Male}: The term \textit{wife} (0.055–0.091) appears frequently, similar to Hindu males. The term \textit{two} is particularly prevalent among Muslim men across all categories (TF-IDF up to 0.087), which does not appear as frequently for Hindu men. Additionally, the term \textit{two} (0.075–0.087) appears often, potentially reflecting family size, numerical references, or a cultural emphasis on duality (e.g., two wives, two sons).
-\end{itemize}
-
-\subsubsection{Marital Status-Based Analysis}
-\begin{itemize}
-    \item Married men, regardless of religion, frequently feature the term \textit{wife} with high TF-IDF values (0.054–0.088), reinforcing a strong narrative focus on marriage.
-    \item Single Hindu females frequently feature \textit{two} (TF-IDF = 0.093), while single Muslim females also have \textit{two} (0.070), potentially reflecting a common storytelling pattern about pairs, relationships, or decision-making.
-    \item Divorced and widowed women have \textit{work} and \textit{house} as frequent terms, reinforcing themes of domesticity and resilience.
-\end{itemize}
-
-\subsubsection{Children-Based Analysis}
-\begin{itemize}
-    \item Across all identities, the presence of children influences term frequency. Women with many children frequently feature \textit{house} and \textit{mother}, reinforcing maternal roles.
-    \item Men, regardless of marital status, frequently have \textit{wife} as a dominant term, with Muslim males showing the highest TF-IDF values.
-    \item The term \textit{admit} appears for Hindu females with many children (TF-IDF = 0.089) and Muslim females with one child (0.061), possibly indicating themes of education, confession, or acknowledgment in storytelling.
-\end{itemize}
-
-\subsubsection{Summary of Findings}
-\begin{itemize}
-    \item Gendered patterns emerge strongly, with women frequently associated with \textit{house} and \textit{work}, while men are more frequently linked to \textit{wife}.
-    \item Hindu and Muslim men exhibit similar trends, but Muslim men display slightly stronger emphasis on spousal relationships and numerical references (\textit{two}).
-    \item Married and widowed women, especially those with children, frequently feature terms reinforcing domestic and maternal roles.
-    \item The presence of children influences term frequency, with stronger associations between motherhood and household-related terms for women.
-\end{itemize}
-
-
-'''
