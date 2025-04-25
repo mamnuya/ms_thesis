@@ -41,7 +41,7 @@ Run the slurm scripts provided within `datasetGeneration/` folder in a GPU-suppo
 
 📌 *Remember to replace with an actual email for notifications*:  
 ```bash
-#SBATCH --mail-user=EXAMPLE_EMAIL@gmu.edu
+#SBATCH --mail-user=EXAMPLE_EMAIL@EXAMPLE.com
 ``` 
 ---
 ### `cleanLemmatizeTokenizeData.py`

@@ -30,7 +30,7 @@
 
 ## Email Notifications
 #SBATCH --mail-type=END,FAIL       # Notify on job end and failure
-#SBATCH --mail-user=EXAMPLE_EMAIL@gmu.edu # Use your email address for notifications
+#SBATCH --mail-user=EXAMPLE_EMAIL@EXAMPLE.com # Use your email address for notifications
 
 ## Task and Node Specifications
 #SBATCH --nodes=1                  # Run on a single node
