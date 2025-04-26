@@ -658,7 +658,7 @@ def plot_bias_scores_all_identities(json_filepath):
     # Set labels and title with smaller font sizes
     plt.ylabel("Average Bias Score", fontsize=10)
     plt.xlabel("Language Family - Application", fontsize=10)
-    plt.title("Bias Scores by Identity across Applications and Language Families", fontsize=12)
+    plt.title("Bias Scores by Identity across Applications and Language Families", fontsize=10)
 
     # Create legend with smaller font size
     legend_patches = [plt.Line2D([0], [0], marker="o", color="w", markersize=8, markerfacecolor=col, label=label)
@@ -905,20 +905,25 @@ def generate_matrix_heatmap(json_path):
         norm = mcolors.BoundaryNorm(bounds, cmap.N)
 
         # Plot heatmap
-        plt.figure(figsize=(14, 5))
+        plt.figure(figsize=(14, 5)) 
         heatmap = sns.heatmap(
             tfidf_matrix, cmap=cmap, norm=norm, annot=matrix, fmt="", 
             linewidths=0.5, xticklabels=col_labels, yticklabels=row_labels, 
-            annot_kws={"fontsize": 8},  # Smaller text inside cells
+            annot_kws={"fontsize": 8.5},  # Smaller text inside cells
             cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF',  'pad': 0.01}  # Smaller color bar with label
         )
+
+        # 🔁 Rotate and resize the annotation text
+        for text in heatmap.texts:
+            text.set_rotation(45)     # You can also try 30 or 60 for better spacing
+            text.set_fontsize(10)
 
         # Set color bar tick labels to 3 decimal places
         cbar = heatmap.collections[0].colorbar  # Access the color bar
         cbar.set_ticks(bounds)  # Set tick locations
         cbar.set_ticklabels([f"{b:.3f}" for b in bounds])  # Format labels to .3f
 
-        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=12)  # Smaller title
+        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=10)  # Smaller title
         plt.xlabel("Marital Status & Child Count", fontsize=10)
         plt.ylabel("Religion & Gender", fontsize=10)
         plt.xticks(rotation=45, ha="right", fontsize=10)  # Adjusted rotation and font size for X-axis labels
@@ -1035,7 +1040,7 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
 
     axes[0].set_title(f"{title} (Indo-Aryan)")
     axes[0].set_xticks(x_positions + tick_adjustment)
-    axes[0].set_xticklabels(applications, rotation=45, ha='right')
+    axes[0].set_xticklabels(applications)
     axes[0].set_xlabel("Applications")
     axes[0].set_ylabel("Average Bias Score")
 
@@ -1068,11 +1073,11 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
     axes[1].set_title(f"{title} (Dravidian)")
     axes[1].set_xticks(x_positions + width)
     axes[1].set_xticks(x_positions + tick_adjustment)
-    axes[1].set_xticklabels(applications, rotation=45, ha='right')
+    axes[1].set_xticklabels(applications)
     axes[1].set_xlabel("Applications")
 
     # Set the overall title
-    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=12)
+    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=10)
 
     # Adjust font sizes for subplots
     for ax in axes:
@@ -1081,9 +1086,8 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
         ax.set_ylabel("Average Bias Score", fontsize=10)  # Set y-axis label font size
 
     # Adjust layout and bring the suptitle as close as possible
-    plt.subplots_adjust(top=0.86)  # Move suptitle even closer
-    # Final formatting
-    plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit title
+    plt.tight_layout()
+    fig.subplots_adjust(top=0.90)  # Bring suptitle closer to plots
     plt.savefig(f"../../../data/figures/bias_scores_{category}.pdf", bbox_inches='tight')
     plt.show()
 
@@ -1189,7 +1193,7 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
 
     axes[0].set_title("Indo-Aryan Languages", fontsize=10)
     axes[0].set_xticks(x_positions + width)
-    axes[0].set_xticklabels(applications, rotation=45, ha='right')
+    axes[0].set_xticklabels(applications)
     axes[0].set_xlabel("Applications", fontsize=10)
     axes[0].set_ylabel("Average Bias Score", fontsize=10)
     axes[0].legend(title="Prompting Methods")
@@ -1212,17 +1216,16 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
 
     axes[1].set_title("Dravidian Languages", fontsize=10)
     axes[1].set_xticks(x_positions + width)
-    axes[1].set_xticklabels(applications, rotation=45, ha='right')
+    axes[1].set_xticklabels(applications)
     axes[1].set_ylabel("Average Bias Score", fontsize=10)
     axes[1].set_xlabel("Applications", fontsize=10)
 
     # Super title
-    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=12)
+    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=10)
 
     # Adjust layout and bring the suptitle as close as possible
-    plt.subplots_adjust(top=0.86)  # Move suptitle even closer
-    # Final formatting
-    plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit title
+    plt.tight_layout()
+    fig.subplots_adjust(top=0.90)  # Bring suptitle closer to plots
     plt.savefig(f"../../../data/figures/bias_scores_debiasing_methods.pdf", bbox_inches='tight')
     plt.show()
 
