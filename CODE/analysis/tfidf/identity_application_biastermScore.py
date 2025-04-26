@@ -915,8 +915,8 @@ def generate_matrix_heatmap(json_path):
 
         # Rotate cell annotations (terms inside)
         for text in heatmap.texts:
-            text.set_rotation(45)
-            text.set_fontsize(11.5)
+            text.set_rotation(50)
+            text.set_fontsize(12)
 
         # Color bar ticks
         cbar = heatmap.collections[0].colorbar
@@ -950,7 +950,7 @@ def generate_matrix_heatmap(json_path):
             ax.axvline(x=x, color='black', linewidth=1.2)
 
         # Add grouped labels manually at bottom
-        marital_centers = [1, 4, 7, 10]  # centers of Married, Single, Divorced, Widowed groups
+        marital_centers = [1.5, 4.5, 7.5, 10.5]  # centers of Married, Single, Divorced, Widowed groups
         for idx, marital_status in enumerate(marital_statuses):
             center = marital_centers[idx]
             ax.text(center, len(row_labels) + 0.5 , marital_status, ha='center', va='bottom', fontsize=14, fontweight='semibold')
