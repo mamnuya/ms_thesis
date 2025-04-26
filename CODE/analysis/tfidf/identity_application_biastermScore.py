@@ -913,9 +913,9 @@ def generate_matrix_heatmap(json_path):
             cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF',  'pad': 0.01}  # Smaller color bar with label
         )
 
-        # 🔁 Rotate and resize the annotation text
+        # Rotate and resize the annotation text inside the cells
         for text in heatmap.texts:
-            text.set_rotation(45)     # You can also try 30 or 60 for better spacing
+            text.set_rotation(45)     
             text.set_fontsize(10)
 
         # Set color bar tick labels to 3 decimal places
@@ -1033,14 +1033,14 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
         for bar in bars:
             yval = bar.get_height()
             axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
-                         ha='center', va='bottom', fontsize=10, color='black')
+                         ha='center', va='bottom', fontsize=10.5, color='black')
 
 
     tick_adjustment = (num_subcategories - 1) * width / 2  # Center tick between bars
 
     axes[0].set_title(f"{title} (Indo-Aryan)")
     axes[0].set_xticks(x_positions + tick_adjustment)
-    axes[0].set_xticklabels(applications)
+    axes[0].set_xticklabels(applications, fontsize=12)
     axes[0].set_xlabel("Applications")
     axes[0].set_ylabel("Average Bias Score")
 
@@ -1068,22 +1068,22 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
         for bar in bars:
             yval = bar.get_height()
             axes[1].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
-                         ha='center', va='bottom', fontsize=10, color='black')
+                         ha='center', va='bottom', fontsize=10.5, color='black')
 
     axes[1].set_title(f"{title} (Dravidian)")
     axes[1].set_xticks(x_positions + width)
     axes[1].set_xticks(x_positions + tick_adjustment)
-    axes[1].set_xticklabels(applications)
+    axes[1].set_xticklabels(applications, fontsize=12)
     axes[1].set_xlabel("Applications")
 
     # Set the overall title
-    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=10)
+    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=12)
 
     # Adjust font sizes for subplots
     for ax in axes:
-        ax.set_title(ax.get_title(), fontsize=10)  # Set subplot title font size
-        ax.set_xlabel("Applications", fontsize=10)  # Set x-axis label font size
-        ax.set_ylabel("Average Bias Score", fontsize=10)  # Set y-axis label font size
+        ax.set_title(ax.get_title(), fontsize=12)  # Set subplot title font size
+        ax.set_xlabel("Applications", fontsize=12)  # Set x-axis label font size
+        ax.set_ylabel("Average Bias Score", fontsize=12)  # Set y-axis label font size
 
     # Adjust layout and bring the suptitle as close as possible
     plt.tight_layout()
@@ -1189,13 +1189,13 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
         for bar in bars:
             yval = bar.get_height()
             axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
-                         ha='center', va='bottom', fontsize=10, color='black')
+                         ha='center', va='bottom', fontsize=10.5, color='black')
 
-    axes[0].set_title("Indo-Aryan Languages", fontsize=10)
+    axes[0].set_title("Indo-Aryan Languages", fontsize=12)
     axes[0].set_xticks(x_positions + width)
-    axes[0].set_xticklabels(applications)
-    axes[0].set_xlabel("Applications", fontsize=10)
-    axes[0].set_ylabel("Average Bias Score", fontsize=10)
+    axes[0].set_xticklabels(applications, fontsize=12)
+    axes[0].set_xlabel("Applications", fontsize=12)
+    axes[0].set_ylabel("Average Bias Score", fontsize=12)
     axes[0].legend(title="Prompting Methods")
 
     # Plot for Dravidian languages
@@ -1212,16 +1212,16 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
         for bar in bars:
             yval = bar.get_height()
             axes[1].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
-                         ha='center', va='bottom', fontsize=10, color='black')
+                         ha='center', va='bottom', fontsize=10.5, color='black')
 
-    axes[1].set_title("Dravidian Languages", fontsize=10)
+    axes[1].set_title("Dravidian Languages", fontsize=12)
     axes[1].set_xticks(x_positions + width)
-    axes[1].set_xticklabels(applications)
-    axes[1].set_ylabel("Average Bias Score", fontsize=10)
-    axes[1].set_xlabel("Applications", fontsize=10)
+    axes[1].set_xticklabels(applications, fontsize=12)
+    axes[1].set_ylabel("Average Bias Score", fontsize=12)
+    axes[1].set_xlabel("Applications", fontsize=12)
 
     # Super title
-    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=10)
+    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=12)
 
     # Adjust layout and bring the suptitle as close as possible
     plt.tight_layout()
