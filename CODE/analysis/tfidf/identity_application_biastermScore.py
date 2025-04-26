@@ -1040,19 +1040,19 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
 
     axes[0].set_title(f"{title} (Indo-Aryan)")
     axes[0].set_xticks(x_positions + tick_adjustment)
-    axes[0].set_xticklabels(applications, fontsize=12)
+    axes[0].set_xticklabels(applications, fontsize=14)
     axes[0].set_xlabel("Applications")
     axes[0].set_ylabel("Average Bias Score")
 
     # Dynamically set the legend title
     if "gender" in category:
-        axes[0].legend(title="Genders")
+        axes[0].legend(title="Genders", fontsize=14, title_fontsize=14)
     elif "religion" in category:
-        axes[0].legend(title="Religions")
+        axes[0].legend(title="Religions", fontsize=14, title_fontsize=14)
     elif "marital_status" in category:
-        axes[0].legend(title="Marital Statuses")
+        axes[0].legend(title="Marital Statuses", fontsize=14, title_fontsize=14)
     elif "child_count" in category:
-        axes[0].legend(title="Number of Children")
+        axes[0].legend(title="Number of Children", fontsize=14, title_fontsize=14)
 
     # Plot for Dravidian languages
     for idx, subcategory in enumerate(category_scores_drav.keys()):
@@ -1073,17 +1073,17 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
     axes[1].set_title(f"{title} (Dravidian)")
     axes[1].set_xticks(x_positions + width)
     axes[1].set_xticks(x_positions + tick_adjustment)
-    axes[1].set_xticklabels(applications, fontsize=12)
+    axes[1].set_xticklabels(applications, fontsize=14)
     axes[1].set_xlabel("Applications")
 
     # Set the overall title
-    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=12)
+    fig.suptitle(f"{title} Bias Scores (Averaged Across Language Families in Original Prompting Method)", fontsize=14)
 
     # Adjust font sizes for subplots
     for ax in axes:
-        ax.set_title(ax.get_title(), fontsize=12)  # Set subplot title font size
-        ax.set_xlabel("Applications", fontsize=12)  # Set x-axis label font size
-        ax.set_ylabel("Average Bias Score", fontsize=12)  # Set y-axis label font size
+        ax.set_title(ax.get_title(), fontsize=14)  # Set subplot title font size
+        ax.set_xlabel("Applications", fontsize=14)  # Set x-axis label font size
+        ax.set_ylabel("Average Bias Score", fontsize=14)  # Set y-axis label font size
 
     # Adjust layout and bring the suptitle as close as possible
     plt.tight_layout()
@@ -1191,12 +1191,12 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
             axes[0].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
                          ha='center', va='bottom', fontsize=10.5, color='black')
 
-    axes[0].set_title("Indo-Aryan Languages", fontsize=12)
+    axes[0].set_title("Indo-Aryan Languages", fontsize=14)
     axes[0].set_xticks(x_positions + width)
-    axes[0].set_xticklabels(applications, fontsize=12)
-    axes[0].set_xlabel("Applications", fontsize=12)
-    axes[0].set_ylabel("Average Bias Score", fontsize=12)
-    axes[0].legend(title="Prompting Methods")
+    axes[0].set_xticklabels(applications, fontsize=14)
+    axes[0].set_xlabel("Applications", fontsize=14)
+    axes[0].set_ylabel("Average Bias Score", fontsize=14)
+    axes[0].legend(title="Prompting Methods", fontsize=14, title_fontsize=14)
 
     # Plot for Dravidian languages
     for idx, subcategory in enumerate(subcategories):
@@ -1214,14 +1214,14 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
             axes[1].text(bar.get_x() + bar.get_width() / 2, yval, f"{yval:.3f}", 
                          ha='center', va='bottom', fontsize=10.5, color='black')
 
-    axes[1].set_title("Dravidian Languages", fontsize=12)
+    axes[1].set_title("Dravidian Languages", fontsize=14)
     axes[1].set_xticks(x_positions + width)
-    axes[1].set_xticklabels(applications, fontsize=12)
-    axes[1].set_ylabel("Average Bias Score", fontsize=12)
-    axes[1].set_xlabel("Applications", fontsize=12)
+    axes[1].set_xticklabels(applications, fontsize=14)
+    axes[1].set_ylabel("Average Bias Score", fontsize=14)
+    axes[1].set_xlabel("Applications", fontsize=14)
 
     # Super title
-    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=12)
+    fig.suptitle(f"{title} Bias Scores by Prompting Method (Averaged Across Language Families)", fontsize=14)
 
     # Adjust layout and bring the suptitle as close as possible
     plt.tight_layout()
