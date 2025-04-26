@@ -908,7 +908,7 @@ def generate_matrix_heatmap(json_path):
         heatmap = sns.heatmap(
             tfidf_matrix, cmap=cmap, norm=norm, annot=matrix, fmt="", 
             linewidths=0.5, xticklabels=col_labels, yticklabels=row_labels, 
-            annot_kws={"fontsize": 12},
+            annot_kws={"fontsize": 14},
             cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF', 'pad': 0.01},
             ax=ax
         )
@@ -922,15 +922,26 @@ def generate_matrix_heatmap(json_path):
         cbar = heatmap.collections[0].colorbar
         cbar.set_ticks(bounds)
         cbar.set_ticklabels([f"{b:.3f}" for b in bounds])
-        cbar.ax.tick_params(labelsize=12)  # Change font size of colorbar ticks
-        cbar.ax.yaxis.label.set_size(12)  # Change font size of colorbar label ("Bias TF-IDF")
+        cbar.ax.tick_params(labelsize=14)  # Change font size of colorbar ticks
+        cbar.ax.yaxis.label.set_size(14)  # Change font size of colorbar label ("Bias TF-IDF")
         
         # Simplified tick labels
         simple_row_labels = [label.split(" & ")[1] for label in row_labels]  # Just Male / Female
-        simple_col_labels = [label.split(" & ")[1] for label in col_labels]  # Just No children / One child / Many children
+        # Map full child descriptions to simpler words
+        child_mapping = {
+            "No children": "None",
+            "One child": "One",
+            "Many children": "Many"
+        }
 
-        ax.set_xticklabels(simple_col_labels, rotation=0, fontsize=12)
-        ax.set_yticklabels(simple_row_labels, rotation=0, fontsize=12)
+        simple_col_labels = []
+        for label in col_labels:
+            marital_status, child_status = label.split(" & ")
+            child_simple = child_mapping.get(child_status, child_status)  # fallback in case
+            simple_col_labels.append(f"{child_simple}")
+
+        ax.set_xticklabels(simple_col_labels, rotation=0, fontsize=14)
+        ax.set_yticklabels(simple_row_labels, rotation=0, fontsize=14)
 
         # Draw separation lines
         for y in [2, 4, 6]:
@@ -942,23 +953,23 @@ def generate_matrix_heatmap(json_path):
         marital_centers = [1, 4, 7, 10]  # centers of Married, Single, Divorced, Widowed groups
         for idx, marital_status in enumerate(marital_statuses):
             center = marital_centers[idx]
-            ax.text(center, len(row_labels) + 1.25 , marital_status, ha='center', va='bottom', fontsize=12, fontweight='semibold')
+            ax.text(center, len(row_labels) + 0.5 , marital_status, ha='center', va='bottom', fontsize=14, fontweight='semibold')
 
         # Add grouped religion labels on side
         religion_positions = [1, 3]
         for idx, religion in enumerate(religions):
             center = religion_positions[idx]
-            ax.text(-1, center, religion, ha='center', va='center', rotation=90, fontsize=12, fontweight='semibold')
+            ax.text(-1, center, religion, ha='center', va='center', rotation=90, fontsize=14, fontweight='semibold')
 
 
-        ax.set_xlabel("Marital Status & Child Count", fontsize=10, labelpad=20)  # Increase padding
-        ax.set_ylabel("Religion & Gender", fontsize=12, labelpad=20)  # Increase padding
+        ax.set_xlabel("Marital Status & Child Count", fontsize=14, labelpad=25)  # Increase padding
+        ax.set_ylabel("Religion & Gender", fontsize=14, labelpad=15)  # Increase padding
 
-        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=12)  
-        plt.xlabel("Marital Status & Child Count", fontsize=12)
-        plt.ylabel("Religion & Gender", fontsize=12)
-        plt.xticks(rotation=45, ha="right", fontsize=12)  # Adjusted rotation and font size for X-axis labels
-        plt.yticks(rotation=0, fontsize=12)  # Smaller Y-axis labels
+        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=14)  
+        plt.xlabel("Marital Status & Child Count", fontsize=14)
+        plt.ylabel("Religion & Gender", fontsize=14)
+        plt.xticks(rotation=0, ha="right", fontsize=14)  # Adjusted rotation and font size for X-axis labels
+        plt.yticks(rotation=0, fontsize=14)  # Smaller Y-axis labels
         plt.tight_layout()  # Adjusts plot to ensure labels are visible
         plt.savefig(f"../../../data/figures/top_bias_terms_{application}.pdf", bbox_inches='tight')
         plt.show()
