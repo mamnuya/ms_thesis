@@ -904,26 +904,26 @@ def generate_matrix_heatmap(json_path):
         cmap = mcolors.ListedColormap(colors)
         norm = mcolors.BoundaryNorm(bounds, cmap.N)
 
-        fig, ax = plt.subplots(figsize=(14, 6))
+        fig, ax = plt.subplots(figsize=(14, 7))
         heatmap = sns.heatmap(
             tfidf_matrix, cmap=cmap, norm=norm, annot=matrix, fmt="", 
             linewidths=0.5, xticklabels=col_labels, yticklabels=row_labels, 
-            annot_kws={"fontsize": 14},
+            #annot_kws={"fontsize": 18},
             cbar_kws={'shrink': 0.5, 'label': 'Bias TF-IDF', 'pad': 0.01},
             ax=ax
         )
 
         # Rotate cell annotations (terms inside)
         for text in heatmap.texts:
-            text.set_rotation(50)
-            text.set_fontsize(12)
+            text.set_rotation(55)
+            text.set_fontsize(14)
 
         # Color bar ticks
         cbar = heatmap.collections[0].colorbar
         cbar.set_ticks(bounds)
         cbar.set_ticklabels([f"{b:.3f}" for b in bounds])
-        cbar.ax.tick_params(labelsize=14)  # Change font size of colorbar ticks
-        cbar.ax.yaxis.label.set_size(14)  # Change font size of colorbar label ("Bias TF-IDF")
+        cbar.ax.tick_params(labelsize=16)  # Change font size of colorbar ticks
+        cbar.ax.yaxis.label.set_size(16)  # Change font size of colorbar label ("Bias TF-IDF")
         
         # Simplified tick labels
         simple_row_labels = [label.split(" & ")[1] for label in row_labels]  # Just Male / Female
@@ -953,25 +953,25 @@ def generate_matrix_heatmap(json_path):
         marital_centers = [1.5, 4.5, 7.5, 10.5]  # centers of Married, Single, Divorced, Widowed groups
         for idx, marital_status in enumerate(marital_statuses):
             center = marital_centers[idx]
-            ax.text(center, len(row_labels) + 0.5 , marital_status, ha='center', va='bottom', fontsize=14, fontweight='semibold')
+            ax.text(center, len(row_labels) + 0.4 , marital_status, ha='center', va='bottom', fontsize=16, fontweight='semibold')
 
         # Add grouped religion labels on side
         religion_positions = [1, 3]
         for idx, religion in enumerate(religions):
             center = religion_positions[idx]
-            ax.text(-1, center, religion, ha='center', va='center', rotation=90, fontsize=14, fontweight='semibold')
+            ax.text(-1.2, center, religion, ha='center', va='center', rotation=90, fontsize=16, fontweight='semibold')
 
 
-        ax.set_xlabel("Marital Status & Child Count", fontsize=14, labelpad=25)  # Increase padding
-        ax.set_ylabel("Religion & Gender", fontsize=14, labelpad=15)  # Increase padding
+        ax.set_xlabel("Marital Status & Child Count", fontsize=16, labelpad=25)  # Increase padding
+        ax.set_ylabel("Religion & Gender", fontsize=16, labelpad=15)  # Increase padding
 
-        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=14)  
-        plt.xlabel("Marital Status & Child Count", fontsize=14)
-        plt.ylabel("Religion & Gender", fontsize=14)
-        plt.xticks(rotation=0, ha="right", fontsize=14)  # Adjusted rotation and font size for X-axis labels
-        plt.yticks(rotation=0, fontsize=14)  # Smaller Y-axis labels
+        plt.title(f"Top Bias Terms for All Identities in {application} Generations (Aggregated Across All Languages in Original Prompting Method)", fontsize=16)  
+        plt.xlabel("Marital Status & Child Count", fontsize=16)
+        plt.ylabel("Religion & Gender", fontsize=16)
+        plt.xticks(rotation=0, ha="right", fontsize=16)  # Adjusted rotation and font size for X-axis labels
+        plt.yticks(rotation=0, fontsize=16)  # Smaller Y-axis labels
         plt.tight_layout()  # Adjusts plot to ensure labels are visible
-        plt.savefig(f"../../../data/figures/top_bias_terms_{application}.pdf", bbox_inches='tight')
+        plt.savefig(f"../../../data/figures/top_bias_terms_{application}.pdf", bbox_inches='tight', dpi=450)
         plt.show()
 
 # Call function with JSON path
@@ -1131,8 +1131,9 @@ def plot_bias_scores_individual_identity_categories(data, category, subcategorie
 
     # Adjust layout and bring the suptitle as close as possible
     plt.tight_layout()
+    plt.rcParams.update({'font.size': 16})  # Increase the font size globally
     fig.subplots_adjust(top=0.90)  # Bring suptitle closer to plots
-    plt.savefig(f"../../../data/figures/bias_scores_{category}.pdf", bbox_inches='tight')
+    plt.savefig(f"../../../data/figures/bias_scores_{category}.pdf", bbox_inches='tight', dpi=450)
     plt.show()
 
 # Function to generate plots for gender, religion, marital status, and child count
@@ -1272,7 +1273,7 @@ def plot_application_bias_by_language_family_debiasing_method(data, title="Appli
     # Adjust layout and bring the suptitle as close as possible
     plt.tight_layout()
     fig.subplots_adjust(top=0.90)  # Bring suptitle closer to plots
-    plt.savefig(f"../../../data/figures/bias_scores_debiasing_methods.pdf", bbox_inches='tight')
+    plt.savefig(f"../../../data/figures/bias_scores_debiasing_methods.pdf", bbox_inches='tight', dpi=450)
     plt.show()
 
 # Example usage
